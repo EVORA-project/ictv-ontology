@@ -1,0 +1,8 @@
+﻿change	notes
+abolish	taxon does not appear in the next MSL
+demote	taxon changes rank and name in next MSL
+merge	multiple taxa collapsed into a single taxon in next MSL
+move	taxon changes parent in next MSL
+promote	taxon changes rank and name in next MSL
+rename	taxon renamed in next MSL
+type	Assign or remove as type species in a genus; No longer used after MSL35. 
