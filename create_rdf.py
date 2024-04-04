@@ -19,19 +19,7 @@ def main():
     molecules = pd.read_csv('data/taxonomy_molecule.tsv', sep='\t', dtype=str)
 # id	abbrev	name	balt_group	balt_roman	description	left_idx	right_idx
 
-    common_graph = rdflib.Graph()
 
-    molecule_superclass_iri = prefix + 'molecule'
-    common_graph.add((URIRef(molecule_superclass_iri), RDF.type, OWL.Class))
-    common_graph.add((URIRef(molecule_superclass_iri), RDFS.label, Literal("Molecule")))
-    common_graph.add((URIRef(molecule_superclass_iri), RDFS.subClassOf, OWL.Thing))
-
-    for molecule in molecules.itertuples():
-        molecule_iri = prefix + 'molecule_' + molecule.id
-        common_graph.add((URIRef(molecule_iri), RDF.type, OWL.Class))
-        common_graph.add((URIRef(molecule_iri), RDFS.subClassOf, URIRef(molecule_superclass_iri)))
-        common_graph.add((URIRef(molecule_iri), RDFS.label, Literal(molecule.abbrev)))
-        common_graph.add((URIRef(molecule_iri), RDFS.comment, Literal(molecule.name)))
 
     nodes = pd.read_csv('data/taxonomy_node.tsv', sep='\t', on_bad_lines=lambda x: x[:-1], engine='python', dtype=str)
     delta = pd.read_csv('data/taxonomy_node_delta.tsv', sep='\t', dtype=str)

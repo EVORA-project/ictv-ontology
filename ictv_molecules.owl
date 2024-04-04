@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+>
+  <owl:Class rdf:about="http://ictv.global/MolecularType">
+    <rdfs:label>MolecularType</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_dna">
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ds_or_ss_dna"/>
+    <rdfs:label>ssDNA</rdfs:label>
+    <rdfs:comment>Single-stranded DNA</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ds_or_ss_dna">
+    <rdfs:subClassOf rdf:resource="http://ictv.global/MolecularType"/>
+    <rdfs:label>dsDNA; ssDNA</rdfs:label>
+    <rdfs:comment>DNA - some taxa double stranded, some taxa single standed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_rna_positive_sense">
+        <rdfs:subClassOf rdf:resource="http://ictv.global/ss_rna_ambisense"/>
+    <rdfs:label>ssRNA(+)</rdfs:label>
+    <rdfs:comment>Single-stranded RNA - Positive-sense</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_dna_positive_sense">
+      <rdfs:subClassOf rdf:resource="http://ictv.global/ss_dna_ambisense"/>
+    <rdfs:label>ssDNA(+)</rdfs:label>
+    <rdfs:comment>Single-stranded DNA - Positive-sense</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_rna">
+    <rdfs:subClassOf rdf:resource="http://ictv.global/MolecularType"/>
+    <rdfs:label>ssRNA</rdfs:label>
+    <rdfs:comment>Single-stranded RNA</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_rna_ambisense">
+      <rdfs:subClassOf rdf:resource="http://ictv.global/ss_rna"/>
+    <rdfs:label>ssRNA(+/-)</rdfs:label>
+    <rdfs:comment>Single-stranded RNA - Ambi-sense</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ds_rna">
+        <rdfs:subClassOf rdf:resource="http://ictv.global/MolecularType"/>
+    <rdfs:label>dsRNA</rdfs:label>
+    <rdfs:comment>Double-stranded RNA</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ds_dna">
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ds_or_ss_dna"/>
+    <rdfs:label>dsDNA</rdfs:label>
+    <rdfs:comment>Double-stranded DNA</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_dna_negative_sense">
+        <rdfs:subClassOf rdf:resource="http://ictv.global/ss_dna_ambisense"/>
+    <rdfs:label>ssDNA(-)</rdfs:label>
+    <rdfs:comment>Single-stranded DNA - Negative-sense</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_dna_ambisense">
+        <rdfs:subClassOf rdf:resource="http://ictv.global/ss_dna"/>
+    <rdfs:label>ssDNA(+/-)</rdfs:label>
+    <rdfs:comment>Single-stranded DNA - Ambi-sense</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ssrna_rt">
+      <rdfs:subClassOf rdf:resource="http://ictv.global/ss_rna_positive_sense"/>
+    <rdfs:label>ssRNA-RT</rdfs:label>
+    <rdfs:comment>Single-stranded RNA - Positive-sense - replicates through a DNA intermediate</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/unassigned">
+      <rdfs:subClassOf rdf:resource="http://ictv.global/MolecularType"/>
+    <rdfs:label>Unassigned</rdfs:label>
+    <rdfs:comment>Unassigned</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_rna_negative_sense">
+        <rdfs:subClassOf rdf:resource="http://ictv.global/ss_rna_ambisense"/>
+    <rdfs:label>ssRNA(-)</rdfs:label>
+    <rdfs:comment>Single-stranded RNA - Negative-sense</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/dsdna_rt">
+      <rdfs:subClassOf rdf:resource="http://ictv.global/ds_dna"/>
+    <rdfs:label>dsDNA-RT</rdfs:label>
+    <rdfs:comment>Double-stranded DNA - replicates through a single-strand RNA intermediate</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/viroid">
+      <rdfs:subClassOf rdf:resource="http://ictv.global/ss_rna"/>
+    <rdfs:label>Viroid</rdfs:label>
+    <rdfs:comment>Circular Single-stranded RNA</rdfs:comment>
+  </owl:Class>
+</rdf:RDF>
