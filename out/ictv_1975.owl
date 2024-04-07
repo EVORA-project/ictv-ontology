@@ -1,0 +1,3152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:oio="http://www.geneontology.org/formats/oboInOwl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:ns1="http://purl.obolibrary.org/obo/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+>
+  <owl:Axiom rdf:nodeID="Nb61a4ff553ef4f55adca46f105a7ebbe">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750330"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003542</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750316">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760633"/>
+    <rdfs:label>Stratford virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy>
+      <owl:Ontology rdf:about="http://ictv.global/ictv_1975">
+        <rdfs:label>ICTV Taxonomy (1975)</rdfs:label>
+        <rdfs:comment>International Committee on Taxonomy of Viruses (ICTV)</rdfs:comment>
+        <foaf:homepage rdf:resource="https://ictv.global/"/>
+        <owl:versionInfo>3</owl:versionInfo>
+      </owl:Ontology>
+    </rdfs:isDefinedBy>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750331">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760652"/>
+    <rdfs:label>Cactus virus 2</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750079"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N6ee461b8478b489ab6e60a46eb377bfe">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750345"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AB295644</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750313">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760624"/>
+    <rdfs:label>Powassan virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750158">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760275"/>
+    <rdfs:label>Rabbit papilloma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750047"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750141">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760239"/>
+    <rdfs:label>Marek's disease virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750156">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760273"/>
+    <rdfs:label>Human papilloma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750047"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N6297ebc6ed944e90a32678c1037ddf18">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750330"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003543</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750206">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760484"/>
+    <rdfs:label>Squirrel fibroma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750061"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Ne6b64ee2f40942ef91546fafeae19c07">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750359"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_006057</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750401">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760846"/>
+    <rdfs:label>Artichoke mottled crinkle virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750102"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:X62493</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001339</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750110">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760129"/>
+    <rdfs:label>Lymphocytic choriomeningitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750040"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750404">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760850"/>
+    <rdfs:label>Tomato bushy stunt virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750102"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:M21958</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001554</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750375">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760755"/>
+    <rdfs:label>Beet mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750095"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AY206394</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_005304</oio:hasDbXref>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nfe7d72c93a064cba8e56e2cd6a5faf88">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750327"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:L00163</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750248">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760533"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>Feline leukemia virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750182">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760650"/>
+    <rdfs:label>Feline picornavirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750055"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750283">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760580"/>
+    <rdfs:label>Una virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nb5f07a54000d42349e2aba82f9051dad">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750328"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_004006</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N99cbbb89bcb94f659321d5e36f86d359">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750361"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AY303787</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750153">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760267"/>
+    <rdfs:label>Bovine papilloma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750047"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750179">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760312"/>
+    <rdfs:label>Minute mouse virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750054"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750225">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760502"/>
+    <rdfs:label>African horse sickness virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750065"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750334">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760657"/>
+    <rdfs:label>Passiflora latent virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750079"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:DQ455582</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_008292</oio:hasDbXref>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N133d0fd3f3554086a4a6693ee8912bb3">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750398"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_002036</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750386">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760813"/>
+    <rdfs:label>Coliphage T2</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750097"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750104">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760113"/>
+    <rdfs:label>CELO virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750038"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750368">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760744"/>
+    <rdfs:label>Cactus virus X</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750094"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AF308158</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002815</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750340">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760664"/>
+    <rdfs:label>Dahlia mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750080"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:JX272320</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_018616</oio:hasDbXref>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nf43685435e1f45d6959801da43b3ab5a">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750349"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:D10538</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N7cc5024a552145d994496274cf8b2981">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750354"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003481</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750200">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760455"/>
+    <rdfs:label>Lumpy skin disease virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750059"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N7c7adbbd863d443fae5165402c9b6555">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750349"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_002035</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750169">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760292"/>
+    <rdfs:label>Parainfluenza virus 4</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750050"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750135">
+    <rdfs:label>Herpesvirus of saimiri</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750372">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760752"/>
+    <rdfs:label>White clover mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750094"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:X06728</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003820</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750405">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760851"/>
+    <rdfs:label>Andean potato latent virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750103"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750387">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760814"/>
+    <rdfs:label>Coliphage T4</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750097"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750281">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760578"/>
+    <rdfs:label>Semliki Forest virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750308">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760618"/>
+    <rdfs:label>Montana myotis leukoencephalitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N439eda17de2641ff8a13f955394cee4e">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750345"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_010710</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N35216d77d37a46eb93cfea0192bd99fd">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750346"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003738</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750130">
+    <rdfs:label>Feline rhinotracheitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750176">
+    <rdfs:label>H viruses</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750054"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750268">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760556"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>Hart Park virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750072"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N793ba951b60d42829dc1324490e76ed0">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750400"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:D00645</owl:annotatedTarget>
+    <rdfs:label>S</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750284">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760581"/>
+    <rdfs:label>Venezuelan equine encephalitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750237">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760519"/>
+    <rdfs:label>Avian reovirus 4</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750066"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N6731777fc3bf4acf9dbd22fe2805125d">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750354"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003469</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N45ef4dc82b304240ae1c38737b5f0d34">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750330"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003541</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="Ncc5e9ff2536644129a4d4ff0a379a21a">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750354"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:M16576</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N7f079db579e842aeae8e30c5f746b2b4">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750349"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:D00355</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750107">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760127"/>
+    <rdfs:label>Junin virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750040"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750301">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760605"/>
+    <rdfs:label>Japanese encephalitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750220">
+    <rdfs:label>Horse pox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750014"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750403">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760849"/>
+    <rdfs:label>Petunia asteroid mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750102"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/dsdna_rt">
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ds_dna"/>
+    <rdfs:label>dsDNA-RT</rdfs:label>
+    <rdfs:comment>Double-stranded DNA - replicates through a single-strand RNA intermediate</rdfs:comment>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N451684f89e4b4957864522b1fc6d1eea">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750346"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:X64886</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N36f0d100afd3487aa241711fc6e7ae05">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750361"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_005267</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750173">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760301"/>
+    <rdfs:label>Adeno-associated virus 3</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750052"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750357">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760743"/>
+    <rdfs:label>Lipid phage PM2</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750089"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_rna_negative_sense">
+    <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/SO_0001200"/>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ss_rna_ambisense"/>
+    <rdfs:comment>Single-stranded RNA - Negative-sense</rdfs:comment>
+    <rdfs:label>ssRNA(-)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750240">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760524"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>Mammalian reovirus 1</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750066"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/unassigned">
+    <rdfs:label>Unassigned</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/MolecularType"/>
+    <rdfs:comment>Unassigned</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750106">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760126"/>
+    <rdfs:label>Amapari virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750040"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N780d0cd2cb2045f286433d0214533857">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750363"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:KJ556850</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N3f3a66fea5754c9c81682dcdc43996f8">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750330"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:M28818</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750242">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760523"/>
+    <rdfs:label>Mammalian reovirus 3</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750066"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750236">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760518"/>
+    <rdfs:label>Avian reovirus 3</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750066"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750333">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760654"/>
+    <rdfs:label>Chrysanthemum virus B</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750079"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AM493895</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_009087</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750246">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760528"/>
+    <rdfs:label>Avian leukosis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750207">
+    <rdfs:label>Alastrim virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750062"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750222">
+    <rdfs:label>Rhinoceros pox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750014"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750219">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760496"/>
+    <rdfs:label>Orf virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750063"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750193">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760447"/>
+    <rdfs:label>Fowlpox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750058"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Ne7e0506f5c6e42f89af918e0b031741c">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750351"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:D10663</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750165">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760288"/>
+    <rdfs:label>Newcastle disease virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750050"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750233">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760510"/>
+    <rdfs:label>Palyam virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750065"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750060">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760063"/>
+    <rdfs:label>Entomopoxvirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750014"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750164">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760287"/>
+    <rdfs:label>Mumps virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750050"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Na8da96bbd8e440d3a4461bdd5c3a15ad">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750362"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_006965</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N420d55437daf4172b4affb20b60e9c6b">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750327"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:K02703</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750121">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760150"/>
+    <rdfs:label>Bunyamwera virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750042"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750159">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760278"/>
+    <rdfs:label>K virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750048"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750384">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760783"/>
+    <rdfs:label>Tobacco etch virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750095"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:M11458</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001555</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750178">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760310"/>
+    <rdfs:label>Latent rat virus (Kilham)</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750054"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750217">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760494"/>
+    <rdfs:label>Chamois contagious echthyma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750063"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N93fb9aad22244a78b45ade9e5fc65f7a">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750365"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003839</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750323">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760640"/>
+    <rdfs:label>Yellow fever virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750177">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760309"/>
+    <rdfs:label>H1 virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750054"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750391">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760834"/>
+    <rdfs:label>Cucumber green mottle mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750099"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:D12505</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001801</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750105">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760119"/>
+    <rdfs:label>Adenovirus type 1</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750039"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N804466c56ae34ac98b0392c55072ff00">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750400"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_002051</owl:annotatedTarget>
+    <rdfs:label>S</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750292">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760594"/>
+    <rdfs:label>Dakar bat virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750111">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760130"/>
+    <rdfs:label>Machupo virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750040"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750198">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760453"/>
+    <rdfs:label>Turkey pox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750058"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750181">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760316"/>
+    <rdfs:label>X14 virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750054"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750315">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760632"/>
+    <rdfs:label>St. Louis encephalitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750185">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760322"/>
+    <rdfs:label>Duck hepatitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750056"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750336">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760659"/>
+    <rdfs:label>Potato virus M</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750079"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:D14449</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001361</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750155">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760268"/>
+    <rdfs:label>Canine papilloma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750047"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750184">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760318"/>
+    <rdfs:label>Avian encephalomyelitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750056"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750265">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760551"/>
+    <rdfs:label>Rabies virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750071"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N35673e206593435c82aea153abba161f">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750344"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:X00729</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N942b1be1656b47aaa9307fca1136ce96">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750347"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:EU421059</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750120">
+    <rdfs:label>Portheria dispar nuclear polyhedrosis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750041"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750277">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760572"/>
+    <rdfs:label>Mucambo virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750300">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760604"/>
+    <rdfs:label>Israel turkey meningoencephalitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750261">
+    <rdfs:label>RIF 1</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N6f48a6d75d4b4fa89821cbcefb2e9c1f">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750328"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:M60291</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N57aaf700078643aba3ddfc5a1fdb3367">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750345"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AB295643</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N4b51fb0bc4ce44ab9afd4efada5525e7">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750361"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_005266</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750214">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760491"/>
+    <rdfs:label>Vaccinia virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750062"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750322">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760639"/>
+    <rdfs:label>West Nile virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750314">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760631"/>
+    <rdfs:label>Spondweni virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750388">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760815"/>
+    <rdfs:label>Coliphage T6</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750097"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750170">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760298"/>
+    <rdfs:label>Respiratory syncytial virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750051"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nd18ea2ec5794457a96ff643652190192">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750362"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AY860978</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750272">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760566"/>
+    <rdfs:label>Chikungunya virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750209">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760486"/>
+    <rdfs:label>Camel pox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750062"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N8e50b26f04a149139d711d9c10c5946e">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750346"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003741</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750216">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760493"/>
+    <rdfs:label>Bovine papular dermatitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750063"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N5f62716ce0214814ae4601a426b2b1c6">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750344"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:X00206</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750339">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760663"/>
+    <rdfs:label>Cauliflower mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750080"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:V00141</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001497</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750406">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760852"/>
+    <rdfs:label>Belladonna mottle virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750103"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750259">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760536"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>Rauscher virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750310">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760620"/>
+    <rdfs:label>Negishi virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750211">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760488"/>
+    <rdfs:label>Infectious ectromelia virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750062"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750371">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760751"/>
+    <rdfs:label>Potato virus X</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750094"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:D00344</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_011620</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750373">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760753"/>
+    <rdfs:label>Bean common mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750095"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:U34972</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750396">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760841"/>
+    <rdfs:label>Tobacco mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750099"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:V01408</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001367</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750318">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760636"/>
+    <rdfs:label>Uganda S virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750392">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760837"/>
+    <rdfs:label>Odontoglossum ringspot virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750099"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:X82130</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001728</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750168">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760291"/>
+    <rdfs:label>Parainfluenza virus 3</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750050"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750223">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760498"/>
+    <rdfs:label>Swine pox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750014"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750226">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760503"/>
+    <rdfs:label>Bluetongue virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750065"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750306">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760616"/>
+    <rdfs:label>Louping ill virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nad2e68facfe34b658be9a804721c1f56">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750364"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AY157994</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750307">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760617"/>
+    <rdfs:label>Modoc virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750199">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760454"/>
+    <rdfs:label>Goat pox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750059"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750251">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760536"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>Friend virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750109">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760128"/>
+    <rdfs:label>Latino virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750040"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N7c037f4bdaa54de5a5ed3c208eb878e7">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750361"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AY303788</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="Nc4b83de19e4046a688643ce34ae1cf1a">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750347"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:EU421060</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750274">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760569"/>
+    <rdfs:label>Getah virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750352">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760501"/>
+    <rdfs:label>Bombyx mori cytoplasmic polyhedrosis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750084"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750203">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760481"/>
+    <rdfs:label>Hare fibroma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750061"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750411">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760865"/>
+    <rdfs:label>Turnip yellow mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750103"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750260">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760531"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>RAV 1-6</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/viroid">
+    <rdfs:label>Viroid</rdfs:label>
+    <rdfs:comment>Circular Single-stranded RNA</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ss_rna"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750393">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760838"/>
+    <rdfs:label>Ribgrass mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750099"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:HQ667979</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002792</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750257">
+    <rdfs:label>Nodule-inducing virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N1e561ef6253d460ab84314e3f33162bd">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750364"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AY157993</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750123">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760227"/>
+    <rdfs:label>Human respiratory virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750043"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750358">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760705"/>
+    <rdfs:label>Barley yellow dwarf virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750090"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Na2f064db03704e859880c96b4deb96f8">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750400"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:D10066</owl:annotatedTarget>
+    <rdfs:label>L</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750208">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760485"/>
+    <rdfs:label>Buffalo pox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750062"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N77312f7741de4688aec470e8cfec6500">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750327"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:X01572</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N19770862b6484b89bb169a50a282292e">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750329"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:X58457</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750378">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760762"/>
+    <rdfs:label>Cowpea aphid-borne mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750095"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AF348210</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_004013</oio:hasDbXref>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N006d94fdff364056ad773b95a6892b92">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750360"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003615</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750116">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760134"/>
+    <rdfs:label>Tamiani virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750040"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750341">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760666"/>
+    <rdfs:label>Beet yellows virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750081"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:X73476</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001598</oio:hasDbXref>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N3bcf0690424d4797a4cc3b1c5d9200ef">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750354"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:X03854</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N2fff36ec905e49c3a8a4a64709653524">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750400"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_002052</owl:annotatedTarget>
+    <rdfs:label>L</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750221">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760497"/>
+    <rdfs:label>Molluscum contagiosum virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750014"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750270">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760559"/>
+    <rdfs:label>Vesicular stomatitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750072"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750171">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760299"/>
+    <rdfs:label>Adeno-associated virus 1</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750052"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N26148bbe194f42babc84584dfae6eada">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750364"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_004439</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="Nfd5159acbe6f4e6a81685a7f96061ad0">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750362"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AY860979</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750227">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760504"/>
+    <rdfs:label>Changuinola virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750065"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750239">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760521"/>
+    <rdfs:label>Canine reovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750066"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750224">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760499"/>
+    <rdfs:label>Tana virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750014"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750275">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760570"/>
+    <rdfs:label>Mayaro virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750258">
+    <rdfs:label>Osteopetrosis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750298">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760600"/>
+    <rdfs:label>Entebbe bat salivary gland virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750353">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760684"/>
+    <rdfs:label>Coliphage fd</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750085"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N9ad0256e69364c83a5e4d2a0f29fa511">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750400"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:S48091</owl:annotatedTarget>
+    <rdfs:label>M</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750245">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760527"/>
+    <rdfs:label>Mouse mammary tumour virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750068"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750151">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760266"/>
+    <rdfs:label>Influenza type C virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750046"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750163">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760283"/>
+    <rdfs:label>Measles virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750049"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750218">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760495"/>
+    <rdfs:label>Milker's node (paravaccinia) virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750063"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nc67eb4ae25974c3a9b6b816becb68c6e">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750351"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003836</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750180">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760313"/>
+    <rdfs:label>Porcine parvovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750054"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750234">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760516"/>
+    <rdfs:label>Avian reovirus 1</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750066"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750397">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760842"/>
+    <rdfs:label>Tomato mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750099"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AF332868</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002692</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750264">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760531"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>Rous sarcoma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nf38130158ccf44ec9ee4efdc9ca40c68">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750365"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003840</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ss_dna_positive_sense">
+    <rdfs:label>ssDNA(+)</rdfs:label>
+    <rdfs:comment>Single-stranded DNA - Positive-sense</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ss_dna_ambisense"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750241">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760522"/>
+    <rdfs:label>Mammalian reovirus 2</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750066"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_dna_negative_sense">
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ss_dna_ambisense"/>
+    <rdfs:label>ssDNA(-)</rdfs:label>
+    <rdfs:comment>Single-stranded DNA - Negative-sense</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750383">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760781"/>
+    <rdfs:label>Soybean mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750095"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:D00507</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002634</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750122">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760225"/>
+    <rdfs:label>Avian infectious bronchitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750043"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750367">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760720"/>
+    <rdfs:label>Coliphage phiX 174</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750093"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750356">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760701"/>
+    <rdfs:label>Coliphage lambda</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750088"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750174">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760302"/>
+    <rdfs:label>Adeno-associated virus 4</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750052"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750379">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760764"/>
+    <rdfs:label>Henbane mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750095"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750380">
+    <rdfs:label>Pea mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750095"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750133">
+    <rdfs:label>Herpesvirus of Cercopithecus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750280">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760576"/>
+    <rdfs:label>Ross River virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750201">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760456"/>
+    <rdfs:label>Sheep pox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750059"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750389">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760831"/>
+    <rdfs:label>Tobacco necrosis virus (A strain)</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750098"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750305">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760615"/>
+    <rdfs:label>Langat virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750366">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760718"/>
+    <rdfs:label>Pea enation mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750092"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Na74b74119fdc4aaeb5dc83ac464b143d">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750365"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:L19655</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750117">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760135"/>
+    <rdfs:label>Bombyx mori nuclear polyhedrosis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750041"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750238">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760520"/>
+    <rdfs:label>Avian reovirus 5</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750066"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nbc43dc4eca0e497cb596f08f3ba0ac80">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750328"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:M65138</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750325">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760644"/>
+    <rdfs:label>Mucosal disease virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750075"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750231">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760508"/>
+    <rdfs:label>Eubenangee virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750065"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750157">
+    <rdfs:label>Rabbit oral papilloma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750047"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750376">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760759"/>
+    <rdfs:label>Clover yellow vein virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750095"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AB011819</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003536</oio:hasDbXref>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Naf5d8eb555534c0db3ed4df3940b42a4">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750330"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:M28817</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N2f5c39268f1d410cbc0682d09bec9675">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750351"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:D10044</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750385">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760786"/>
+    <rdfs:label>Coliphage f2</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750096"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N1fcbeb897bbc435f9b14f6e564840b5f">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750359"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_006056</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750124">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760228"/>
+    <rdfs:label>Mouse hepatitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750043"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750134">
+    <rdfs:label>Herpesvirus of patas monkeys</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750271">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760564"/>
+    <rdfs:label>Aura virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750296">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760598"/>
+    <rdfs:label>Dengue type 4 virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nfadd894df2c94f1185dead537c9881f5">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750343"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:FJ028650</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750273">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760567"/>
+    <rdfs:label>Eastern equine encephalitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750205">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760483"/>
+    <rdfs:label>Rabbit fibroma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750061"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750291">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760593"/>
+    <rdfs:label>Cowbone Ridge virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750320">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760637"/>
+    <rdfs:label>Usutu virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750295">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760597"/>
+    <rdfs:label>Dengue type 3 virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750161">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760280"/>
+    <rdfs:label>Rabbit vacuolating virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750048"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750382">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760780"/>
+    <rdfs:label>Potato virus Y</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750095"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:X12456</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001616</oio:hasDbXref>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nf884aaa243774011a07872a770afa3b4">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750360"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003623</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N6496cd71575b49759cef376dcb3fd0a1">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750354"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003478</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750255">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760536"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>Moloney virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nd010e691813443c2b2f27eb31a1be78f">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750330"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:M65139</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750332">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760653"/>
+    <rdfs:label>Carnation latent virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750079"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750370">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760748"/>
+    <rdfs:label>Hydrangea ringspot virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750094"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AY707100</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_006943</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750128">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760238"/>
+    <rdfs:label>Epstein-Barr virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750288">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760587"/>
+    <rdfs:label>Banzi virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750321">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760638"/>
+    <rdfs:label>Wesselsbron virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750244">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760525"/>
+    <rdfs:label>Simian reovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750066"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N32a2bff4356140ac9bed6e9a5cf10d3b">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750354"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:J04342</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750252">
+    <rdfs:label>Fujinami sarcoma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750395">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760840"/>
+    <rdfs:label>Sunn hemp mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750099"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750412">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760866"/>
+    <rdfs:label>Wild cucumber mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750103"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AJ271595</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002164</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750202">
+    <rdfs:label>California myxoma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750061"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750167">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760290"/>
+    <rdfs:label>Parainfluenza virus 2</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750050"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750249">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760533"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>Feline sarcoma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750189">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760325"/>
+    <rdfs:label>Poliovirus type 1</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750056"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nd40866d3b12843a8a0dc5227635a7698">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750398"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_001368</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N965379bdf27d45448ac16a5260d180ed">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750355"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003842</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750192">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760446"/>
+    <rdfs:label>Canary pox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750058"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750112">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760131"/>
+    <rdfs:label>Parana virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750040"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750144">
+    <rdfs:label>Sheep pulmonary adenomatosis (Jaagsiekte) virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750326">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760645"/>
+    <rdfs:label>Rubella virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750076"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750114">
+    <rdfs:label>Pistillo virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750040"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750409">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760857"/>
+    <rdfs:label>Eggplant mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750103"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:D00637</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001746</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750125">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760230"/>
+    <rdfs:label>Transmissible gastro-enteritis virus of swine</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750043"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N96f800f596c945cba956a694b16e6d89">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750398"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:X51828</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750254">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760536"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>Gross virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750377">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760761"/>
+    <rdfs:label>Columbian Datura virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750095"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750290">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760591"/>
+    <rdfs:label>Bussuquara virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750228">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760505"/>
+    <rdfs:label>Colorado tick fever virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750065"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750230">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760507"/>
+    <rdfs:label>Epizootic hemorrhagic disease of deer virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750065"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750139">
+    <rdfs:label>Infectious laryngotracheitis (avian)</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N1dba1f0fdfe24f538409d700d975f669">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750399"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AF166084</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N43b3bc65347845858884b4f0164f9488">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750364"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_004440</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750232">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760509"/>
+    <rdfs:label>Kemerovo virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750065"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750143">
+    <rdfs:label>Pseudorabies (Aujeszky's disease) virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750413">
+    <rdfs:label>infectious bovine rhinotracheitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750402">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760847"/>
+    <rdfs:label>Carnation Italian ringspot virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750102"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:X85215</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003500</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750348">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760680"/>
+    <rdfs:label>True broad bean mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750082"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750188">
+    <rdfs:label>Nodamura virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750056"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750243">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760524"/>
+    <rdfs:label>Reovirus type 1</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750066"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nfe6414705cb04592aadcdd93019f4a49">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750328"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_004008</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750129">
+    <rdfs:label>Equine rhinopneumonitis (equine abortion) virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750195">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760449"/>
+    <rdfs:label>Pigeon pox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750058"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750187">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760326"/>
+    <rdfs:label>Murine encephalomyelitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750056"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750131">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760236"/>
+    <rdfs:label>Herpes simplex virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Ndbade0395dd04dae920e15ee9cf7f658">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750355"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:X00435</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750374">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760754"/>
+    <rdfs:label>Bean yellow mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750095"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:U47033</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750162">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760281"/>
+    <rdfs:label>Simian vacuolating virus (SV40)</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750048"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750172">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760300"/>
+    <rdfs:label>Adeno-associated virus 2</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750052"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750127">
+    <rdfs:label>Canine herpesvirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750166">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760289"/>
+    <rdfs:label>Parainfluenza virus 1</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750050"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N40d62ca855304367be373be66bca885e">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750351"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003838</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750410">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760861"/>
+    <rdfs:label>Ononis yellow mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750103"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750126">
+    <rdfs:label>Bovine ulcerative mammillitis (Allerton) virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N9701c2d9c6f9469a841c6f415c6b2000">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750399"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003811</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750115">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760133"/>
+    <rdfs:label>Tacaribe virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750040"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750235">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760517"/>
+    <rdfs:label>Avian reovirus 2</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750066"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N21bba675c2b340a3b6dd7cfd9ff62209">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750342"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AF394607</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750309">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760619"/>
+    <rdfs:label>Murray Valley encephalitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750286">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760583"/>
+    <rdfs:label>Whataroa virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750303">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760613"/>
+    <rdfs:label>Kunjin virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750210">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760487"/>
+    <rdfs:label>Cowpox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750062"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750256">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760536"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>Mouse leukemia virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750204">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760482"/>
+    <rdfs:label>Myxoma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750061"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750317">
+    <rdfs:label>Tick-borne encephalitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750250">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760531"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>Fowl sarcoma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750229">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760506"/>
+    <rdfs:label>Corriparta virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750065"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750147">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760248"/>
+    <rdfs:label>Chilo iridescent virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750045"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750381">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760779"/>
+    <rdfs:label>Potato virus A</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750095"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AF543212</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750312">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760622"/>
+    <rdfs:label>Omsk haemorrhagic fever virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750149">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760261"/>
+    <rdfs:label>Tipula iridescent virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750045"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750369">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760746"/>
+    <rdfs:label>Clover yellow mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750094"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:D29630</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001753</oio:hasDbXref>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N6871e08eee024098a8e3183c64cb8b80">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750399"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:Z36974</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750293">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760595"/>
+    <rdfs:label>Dengue type 1 virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750136">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760234"/>
+    <rdfs:label>Herpesvirus simiae (B virus)</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750215">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760492"/>
+    <rdfs:label>Variola virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750062"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750279">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760575"/>
+    <rdfs:label>Pixuna virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N288c60ccfcb9483f87d132dbc309d381">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750360"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:D00915</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750118">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760136"/>
+    <rdfs:label>Choristoneura fumiferana granulosis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750041"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750266">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760562"/>
+    <rdfs:label>Cocal virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750072"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750253">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760536"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>Graffi virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750132">
+    <rdfs:label>Herpesvirus cuniculi (virus III of rabbits)</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750196">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760451"/>
+    <rdfs:label>Sparrow pox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750058"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nb50944aafe5243d29fe788c877f9749f">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750360"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:X16907</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750262">
+    <rdfs:label>RIF 12</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N5e643d084796456a98ede0946e9f65fd">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750399"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003805</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750145">
+    <rdfs:label>Snake herpesvirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N3be045f185e849d7a5f40a8dc7c703d6">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750355"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003844</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750350">
+    <rdfs:label>Cucumber yellow mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750083"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750311">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760621"/>
+    <rdfs:label>Ntaya virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750113">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760132"/>
+    <rdfs:label>Pichinde virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750040"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nc01a8c013fb245c6ba23cd246ab955d2">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750327"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_002024</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N8baae6bff99145db916111b6842376b9">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750349"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_002034</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750154">
+    <rdfs:label>Canine oral papilloma virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750047"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750119">
+    <rdfs:label>Plodia interpunctella granulosis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750041"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Ndb9f2ab757424c90bd18cc49373e228c">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750355"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:U80934</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750407">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760853"/>
+    <rdfs:label>Cacao yellow mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750103"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AF195000</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002588</oio:hasDbXref>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nc7fade7a85474cc5a433bff435acc85b">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750329"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:X58458</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750394">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760839"/>
+    <rdfs:label>Sammon's Opuntia virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750099"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750190">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760331"/>
+    <rdfs:label>Foot-and-mouth disease virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750057"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750175">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760304"/>
+    <rdfs:label>Densonucleosis virus of Galleriae</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750053"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Ne1805cca4a894d9d9a4ac561c2de058f">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750363"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:KJ556849</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N59ea771f81a0477fac0afda4b1db0bbc">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750351"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AJ277268</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750278">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760574"/>
+    <rdfs:label>O'Nyong-nyong virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nf1df21d7f1754a6481b34827c9702ffb">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750400"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_002050</owl:annotatedTarget>
+    <rdfs:label>M</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750294">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760596"/>
+    <rdfs:label>Dengue type 2 virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750183">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760651"/>
+    <rdfs:label>Vesicular exanthema virus type A</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750055"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750148">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760259"/>
+    <rdfs:label>Sericesthis iridescent virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750045"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750337">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760660"/>
+    <rdfs:label>Potato virus S</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750079"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AJ863509</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_007289</oio:hasDbXref>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N16c8860e1ab8461fa8c5bdfc85d3c807">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750344"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003549</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750142">
+    <rdfs:label>Porcine inclusion body rhinitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750150">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760265"/>
+    <rdfs:label>Influenza type B virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750046"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Na484806e51fe4f0e81146765010893ec">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750349"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:D00356</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750324">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760641"/>
+    <rdfs:label>Zika virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750297">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760599"/>
+    <rdfs:label>Edgehill virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750289">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760590"/>
+    <rdfs:label>Bukalasa bat virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N91659244deac4ae69885e72babc6ffd9">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750328"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:M64713</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750285">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760582"/>
+    <rdfs:label>Western equine encephalitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750138">
+    <rdfs:label>Infectious bovine rhinotrecheitis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750152">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760264"/>
+    <rdfs:label>Influenza virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750046"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Neeee6ec9fbd345ed9e71f5788cce600c">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750359"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AY303786</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="Nb793ef966de7441f9f938c070ea4189b">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750342"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AF394606</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750335">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760658"/>
+    <rdfs:label>Pea streak virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750079"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:KP784454</oio:hasDbXref>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N266c4e46bb7d46faa688f65c43c44ba3">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750345"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_010709</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750194">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760448"/>
+    <rdfs:label>Junco pox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750058"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750299">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760603"/>
+    <rdfs:label>Ilheus virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750408">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760856"/>
+    <rdfs:label>Dulcamara mottle virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750103"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AF098523</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001977</oio:hasDbXref>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Nb5479f1b5dab4ed0b235db10db6ac8c6">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750365"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:D12477</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750302">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760610"/>
+    <rdfs:label>Kokobera virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750108">
+    <rdfs:label>Lassa virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750040"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750263">
+    <rdfs:label>RIF 2</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750247">
+    <rdfs:label>FAV 1</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750069"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750197">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760452"/>
+    <rdfs:label>Starling pox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750058"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750282">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760579"/>
+    <rdfs:label>Sindbis virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750304">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760614"/>
+    <rdfs:label>Kyasanur Forest virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N1b6f86197dde48e983f657d4e1582113">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750349"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_001440</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750338">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760661"/>
+    <rdfs:label>Red clover vein mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750079"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:FJ685618</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_012210</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750137">
+    <rdfs:label>Herpesvirus T</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ds_rna">
+    <rdfs:comment>Double-stranded RNA</rdfs:comment>
+    <rdfs:label>dsRNA</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/MolecularType"/>
+    <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/SO_0001169"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750160">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760279"/>
+    <rdfs:label>Polyomavirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750048"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ssrna_rt">
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ss_rna_positive_sense"/>
+    <rdfs:comment>Single-stranded RNA - Positive-sense - replicates through a DNA intermediate</rdfs:comment>
+    <rdfs:label>ssRNA-RT</rdfs:label>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N10b350e3099c4e38931b549a0e7427f7">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750346"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:M14913</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750140">
+    <rdfs:label>Malignant catarrh virus of cattle</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="Na92ebf6e45c34bd2927e4c0821febc32">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750327"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_002025</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="Nf686408eb8b441758872635f16bf2627">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750398"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:X14006</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750212">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760489"/>
+    <rdfs:label>Monkeypox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750062"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750191">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760356"/>
+    <rdfs:label>Rhinovirus 1A</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750057"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N68abf383d17c448b9512853bad85c770">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750328"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_004007</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750267">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760556"/>
+    <ns1:IAO_0000225 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+    <rdfs:label>Flanders virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750072"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750319">
+    <rdfs:label>US bat salivary gland virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750287">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760586"/>
+    <rdfs:label>Apoi virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750074"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N3140024f287b41e88d64dd153af368d5">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750327"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_001495</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750146">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760240"/>
+    <rdfs:label>Varicella virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750044"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750186">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760320"/>
+    <rdfs:label>EMC virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750056"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N313039c084fc48f69e97a1902ce7f824">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750329"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:X58456</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="Nbb7a6f09ebe144b2805f22a88363b6c9">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750362"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_006964</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750269">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760557"/>
+    <rdfs:label>Kern Canyon virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750072"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750390">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760832"/>
+    <rdfs:label>Tobacco necrosis virus (D strain)</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750098"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750213">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760490"/>
+    <rdfs:label>Rabbitpox virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750062"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Axiom rdf:nodeID="N50c98d636bd44497820c9f73faab0932">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750359"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:AY017339</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N8978b82be3ec4c629e6b615ff18a6b95">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750355"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>genbank:U75538</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N20c690d1549a40f280e7a49057f08e6b">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750351"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003837</owl:annotatedTarget>
+    <rdfs:label>RNA1</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N77d6c1cec200424995052bc29f47cd38">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750355"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003845</owl:annotatedTarget>
+    <rdfs:label>RNA3</rdfs:label>
+  </owl:Axiom>
+  <owl:Axiom rdf:nodeID="N57fc994e4f0c4e2e8e8ec53eef9c10ee">
+    <owl:annotatedSource rdf:resource="http://ictv.global/ictv_19750344"/>
+    <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    <owl:annotatedTarget>refseq:NC_003550</owl:annotatedTarget>
+    <rdfs:label>RNA2</rdfs:label>
+  </owl:Axiom>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750276">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760571"/>
+    <rdfs:label>Middleburg virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750073"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750038">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760040"/>
+    <rdfs:label>Aviadenovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750002"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750360">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760713"/>
+    <rdfs:label>Grapevine fanleaf virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750091"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:D00915</oio:hasDbXref>
+    <oio:hasDbXref>genbank:X16907</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003615</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003623</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750045">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760048"/>
+    <rdfs:label>Iridovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750008"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_rna_positive_sense">
+    <rdfs:comment>Single-stranded RNA - Positive-sense</rdfs:comment>
+    <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/SO_0001201"/>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ss_rna_ambisense"/>
+    <rdfs:label>ssRNA(+)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750342">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760671"/>
+    <rdfs:label>Bean pod mottle virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750082"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AF394606</oio:hasDbXref>
+    <oio:hasDbXref>genbank:AF394607</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750328">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760647"/>
+    <rdfs:label>Broad bean mottle virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750078"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:M65138</oio:hasDbXref>
+    <oio:hasDbXref>genbank:M64713</oio:hasDbXref>
+    <oio:hasDbXref>genbank:M60291</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_004008</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_004007</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_004006</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750011">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760011"/>
+    <rdfs:label>Paramyxoviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750349">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760681"/>
+    <rdfs:label>Cucumber mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750083"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:D00356</oio:hasDbXref>
+    <oio:hasDbXref>genbank:D00355</oio:hasDbXref>
+    <oio:hasDbXref>genbank:D10538</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002034</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002035</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001440</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750330">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760649"/>
+    <rdfs:label>Cowpea chlorotic mottle virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750078"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:M65139</oio:hasDbXref>
+    <oio:hasDbXref>genbank:M28817</oio:hasDbXref>
+    <oio:hasDbXref>genbank:M28818</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003543</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003541</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003542</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750039">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760041"/>
+    <rdfs:label>Mastadenovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750002"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750080">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760088"/>
+    <rdfs:label>Caulimovirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750058">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760061"/>
+    <rdfs:label>Avipoxvirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750014"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750362">
+    <rdfs:label>Strawberry latent ringspot virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750091"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AY860978</oio:hasDbXref>
+    <oio:hasDbXref>genbank:AY860979</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_006964</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_006965</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750082">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760090"/>
+    <rdfs:label>Comovirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750007">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760007"/>
+    <rdfs:label>Herpetoviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750010">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760010"/>
+    <rdfs:label>Papovaviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750041">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760043"/>
+    <rdfs:label>Baculovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750004"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750078">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760085"/>
+    <rdfs:label>Bromovirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750344">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760674"/>
+    <rdfs:label>Cowpea mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750082"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:X00206</oio:hasDbXref>
+    <oio:hasDbXref>genbank:X00729</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003549</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003550</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750090">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760096"/>
+    <rdfs:label>Luteovirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750084">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760068"/>
+    <rdfs:label>Cytoplasmic polyhedrosis virus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750092">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760098"/>
+    <rdfs:label>Pea enation mosaic virus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750050">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760054"/>
+    <rdfs:label>Paramyxovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750011"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750363">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760715"/>
+    <rdfs:label>Tobacco ringspot virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750091"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:KJ556849</oio:hasDbXref>
+    <oio:hasDbXref>genbank:KJ556850</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_rna_ambisense">
+    <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/SO_0001202"/>
+    <rdfs:comment>Single-stranded RNA - Ambi-sense</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ss_rna"/>
+    <rdfs:label>ssRNA(+/-)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750089">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760101"/>
+    <rdfs:label>Lipid phage PM2</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750054">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760058"/>
+    <rdfs:label>Parvovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750012"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750400">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760845"/>
+    <rdfs:label>Tomato spotted wilt virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750101"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:D10066</oio:hasDbXref>
+    <oio:hasDbXref>genbank:S48091</oio:hasDbXref>
+    <oio:hasDbXref>genbank:D00645</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002052</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002050</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002051</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750004">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760004"/>
+    <rdfs:label>Baculoviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750013">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760013"/>
+    <rdfs:label>Picornaviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750095">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760103"/>
+    <rdfs:label>Potyvirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750044">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760046"/>
+    <rdfs:label>Herpesvirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750007"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750351">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760683"/>
+    <rdfs:label>Tomato aspermy virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750083"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:D10044</oio:hasDbXref>
+    <oio:hasDbXref>genbank:D10663</oio:hasDbXref>
+    <oio:hasDbXref>genbank:AJ277268</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003837</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003838</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003836</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750098">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760107"/>
+    <rdfs:label>Tobacco necrosis virus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750055">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760086"/>
+    <rdfs:label>Calicivirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750013"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750046">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760049"/>
+    <rdfs:label>Influenzavirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750009"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750073">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760080"/>
+    <rdfs:label>Alphavirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750018"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750076">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760083"/>
+    <rdfs:label>Rubivirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750018"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750093">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760100"/>
+    <rdfs:label>phiX group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750327">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760646"/>
+    <rdfs:label>Alfalfa mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750077"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:L00163</oio:hasDbXref>
+    <oio:hasDbXref>genbank:X01572</oio:hasDbXref>
+    <oio:hasDbXref>genbank:K02703</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001495</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002024</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002025</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750003">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760003"/>
+    <rdfs:label>Arenaviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750018">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760018"/>
+    <rdfs:label>Togaviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750099">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760108"/>
+    <rdfs:label>Tobamovirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750359">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760708"/>
+    <rdfs:label>Arabis mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750091"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AY303786</oio:hasDbXref>
+    <oio:hasDbXref>genbank:AY017339</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_006057</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_006056</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_dna">
+    <rdfs:label>ssDNA</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ds_or_ss_dna"/>
+    <rdfs:comment>Single-stranded DNA</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750346">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760678"/>
+    <rdfs:label>Red clover mottle virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750082"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:X64886</oio:hasDbXref>
+    <oio:hasDbXref>genbank:M14913</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003741</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003738</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750075">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760082"/>
+    <rdfs:label>Pestivirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750018"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750365">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760717"/>
+    <rdfs:label>Tomato ringspot virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750091"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:L19655</oio:hasDbXref>
+    <oio:hasDbXref>genbank:D12477</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003840</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003839</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750329">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760648"/>
+    <rdfs:label>Brome mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750078"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:X58456</oio:hasDbXref>
+    <oio:hasDbXref>genbank:X58457</oio:hasDbXref>
+    <oio:hasDbXref>genbank:X58458</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750354">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760685"/>
+    <rdfs:label>Barley stripe mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750086"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:J04342</oio:hasDbXref>
+    <oio:hasDbXref>genbank:X03854</oio:hasDbXref>
+    <oio:hasDbXref>genbank:M16576</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003469</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003481</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003478</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750005">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760005"/>
+    <rdfs:label>Bunyaviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750355">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760699"/>
+    <rdfs:label>Tobacco streak virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750087"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:U80934</oio:hasDbXref>
+    <oio:hasDbXref>genbank:U75538</oio:hasDbXref>
+    <oio:hasDbXref>genbank:X00435</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003844</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003842</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003845</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750002">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760002"/>
+    <rdfs:label>Adenoviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750364">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760716"/>
+    <rdfs:label>Tomato black ring virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750091"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AY157993</oio:hasDbXref>
+    <oio:hasDbXref>genbank:AY157994</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_004439</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_004440</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750040">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760042"/>
+    <rdfs:label>Arenavirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750003"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750088">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760095"/>
+    <rdfs:label>Lambda phage</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750042">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760044"/>
+    <rdfs:label>Bunyavirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750005"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750049">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760053"/>
+    <rdfs:label>Morbillivirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750011"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750014">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760014"/>
+    <rdfs:label>Poxviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750063">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760066"/>
+    <rdfs:label>Parapoxvirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750014"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750399">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760844"/>
+    <rdfs:label>Tobacco rattle virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750100"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AF166084</oio:hasDbXref>
+    <oio:hasDbXref>genbank:Z36974</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003805</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_003811</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750097">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760106"/>
+    <rdfs:label>T-even phages</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750085">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760092"/>
+    <rdfs:label>Filamentous phage</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750061">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760064"/>
+    <rdfs:label>Leporipoxvirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750014"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750016">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760016"/>
+    <rdfs:label>Retroviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750062">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760065"/>
+    <rdfs:label>Orthopoxvirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750014"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750072">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760079"/>
+    <rdfs:label>Vesiculovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750017"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750345">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760677"/>
+    <rdfs:label>Radish mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750082"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AB295643</oio:hasDbXref>
+    <oio:hasDbXref>genbank:AB295644</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_010709</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_010710</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750056">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760059"/>
+    <rdfs:label>Enterovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750013"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750009">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760009"/>
+    <rdfs:label>Orthomyxoviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750361">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760714"/>
+    <rdfs:label>Raspberry ringspot virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750091"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:AY303787</oio:hasDbXref>
+    <oio:hasDbXref>genbank:AY303788</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_005266</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_005267</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750043">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760045"/>
+    <rdfs:label>Coronavirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750006"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750100">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760109"/>
+    <rdfs:label>Tobravirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750083">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760091"/>
+    <rdfs:label>Cucumovirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750017">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760017"/>
+    <rdfs:label>Rhabdoviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750343">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760673"/>
+    <rdfs:label>Broad bean stain virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750082"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:FJ028650</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750101">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760110"/>
+    <rdfs:label>Tomato spotted wilt virus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750059">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760062"/>
+    <rdfs:label>Capripoxvirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750014"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750066">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760071"/>
+    <rdfs:label>Reovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750015"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_rna">
+    <rdfs:subClassOf rdf:resource="http://ictv.global/MolecularType"/>
+    <rdfs:comment>Single-stranded RNA</rdfs:comment>
+    <rdfs:label>ssRNA</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750081">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760089"/>
+    <rdfs:label>Closterovirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750398">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760843"/>
+    <rdfs:label>Pea early-browning virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750100"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:X14006</oio:hasDbXref>
+    <oio:hasDbXref>genbank:X51828</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_002036</oio:hasDbXref>
+    <oio:hasDbXref>refseq:NC_001368</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750096">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760104"/>
+    <rdfs:label>Ribophage group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750053">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760057"/>
+    <rdfs:label>Densovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750012"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750057">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760060"/>
+    <rdfs:label>Rhinovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750013"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750077">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760084"/>
+    <rdfs:label>Alfalfa mosaic virus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750008">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760008"/>
+    <rdfs:label>Iridoviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750074">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760081"/>
+    <rdfs:label>Flavivirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750018"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750094">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760102"/>
+    <rdfs:label>Potexvirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ss_dna_ambisense">
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ss_dna"/>
+    <rdfs:comment>Single-stranded DNA - Ambi-sense</rdfs:comment>
+    <rdfs:label>ssDNA(+/-)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750087">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760094"/>
+    <rdfs:label>Ilarvirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750347">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760679"/>
+    <rdfs:label>Squash mosaic virus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750082"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+    <oio:hasDbXref>genbank:EU421059</oio:hasDbXref>
+    <oio:hasDbXref>genbank:EU421060</oio:hasDbXref>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750051">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760055"/>
+    <rdfs:label>Pneumovirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750011"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ds_dna">
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ds_or_ss_dna"/>
+    <rdfs:comment>Double-stranded DNA</rdfs:comment>
+    <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/SO_0001198"/>
+    <rdfs:label>dsDNA</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750068">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760073"/>
+    <rdfs:label>Type B oncovirus group</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750034"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750012">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760012"/>
+    <rdfs:label>Parvoviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750102">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760111"/>
+    <rdfs:label>Tombusvirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ds_or_ss_dna">
+    <rdfs:subClassOf rdf:resource="http://ictv.global/MolecularType"/>
+    <rdfs:label>dsDNA; ssDNA</rdfs:label>
+    <rdfs:comment>DNA - some taxa double stranded, some taxa single standed</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750047">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760051"/>
+    <rdfs:label>Papillomavirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750010"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750079">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760087"/>
+    <rdfs:label>Carlavirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750091">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760097"/>
+    <rdfs:label>Nepovirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750052">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760056"/>
+    <rdfs:label>Adeno-associated virus group</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750012"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750069">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760074"/>
+    <rdfs:label>Type C oncovirus group</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750034"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750103">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760112"/>
+    <rdfs:label>Tymovirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750006">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760006"/>
+    <rdfs:label>Coronaviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750071">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760076"/>
+    <rdfs:label>Lyssavirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750017"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750048">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760052"/>
+    <rdfs:label>Polyomavirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750010"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750015">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760015"/>
+    <rdfs:label>Reoviridae</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750086">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760093"/>
+    <rdfs:label>Hordeivirus group</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750034">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760035"/>
+    <rdfs:label>Oncovirinae</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750016"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://ictv.global/ictv_19750065">
+    <ns1:IAO_0100001 rdf:resource="http://ictv.global/19760069"/>
+    <rdfs:label>Orbivirus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://ictv.global/ictv_19750015"/>
+    <rdfs:isDefinedBy rdf:resource="http://ictv.global/ictv_1975"/>
+  </owl:Class>
+</rdf:RDF>

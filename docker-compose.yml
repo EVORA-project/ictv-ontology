@@ -1,0 +1,62 @@
+version: '3'
+services:
+    evora-ols-dataload:
+      image: ghcr.io/ebispot/ols4-dataload:f4c4c4248f8bedca2b6a8995947a9815e0766122
+      volumes:
+        - evora-ols-solr-data:/opt/solr/server/solr:rw
+        - evora-ols-neo4j-data:/opt/neo4j/data:rw
+        - ./ols_config.json:/mnt/config.json:ro
+        - ./out:/opt/dataload/out:ro
+      command: ./dataload.dockersh --loadLocalFiles
+    evora-ols-solr:
+      image: solr:9.0.0
+      environment:
+        - SOLR_HOME=/mnt/evora-ols-solr-data
+      ports:
+        - 8983:8983
+      volumes:
+        - evora-ols-solr-data:/mnt/evora-ols-solr-data
+      command: ["-f"]
+      depends_on:
+        evora-ols-dataload:
+          condition: service_completed_successfully
+    evora-ols-neo4j:
+      image: neo4j:4.4.9-community
+      ports:
+        - 7474:7474
+        - 7687:7687
+      volumes:
+        - evora-ols-neo4j-data:/var/lib/neo4j/data
+      environment:
+        - NEO4J_AUTH=none
+      depends_on:
+        evora-ols-dataload:
+          condition: service_completed_successfully
+    evora-ols-backend:
+      image: ghcr.io/ebispot/ols4-backend:f4c4c4248f8bedca2b6a8995947a9815e0766122
+      ports:
+        - 8080:8080
+      environment:
+        - OLS_SOLR_HOST=http://evora-ols-solr:8983
+        - OLS_NEO4J_HOST=bolt://evora-ols-neo4j:7687
+      depends_on:
+        - evora-ols-solr
+        - evora-ols-neo4j    
+      links:
+        - evora-ols-solr
+        - evora-ols-neo4j 
+    evora-ols-frontend:
+      image: ghcr.io/ebispot/ols4-frontend:f4c4c4248f8bedca2b6a8995947a9815e0766122
+      env_file: .env.evora_ols
+      ports:
+        - 8081:8080
+      depends_on:
+        - evora-ols-backend
+      links:
+        - evora-ols-backend
+volumes:
+    evora-ols-solr-data:
+    evora-ols-neo4j-data:
+
+
+

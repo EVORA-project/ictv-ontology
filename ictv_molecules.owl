@@ -4,10 +4,6 @@
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:owl="http://www.w3.org/2002/07/owl#"
 >
-  <owl:Class rdf:about="http://ictv.global/MolecularType">
-    <rdfs:label>MolecularType</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-  </owl:Class>
   <owl:Class rdf:about="http://ictv.global/ss_dna">
     <rdfs:subClassOf rdf:resource="http://ictv.global/ds_or_ss_dna"/>
     <rdfs:label>ssDNA</rdfs:label>
@@ -22,6 +18,7 @@
         <rdfs:subClassOf rdf:resource="http://ictv.global/ss_rna_ambisense"/>
     <rdfs:label>ssRNA(+)</rdfs:label>
     <rdfs:comment>Single-stranded RNA - Positive-sense</rdfs:comment>
+    <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/SO_0001201"/>
   </owl:Class>
   <owl:Class rdf:about="http://ictv.global/ss_dna_positive_sense">
       <rdfs:subClassOf rdf:resource="http://ictv.global/ss_dna_ambisense"/>
@@ -37,16 +34,19 @@
       <rdfs:subClassOf rdf:resource="http://ictv.global/ss_rna"/>
     <rdfs:label>ssRNA(+/-)</rdfs:label>
     <rdfs:comment>Single-stranded RNA - Ambi-sense</rdfs:comment>
+    <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/SO_0001202"/>
   </owl:Class>
   <owl:Class rdf:about="http://ictv.global/ds_rna">
         <rdfs:subClassOf rdf:resource="http://ictv.global/MolecularType"/>
     <rdfs:label>dsRNA</rdfs:label>
     <rdfs:comment>Double-stranded RNA</rdfs:comment>
+    <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/SO_0001169"/>
   </owl:Class>
   <owl:Class rdf:about="http://ictv.global/ds_dna">
     <rdfs:subClassOf rdf:resource="http://ictv.global/ds_or_ss_dna"/>
     <rdfs:label>dsDNA</rdfs:label>
     <rdfs:comment>Double-stranded DNA</rdfs:comment>
+    <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/SO_0001198"/>
   </owl:Class>
   <owl:Class rdf:about="http://ictv.global/ss_dna_negative_sense">
         <rdfs:subClassOf rdf:resource="http://ictv.global/ss_dna_ambisense"/>
@@ -72,6 +72,7 @@
         <rdfs:subClassOf rdf:resource="http://ictv.global/ss_rna_ambisense"/>
     <rdfs:label>ssRNA(-)</rdfs:label>
     <rdfs:comment>Single-stranded RNA - Negative-sense</rdfs:comment>
+    <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/SO_0001200"/>
   </owl:Class>
   <owl:Class rdf:about="http://ictv.global/dsdna_rt">
       <rdfs:subClassOf rdf:resource="http://ictv.global/ds_dna"/>
