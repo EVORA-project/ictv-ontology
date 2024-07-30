@@ -33,7 +33,7 @@ spec:
             - name: OLS_NEO4J_HOST
               value: bolt://{{ .Release.Name }}-neo4j:7687
             - name: SERVER_SERVLET_CONTEXT_PATH
-              value: /ols4
+              value: /spot/evora/ols
             - name: JDK_JAVA_OPTIONS
               value: "-XX:InitialRAMPercentage=60.0 -XX:MinRAMPercentage=60.0 -XX:MaxRAMPercentage=80.0"
               
