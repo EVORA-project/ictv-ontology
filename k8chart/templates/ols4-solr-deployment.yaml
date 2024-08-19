@@ -26,10 +26,10 @@ spec:
               name: {{ .Release.Name }}-solr-storage
           resources:
             requests:
-              memory: 4Gi
+              memory: 2Gi
               cpu: 0.5
             limits:
-              memory: 4Gi
+              memory: 2Gi
               cpu: 0.5
           env:
             - name: SOLR_HOME

@@ -30,16 +30,16 @@ spec:
               name: {{ .Release.Name }}-neo4j-storage
           resources:
             requests:
-              memory: 8Gi
+              memory: 4Gi
               cpu: 1
             limits:
-              memory: 8Gi
+              memory: 4Gi
               cpu: 1
           env:
             - name: NEO4J_HEAP_MEMORY
-              value: 6g
+              value: 3g
             - name: NEO4J_dbms_memory_heap_maxSize
-              value: 6g
+              value: 3g
             - name: NEO4J_AUTH
               value: none
           ports:
