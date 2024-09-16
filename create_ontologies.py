@@ -15,14 +15,15 @@ TERM_SPLIT = "http://purl.obolibrary.org/obo/IAO_0000229"
 TERMS_MERGED = "http://purl.obolibrary.org/obo/IAO_0000227"
 SYNONYM = "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
 XREF = "http://www.geneontology.org/formats/oboInOwl#hasDbXref"
+DEPRECATED = "http://www.w3.org/2002/07/owl#deprecated"
 
 def main():
 
     common_graph = rdflib.Graph()
     common_graph.parse(location='ictv_molecules.owl')
     
-    nodes = pd.read_csv('data/taxonomy_node.tsv', sep='\t', on_bad_lines=lambda x: x[:-1], engine='python', dtype=str)
-    delta = pd.read_csv('data/taxonomy_node_delta.tsv', sep='\t', dtype=str)
+    nodes = pd.read_csv('data/taxonomy_node_export.utf8.txt', sep='\t', on_bad_lines=lambda x: x[:-1], engine='python', dtype=str)
+    delta = pd.read_csv('data/taxonomy_node_delta.utf8.txt', sep='\t', dtype=str)
 
     releases = nodes[(nodes['level_id'] == '100') & (nodes['name'] != 'empty_tree')]
 
@@ -30,6 +31,9 @@ def main():
 
     for release in releases.itertuples():
         print(f'Processing release {release.name}')
+
+        taxnode_id_to_ictv_id = {}
+
         id = 'ictv_' + release.name
         release_num = release.msl_release_num
         owl_filename = 'out/' + id + '.owl'
@@ -45,7 +49,11 @@ def main():
         g.add((URIRef(ontology_iri), OWL.versionInfo, Literal(str(release_num))))
 
         for node in nodes_in_release.itertuples():
-            class_iri = f'{prefix}ictv_{node.taxnode_id}'
+            class_iri = f'{prefix}ictv_{node.ictv_id}'
+
+            if node.taxnode_id in taxnode_id_to_ictv_id:
+                raise Exception(f'Taxnode ID {node.ictv_id} already exists')
+            taxnode_id_to_ictv_id[node.taxnode_id] = node.ictv_id
             # print(class_iri)
 
             replacements = delta[delta['prev_taxid'] == node.taxnode_id]
@@ -72,6 +80,7 @@ def main():
             g.add((URIRef(class_iri), RDF.type, OWL.Class))
             g.add((URIRef(class_iri), RDFS.label, Literal(node.name)))
             if node.parent_id != release.ictv_id:
+                #g.add((URIRef(class_iri), RDFS.subClassOf, URIRef(f'{prefix}ictv_{taxnode_id_to_ictv_id[node.parent_id]}')))
                 g.add((URIRef(class_iri), RDFS.subClassOf, URIRef(f'{prefix}ictv_{node.parent_id}')))
             g.add((URIRef(class_iri), RDFS.isDefinedBy, URIRef(ontology_iri)))
 

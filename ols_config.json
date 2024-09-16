@@ -1,156 +1,160 @@
 {
   "ontologies": [
     {
-      "id": "ictv_2018a",
-      "ontology_purl": "./out/ictv_2018a.owl"
-    },
-    {
-      "id": "ictv_2009",
-      "ontology_purl": "./out/ictv_2009.owl"
-    },
-    {
-      "id": "ictv_1991",
-      "ontology_purl": "./out/ictv_1991.owl"
-    },
-    {
-      "id": "ictv_2004",
-      "ontology_purl": "./out/ictv_2004.owl"
-    },
-    {
-      "id": "ictv_1982",
-      "ontology_purl": "./out/ictv_1982.owl"
-    },
-    {
       "id": "ictv_2005",
       "ontology_purl": "./out/ictv_2005.owl"
-    },
-    {
-      "id": "ictv_1999b",
-      "ontology_purl": "./out/ictv_1999b.owl"
-    },
-    {
-      "id": "ictv_2017",
-      "ontology_purl": "./out/ictv_2017.owl"
-    },
-    {
-      "id": "ictv_1974",
-      "ontology_purl": "./out/ictv_1974.owl"
-    },
-    {
-      "id": "ictv_2012",
-      "ontology_purl": "./out/ictv_2012.owl"
-    },
-    {
-      "id": "ictv_1976",
-      "ontology_purl": "./out/ictv_1976.owl"
-    },
-    {
-      "id": "ictv_2002a",
-      "ontology_purl": "./out/ictv_2002a.owl"
-    },
-    {
-      "id": "ictv_2021",
-      "ontology_purl": "./out/ictv_2021.owl"
-    },
-    {
-      "id": "ictv_1979",
-      "ontology_purl": "./out/ictv_1979.owl"
-    },
-    {
-      "id": "ictv_2019",
-      "ontology_purl": "./out/ictv_2019.owl"
-    },
-    {
-      "id": "ictv_2013",
-      "ontology_purl": "./out/ictv_2013.owl"
-    },
-    {
-      "id": "ictv_2018b",
-      "ontology_purl": "./out/ictv_2018b.owl"
-    },
-    {
-      "id": "ictv_1999a",
-      "ontology_purl": "./out/ictv_1999a.owl"
-    },
-    {
-      "id": "ictv_1993",
-      "ontology_purl": "./out/ictv_1993.owl"
-    },
-    {
-      "id": "ictv_1997",
-      "ontology_purl": "./out/ictv_1997.owl"
-    },
-    {
-      "id": "ictv_1996",
-      "ontology_purl": "./out/ictv_1996.owl"
     },
     {
       "id": "ictv_2011",
       "ontology_purl": "./out/ictv_2011.owl"
     },
     {
-      "id": "ictv_1995",
-      "ontology_purl": "./out/ictv_1995.owl"
+      "id": "ictv_2004",
+      "ontology_purl": "./out/ictv_2004.owl"
     },
     {
-      "id": "ictv_1984",
-      "ontology_purl": "./out/ictv_1984.owl"
+      "id": "ictv_2012",
+      "ontology_purl": "./out/ictv_2012.owl"
     },
     {
-      "id": "ictv_2002b",
-      "ontology_purl": "./out/ictv_2002b.owl"
+      "id": "ictv_2013",
+      "ontology_purl": "./out/ictv_2013.owl"
     },
     {
-      "id": "ictv_1971",
-      "ontology_purl": "./out/ictv_1971.owl"
-    },
-    {
-      "id": "ictv_1975",
-      "ontology_purl": "./out/ictv_1975.owl"
-    },
-    {
-      "id": "ictv_1981",
-      "ontology_purl": "./out/ictv_1981.owl"
-    },
-    {
-      "id": "ictv_1990",
-      "ontology_purl": "./out/ictv_1990.owl"
-    },
-    {
-      "id": "ictv_2015",
-      "ontology_purl": "./out/ictv_2015.owl"
-    },
-    {
-      "id": "ictv_ictvdb2009",
-      "ontology_purl": "./out/ictv_ictvdb2009.owl"
-    },
-    {
-      "id": "ictv_1978",
-      "ontology_purl": "./out/ictv_1978.owl"
-    },
-    {
-      "id": "ictv_1987",
-      "ontology_purl": "./out/ictv_1987.owl"
-    },
-    {
-      "id": "ictv_2020",
-      "ontology_purl": "./out/ictv_2020.owl"
-    },
-    {
-      "id": "ictv_1998",
-      "ontology_purl": "./out/ictv_1998.owl"
+      "id": "ictv_2017",
+      "ontology_purl": "./out/ictv_2017.owl"
     },
     {
       "id": "ictv_2016",
       "ontology_purl": "./out/ictv_2016.owl"
     },
     {
-      "id": "ictv_2008",
-      "ontology_purl": "./out/ictv_2008.owl"
-    },
-    {
       "id": "ictv_2014",
       "ontology_purl": "./out/ictv_2014.owl"
+    },
+    {
+      "id": "ictv_2015",
+      "ontology_purl": "./out/ictv_2015.owl"
+    },
+    {
+      "id": "ictv_1976",
+      "ontology_purl": "./out/ictv_1976.owl"
+    },
+    {
+      "id": "ictv_1975",
+      "ontology_purl": "./out/ictv_1975.owl"
+    },
+    {
+      "id": "ictv_1974",
+      "ontology_purl": "./out/ictv_1974.owl"
+    },
+    {
+      "id": "ictv_1971",
+      "ontology_purl": "./out/ictv_1971.owl"
+    },
+    {
+      "id": "ictv_1998",
+      "ontology_purl": "./out/ictv_1998.owl"
+    },
+    {
+      "id": "ictv_1999b",
+      "ontology_purl": "./out/ictv_1999b.owl"
+    },
+    {
+      "id": "ictv_1981",
+      "ontology_purl": "./out/ictv_1981.owl"
+    },
+    {
+      "id": "ictv_1995",
+      "ontology_purl": "./out/ictv_1995.owl"
+    },
+    {
+      "id": "ictv_1997",
+      "ontology_purl": "./out/ictv_1997.owl"
+    },
+    {
+      "id": "ictv_1999a",
+      "ontology_purl": "./out/ictv_1999a.owl"
+    },
+    {
+      "id": "ictv_1996",
+      "ontology_purl": "./out/ictv_1996.owl"
+    },
+    {
+      "id": "ictv_1982",
+      "ontology_purl": "./out/ictv_1982.owl"
+    },
+    {
+      "id": "ictv_1979",
+      "ontology_purl": "./out/ictv_1979.owl"
+    },
+    {
+      "id": "ictv_1978",
+      "ontology_purl": "./out/ictv_1978.owl"
+    },
+    {
+      "id": "ictv_1993",
+      "ontology_purl": "./out/ictv_1993.owl"
+    },
+    {
+      "id": "ictv_1987",
+      "ontology_purl": "./out/ictv_1987.owl"
+    },
+    {
+      "id": "ictv_1991",
+      "ontology_purl": "./out/ictv_1991.owl"
+    },
+    {
+      "id": "ictv_1984",
+      "ontology_purl": "./out/ictv_1984.owl"
+    },
+    {
+      "id": "ictv_1990",
+      "ontology_purl": "./out/ictv_1990.owl"
+    },
+    {
+      "id": "ictv_2002b",
+      "ontology_purl": "./out/ictv_2002b.owl"
+    },
+    {
+      "id": "ictv_2018a",
+      "ontology_purl": "./out/ictv_2018a.owl"
+    },
+    {
+      "id": "ictv_2019",
+      "ontology_purl": "./out/ictv_2019.owl"
+    },
+    {
+      "id": "ictv_2002a",
+      "ontology_purl": "./out/ictv_2002a.owl"
+    },
+    {
+      "id": "ictv_2018b",
+      "ontology_purl": "./out/ictv_2018b.owl"
+    },
+    {
+      "id": "ictv_2022",
+      "ontology_purl": "./out/ictv_2022.owl"
+    },
+    {
+      "id": "ictv_2023",
+      "ontology_purl": "./out/ictv_2023.owl"
+    },
+    {
+      "id": "ictv_2009",
+      "ontology_purl": "./out/ictv_2009.owl"
+    },
+    {
+      "id": "ictv_2021",
+      "ontology_purl": "./out/ictv_2021.owl"
+    },
+    {
+      "id": "ictv_2020",
+      "ontology_purl": "./out/ictv_2020.owl"
+    },
+    {
+      "id": "ictv_2008",
+      "ontology_purl": "./out/ictv_2008.owl"
     }
   ]
 }
