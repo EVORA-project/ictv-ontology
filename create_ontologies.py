@@ -27,7 +27,7 @@ def main():
 
     releases = nodes[(nodes['level_id'] == '100') & (nodes['name'] != 'empty_tree')]
 
-    prefix = 'http://ictv.global/'
+    prefix = 'https://ictv.global/taxonomy/taxondetails?taxnode_id='
 
     for release in releases.itertuples():
         print(f'Processing release {release.name}')
