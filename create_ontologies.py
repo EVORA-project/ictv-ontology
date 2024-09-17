@@ -2,12 +2,11 @@
 import rdflib
 from rdflib import URIRef, BNode, Literal
 from rdflib.collection import Collection
-from rdflib.namespace import OWL, RDFS, RDF, PROV, FOAF
+from rdflib.namespace import OWL, RDFS, RDF, PROV, FOAF, SKOS
 import pandas as pd
 import os
 import json
 import re
-import gzip
 
 TERM_REPLACED_BY = "http://purl.obolibrary.org/obo/IAO_0100001"
 OBSOLESCENCE_REASON = "http://purl.obolibrary.org/obo/IAO_0000225"
@@ -24,6 +23,7 @@ def main():
     
     nodes = pd.read_csv('data/taxonomy_node_export.utf8.txt', sep='\t', on_bad_lines=lambda x: x[:-1], engine='python', dtype=str)
     delta = pd.read_csv('data/taxonomy_node_delta.utf8.txt', sep='\t', dtype=str)
+    isolates = pd.read_csv('data/species_isolates.utf8.txt', sep='\t', dtype=str)
 
     releases = nodes[(nodes['level_id'] == '100') & (nodes['name'] != 'empty_tree')]
 
@@ -80,8 +80,9 @@ def main():
             g.add((URIRef(class_iri), RDF.type, OWL.Class))
             g.add((URIRef(class_iri), RDFS.label, Literal(node.name)))
             if node.parent_id != release.ictv_id:
-                #g.add((URIRef(class_iri), RDFS.subClassOf, URIRef(f'{prefix}ictv_{taxnode_id_to_ictv_id[node.parent_id]}')))
-                g.add((URIRef(class_iri), RDFS.subClassOf, URIRef(f'{prefix}ictv_{node.parent_id}')))
+                if node.parent_id in taxnode_id_to_ictv_id:
+                    g.add((URIRef(class_iri), RDFS.subClassOf, URIRef(f'{prefix}ictv_{taxnode_id_to_ictv_id[node.parent_id]}')))
+                #g.add((URIRef(class_iri), RDFS.subClassOf, URIRef(f'{prefix}ictv_{node.parent_id}')))
             g.add((URIRef(class_iri), RDFS.isDefinedBy, URIRef(ontology_iri)))
 
             if not pd.isna(node.abbrev_csv):
@@ -91,6 +92,29 @@ def main():
                 add_xrefs(g, class_iri, node.genbank_accession_csv, 'genbank:')
             if not pd.isna(node.refseq_accession_csv):
                 add_xrefs(g, class_iri, node.refseq_accession_csv, 'refseq:')
+
+            taxnode_isolates = isolates[isolates['taxnode_id'] == node.taxnode_id]
+
+            for isolate in taxnode_isolates.itertuples():
+                isolate_iri = f'https://ictv.global/isolate_{isolate.isolate_id}'
+                g.add((URIRef(isolate_iri), RDF.type, OWL.NamedIndividual))
+                g.add((URIRef(isolate_iri), RDF.type, URIRef(class_iri)))
+                g.add((URIRef(isolate_iri), RDFS.isDefinedBy, URIRef(ontology_iri)))
+                if not pd.isna(isolate.isolate_names):
+                    for name in re.split(';|,', isolate.isolate_names):
+                        g.add((URIRef(isolate_iri), RDFS.label, Literal(name.strip())))
+                if not pd.isna(isolate.isolate_abbrevs):
+                    for abbrev in re.split(';|,', isolate.isolate_abbrevs):
+                        g.add((URIRef(isolate_iri), URIRef(SYNONYM), Literal(abbrev.strip())))
+                if not pd.isna(isolate.genbank_accessions):
+                    for xref in re.split(';|,', isolate.genbank_accessions):
+                        g.add((URIRef(isolate_iri), SKOS.exactMatch, Literal("genbank:" + xref.strip())))
+                        g.add((URIRef(class_iri), SKOS.narrowMatch, Literal("genbank:" + xref.strip())))
+                if not pd.isna(isolate.refseq_accessions):
+                    for xref in re.split(';|,', isolate.refseq_accessions):
+                        g.add((URIRef(isolate_iri), SKOS.exactMatch, Literal("refseq:" + xref.strip())))
+                        g.add((URIRef(class_iri), SKOS.narrowMatch, Literal("refseq:" + xref.strip())))
+
 
         g.bind('owl', OWL)
         g.bind('iao', 'http://purl.obolibrary.org/obo/IAO_')
