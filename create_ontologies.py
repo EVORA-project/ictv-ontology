@@ -36,7 +36,7 @@ def main():
 
         id = 'ictv_' + release.name
         release_num = release.msl_release_num
-        owl_filename = 'out/' + id + '.owl'
+        owl_filename = 'out/' + id + '.owl.ttl'
         ontology_iri = f'{prefix}{id}'
 
         nodes_in_release = nodes[(nodes['msl_release_num'] == release_num) & (nodes['level_id'] != '100')]
@@ -49,7 +49,7 @@ def main():
         g.add((URIRef(ontology_iri), OWL.versionInfo, Literal(str(release_num))))
 
         for node in nodes_in_release.itertuples():
-            class_iri = f'{prefix}ictv_{node.ictv_id}'
+            class_iri = URIRef(prefix + node.ictv_id)
 
             if node.taxnode_id in taxnode_id_to_ictv_id:
                 raise Exception(f'Taxnode ID {node.ictv_id} already exists')
@@ -70,23 +70,23 @@ def main():
 
                 for replacement in replacements.itertuples():
                     if not pd.isna(replacement.new_taxid):
-                        g.add((URIRef(class_iri), URIRef(TERM_REPLACED_BY), URIRef(prefix+replacement.new_taxid)))
+                        g.add((class_iri, URIRef(TERM_REPLACED_BY), URIRef(prefix+replacement.new_taxid)))
 
                 if is_merged:
-                    g.add((URIRef(class_iri), URIRef(OBSOLESCENCE_REASON), URIRef(TERMS_MERGED)))
+                    g.add((class_iri, URIRef(OBSOLESCENCE_REASON), URIRef(TERMS_MERGED)))
                 if is_split:
-                    g.add((URIRef(class_iri), URIRef(OBSOLESCENCE_REASON), URIRef(TERM_SPLIT)))
+                    g.add((class_iri, URIRef(OBSOLESCENCE_REASON), URIRef(TERM_SPLIT)))
 
-            g.add((URIRef(class_iri), RDF.type, OWL.Class))
-            g.add((URIRef(class_iri), RDFS.label, Literal(node.name)))
+            g.add((class_iri, RDF.type, OWL.Class))
+            g.add((class_iri, RDFS.label, Literal(node.name)))
+            g.add((class_iri, URIRef("http://ictv.global/ictv_id"), Literal(node.ictv_id)))
             if node.parent_id != release.ictv_id:
                 if node.parent_id in taxnode_id_to_ictv_id:
-                    g.add((URIRef(class_iri), RDFS.subClassOf, URIRef(f'{prefix}ictv_{taxnode_id_to_ictv_id[node.parent_id]}')))
-                #g.add((URIRef(class_iri), RDFS.subClassOf, URIRef(f'{prefix}ictv_{node.parent_id}')))
-            g.add((URIRef(class_iri), RDFS.isDefinedBy, URIRef(ontology_iri)))
+                    g.add((class_iri, RDFS.subClassOf, URIRef(f'{prefix}{taxnode_id_to_ictv_id[node.parent_id]}')))
+            g.add((class_iri, RDFS.isDefinedBy, URIRef(ontology_iri)))
 
             if not pd.isna(node.abbrev_csv):
-                g.add((URIRef(class_iri), URIRef(SYNONYM), Literal(node.abbrev_csv)))
+                g.add((class_iri, URIRef(SYNONYM), Literal(node.abbrev_csv)))
 
             if not pd.isna(node.genbank_accession_csv):
                 add_xrefs(g, class_iri, node.genbank_accession_csv, 'genbank:')
@@ -98,7 +98,7 @@ def main():
             for isolate in taxnode_isolates.itertuples():
                 isolate_iri = f'https://ictv.global/isolate_{isolate.isolate_id}'
                 g.add((URIRef(isolate_iri), RDF.type, OWL.NamedIndividual))
-                g.add((URIRef(isolate_iri), RDF.type, URIRef(class_iri)))
+                g.add((URIRef(isolate_iri), RDF.type, class_iri))
                 g.add((URIRef(isolate_iri), RDFS.isDefinedBy, URIRef(ontology_iri)))
                 if not pd.isna(isolate.isolate_names):
                     for name in re.split(';|,', isolate.isolate_names):
@@ -109,24 +109,26 @@ def main():
                 if not pd.isna(isolate.genbank_accessions):
                     for xref in re.split(';|,', isolate.genbank_accessions):
                         g.add((URIRef(isolate_iri), SKOS.exactMatch, Literal("genbank:" + xref.strip())))
-                        g.add((URIRef(class_iri), SKOS.narrowMatch, Literal("genbank:" + xref.strip())))
+                        g.add((class_iri, SKOS.narrowMatch, Literal("genbank:" + xref.strip())))
                 if not pd.isna(isolate.refseq_accessions):
                     for xref in re.split(';|,', isolate.refseq_accessions):
                         g.add((URIRef(isolate_iri), SKOS.exactMatch, Literal("refseq:" + xref.strip())))
-                        g.add((URIRef(class_iri), SKOS.narrowMatch, Literal("refseq:" + xref.strip())))
+                        g.add((class_iri, SKOS.narrowMatch, Literal("refseq:" + xref.strip())))
 
 
         g.bind('owl', OWL)
         g.bind('iao', 'http://purl.obolibrary.org/obo/IAO_')
         g.bind('oio', 'http://www.geneontology.org/formats/oboInOwl#')
+        g.bind('ictv', prefix)
 
-        g.serialize(owl_filename, format='pretty-xml')
+        g.serialize(owl_filename, format='turtle')
 
-    owl_files = [f for f in os.listdir('out') if f.endswith('.owl')]
+    owl_files = [f for f in os.listdir('out') if f.endswith('.owl.ttl')]
     ols_config = {
         'ontologies': list(map(lambda f: {
             'id': f.split('.')[0],
-            'ontology_purl': './out/' + f
+            'ontology_purl': './out/' + f,
+            'preferredPrefix': prefix
         }, owl_files))
     }
     with open('ols_config.json', 'w') as f:
@@ -138,15 +140,15 @@ def add_xrefs(g, class_iri, field, prefix):
         if ':' in entry:
             k = entry.split(':')[0].strip()
             v = entry.split(':')[1].strip()
-            g.add((URIRef(class_iri), URIRef(XREF), Literal(prefix + v)))
+            g.add((class_iri, URIRef(XREF), Literal(prefix + v)))
             stmt = BNode()
             g.add((stmt, RDF.type, OWL.Axiom))
-            g.add((stmt, OWL.annotatedSource, URIRef(class_iri)))
+            g.add((stmt, OWL.annotatedSource, class_iri))
             g.add((stmt, OWL.annotatedProperty, URIRef(XREF)))
             g.add((stmt, OWL.annotatedTarget, Literal(prefix + v)))
             g.add((stmt, RDFS.label, Literal(k)))
         else:
-            g.add((URIRef(class_iri), URIRef(XREF), Literal(prefix + entry)))
+            g.add((class_iri, URIRef(XREF), Literal(prefix + entry)))
 
 
 
