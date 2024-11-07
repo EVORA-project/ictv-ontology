@@ -88,10 +88,10 @@ def main():
             if not pd.isna(node.abbrev_csv):
                 g.add((class_iri, URIRef(SYNONYM), Literal(node.abbrev_csv)))
 
-            if not pd.isna(node.genbank_accession_csv):
-                add_xrefs(g, class_iri, node.genbank_accession_csv, 'genbank:')
-            if not pd.isna(node.refseq_accession_csv):
-                add_xrefs(g, class_iri, node.refseq_accession_csv, 'refseq:')
+            # if not pd.isna(node.genbank_accession_csv):
+            #     add_xrefs(g, class_iri, node.genbank_accession_csv, 'genbank:')
+            # if not pd.isna(node.refseq_accession_csv):
+            #     add_xrefs(g, class_iri, node.refseq_accession_csv, 'refseq:')
 
             taxnode_isolates = isolates[isolates['taxnode_id'] == node.taxnode_id]
 

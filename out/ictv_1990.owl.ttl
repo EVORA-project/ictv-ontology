@@ -2,7 +2,6 @@
 @prefix iao: <http://purl.obolibrary.org/obo/IAO_> .
 @prefix ictv: <https://ictv.global/taxonomy/taxondetails?taxnode_id=> .
 @prefix ns1: <http://ictv.global/> .
-@prefix oio: <http://www.geneontology.org/formats/oboInOwl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
@@ -152,6 +151,13 @@ ictv:19710071 a owl:Class ;
     iao:0100001 ictv:19910318 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710013 .
+
+ictv:19710072 a owl:Class ;
+    rdfs:label "Alfalfa mosaic virus" ;
+    ns1:ictv_id "19710072" ;
+    iao:0100001 ictv:19911513 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710014 .
 
 ictv:19710073 a owl:Class ;
     rdfs:label "Aura virus" ;
@@ -587,6 +593,27 @@ ictv:19710138 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19900102 .
 
+ictv:19710142 a owl:Class ;
+    rdfs:label "Broad bean mottle virus" ;
+    ns1:ictv_id "19710142" ;
+    iao:0100001 ictv:19911514 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710019 .
+
+ictv:19710143 a owl:Class ;
+    rdfs:label "Brome mosaic virus" ;
+    ns1:ictv_id "19710143" ;
+    iao:0100001 ictv:19911515 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710019 .
+
+ictv:19710144 a owl:Class ;
+    rdfs:label "Cowpea chlorotic mottle virus" ;
+    ns1:ictv_id "19710144" ;
+    iao:0100001 ictv:19911517 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710019 .
+
 ictv:19710145 a owl:Class ;
     rdfs:label "Cactus virus 2" ;
     ns1:ictv_id "19710145" ;
@@ -605,8 +632,6 @@ ictv:19710147 a owl:Class ;
     rdfs:label "Chrysanthemum virus B" ;
     ns1:ictv_id "19710147" ;
     iao:0100001 ictv:19911525 ;
-    oio:hasDbXref "genbank:AM493895",
-        "refseq:NC_009087" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710020 .
 
@@ -614,8 +639,6 @@ ictv:19710148 a owl:Class ;
     rdfs:label "Passiflora latent virus" ;
     ns1:ictv_id "19710148" ;
     iao:0100001 ictv:19911541 ;
-    oio:hasDbXref "genbank:DQ455582",
-        "refseq:NC_008292" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710020 .
 
@@ -623,8 +646,6 @@ ictv:19710150 a owl:Class ;
     rdfs:label "Potato virus M" ;
     ns1:ictv_id "19710150" ;
     iao:0100001 ictv:19911544 ;
-    oio:hasDbXref "genbank:D14449",
-        "refseq:NC_001361" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710020 .
 
@@ -632,8 +653,6 @@ ictv:19710151 a owl:Class ;
     rdfs:label "Potato virus S" ;
     ns1:ictv_id "19710151" ;
     iao:0100001 ictv:19911545 ;
-    oio:hasDbXref "genbank:AJ863509",
-        "refseq:NC_007289" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710020 .
 
@@ -641,8 +660,6 @@ ictv:19710152 a owl:Class ;
     rdfs:label "Red clover vein mosaic virus" ;
     ns1:ictv_id "19710152" ;
     iao:0100001 ictv:19911546 ;
-    oio:hasDbXref "genbank:FJ685618",
-        "refseq:NC_012210" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710020 .
 
@@ -650,8 +667,6 @@ ictv:19710153 a owl:Class ;
     rdfs:label "Cauliflower mosaic virus" ;
     ns1:ictv_id "19710153" ;
     iao:0100001 ictv:19911559 ;
-    oio:hasDbXref "genbank:V00141",
-        "refseq:NC_001497" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710021 .
 
@@ -659,8 +674,6 @@ ictv:19710154 a owl:Class ;
     rdfs:label "Dahlia mosaic virus" ;
     ns1:ictv_id "19710154" ;
     iao:0100001 ictv:19911560 ;
-    oio:hasDbXref "genbank:JX272320",
-        "refseq:NC_018616" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710021 .
 
@@ -691,6 +704,69 @@ ictv:19710158 a owl:Class ;
     iao:0100001 ictv:19910705 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710022 .
+
+ictv:19710159 a owl:Class ;
+    rdfs:label "Bean pod mottle virus" ;
+    ns1:ictv_id "19710159" ;
+    iao:0100001 ictv:19911582 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710023 .
+
+ictv:19710160 a owl:Class ;
+    rdfs:label "Broad bean stain virus" ;
+    ns1:ictv_id "19710160" ;
+    iao:0100001 ictv:19911584 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710023 .
+
+ictv:19710161 a owl:Class ;
+    rdfs:label "Cowpea mosaic virus" ;
+    ns1:ictv_id "19710161" ;
+    iao:0100001 ictv:19911586 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710023 .
+
+ictv:19710162 a owl:Class ;
+    rdfs:label "Radish mosaic virus" ;
+    ns1:ictv_id "19710162" ;
+    iao:0100001 ictv:19911591 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710023 .
+
+ictv:19710163 a owl:Class ;
+    rdfs:label "Red clover mottle virus" ;
+    ns1:ictv_id "19710163" ;
+    iao:0100001 ictv:19911592 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710023 .
+
+ictv:19710164 a owl:Class ;
+    rdfs:label "Squash mosaic virus" ;
+    ns1:ictv_id "19710164" ;
+    iao:0100001 ictv:19911593 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710023 .
+
+ictv:19710165 a owl:Class ;
+    rdfs:label "Broad bean true mosaic virus" ;
+    ns1:ictv_id "19710165" ;
+    iao:0100001 ictv:19911585 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710023 .
+
+ictv:19710166 a owl:Class ;
+    rdfs:label "Cucumber mosaic virus" ;
+    ns1:ictv_id "19710166" ;
+    iao:0100001 ictv:19911615 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710024 .
+
+ictv:19710168 a owl:Class ;
+    rdfs:label "Tomato aspermy virus" ;
+    ns1:ictv_id "19710168" ;
+    iao:0100001 ictv:19911617 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710024 .
 
 ictv:19710169 a owl:Class ;
     rdfs:label "Bombyx mori cytoplasmic polyhedrosis virus" ;
@@ -768,6 +844,48 @@ ictv:19710216 a owl:Class ;
     iao:0100001 ictv:19910707 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710031 .
+
+ictv:19710217 a owl:Class ;
+    rdfs:label "Arabis mosaic virus" ;
+    ns1:ictv_id "19710217" ;
+    iao:0100001 ictv:19911704 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710032 .
+
+ictv:19710218 a owl:Class ;
+    rdfs:label "Grapevine fanleaf virus" ;
+    ns1:ictv_id "19710218" ;
+    iao:0100001 ictv:19911718 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710032 .
+
+ictv:19710219 a owl:Class ;
+    rdfs:label "Raspberry ringspot virus" ;
+    ns1:ictv_id "19710219" ;
+    iao:0100001 ictv:19911728 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710032 .
+
+ictv:19710221 a owl:Class ;
+    rdfs:label "Tobacco ringspot virus" ;
+    ns1:ictv_id "19710221" ;
+    iao:0100001 ictv:19911729 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710032 .
+
+ictv:19710222 a owl:Class ;
+    rdfs:label "Tomato black ring virus" ;
+    ns1:ictv_id "19710222" ;
+    iao:0100001 ictv:19911730 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710032 .
+
+ictv:19710223 a owl:Class ;
+    rdfs:label "Tomato ringspot virus" ;
+    ns1:ictv_id "19710223" ;
+    iao:0100001 ictv:19911731 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710032 .
 
 ictv:19710224 a owl:Class ;
     rdfs:label "Influenza virus B" ;
@@ -898,8 +1016,6 @@ ictv:19710245 a owl:Class ;
     rdfs:label "Cactus virus X" ;
     ns1:ictv_id "19710245" ;
     iao:0100001 ictv:19911736 ;
-    oio:hasDbXref "genbank:AF308158",
-        "refseq:NC_002815" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710038 .
 
@@ -907,8 +1023,6 @@ ictv:19710246 a owl:Class ;
     rdfs:label "Clover yellow mosaic virus" ;
     ns1:ictv_id "19710246" ;
     iao:0100001 ictv:19911737 ;
-    oio:hasDbXref "genbank:D29630",
-        "refseq:NC_001753" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710038 .
 
@@ -916,8 +1030,6 @@ ictv:19710247 a owl:Class ;
     rdfs:label "Hydrangea ringspot virus" ;
     ns1:ictv_id "19710247" ;
     iao:0100001 ictv:19911741 ;
-    oio:hasDbXref "genbank:AY707100",
-        "refseq:NC_006943" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710038 .
 
@@ -925,8 +1037,6 @@ ictv:19710248 a owl:Class ;
     rdfs:label "Potato virus X" ;
     ns1:ictv_id "19710248" ;
     iao:0100001 ictv:19911749 ;
-    oio:hasDbXref "genbank:D00344",
-        "refseq:NC_011620" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710038 .
 
@@ -934,8 +1044,6 @@ ictv:19710249 a owl:Class ;
     rdfs:label "White clover mosaic virus" ;
     ns1:ictv_id "19710249" ;
     iao:0100001 ictv:19911752 ;
-    oio:hasDbXref "genbank:X06728",
-        "refseq:NC_003820" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710038 .
 
@@ -943,7 +1051,6 @@ ictv:19710250 a owl:Class ;
     rdfs:label "Bean common mosaic virus" ;
     ns1:ictv_id "19710250" ;
     iao:0100001 ictv:19911758 ;
-    oio:hasDbXref "genbank:U34972" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -951,7 +1058,6 @@ ictv:19710251 a owl:Class ;
     rdfs:label "Bean yellow mosaic virus" ;
     ns1:ictv_id "19710251" ;
     iao:0100001 ictv:19911759 ;
-    oio:hasDbXref "genbank:U47033" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -959,8 +1065,6 @@ ictv:19710252 a owl:Class ;
     rdfs:label "Beet mosaic virus" ;
     ns1:ictv_id "19710252" ;
     iao:0100001 ictv:19911760 ;
-    oio:hasDbXref "genbank:AY206394",
-        "refseq:NC_005304" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -968,8 +1072,6 @@ ictv:19710254 a owl:Class ;
     rdfs:label "Colombian datura virus" ;
     ns1:ictv_id "19710254" ;
     iao:0100001 ictv:19911769 ;
-    oio:hasDbXref "genbank:JQ801448",
-        "refseq:NC_020072" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -977,8 +1079,6 @@ ictv:19710255 a owl:Class ;
     rdfs:label "Cowpea aphid-borne mosaic virus" ;
     ns1:ictv_id "19710255" ;
     iao:0100001 ictv:19911771 ;
-    oio:hasDbXref "genbank:AF348210",
-        "refseq:NC_004013" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -993,7 +1093,6 @@ ictv:19710258 a owl:Class ;
     rdfs:label "Potato virus A" ;
     ns1:ictv_id "19710258" ;
     iao:0100001 ictv:19911806 ;
-    oio:hasDbXref "genbank:AF543212" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -1001,8 +1100,6 @@ ictv:19710259 a owl:Class ;
     rdfs:label "Potato virus Y" ;
     ns1:ictv_id "19710259" ;
     iao:0100001 ictv:19911808 ;
-    oio:hasDbXref "genbank:X12456",
-        "refseq:NC_001616" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -1010,8 +1107,6 @@ ictv:19710260 a owl:Class ;
     rdfs:label "Soybean mosaic virus" ;
     ns1:ictv_id "19710260" ;
     iao:0100001 ictv:19911810 ;
-    oio:hasDbXref "genbank:D00507",
-        "refseq:NC_002634" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -1019,8 +1114,6 @@ ictv:19710261 a owl:Class ;
     rdfs:label "Tobacco etch virus" ;
     ns1:ictv_id "19710261" ;
     iao:0100001 ictv:19911816 ;
-    oio:hasDbXref "genbank:M11458",
-        "refseq:NC_001555" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -1335,8 +1428,6 @@ ictv:19710317 a owl:Class ;
     rdfs:label "Cucumber green mottle mosaic virus" ;
     ns1:ictv_id "19710317" ;
     iao:0100001 ictv:19911841 ;
-    oio:hasDbXref "genbank:D12505",
-        "refseq:NC_001801" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710045 .
 
@@ -1344,8 +1435,6 @@ ictv:19710318 a owl:Class ;
     rdfs:label "Odontoglossum ringspot virus" ;
     ns1:ictv_id "19710318" ;
     iao:0100001 ictv:19911844 ;
-    oio:hasDbXref "genbank:X82130",
-        "refseq:NC_001728" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710045 .
 
@@ -1353,8 +1442,6 @@ ictv:19710319 a owl:Class ;
     rdfs:label "Ribgrass mosaic virus" ;
     ns1:ictv_id "19710319" ;
     iao:0100001 ictv:19911846 ;
-    oio:hasDbXref "genbank:HQ667979",
-        "refseq:NC_002792" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710045 .
 
@@ -1376,8 +1463,6 @@ ictv:19710322 a owl:Class ;
     rdfs:label "Tobacco mosaic virus" ;
     ns1:ictv_id "19710322" ;
     iao:0100001 ictv:19911850 ;
-    oio:hasDbXref "genbank:V01408",
-        "refseq:NC_001367" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710045 .
 
@@ -1385,8 +1470,6 @@ ictv:19710323 a owl:Class ;
     rdfs:label "Tomato mosaic virus" ;
     ns1:ictv_id "19710323" ;
     iao:0100001 ictv:19911851 ;
-    oio:hasDbXref "genbank:AF332868",
-        "refseq:NC_002692" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710045 .
 
@@ -1397,12 +1480,24 @@ ictv:19710324 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710046 .
 
+ictv:19710326 a owl:Class ;
+    rdfs:label "Pea early-browning virus" ;
+    ns1:ictv_id "19710326" ;
+    iao:0100001 ictv:19911853 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710047 .
+
+ictv:19710327 a owl:Class ;
+    rdfs:label "Tobacco rattle virus" ;
+    ns1:ictv_id "19710327" ;
+    iao:0100001 ictv:19911855 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710047 .
+
 ictv:19710328 a owl:Class ;
     rdfs:label "Artichoke mottled crinkle virus" ;
     ns1:ictv_id "19710328" ;
     iao:0100001 ictv:19911856 ;
-    oio:hasDbXref "genbank:X62493",
-        "refseq:NC_001339" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710048 .
 
@@ -1410,8 +1505,6 @@ ictv:19710329 a owl:Class ;
     rdfs:label "Carnation Italian ringspot virus" ;
     ns1:ictv_id "19710329" ;
     iao:0100001 ictv:19911857 ;
-    oio:hasDbXref "genbank:X85215",
-        "refseq:NC_003500" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710048 .
 
@@ -1426,10 +1519,15 @@ ictv:19710331 a owl:Class ;
     rdfs:label "Tomato bushy stunt virus" ;
     ns1:ictv_id "19710331" ;
     iao:0100001 ictv:19911867 ;
-    oio:hasDbXref "genbank:M21958",
-        "refseq:NC_001554" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710048 .
+
+ictv:19710332 a owl:Class ;
+    rdfs:label "Tomato spotted wilt virus" ;
+    ns1:ictv_id "19710332" ;
+    iao:0100001 ictv:19910693 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19900109 .
 
 ictv:19710333 a owl:Class ;
     rdfs:label "Andean potato latent virus" ;
@@ -1448,8 +1546,6 @@ ictv:19710335 a owl:Class ;
     rdfs:label "Cacao yellow mosaic virus" ;
     ns1:ictv_id "19710335" ;
     iao:0100001 ictv:19911871 ;
-    oio:hasDbXref "genbank:AF195000",
-        "refseq:NC_002588" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710050 .
 
@@ -1457,8 +1553,6 @@ ictv:19710336 a owl:Class ;
     rdfs:label "Dulcamara mottle virus" ;
     ns1:ictv_id "19710336" ;
     iao:0100001 ictv:19911874 ;
-    oio:hasDbXref "genbank:AF098523",
-        "refseq:NC_001977" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710050 .
 
@@ -1466,8 +1560,6 @@ ictv:19710337 a owl:Class ;
     rdfs:label "Eggplant mosaic virus" ;
     ns1:ictv_id "19710337" ;
     iao:0100001 ictv:19911875 ;
-    oio:hasDbXref "genbank:D00637",
-        "refseq:NC_001746" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710050 .
 
@@ -1489,8 +1581,6 @@ ictv:19710340 a owl:Class ;
     rdfs:label "Wild cucumber mosaic virus" ;
     ns1:ictv_id "19710340" ;
     iao:0100001 ictv:19911887 ;
-    oio:hasDbXref "genbank:AJ271595",
-        "refseq:NC_002164" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710050 .
 
@@ -1612,6 +1702,13 @@ ictv:19750341 a owl:Class ;
     iao:0100001 ictv:19911576 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750081 .
+
+ictv:19750354 a owl:Class ;
+    rdfs:label "Barley stripe mosaic virus" ;
+    ns1:ictv_id "19750354" ;
+    iao:0100001 ictv:19911666 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19750086 .
 
 ictv:19750358 a owl:Class ;
     rdfs:label "Barley yellow dwarf virus" ;
@@ -3468,6 +3565,13 @@ ictv:19760500 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19900163 .
 
+ictv:19760511 a owl:Class ;
+    rdfs:label "Maize rough dwarf virus" ;
+    ns1:ictv_id "19760511" ;
+    iao:0100001 ictv:19911398 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19780095 .
+
 ictv:19760512 a owl:Class ;
     rdfs:label "Rice black-streaked dwarf virus" ;
     ns1:ictv_id "19760512" ;
@@ -3475,6 +3579,27 @@ ictv:19760512 a owl:Class ;
     iao:0100001 ictv:19911398 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19780095 .
+
+ictv:19760513 a owl:Class ;
+    rdfs:label "Rice dwarf virus" ;
+    ns1:ictv_id "19760513" ;
+    iao:0100001 ictv:19911421 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19780097 .
+
+ictv:19760514 a owl:Class ;
+    rdfs:label "Fiji disease virus" ;
+    ns1:ictv_id "19760514" ;
+    iao:0100001 ictv:19911397 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19780095 .
+
+ictv:19760515 a owl:Class ;
+    rdfs:label "Wound tumor virus" ;
+    ns1:ictv_id "19760515" ;
+    iao:0100001 ictv:19911423 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19780097 .
 
 ictv:19760524 a owl:Class ;
     rdfs:label "Reovirus type 1" ;
@@ -3626,8 +3751,6 @@ ictv:19760552 a owl:Class ;
     rdfs:label "Lettuce necrotic yellows virus" ;
     ns1:ictv_id "19760552" ;
     iao:0100001 ictv:19910275 ;
-    oio:hasDbXref "genbank:AJ867584",
-        "refseq:NC_007642" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19820133 .
 
@@ -3635,8 +3758,6 @@ ictv:19760553 a owl:Class ;
     rdfs:label "Potato yellow dwarf virus" ;
     ns1:ictv_id "19760553" ;
     iao:0100001 ictv:19910282 ;
-    oio:hasDbXref "genbank:GU734660",
-        "refseq:NC_016136" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19820134 .
 
@@ -3838,8 +3959,6 @@ ictv:19760655 a owl:Class ;
     rdfs:label "Cowpea mild mottle virus" ;
     ns1:ictv_id "19760655" ;
     iao:0100001 ictv:19911526 ;
-    oio:hasDbXref "genbank:HQ184471",
-        "refseq:NC_014730" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710020 .
 
@@ -3847,8 +3966,6 @@ ictv:19760656 a owl:Class ;
     rdfs:label "Lily symptomless virus" ;
     ns1:ictv_id "19760656" ;
     iao:0100001 ictv:19911536 ;
-    oio:hasDbXref "genbank:AJ516059",
-        "refseq:NC_005138" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710020 .
 
@@ -3856,8 +3973,6 @@ ictv:19760662 a owl:Class ;
     rdfs:label "Carnation etched ring virus" ;
     ns1:ictv_id "19760662" ;
     iao:0100001 ictv:19911558 ;
-    oio:hasDbXref "genbank:X04658",
-        "refseq:NC_003498" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710021 .
 
@@ -3879,8 +3994,6 @@ ictv:19760668 a owl:Class ;
     rdfs:label "Citrus tristeza virus" ;
     ns1:ictv_id "19760668" ;
     iao:0100001 ictv:19911572 ;
-    oio:hasDbXref "genbank:U16304",
-        "refseq:NC_001661" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750081 .
 
@@ -3912,6 +4025,55 @@ ictv:19760676 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710023 .
 
+ictv:19760682 a owl:Class ;
+    rdfs:label "Peanut stunt virus" ;
+    ns1:ictv_id "19760682" ;
+    iao:0100001 ictv:19911616 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710024 .
+
+ictv:19760686 a owl:Class ;
+    rdfs:label "Lychnis ringspot virus" ;
+    ns1:ictv_id "19760686" ;
+    iao:0100001 ictv:19911667 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19750086 .
+
+ictv:19760687 a owl:Class ;
+    rdfs:label "Poa semilatent virus" ;
+    ns1:ictv_id "19760687" ;
+    iao:0100001 ictv:19911668 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19750086 .
+
+ictv:19760691 a owl:Class ;
+    rdfs:label "Citrus leaf rugose virus" ;
+    ns1:ictv_id "19760691" ;
+    iao:0100001 ictv:19911674 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19750087 .
+
+ictv:19760692 a owl:Class ;
+    rdfs:label "Citrus variegation virus" ;
+    ns1:ictv_id "19760692" ;
+    iao:0100001 ictv:19911675 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19750087 .
+
+ictv:19760694 a owl:Class ;
+    rdfs:label "Elm mottle virus" ;
+    ns1:ictv_id "19760694" ;
+    iao:0100001 ictv:19911677 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19750087 .
+
+ictv:19760700 a owl:Class ;
+    rdfs:label "Tulare apple mosaic virus" ;
+    ns1:ictv_id "19760700" ;
+    iao:0100001 ictv:19911688 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19750087 .
+
 ictv:19760702 a owl:Class ;
     rdfs:label "Phage PA2" ;
     ns1:ictv_id "19760702" ;
@@ -3937,8 +4099,6 @@ ictv:19760706 a owl:Class ;
     rdfs:label "Beet western yellows virus" ;
     ns1:ictv_id "19760706" ;
     iao:0100001 ictv:19911691 ;
-    oio:hasDbXref "genbank:AF473561",
-        "refseq:NC_004756" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750090 .
 
@@ -3946,8 +4106,6 @@ ictv:19760707 a owl:Class ;
     rdfs:label "Soybean dwarf virus" ;
     ns1:ictv_id "19760707" ;
     iao:0100001 ictv:19911696 ;
-    oio:hasDbXref "genbank:AB038147",
-        "refseq:NC_003056" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750090 .
 
@@ -3962,6 +4120,13 @@ ictv:19760711 a owl:Class ;
     rdfs:label "Cocoa necrosis virus" ;
     ns1:ictv_id "19760711" ;
     iao:0100001 ictv:19911713 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710032 .
+
+ictv:19760712 a owl:Class ;
+    rdfs:label "Grapevine chrome mosaic virus" ;
+    ns1:ictv_id "19760712" ;
+    iao:0100001 ictv:19911717 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710032 .
 
@@ -4129,8 +4294,6 @@ ictv:19760742 a owl:Class ;
 ictv:19760745 a owl:Class ;
     rdfs:label "Cassava common mosaic virus" ;
     ns1:ictv_id "19760745" ;
-    oio:hasDbXref "genbank:U23414",
-        "refseq:NC_001658" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710038 .
 
@@ -4138,8 +4301,6 @@ ictv:19760747 a owl:Class ;
     rdfs:label "Cymbidium mosaic virus" ;
     ns1:ictv_id "19760747" ;
     iao:0100001 ictv:19911739 ;
-    oio:hasDbXref "genbank:U62963",
-        "refseq:NC_001812" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710038 .
 
@@ -4147,8 +4308,6 @@ ictv:19760749 a owl:Class ;
     rdfs:label "Narcissus mosaic virus" ;
     ns1:ictv_id "19760749" ;
     iao:0100001 ictv:19911743 ;
-    oio:hasDbXref "genbank:D13747",
-        "refseq:NC_001441" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710038 .
 
@@ -4156,8 +4315,6 @@ ictv:19760750 a owl:Class ;
     rdfs:label "Papaya mosaic virus" ;
     ns1:ictv_id "19760750" ;
     iao:0100001 ictv:19911745 ;
-    oio:hasDbXref "genbank:D13957",
-        "refseq:NC_001748" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710038 .
 
@@ -4165,7 +4322,6 @@ ictv:19760756 a owl:Class ;
     rdfs:label "Bidens mottle virus" ;
     ns1:ictv_id "19760756" ;
     iao:0100001 ictv:19911761 ;
-    oio:hasDbXref "genbank:EU250210" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4180,8 +4336,6 @@ ictv:19760758 a owl:Class ;
     rdfs:label "Celery mosaic virus" ;
     ns1:ictv_id "19760758" ;
     iao:0100001 ictv:19911766 ;
-    oio:hasDbXref "genbank:HQ676607",
-        "refseq:NC_015393" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4189,8 +4343,6 @@ ictv:19760760 a owl:Class ;
     rdfs:label "Cocksfoot streak virus" ;
     ns1:ictv_id "19760760" ;
     iao:0100001 ictv:19911768 ;
-    oio:hasDbXref "genbank:AF499738",
-        "refseq:NC_003742" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4198,8 +4350,6 @@ ictv:19760763 a owl:Class ;
     rdfs:label "Dasheen mosaic virus" ;
     ns1:ictv_id "19760763" ;
     iao:0100001 ictv:19911773 ;
-    oio:hasDbXref "genbank:AJ298033",
-        "refseq:NC_003537" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4207,8 +4357,6 @@ ictv:19760765 a owl:Class ;
     rdfs:label "Hippeastrum mosaic virus" ;
     ns1:ictv_id "19760765" ;
     iao:0100001 ictv:19911782 ;
-    oio:hasDbXref "genbank:JQ395040",
-        "refseq:NC_017967" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4223,7 +4371,6 @@ ictv:19760767 a owl:Class ;
     rdfs:label "Lettuce mosaic virus" ;
     ns1:ictv_id "19760767" ;
     iao:0100001 ictv:19911788 ;
-    oio:hasDbXref "genbank:X97704" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4238,8 +4385,6 @@ ictv:19760769 a owl:Class ;
     rdfs:label "Onion yellow dwarf virus" ;
     ns1:ictv_id "19760769" ;
     iao:0100001 ictv:19911793 ;
-    oio:hasDbXref "genbank:AJ510223",
-        "refseq:NC_005029" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4247,7 +4392,6 @@ ictv:19760770 a owl:Class ;
     rdfs:label "Papaya ringspot virus" ;
     ns1:ictv_id "19760770" ;
     iao:0100001 ictv:19911795 ;
-    oio:hasDbXref "genbank:AY010722" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4269,8 +4413,6 @@ ictv:19760774 a owl:Class ;
     rdfs:label "Pea seed-borne mosaic virus" ;
     ns1:ictv_id "19760774" ;
     iao:0100001 ictv:19911798 ;
-    oio:hasDbXref "genbank:D10930",
-        "refseq:NC_001671" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4278,8 +4420,6 @@ ictv:19760775 a owl:Class ;
     rdfs:label "Peanut mottle virus" ;
     ns1:ictv_id "19760775" ;
     iao:0100001 ictv:19911799 ;
-    oio:hasDbXref "genbank:AF023848",
-        "refseq:NC_002600" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4287,7 +4427,6 @@ ictv:19760776 a owl:Class ;
     rdfs:label "Pepper mottle virus" ;
     ns1:ictv_id "19760776" ;
     iao:0100001 ictv:19911801 ;
-    oio:hasDbXref "genbank:AF501591" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4295,8 +4434,6 @@ ictv:19760777 a owl:Class ;
     rdfs:label "Pepper veinal mottle virus" ;
     ns1:ictv_id "19760777" ;
     iao:0100001 ictv:19911803 ;
-    oio:hasDbXref "genbank:DQ645484",
-        "refseq:NC_011918" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4304,7 +4441,6 @@ ictv:19760778 a owl:Class ;
     rdfs:label "Pokeweed mosaic virus" ;
     ns1:ictv_id "19760778" ;
     iao:0100001 ictv:19911805 ;
-    oio:hasDbXref "genbank:JQ609095" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4312,8 +4448,6 @@ ictv:19760782 a owl:Class ;
     rdfs:label "Sugarcane mosaic virus" ;
     ns1:ictv_id "19760782" ;
     iao:0100001 ictv:19911812 ;
-    oio:hasDbXref "genbank:AJ297628",
-        "refseq:NC_003398" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -4608,8 +4742,6 @@ ictv:19760836 a owl:Class ;
     rdfs:label "Frangipani mosaic virus" ;
     ns1:ictv_id "19760836" ;
     iao:0100001 ictv:19911842 ;
-    oio:hasDbXref "genbank:HM026454",
-        "refseq:NC_014546" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710045 .
 
@@ -4624,8 +4756,6 @@ ictv:19760854 a owl:Class ;
     rdfs:label "Clitoria yellow vein virus" ;
     ns1:ictv_id "19760854" ;
     iao:0100001 ictv:19911872 ;
-    oio:hasDbXref "genbank:AY789137",
-        "refseq:NC_007609" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710050 .
 
@@ -4633,8 +4763,6 @@ ictv:19760855 a owl:Class ;
     rdfs:label "Desmodium yellow mottle virus" ;
     ns1:ictv_id "19760855" ;
     iao:0100001 ictv:19911873 ;
-    oio:hasDbXref "genbank:J04374",
-        "refseq:NC_001480" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710050 .
 
@@ -4649,8 +4777,6 @@ ictv:19760859 a owl:Class ;
     rdfs:label "Kennedya yellow mosaic virus" ;
     ns1:ictv_id "19760859" ;
     iao:0100001 ictv:19911877 ;
-    oio:hasDbXref "genbank:AY751778",
-        "refseq:NC_011538" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710050 .
 
@@ -4672,8 +4798,6 @@ ictv:19760863 a owl:Class ;
     rdfs:label "Plantago mottle virus" ;
     ns1:ictv_id "19760863" ;
     iao:0100001 ictv:19911883 ;
-    oio:hasDbXref "genbank:X07441",
-        "refseq:NC_004063" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710050 .
 
@@ -4716,8 +4840,6 @@ ictv:19780782 a owl:Class ;
     rdfs:label "Maize chlorotic dwarf virus" ;
     ns1:ictv_id "19780782" ;
     iao:0100001 ictv:19911698 ;
-    oio:hasDbXref "genbank:U67839",
-        "refseq:NC_003626" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19780126 .
 
@@ -4725,8 +4847,6 @@ ictv:19780836 a owl:Class ;
     rdfs:label "Southern bean mosaic virus" ;
     ns1:ictv_id "19780836" ;
     iao:0100001 ictv:19911833 ;
-    oio:hasDbXref "genbank:AF055887",
-        "refseq:NC_004060" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19780131 .
 
@@ -6176,6 +6296,13 @@ ictv:19790778 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19780095 .
 
+ictv:19790780 a owl:Class ;
+    rdfs:label "Oat sterile dwarf virus" ;
+    ns1:ictv_id "19790780" ;
+    iao:0100001 ictv:19911399 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19780095 .
+
 ictv:19790781 a owl:Class ;
     rdfs:label "Pangola stunt virus" ;
     ns1:ictv_id "19790781" ;
@@ -6229,8 +6356,6 @@ ictv:19790840 a owl:Class ;
     rdfs:label "Eggplant mottled dwarf virus" ;
     ns1:ictv_id "19790840" ;
     iao:0100001 ictv:19910281 ;
-    oio:hasDbXref "genbank:KJ082087",
-        "refseq:NC_025389" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19820134 .
 
@@ -6238,8 +6363,6 @@ ictv:19790844 a owl:Class ;
     rdfs:label "Sonchus yellow net virus" ;
     ns1:ictv_id "19790844" ;
     iao:0100001 ictv:19910283 ;
-    oio:hasDbXref "genbank:L32603",
-        "refseq:NC_001615" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19820134 .
 
@@ -6373,8 +6496,6 @@ ictv:19790964 a owl:Class ;
     rdfs:label "Poplar mosaic virus" ;
     ns1:ictv_id "19790964" ;
     iao:0100001 ictv:19911543 ;
-    oio:hasDbXref "genbank:AY505475",
-        "refseq:NC_005343" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710020 .
 
@@ -6390,6 +6511,13 @@ ictv:19790976 a owl:Class ;
     ns1:ictv_id "19790976" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750081 .
+
+ictv:19790979 a owl:Class ;
+    rdfs:label "Andean potato mottle virus" ;
+    ns1:ictv_id "19790979" ;
+    iao:0100001 ictv:19911581 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710023 .
 
 ictv:19790993 a owl:Class ;
     rdfs:label "Bean golden mosaic virus" ;
@@ -6412,13 +6540,18 @@ ictv:19790995 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870182 .
 
+ictv:19791009 a owl:Class ;
+    rdfs:label "Lilac ring mottle virus" ;
+    ns1:ictv_id "19791009" ;
+    iao:0100001 ictv:19911682 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19750087 .
+
 ictv:19791019 a owl:Class ;
     rdfs:label "Beet mild yellowing virus" ;
     ns1:ictv_id "19791019" ;
     iao:0000225 iao:0000227 ;
     iao:0100001 ictv:19911691 ;
-    oio:hasDbXref "genbank:X83110",
-        "refseq:NC_003491" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750090 .
 
@@ -6466,8 +6599,6 @@ ictv:19791027 a owl:Class ;
     ns1:ictv_id "19791027" ;
     iao:0000225 iao:0000227 ;
     iao:0100001 ictv:19911691 ;
-    oio:hasDbXref "genbank:X13063",
-        "refseq:NC_003743" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750090 .
 
@@ -6492,10 +6623,31 @@ ictv:19791036 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710032 .
 
+ictv:19791037 a owl:Class ;
+    rdfs:label "Peach rosette mosaic virus" ;
+    ns1:ictv_id "19791037" ;
+    iao:0100001 ictv:19911725 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710032 .
+
+ictv:19791038 a owl:Class ;
+    rdfs:label "Potato black ringspot virus" ;
+    ns1:ictv_id "19791038" ;
+    iao:0100001 ictv:19911726 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710032 .
+
 ictv:19791044 a owl:Class ;
     rdfs:label "Penicillium brevicompactum virus" ;
     ns1:ictv_id "19791044" ;
     iao:0100001 ictv:19911019 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19790136 .
+
+ictv:19791045 a owl:Class ;
+    rdfs:label "Penicillium chrysogenum virus" ;
+    ns1:ictv_id "19791045" ;
+    iao:0100001 ictv:19911020 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19790136 .
 
@@ -6506,12 +6658,17 @@ ictv:19791046 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19790136 .
 
+ictv:19791047 a owl:Class ;
+    rdfs:label "Penicillium stoloniferum virus S" ;
+    ns1:ictv_id "19791047" ;
+    iao:0100001 ictv:19911017 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19790137 .
+
 ictv:19791054 a owl:Class ;
     rdfs:label "Nerine virus X" ;
     ns1:ictv_id "19791054" ;
     iao:0100001 ictv:19911744 ;
-    oio:hasDbXref "genbank:AB219105",
-        "refseq:NC_007679" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710038 .
 
@@ -6519,8 +6676,6 @@ ictv:19791056 a owl:Class ;
     rdfs:label "Pepino mosaic virus" ;
     ns1:ictv_id "19791056" ;
     iao:0100001 ictv:19911746 ;
-    oio:hasDbXref "genbank:AF484251",
-        "refseq:NC_004067" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710038 .
 
@@ -6535,7 +6690,6 @@ ictv:19791085 a owl:Class ;
     rdfs:label "Plum pox virus" ;
     ns1:ictv_id "19791085" ;
     iao:0100001 ictv:19911804 ;
-    oio:hasDbXref "genbank:X16415" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -6543,8 +6697,6 @@ ictv:19791093 a owl:Class ;
     rdfs:label "Turnip mosaic virus" ;
     ns1:ictv_id "19791093" ;
     iao:0100001 ictv:19911821 ;
-    oio:hasDbXref "genbank:AF169561",
-        "refseq:NC_002509" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -7169,6 +7321,13 @@ ictv:19810594 a owl:Class ;
     iao:0100001 ictv:19911038 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710035 .
+
+ictv:19811120 a owl:Class ;
+    rdfs:label "Carnation ringspot virus" ;
+    ns1:ictv_id "19811120" ;
+    iao:0100001 ictv:19911618 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19810149 .
 
 ictv:19820251 a owl:Class ;
     rdfs:label "Apanteles melanoscelus virus" ;
@@ -7827,8 +7986,6 @@ ictv:19821153 a owl:Class ;
     rdfs:label "Hop latent virus" ;
     ns1:ictv_id "19821153" ;
     iao:0100001 ictv:19911532 ;
-    oio:hasDbXref "genbank:AB032469",
-        "refseq:NC_002552" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710020 .
 
@@ -7836,8 +7993,6 @@ ictv:19821154 a owl:Class ;
     rdfs:label "Hop mosaic virus" ;
     ns1:ictv_id "19821154" ;
     iao:0100001 ictv:19911533 ;
-    oio:hasDbXref "genbank:EU527979",
-        "refseq:NC_010538" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710020 .
 
@@ -7859,8 +8014,6 @@ ictv:19821160 a owl:Class ;
     rdfs:label "Nerine latent virus" ;
     ns1:ictv_id "19821160" ;
     iao:0100001 ictv:19911540 ;
-    oio:hasDbXref "genbank:AM182569",
-        "refseq:NC_008552" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710020 .
 
@@ -7868,7 +8021,6 @@ ictv:19821162 a owl:Class ;
     rdfs:label "Pea streak virus" ;
     ns1:ictv_id "19821162" ;
     iao:0100001 ictv:19911542 ;
-    oio:hasDbXref "genbank:KP784454" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710020 .
 
@@ -7884,8 +8036,6 @@ ictv:19821168 a owl:Class ;
     rdfs:label "Shallot latent virus" ;
     ns1:ictv_id "19821168" ;
     iao:0100001 ictv:19911547 ;
-    oio:hasDbXref "genbank:AJ292226",
-        "refseq:NC_003557" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710020 .
 
@@ -7893,8 +8043,6 @@ ictv:19821172 a owl:Class ;
     rdfs:label "Figwort mosaic virus" ;
     ns1:ictv_id "19821172" ;
     iao:0100001 ictv:19911561 ;
-    oio:hasDbXref "genbank:X06166",
-        "refseq:NC_003554" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710021 .
 
@@ -7902,8 +8050,6 @@ ictv:19821173 a owl:Class ;
     rdfs:label "Mirabilis mosaic virus" ;
     ns1:ictv_id "19821173" ;
     iao:0100001 ictv:19911563 ;
-    oio:hasDbXref "genbank:AF454635",
-        "refseq:NC_004036" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710021 .
 
@@ -7911,8 +8057,6 @@ ictv:19821174 a owl:Class ;
     rdfs:label "Strawberry vein banding virus" ;
     ns1:ictv_id "19821174" ;
     iao:0100001 ictv:19911566 ;
-    oio:hasDbXref "genbank:X97304",
-        "refseq:NC_001725" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710021 .
 
@@ -7927,8 +8071,6 @@ ictv:19821178 a owl:Class ;
     rdfs:label "Carrot yellow leaf virus" ;
     ns1:ictv_id "19821178" ;
     iao:0100001 ictv:19911571 ;
-    oio:hasDbXref "genbank:FJ869862",
-        "refseq:NC_013007" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750081 .
 
@@ -7938,12 +8080,33 @@ ictv:19821182 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750081 .
 
+ictv:19821192 a owl:Class ;
+    rdfs:label "Cowpea severe mosaic virus" ;
+    ns1:ictv_id "19821192" ;
+    iao:0100001 ictv:19911587 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710023 .
+
 ictv:19821193 a owl:Class ;
     rdfs:label "Glycine mosaic virus" ;
     ns1:ictv_id "19821193" ;
     iao:0100001 ictv:19911588 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710023 .
+
+ictv:19821202 a owl:Class ;
+    rdfs:label "Red clover necrotic mosaic virus" ;
+    ns1:ictv_id "19821202" ;
+    iao:0100001 ictv:19911619 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19810149 .
+
+ictv:19821203 a owl:Class ;
+    rdfs:label "Sweet clover necrotic mosaic virus" ;
+    ns1:ictv_id "19821203" ;
+    iao:0100001 ictv:19911620 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19810149 .
 
 ictv:19821204 a owl:Class ;
     rdfs:label "Gaeumannomyces graminis virus 019/6-A" ;
@@ -7966,6 +8129,13 @@ ictv:19821210 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870183 .
 
+ictv:19821214 a owl:Class ;
+    rdfs:label "Apple mosaic virus" ;
+    ns1:ictv_id "19821214" ;
+    iao:0100001 ictv:19911670 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19750087 .
+
 ictv:19821219 a owl:Class ;
     rdfs:label "North American plum line pattern virus" ;
     ns1:ictv_id "19821219" ;
@@ -7973,12 +8143,38 @@ ictv:19821219 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750087 .
 
+ictv:19821220 a owl:Class ;
+    rdfs:label "Prune dwarf virus" ;
+    ns1:ictv_id "19821220" ;
+    iao:0100001 ictv:19911684 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19750087 .
+
+ictv:19821221 a owl:Class ;
+    rdfs:label "Prunus necrotic ringspot virus" ;
+    ns1:ictv_id "19821221" ;
+    iao:0100001 ictv:19911685 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19750087 .
+
+ictv:19821222 a owl:Class ;
+    rdfs:label "Spinach latent virus" ;
+    ns1:ictv_id "19821222" ;
+    iao:0100001 ictv:19911686 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19750087 .
+
+ictv:19821223 a owl:Class ;
+    rdfs:label "Tobacco streak virus" ;
+    ns1:ictv_id "19821223" ;
+    iao:0100001 ictv:19911687 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19750087 .
+
 ictv:19821232 a owl:Class ;
     rdfs:label "Carrot red leaf virus" ;
     ns1:ictv_id "19821232" ;
     iao:0100001 ictv:19911692 ;
-    oio:hasDbXref "genbank:AY695933",
-        "refseq:NC_006265" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750090 .
 
@@ -8047,6 +8243,13 @@ ictv:19821253 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710032 .
 
+ictv:19821254 a owl:Class ;
+    rdfs:label "Grapevine Bulgarian latent virus" ;
+    ns1:ictv_id "19821254" ;
+    iao:0100001 ictv:19911716 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19710032 .
+
 ictv:19821257 a owl:Class ;
     rdfs:label "Hibiscus latent ringspot virus" ;
     ns1:ictv_id "19821257" ;
@@ -8078,8 +8281,6 @@ ictv:19821278 a owl:Class ;
     rdfs:label "Foxtail mosaic virus" ;
     ns1:ictv_id "19821278" ;
     iao:0100001 ictv:19911740 ;
-    oio:hasDbXref "genbank:M62730",
-        "refseq:NC_001483" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710038 .
 
@@ -8087,8 +8288,6 @@ ictv:19821280 a owl:Class ;
     rdfs:label "Lily virus X" ;
     ns1:ictv_id "19821280" ;
     iao:0100001 ictv:19911742 ;
-    oio:hasDbXref "genbank:AJ633822",
-        "refseq:NC_007192" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710038 .
 
@@ -8132,8 +8331,6 @@ ictv:19821299 a owl:Class ;
     rdfs:label "Clover yellow vein virus" ;
     ns1:ictv_id "19821299" ;
     iao:0100001 ictv:19911767 ;
-    oio:hasDbXref "genbank:AB011819",
-        "refseq:NC_003536" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -8169,8 +8366,6 @@ ictv:19821311 a owl:Class ;
     rdfs:label "Leek yellow stripe virus" ;
     ns1:ictv_id "19821311" ;
     iao:0100001 ictv:19911787 ;
-    oio:hasDbXref "genbank:AJ307057",
-        "refseq:NC_004011" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -8178,8 +8373,6 @@ ictv:19821313 a owl:Class ;
     rdfs:label "Narcissus degeneration virus" ;
     ns1:ictv_id "19821313" ;
     iao:0100001 ictv:19911790 ;
-    oio:hasDbXref "genbank:AM182028",
-        "refseq:NC_008824" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -8187,8 +8380,6 @@ ictv:19821322 a owl:Class ;
     rdfs:label "Pepper severe mosaic virus" ;
     ns1:ictv_id "19821322" ;
     iao:0100001 ictv:19911802 ;
-    oio:hasDbXref "genbank:AM181350",
-        "refseq:NC_008393" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -8211,8 +8402,6 @@ ictv:19821336 a owl:Class ;
     rdfs:label "Wisteria vein mosaic virus" ;
     ns1:ictv_id "19821336" ;
     iao:0100001 ictv:19911823 ;
-    oio:hasDbXref "genbank:AY656816",
-        "refseq:NC_007216" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710039 .
 
@@ -8243,8 +8432,6 @@ ictv:19821341 a owl:Class ;
     rdfs:label "Turnip rosette virus" ;
     ns1:ictv_id "19821341" ;
     iao:0100001 ictv:19911836 ;
-    oio:hasDbXref "genbank:AY177608",
-        "refseq:NC_004553" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19780131 .
 
@@ -8252,8 +8439,6 @@ ictv:19821358 a owl:Class ;
     rdfs:label "Cymbidium ringspot virus" ;
     ns1:ictv_id "19821358" ;
     iao:0100001 ictv:19911859 ;
-    oio:hasDbXref "genbank:X15511",
-        "refseq:NC_003532" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710048 .
 
@@ -8261,8 +8446,6 @@ ictv:19821359 a owl:Class ;
     rdfs:label "Eggplant mottled crinkle virus" ;
     ns1:ictv_id "19821359" ;
     iao:0100001 ictv:19911860 ;
-    oio:hasDbXref "genbank:JQ864181",
-        "refseq:NC_023339" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710048 .
 
@@ -8345,10 +8528,15 @@ ictv:19841277 a owl:Class ;
     rdfs:label "Maize rayado fino virus" ;
     ns1:ictv_id "19841277" ;
     iao:0100001 ictv:19911700 ;
-    oio:hasDbXref "genbank:FJ444852",
-        "refseq:NC_013920" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19840174 .
+
+ictv:19841371 a owl:Class ;
+    rdfs:label "Rice stripe virus" ;
+    ns1:ictv_id "19841371" ;
+    iao:0100001 ictv:19911840 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19840182 .
 
 ictv:19870408 a owl:Class ;
     rdfs:label "Girard Point virus" ;
@@ -8441,7 +8629,6 @@ ictv:19871208 a owl:Class ;
     rdfs:label "Thermoproteus tenax virus 1" ;
     ns1:ictv_id "19871208" ;
     iao:0100001 ictv:19910937 ;
-    oio:hasDbXref "genbank:X14855" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870166 .
 
@@ -8449,7 +8636,6 @@ ictv:19871214 a owl:Class ;
     rdfs:label "Apple stem grooving virus" ;
     ns1:ictv_id "19871214" ;
     iao:0100001 ictv:19911520 ;
-    oio:hasDbXref "genbank:AB004063" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870170 .
 
@@ -8457,8 +8643,6 @@ ictv:19871215 a owl:Class ;
     rdfs:label "Potato virus T" ;
     ns1:ictv_id "19871215" ;
     iao:0100001 ictv:19911521 ;
-    oio:hasDbXref "genbank:EU835937",
-        "refseq:NC_011062" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870170 .
 
@@ -8466,8 +8650,6 @@ ictv:19871238 a owl:Class ;
     rdfs:label "Carnation mottle virus" ;
     ns1:ictv_id "19871238" ;
     iao:0100001 ictv:19911549 ;
-    oio:hasDbXref "genbank:AF192772",
-        "refseq:NC_001265" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870172 .
 
@@ -8475,8 +8657,6 @@ ictv:19871239 a owl:Class ;
     rdfs:label "Galinsoga mosaic virus" ;
     ns1:ictv_id "19871239" ;
     iao:0100001 ictv:19911551 ;
-    oio:hasDbXref "genbank:Y13463",
-        "refseq:NC_001818" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870172 .
 
@@ -8490,8 +8670,6 @@ ictv:19871241 a owl:Class ;
     rdfs:label "Hibiscus chlorotic ringspot virus" ;
     ns1:ictv_id "19871241" ;
     iao:0100001 ictv:19911552 ;
-    oio:hasDbXref "genbank:X86448",
-        "refseq:NC_003608" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870172 .
 
@@ -8499,8 +8677,6 @@ ictv:19871242 a owl:Class ;
     rdfs:label "Pelargonium flower break virus" ;
     ns1:ictv_id "19871242" ;
     iao:0100001 ictv:19911554 ;
-    oio:hasDbXref "genbank:AJ514833",
-        "refseq:NC_005286" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870172 .
 
@@ -8508,8 +8684,6 @@ ictv:19871243 a owl:Class ;
     rdfs:label "Saguaro cactus virus" ;
     ns1:ictv_id "19871243" ;
     iao:0100001 ictv:19911555 ;
-    oio:hasDbXref "genbank:U72332",
-        "refseq:NC_001780" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870172 .
 
@@ -8517,10 +8691,22 @@ ictv:19871244 a owl:Class ;
     rdfs:label "Turnip crinkle virus" ;
     ns1:ictv_id "19871244" ;
     iao:0100001 ictv:19911556 ;
-    oio:hasDbXref "genbank:M22445",
-        "refseq:NC_003821" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870172 .
+
+ictv:19871274 a owl:Class ;
+    rdfs:label "Beet cryptic virus 1" ;
+    ns1:ictv_id "19871274" ;
+    iao:0100001 ictv:19911596 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19870176 .
+
+ictv:19871275 a owl:Class ;
+    rdfs:label "Beet cryptic virus 2" ;
+    ns1:ictv_id "19871275" ;
+    iao:0100001 ictv:19911597 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19870176 .
 
 ictv:19871276 a owl:Class ;
     rdfs:label "Carnation cryptic virus 1" ;
@@ -8557,6 +8743,20 @@ ictv:19871280 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870176 .
 
+ictv:19871281 a owl:Class ;
+    rdfs:label "Vicia cryptic virus" ;
+    ns1:ictv_id "19871281" ;
+    iao:0100001 ictv:19911608 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19870176 .
+
+ictv:19871282 a owl:Class ;
+    rdfs:label "White clover cryptic virus 1" ;
+    ns1:ictv_id "19871282" ;
+    iao:0100001 ictv:19911609 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19870176 .
+
 ictv:19871283 a owl:Class ;
     rdfs:label "White clover cryptic virus 3" ;
     ns1:ictv_id "19871283" ;
@@ -8564,10 +8764,66 @@ ictv:19871283 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870176 .
 
+ictv:19871284 a owl:Class ;
+    rdfs:label "Hop trefoil cryptic virus 2" ;
+    ns1:ictv_id "19871284" ;
+    iao:0100001 ictv:19911612 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19870177 .
+
+ictv:19871285 a owl:Class ;
+    rdfs:label "Red clover cryptic virus 2" ;
+    ns1:ictv_id "19871285" ;
+    iao:0100001 ictv:19911613 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19870177 .
+
+ictv:19871286 a owl:Class ;
+    rdfs:label "White clover cryptic virus 2" ;
+    ns1:ictv_id "19871286" ;
+    iao:0100001 ictv:19911614 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19870177 .
+
+ictv:19871293 a owl:Class ;
+    rdfs:label "Broad bean wilt virus 1" ;
+    ns1:ictv_id "19871293" ;
+    iao:0100001 ictv:19911621 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19870180 .
+
+ictv:19871294 a owl:Class ;
+    rdfs:label "Broad bean wilt virus 2" ;
+    ns1:ictv_id "19871294" ;
+    iao:0100001 ictv:19911622 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19870180 .
+
+ictv:19871295 a owl:Class ;
+    rdfs:label "Lamium mild mosaic virus" ;
+    ns1:ictv_id "19871295" ;
+    iao:0100001 ictv:19911623 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19870180 .
+
+ictv:19871296 a owl:Class ;
+    rdfs:label "Peanut clump virus" ;
+    ns1:ictv_id "19871296" ;
+    iao:0100001 ictv:19911625 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19870181 .
+
 ictv:19871297 a owl:Class ;
     rdfs:label "Potato mop top virus" ;
     ns1:ictv_id "19871297" ;
     iao:0100001 ictv:19911626 ;
+    rdfs:isDefinedBy ictv:ictv_1990 ;
+    rdfs:subClassOf ictv:19870181 .
+
+ictv:19871298 a owl:Class ;
+    rdfs:label "Soil-borne wheat mosaic virus" ;
+    ns1:ictv_id "19871298" ;
+    iao:0100001 ictv:19911627 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19870181 .
 
@@ -8638,8 +8894,6 @@ ictv:19871457 a owl:Class ;
     rdfs:label "Grapevine Algerian latent virus" ;
     ns1:ictv_id "19871457" ;
     iao:0100001 ictv:19911861 ;
-    oio:hasDbXref "genbank:AY830918",
-        "refseq:NC_011535" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710048 .
 
@@ -8647,8 +8901,6 @@ ictv:19871458 a owl:Class ;
     rdfs:label "Moroccan pepper virus" ;
     ns1:ictv_id "19871458" ;
     iao:0100001 ictv:19911863 ;
-    oio:hasDbXref "genbank:JX182425",
-        "refseq:NC_020073" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19710048 .
 
@@ -8747,7 +8999,6 @@ ictv:19901199 a owl:Class ;
     rdfs:label "Sulfolobus spindle-shaped virus 1" ;
     ns1:ictv_id "19901199" ;
     iao:0100001 ictv:19911467 ;
-    oio:hasDbXref "genbank:X07234" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19900181 .
 
@@ -8755,8 +9006,6 @@ ictv:19901298 a owl:Class ;
     rdfs:label "Commelina yellow mottle virus" ;
     ns1:ictv_id "19901298" ;
     iao:0100001 ictv:19911579 ;
-    oio:hasDbXref "genbank:X52938",
-        "refseq:NC_001343" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19900196 .
 
@@ -8771,8 +9020,6 @@ ictv:19901348 a owl:Class ;
     rdfs:label "Giardia lamblia virus" ;
     ns1:ictv_id "19901348" ;
     iao:0100001 ictv:19911664 ;
-    oio:hasDbXref "genbank:L13218",
-        "refseq:NC_003555" ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19900207 .
 
@@ -8825,14 +9072,6 @@ ictv:19710046 a owl:Class ;
     iao:0100001 ictv:19910220 ;
     rdfs:isDefinedBy ictv:ictv_1990 .
 
-ictv:19710160 a owl:Class ;
-    rdfs:label "Broad bean stain virus" ;
-    ns1:ictv_id "19710160" ;
-    iao:0100001 ictv:19911584 ;
-    oio:hasDbXref "genbank:FJ028650" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710023 .
-
 ictv:19750003 a owl:Class ;
     rdfs:label "Arenaviridae" ;
     ns1:ictv_id "19750003" ;
@@ -8865,22 +9104,6 @@ ictv:19760099 a owl:Class ;
     iao:0100001 ictv:19910114 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19780008 .
-
-ictv:19760686 a owl:Class ;
-    rdfs:label "Lychnis ringspot virus" ;
-    ns1:ictv_id "19760686" ;
-    iao:0100001 ictv:19911667 ;
-    oio:hasDbXref "genbank:Z46351" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19750086 .
-
-ictv:19760687 a owl:Class ;
-    rdfs:label "Poa semilatent virus" ;
-    ns1:ictv_id "19760687" ;
-    iao:0100001 ictv:19911668 ;
-    oio:hasDbXref "genbank:M81486" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19750086 .
 
 ictv:19780007 a owl:Class ;
     rdfs:label "Corticoviridae" ;
@@ -8951,22 +9174,6 @@ ictv:19790137 a owl:Class ;
     rdfs:label "Penicillium stoloniferum PsV-S group" ;
     ns1:ictv_id "19790137" ;
     rdfs:isDefinedBy ictv:ictv_1990 .
-
-ictv:19790979 a owl:Class ;
-    rdfs:label "Andean potato mottle virus" ;
-    ns1:ictv_id "19790979" ;
-    iao:0100001 ictv:19911581 ;
-    oio:hasDbXref "genbank:L16239" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710023 .
-
-ictv:19791037 a owl:Class ;
-    rdfs:label "Peach rosette mosaic virus" ;
-    ns1:ictv_id "19791037" ;
-    iao:0100001 ictv:19911725 ;
-    oio:hasDbXref "genbank:AF016626" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710032 .
 
 ictv:19810006 a owl:Class ;
     rdfs:label "Caliciviridae" ;
@@ -9276,33 +9483,6 @@ ictv:19710047 a owl:Class ;
     iao:0100001 ictv:19910230 ;
     rdfs:isDefinedBy ictv:ictv_1990 .
 
-ictv:19710159 a owl:Class ;
-    rdfs:label "Bean pod mottle virus" ;
-    ns1:ictv_id "19710159" ;
-    iao:0100001 ictv:19911582 ;
-    oio:hasDbXref "genbank:AF394606",
-        "genbank:AF394607" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710023 .
-
-ictv:19710164 a owl:Class ;
-    rdfs:label "Squash mosaic virus" ;
-    ns1:ictv_id "19710164" ;
-    iao:0100001 ictv:19911593 ;
-    oio:hasDbXref "genbank:EU421059",
-        "genbank:EU421060" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710023 .
-
-ictv:19710221 a owl:Class ;
-    rdfs:label "Tobacco ringspot virus" ;
-    ns1:ictv_id "19710221" ;
-    iao:0100001 ictv:19911729 ;
-    oio:hasDbXref "genbank:KJ556849",
-        "genbank:KJ556850" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710032 .
-
 ictv:19740004 a owl:Class ;
     rdfs:label "Poxviridae" ;
     ns1:ictv_id "19740004" ;
@@ -9392,15 +9572,6 @@ ictv:19790035 a owl:Class ;
     iao:0100001 ictv:19910061 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750007 .
-
-ictv:19791009 a owl:Class ;
-    rdfs:label "Lilac ring mottle virus" ;
-    ns1:ictv_id "19791009" ;
-    iao:0100001 ictv:19911682 ;
-    oio:hasDbXref "genbank:EU919669",
-        "genbank:U17391" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19750087 .
 
 ictv:19810095 a owl:Class ;
     rdfs:label "Nodavirus" ;
@@ -9499,16 +9670,6 @@ ictv:19710024 a owl:Class ;
     ns1:ictv_id "19710024" ;
     iao:0100001 ictv:19910207 ;
     rdfs:isDefinedBy ictv:ictv_1990 .
-
-ictv:19710143 a owl:Class ;
-    rdfs:label "Brome mosaic virus" ;
-    ns1:ictv_id "19710143" ;
-    iao:0100001 ictv:19911515 ;
-    oio:hasDbXref "genbank:X58456",
-        "genbank:X58457",
-        "genbank:X58458" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710019 .
 
 ictv:19740006 a owl:Class ;
     rdfs:label "Togaviridae" ;
@@ -9609,16 +9770,6 @@ ictv:19820163 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19840036 .
 
-ictv:19821221 a owl:Class ;
-    rdfs:label "Prunus necrotic ringspot virus" ;
-    ns1:ictv_id "19821221" ;
-    iao:0100001 ictv:19911685 ;
-    oio:hasDbXref "genbank:JN416771",
-        "genbank:JN416772",
-        "genbank:JN416773" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19750087 .
-
 ictv:19870177 a owl:Class ;
     rdfs:label "Cryptovirus subgroup B" ;
     ns1:ictv_id "19870177" ;
@@ -9636,16 +9787,6 @@ ictv:19870181 a owl:Class ;
     ns1:ictv_id "19870181" ;
     iao:0100001 ictv:19910210 ;
     rdfs:isDefinedBy ictv:ictv_1990 .
-
-ictv:19871275 a owl:Class ;
-    rdfs:label "Beet cryptic virus 2" ;
-    ns1:ictv_id "19871275" ;
-    iao:0100001 ictv:19911597 ;
-    oio:hasDbXref "genbank:HM560702",
-        "genbank:HM560703",
-        "genbank:HM560704" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19870176 .
 
 ictv:19900001 a owl:Class ;
     rdfs:label "Mononegavirales" ;
@@ -9673,127 +9814,6 @@ ictv:19710029 a owl:Class ;
     iao:0100001 ictv:19910187 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19840033 .
-
-ictv:19710161 a owl:Class ;
-    rdfs:label "Cowpea mosaic virus" ;
-    ns1:ictv_id "19710161" ;
-    iao:0100001 ictv:19911586 ;
-    oio:hasDbXref "genbank:X00206",
-        "genbank:X00729",
-        "refseq:NC_003549",
-        "refseq:NC_003550" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710023 .
-
-ictv:19710162 a owl:Class ;
-    rdfs:label "Radish mosaic virus" ;
-    ns1:ictv_id "19710162" ;
-    iao:0100001 ictv:19911591 ;
-    oio:hasDbXref "genbank:AB295643",
-        "genbank:AB295644",
-        "refseq:NC_010709",
-        "refseq:NC_010710" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710023 .
-
-ictv:19710163 a owl:Class ;
-    rdfs:label "Red clover mottle virus" ;
-    ns1:ictv_id "19710163" ;
-    iao:0100001 ictv:19911592 ;
-    oio:hasDbXref "genbank:M14913",
-        "genbank:X64886",
-        "refseq:NC_003738",
-        "refseq:NC_003741" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710023 .
-
-ictv:19710165 a owl:Class ;
-    rdfs:label "Broad bean true mosaic virus" ;
-    ns1:ictv_id "19710165" ;
-    iao:0100001 ictv:19911585 ;
-    oio:hasDbXref "genbank:GU810903",
-        "genbank:GU810904",
-        "refseq:NC_022004",
-        "refseq:NC_022006" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710023 .
-
-ictv:19710217 a owl:Class ;
-    rdfs:label "Arabis mosaic virus" ;
-    ns1:ictv_id "19710217" ;
-    iao:0100001 ictv:19911704 ;
-    oio:hasDbXref "genbank:AY017339",
-        "genbank:AY303786",
-        "refseq:NC_006056",
-        "refseq:NC_006057" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710032 .
-
-ictv:19710218 a owl:Class ;
-    rdfs:label "Grapevine fanleaf virus" ;
-    ns1:ictv_id "19710218" ;
-    iao:0100001 ictv:19911718 ;
-    oio:hasDbXref "genbank:D00915",
-        "genbank:X16907",
-        "refseq:NC_003615",
-        "refseq:NC_003623" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710032 .
-
-ictv:19710219 a owl:Class ;
-    rdfs:label "Raspberry ringspot virus" ;
-    ns1:ictv_id "19710219" ;
-    iao:0100001 ictv:19911728 ;
-    oio:hasDbXref "genbank:AY303787",
-        "genbank:AY303788",
-        "refseq:NC_005266",
-        "refseq:NC_005267" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710032 .
-
-ictv:19710222 a owl:Class ;
-    rdfs:label "Tomato black ring virus" ;
-    ns1:ictv_id "19710222" ;
-    iao:0100001 ictv:19911730 ;
-    oio:hasDbXref "genbank:AY157993",
-        "genbank:AY157994",
-        "refseq:NC_004439",
-        "refseq:NC_004440" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710032 .
-
-ictv:19710223 a owl:Class ;
-    rdfs:label "Tomato ringspot virus" ;
-    ns1:ictv_id "19710223" ;
-    iao:0100001 ictv:19911731 ;
-    oio:hasDbXref "genbank:D12477",
-        "genbank:L19655",
-        "refseq:NC_003839",
-        "refseq:NC_003840" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710032 .
-
-ictv:19710326 a owl:Class ;
-    rdfs:label "Pea early-browning virus" ;
-    ns1:ictv_id "19710326" ;
-    iao:0100001 ictv:19911853 ;
-    oio:hasDbXref "genbank:X14006",
-        "genbank:X51828",
-        "refseq:NC_001368",
-        "refseq:NC_002036" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710047 .
-
-ictv:19710327 a owl:Class ;
-    rdfs:label "Tobacco rattle virus" ;
-    ns1:ictv_id "19710327" ;
-    iao:0100001 ictv:19911855 ;
-    oio:hasDbXref "genbank:AF166084",
-        "genbank:Z36974",
-        "refseq:NC_003805",
-        "refseq:NC_003811" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710047 .
 
 ictv:19740022 a owl:Class ;
     rdfs:label "Leporipoxvirus" ;
@@ -9829,72 +9849,6 @@ ictv:19750049 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19900045 .
 
-ictv:19760511 a owl:Class ;
-    rdfs:label "Maize rough dwarf virus" ;
-    ns1:ictv_id "19760511" ;
-    iao:0100001 ictv:19911398 ;
-    oio:hasDbXref "genbank:L76560",
-        "genbank:L76561",
-        "genbank:L76562",
-        "genbank:X55701" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19780095 .
-
-ictv:19760712 a owl:Class ;
-    rdfs:label "Grapevine chrome mosaic virus" ;
-    ns1:ictv_id "19760712" ;
-    iao:0100001 ictv:19911717 ;
-    oio:hasDbXref "genbank:X15163",
-        "genbank:X15346",
-        "refseq:NC_003621",
-        "refseq:NC_003622" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710032 .
-
-ictv:19790780 a owl:Class ;
-    rdfs:label "Oat sterile dwarf virus" ;
-    ns1:ictv_id "19790780" ;
-    iao:0100001 ictv:19911399 ;
-    oio:hasDbXref "genbank:AB011024",
-        "genbank:AB011025",
-        "genbank:AB011026",
-        "genbank:AB011027" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19780095 .
-
-ictv:19791038 a owl:Class ;
-    rdfs:label "Potato black ringspot virus" ;
-    ns1:ictv_id "19791038" ;
-    iao:0100001 ictv:19911726 ;
-    oio:hasDbXref "genbank:KC832887",
-        "genbank:KC832892",
-        "refseq:NC_022798",
-        "refseq:NC_022799" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710032 .
-
-ictv:19791047 a owl:Class ;
-    rdfs:label "Penicillium stoloniferum virus S" ;
-    ns1:ictv_id "19791047" ;
-    iao:0100001 ictv:19911017 ;
-    oio:hasDbXref "genbank:AY156521",
-        "genbank:AY156522",
-        "refseq:NC_005976",
-        "refseq:NC_005977" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19790137 .
-
-ictv:19811120 a owl:Class ;
-    rdfs:label "Carnation ringspot virus" ;
-    ns1:ictv_id "19811120" ;
-    iao:0100001 ictv:19911618 ;
-    oio:hasDbXref "genbank:L18870",
-        "genbank:M88589",
-        "refseq:NC_003530",
-        "refseq:NC_003531" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19810149 .
-
 ictv:19820134 a owl:Class ;
     rdfs:label "Plant rhabdovirus subgroup B" ;
     ns1:ictv_id "19820134" ;
@@ -9902,176 +9856,11 @@ ictv:19820134 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750017 .
 
-ictv:19821192 a owl:Class ;
-    rdfs:label "Cowpea severe mosaic virus" ;
-    ns1:ictv_id "19821192" ;
-    iao:0100001 ictv:19911587 ;
-    oio:hasDbXref "genbank:M83309",
-        "genbank:M83830",
-        "refseq:NC_003544",
-        "refseq:NC_003545" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710023 .
-
-ictv:19821202 a owl:Class ;
-    rdfs:label "Red clover necrotic mosaic virus" ;
-    ns1:ictv_id "19821202" ;
-    iao:0100001 ictv:19911619 ;
-    oio:hasDbXref "genbank:J04357",
-        "genbank:X08021",
-        "refseq:NC_003756",
-        "refseq:NC_003775" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19810149 .
-
-ictv:19821203 a owl:Class ;
-    rdfs:label "Sweet clover necrotic mosaic virus" ;
-    ns1:ictv_id "19821203" ;
-    iao:0100001 ictv:19911620 ;
-    oio:hasDbXref "genbank:L07884",
-        "genbank:S46028",
-        "refseq:NC_003806",
-        "refseq:NC_003807" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19810149 .
-
-ictv:19821254 a owl:Class ;
-    rdfs:label "Grapevine Bulgarian latent virus" ;
-    ns1:ictv_id "19821254" ;
-    iao:0100001 ictv:19911716 ;
-    oio:hasDbXref "genbank:FN691934",
-        "genbank:FN691935",
-        "refseq:NC_015492",
-        "refseq:NC_015493" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710032 .
-
 ictv:19870182 a owl:Class ;
     rdfs:label "Geminivirus subgroup I" ;
     ns1:ictv_id "19870182" ;
     iao:0100001 ictv:19910211 ;
     rdfs:isDefinedBy ictv:ictv_1990 .
-
-ictv:19871274 a owl:Class ;
-    rdfs:label "Beet cryptic virus 1" ;
-    ns1:ictv_id "19871274" ;
-    iao:0100001 ictv:19911596 ;
-    oio:hasDbXref "genbank:EU489061",
-        "genbank:EU489062",
-        "refseq:NC_011556",
-        "refseq:NC_011557" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19870176 .
-
-ictv:19871281 a owl:Class ;
-    rdfs:label "Vicia cryptic virus" ;
-    ns1:ictv_id "19871281" ;
-    iao:0100001 ictv:19911608 ;
-    oio:hasDbXref "genbank:AY751737",
-        "genbank:AY751738",
-        "refseq:NC_007241",
-        "refseq:NC_007242" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19870176 .
-
-ictv:19871282 a owl:Class ;
-    rdfs:label "White clover cryptic virus 1" ;
-    ns1:ictv_id "19871282" ;
-    iao:0100001 ictv:19911609 ;
-    oio:hasDbXref "genbank:AY705784",
-        "genbank:AY705785",
-        "refseq:NC_006275",
-        "refseq:NC_006276" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19870176 .
-
-ictv:19871284 a owl:Class ;
-    rdfs:label "Hop trefoil cryptic virus 2" ;
-    ns1:ictv_id "19871284" ;
-    iao:0100001 ictv:19911612 ;
-    oio:hasDbXref "genbank:JX971980",
-        "genbank:JX971981",
-        "refseq:NC_021098",
-        "refseq:NC_021099" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19870177 .
-
-ictv:19871285 a owl:Class ;
-    rdfs:label "Red clover cryptic virus 2" ;
-    ns1:ictv_id "19871285" ;
-    iao:0100001 ictv:19911613 ;
-    oio:hasDbXref "genbank:JX971978",
-        "genbank:JX971979",
-        "refseq:NC_021096",
-        "refseq:NC_021097" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19870177 .
-
-ictv:19871286 a owl:Class ;
-    rdfs:label "White clover cryptic virus 2" ;
-    ns1:ictv_id "19871286" ;
-    iao:0100001 ictv:19911614 ;
-    oio:hasDbXref "genbank:JX971976",
-        "genbank:JX971977",
-        "refseq:NC_021094",
-        "refseq:NC_021095" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19870177 .
-
-ictv:19871293 a owl:Class ;
-    rdfs:label "Broad bean wilt virus 1" ;
-    ns1:ictv_id "19871293" ;
-    iao:0100001 ictv:19911621 ;
-    oio:hasDbXref "genbank:AB084450",
-        "genbank:AB084451",
-        "refseq:NC_005289",
-        "refseq:NC_005290" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19870180 .
-
-ictv:19871294 a owl:Class ;
-    rdfs:label "Broad bean wilt virus 2" ;
-    ns1:ictv_id "19871294" ;
-    iao:0100001 ictv:19911622 ;
-    oio:hasDbXref "genbank:AF225953",
-        "genbank:AF225954",
-        "refseq:NC_003003",
-        "refseq:NC_003004" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19870180 .
-
-ictv:19871295 a owl:Class ;
-    rdfs:label "Lamium mild mosaic virus" ;
-    ns1:ictv_id "19871295" ;
-    iao:0100001 ictv:19911623 ;
-    oio:hasDbXref "genbank:KC595304",
-        "genbank:KC595305",
-        "refseq:NC_023016",
-        "refseq:NC_023017" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19870180 .
-
-ictv:19871296 a owl:Class ;
-    rdfs:label "Peanut clump virus" ;
-    ns1:ictv_id "19871296" ;
-    iao:0100001 ictv:19911625 ;
-    oio:hasDbXref "genbank:L07269",
-        "genbank:X78602",
-        "refseq:NC_003668",
-        "refseq:NC_003672" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19870181 .
-
-ictv:19871298 a owl:Class ;
-    rdfs:label "Soil-borne wheat mosaic virus" ;
-    ns1:ictv_id "19871298" ;
-    iao:0100001 ictv:19911627 ;
-    oio:hasDbXref "genbank:L07937",
-        "genbank:L07938",
-        "refseq:NC_002041",
-        "refseq:NC_002042" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19870181 .
 
 ictv:19900103 a owl:Class ;
     rdfs:label "Non-occluded baculoviruses" ;
@@ -10136,84 +9925,6 @@ ictv:19710021 a owl:Class ;
     iao:0100001 ictv:19910201 ;
     rdfs:isDefinedBy ictv:ictv_1990 .
 
-ictv:19710072 a owl:Class ;
-    rdfs:label "Alfalfa mosaic virus" ;
-    ns1:ictv_id "19710072" ;
-    iao:0100001 ictv:19911513 ;
-    oio:hasDbXref "genbank:K02703",
-        "genbank:L00163",
-        "genbank:X01572",
-        "refseq:NC_001495",
-        "refseq:NC_002024",
-        "refseq:NC_002025" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710014 .
-
-ictv:19710142 a owl:Class ;
-    rdfs:label "Broad bean mottle virus" ;
-    ns1:ictv_id "19710142" ;
-    iao:0100001 ictv:19911514 ;
-    oio:hasDbXref "genbank:M60291",
-        "genbank:M64713",
-        "genbank:M65138",
-        "refseq:NC_004006",
-        "refseq:NC_004007",
-        "refseq:NC_004008" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710019 .
-
-ictv:19710144 a owl:Class ;
-    rdfs:label "Cowpea chlorotic mottle virus" ;
-    ns1:ictv_id "19710144" ;
-    iao:0100001 ictv:19911517 ;
-    oio:hasDbXref "genbank:M28817",
-        "genbank:M28818",
-        "genbank:M65139",
-        "refseq:NC_003541",
-        "refseq:NC_003542",
-        "refseq:NC_003543" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710019 .
-
-ictv:19710166 a owl:Class ;
-    rdfs:label "Cucumber mosaic virus" ;
-    ns1:ictv_id "19710166" ;
-    iao:0100001 ictv:19911615 ;
-    oio:hasDbXref "genbank:D00355",
-        "genbank:D00356",
-        "genbank:D10538",
-        "refseq:NC_001440",
-        "refseq:NC_002034",
-        "refseq:NC_002035" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710024 .
-
-ictv:19710168 a owl:Class ;
-    rdfs:label "Tomato aspermy virus" ;
-    ns1:ictv_id "19710168" ;
-    iao:0100001 ictv:19911617 ;
-    oio:hasDbXref "genbank:AJ277268",
-        "genbank:D10044",
-        "genbank:D10663",
-        "refseq:NC_003836",
-        "refseq:NC_003837",
-        "refseq:NC_003838" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710024 .
-
-ictv:19710332 a owl:Class ;
-    rdfs:label "Tomato spotted wilt virus" ;
-    ns1:ictv_id "19710332" ;
-    iao:0100001 ictv:19910693 ;
-    oio:hasDbXref "genbank:D00645",
-        "genbank:D10066",
-        "genbank:S48091",
-        "refseq:NC_002050",
-        "refseq:NC_002051",
-        "refseq:NC_002052" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19900109 .
-
 ictv:19750005 a owl:Class ;
     rdfs:label "Bunyaviridae" ;
     ns1:ictv_id "19750005" ;
@@ -10227,141 +9938,11 @@ ictv:19750071 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750017 .
 
-ictv:19750354 a owl:Class ;
-    rdfs:label "Barley stripe mosaic virus" ;
-    ns1:ictv_id "19750354" ;
-    iao:0100001 ictv:19911666 ;
-    oio:hasDbXref "genbank:J04342",
-        "genbank:M16576",
-        "genbank:X03854",
-        "refseq:NC_003469",
-        "refseq:NC_003478",
-        "refseq:NC_003481" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19750086 .
-
-ictv:19760682 a owl:Class ;
-    rdfs:label "Peanut stunt virus" ;
-    ns1:ictv_id "19760682" ;
-    iao:0100001 ictv:19911616 ;
-    oio:hasDbXref "genbank:U15728",
-        "genbank:U15729",
-        "genbank:U15730",
-        "refseq:NC_002038",
-        "refseq:NC_002039",
-        "refseq:NC_002040" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19710024 .
-
-ictv:19760691 a owl:Class ;
-    rdfs:label "Citrus leaf rugose virus" ;
-    ns1:ictv_id "19760691" ;
-    iao:0100001 ictv:19911674 ;
-    oio:hasDbXref "genbank:U17390",
-        "genbank:U17726",
-        "genbank:U23715",
-        "refseq:NC_003546",
-        "refseq:NC_003547",
-        "refseq:NC_003548" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19750087 .
-
-ictv:19760692 a owl:Class ;
-    rdfs:label "Citrus variegation virus" ;
-    ns1:ictv_id "19760692" ;
-    iao:0100001 ictv:19911675 ;
-    oio:hasDbXref "genbank:EF584664",
-        "genbank:EF584665",
-        "genbank:U17389",
-        "refseq:NC_009536",
-        "refseq:NC_009537",
-        "refseq:NC_009538" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19750087 .
-
-ictv:19760694 a owl:Class ;
-    rdfs:label "Elm mottle virus" ;
-    ns1:ictv_id "19760694" ;
-    iao:0100001 ictv:19911677 ;
-    oio:hasDbXref "genbank:U34050",
-        "genbank:U57047",
-        "genbank:U85399",
-        "refseq:NC_003568",
-        "refseq:NC_003569",
-        "refseq:NC_003570" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19750087 .
-
-ictv:19760700 a owl:Class ;
-    rdfs:label "Tulare apple mosaic virus" ;
-    ns1:ictv_id "19760700" ;
-    iao:0100001 ictv:19911688 ;
-    oio:hasDbXref "genbank:AF226160",
-        "genbank:AF226161",
-        "genbank:AF226162",
-        "refseq:NC_003833",
-        "refseq:NC_003834",
-        "refseq:NC_003835" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19750087 .
-
 ictv:19810017 a owl:Class ;
     rdfs:label "Tetraviridae" ;
     ns1:ictv_id "19810017" ;
     iao:0100001 ictv:19910040 ;
     rdfs:isDefinedBy ictv:ictv_1990 .
-
-ictv:19821214 a owl:Class ;
-    rdfs:label "Apple mosaic virus" ;
-    ns1:ictv_id "19821214" ;
-    iao:0100001 ictv:19911670 ;
-    oio:hasDbXref "genbank:AF174584",
-        "genbank:AF174585",
-        "genbank:U15608",
-        "refseq:NC_003464",
-        "refseq:NC_003465",
-        "refseq:NC_003480" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19750087 .
-
-ictv:19821220 a owl:Class ;
-    rdfs:label "Prune dwarf virus" ;
-    ns1:ictv_id "19821220" ;
-    iao:0100001 ictv:19911684 ;
-    oio:hasDbXref "genbank:AF277662",
-        "genbank:L28145",
-        "genbank:U57648",
-        "refseq:NC_008037",
-        "refseq:NC_008038",
-        "refseq:NC_008039" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19750087 .
-
-ictv:19821222 a owl:Class ;
-    rdfs:label "Spinach latent virus" ;
-    ns1:ictv_id "19821222" ;
-    iao:0100001 ictv:19911686 ;
-    oio:hasDbXref "genbank:U93192",
-        "genbank:U93193",
-        "genbank:U93194",
-        "refseq:NC_003808",
-        "refseq:NC_003809",
-        "refseq:NC_003810" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19750087 .
-
-ictv:19821223 a owl:Class ;
-    rdfs:label "Tobacco streak virus" ;
-    ns1:ictv_id "19821223" ;
-    iao:0100001 ictv:19911687 ;
-    oio:hasDbXref "genbank:U75538",
-        "genbank:U80934",
-        "genbank:X00435",
-        "refseq:NC_003842",
-        "refseq:NC_003844",
-        "refseq:NC_003845" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19750087 .
 
 ictv:19710009 a owl:Class ;
     rdfs:label "Polyomavirus" ;
@@ -10436,36 +10017,6 @@ ictv:19780095 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19740005 .
 
-ictv:19791045 a owl:Class ;
-    rdfs:label "Penicillium chrysogenum virus" ;
-    ns1:ictv_id "19791045" ;
-    iao:0100001 ictv:19911020 ;
-    oio:hasDbXref "genbank:AF296439",
-        "genbank:AF296440",
-        "genbank:AF296441",
-        "genbank:AF296442",
-        "refseq:NC_007539",
-        "refseq:NC_007540",
-        "refseq:NC_007541",
-        "refseq:NC_007542" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19790136 .
-
-ictv:19841371 a owl:Class ;
-    rdfs:label "Rice stripe virus" ;
-    ns1:ictv_id "19841371" ;
-    iao:0100001 ictv:19911840 ;
-    oio:hasDbXref "genbank:D10979",
-        "genbank:D13176",
-        "genbank:D31879",
-        "genbank:X53563",
-        "refseq:NC_003753",
-        "refseq:NC_003754",
-        "refseq:NC_003755",
-        "refseq:NC_003776" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19840182 .
-
 ictv:19870089 a owl:Class ;
     rdfs:label "Hantavirus" ;
     ns1:ictv_id "19870089" ;
@@ -10492,22 +10043,6 @@ ictv:19760105 a owl:Class ;
     iao:0100001 ictv:19910157 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19810024 .
-
-ictv:19760515 a owl:Class ;
-    rdfs:label "Wound tumor virus" ;
-    ns1:ictv_id "19760515" ;
-    iao:0100001 ictv:19911423 ;
-    oio:hasDbXref "genbank:J03020",
-        "genbank:J04344",
-        "genbank:M11133",
-        "genbank:M24114",
-        "genbank:M24115",
-        "genbank:M24116",
-        "genbank:M24117",
-        "genbank:X14218",
-        "genbank:X14219" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19780097 .
 
 ictv:19780108 a owl:Class ;
     rdfs:label "Tectivirus" ;
@@ -10654,33 +10189,6 @@ ictv:19710028 a owl:Class ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19750008 .
 
-ictv:19760514 a owl:Class ;
-    rdfs:label "Fiji disease virus" ;
-    ns1:ictv_id "19760514" ;
-    iao:0100001 ictv:19911397 ;
-    oio:hasDbXref "genbank:AF049704",
-        "genbank:AF049705",
-        "genbank:AF050086",
-        "genbank:AF356083",
-        "genbank:AF359556",
-        "genbank:AY029520",
-        "genbank:AY029521",
-        "genbank:AY297693",
-        "genbank:AY297694",
-        "genbank:AY789927",
-        "refseq:NC_007154",
-        "refseq:NC_007155",
-        "refseq:NC_007156",
-        "refseq:NC_007157",
-        "refseq:NC_007158",
-        "refseq:NC_007159",
-        "refseq:NC_007160",
-        "refseq:NC_007161",
-        "refseq:NC_007162",
-        "refseq:NC_007163" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19780095 .
-
 ictv:19710020 a owl:Class ;
     rdfs:label "Carlavirus group" ;
     ns1:ictv_id "19710020" ;
@@ -10709,37 +10217,6 @@ ictv:19740021 a owl:Class ;
         ictv:19910170 ;
     rdfs:isDefinedBy ictv:ictv_1990 ;
     rdfs:subClassOf ictv:19780047 .
-
-ictv:19760513 a owl:Class ;
-    rdfs:label "Rice dwarf virus" ;
-    ns1:ictv_id "19760513" ;
-    iao:0100001 ictv:19911421 ;
-    oio:hasDbXref "genbank:U36402",
-        "genbank:U36562",
-        "genbank:U36563",
-        "genbank:U36564",
-        "genbank:U36565",
-        "genbank:U36566",
-        "genbank:U36567",
-        "genbank:U36568",
-        "genbank:U36569",
-        "genbank:U72757",
-        "genbank:U73201",
-        "genbank:U73202",
-        "refseq:NC_003760",
-        "refseq:NC_003761",
-        "refseq:NC_003762",
-        "refseq:NC_003763",
-        "refseq:NC_003764",
-        "refseq:NC_003765",
-        "refseq:NC_003766",
-        "refseq:NC_003767",
-        "refseq:NC_003768",
-        "refseq:NC_003772",
-        "refseq:NC_003773",
-        "refseq:NC_003774" ;
-    rdfs:isDefinedBy ictv:ictv_1990 ;
-    rdfs:subClassOf ictv:19780097 .
 
 ictv:19710015 a owl:Class ;
     rdfs:label "Alphavirus" ;
@@ -10822,1894 +10299,4 @@ ictv:ictv_1990 a owl:Ontology ;
     rdfs:comment "International Committee on Taxonomy of Viruses (ICTV)" ;
     owl:versionInfo "11" ;
     foaf:homepage <https://ictv.global/> .
-
-[] a owl:Axiom ;
-    rdfs:label "S5" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "genbank:AY029521" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710218 ;
-    owl:annotatedTarget "genbank:D00915" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA7" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760515 ;
-    owl:annotatedTarget "genbank:X14218" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710223 ;
-    owl:annotatedTarget "genbank:L19655" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA9" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "refseq:NC_003765" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871285 ;
-    owl:annotatedTarget "genbank:JX971978" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710223 ;
-    owl:annotatedTarget "refseq:NC_003840" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA8" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760515 ;
-    owl:annotatedTarget "genbank:J04344" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821192 ;
-    owl:annotatedTarget "genbank:M83830" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "genbank:U73201" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710222 ;
-    owl:annotatedTarget "genbank:AY157994" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710072 ;
-    owl:annotatedTarget "refseq:NC_001495" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710168 ;
-    owl:annotatedTarget "refseq:NC_003838" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760691 ;
-    owl:annotatedTarget "genbank:U17390" .
-
-[] a owl:Axiom ;
-    rdfs:label "S6" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760511 ;
-    owl:annotatedTarget "genbank:X55701" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19841371 ;
-    owl:annotatedTarget "genbank:D31879" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760700 ;
-    owl:annotatedTarget "genbank:AF226161" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710072 ;
-    owl:annotatedTarget "genbank:K02703" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791047 ;
-    owl:annotatedTarget "genbank:AY156521" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA5" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "genbank:U36563" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871295 ;
-    owl:annotatedTarget "refseq:NC_023016" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "refseq:NC_003773" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871285 ;
-    owl:annotatedTarget "refseq:NC_021097" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871281 ;
-    owl:annotatedTarget "genbank:AY751738" .
-
-[] a owl:Axiom ;
-    rdfs:label "M" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710332 ;
-    owl:annotatedTarget "refseq:NC_002050" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821192 ;
-    owl:annotatedTarget "genbank:M83309" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871281 ;
-    owl:annotatedTarget "refseq:NC_007242" .
-
-[] a owl:Axiom ;
-    rdfs:label "S9" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "genbank:AF050086" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821222 ;
-    owl:annotatedTarget "refseq:NC_003810" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19750354 ;
-    owl:annotatedTarget "refseq:NC_003469" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791045 ;
-    owl:annotatedTarget "genbank:AF296440" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710221 ;
-    owl:annotatedTarget "genbank:KJ556850" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760687 ;
-    owl:annotatedTarget "genbank:M81486" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA8" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "refseq:NC_003764" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791045 ;
-    owl:annotatedTarget "refseq:NC_007540" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19750354 ;
-    owl:annotatedTarget "refseq:NC_003481" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710168 ;
-    owl:annotatedTarget "refseq:NC_003837" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871275 ;
-    owl:annotatedTarget "genbank:HM560704" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710142 ;
-    owl:annotatedTarget "refseq:NC_004006" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710166 ;
-    owl:annotatedTarget "refseq:NC_001440" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871294 ;
-    owl:annotatedTarget "refseq:NC_003003" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19750354 ;
-    owl:annotatedTarget "genbank:M16576" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821220 ;
-    owl:annotatedTarget "genbank:L28145" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710217 ;
-    owl:annotatedTarget "genbank:AY017339" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710162 ;
-    owl:annotatedTarget "refseq:NC_010709" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710072 ;
-    owl:annotatedTarget "genbank:L00163" .
-
-[] a owl:Axiom ;
-    rdfs:label "S5" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "refseq:NC_007160" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871275 ;
-    owl:annotatedTarget "genbank:HM560703" .
-
-[] a owl:Axiom ;
-    rdfs:label "S4" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "refseq:NC_007155" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA6" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760515 ;
-    owl:annotatedTarget "genbank:M24116" .
-
-[] a owl:Axiom ;
-    rdfs:label "S10" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "refseq:NC_007162" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871296 ;
-    owl:annotatedTarget "refseq:NC_003672" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791009 ;
-    owl:annotatedTarget "genbank:EU919669" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871284 ;
-    owl:annotatedTarget "genbank:JX971980" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871293 ;
-    owl:annotatedTarget "refseq:NC_005290" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871296 ;
-    owl:annotatedTarget "genbank:X78602" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710223 ;
-    owl:annotatedTarget "genbank:D12477" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710072 ;
-    owl:annotatedTarget "refseq:NC_002024" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710222 ;
-    owl:annotatedTarget "refseq:NC_004439" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791037 ;
-    owl:annotatedTarget "genbank:AF016626" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821222 ;
-    owl:annotatedTarget "genbank:U93194" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710072 ;
-    owl:annotatedTarget "refseq:NC_002025" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821220 ;
-    owl:annotatedTarget "genbank:AF277662" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760692 ;
-    owl:annotatedTarget "refseq:NC_009538" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821223 ;
-    owl:annotatedTarget "genbank:U80934" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871296 ;
-    owl:annotatedTarget "refseq:NC_003668" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760692 ;
-    owl:annotatedTarget "genbank:EF584664" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA6" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "genbank:U36564" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710164 ;
-    owl:annotatedTarget "genbank:EU421059" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710217 ;
-    owl:annotatedTarget "refseq:NC_006056" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760700 ;
-    owl:annotatedTarget "genbank:AF226162" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710159 ;
-    owl:annotatedTarget "genbank:AF394606" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821223 ;
-    owl:annotatedTarget "refseq:NC_003842" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710327 ;
-    owl:annotatedTarget "genbank:AF166084" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710143 ;
-    owl:annotatedTarget "genbank:X58457" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA5" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760515 ;
-    owl:annotatedTarget "genbank:J03020" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19841371 ;
-    owl:annotatedTarget "genbank:D13176" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710219 ;
-    owl:annotatedTarget "refseq:NC_005267" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710162 ;
-    owl:annotatedTarget "genbank:AB295643" .
-
-[] a owl:Axiom ;
-    rdfs:label "S7" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "genbank:AY789927" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821214 ;
-    owl:annotatedTarget "genbank:U15608" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821223 ;
-    owl:annotatedTarget "refseq:NC_003845" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760682 ;
-    owl:annotatedTarget "refseq:NC_002040" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA12" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "genbank:U36569" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA4" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19841371 ;
-    owl:annotatedTarget "genbank:D10979" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871282 ;
-    owl:annotatedTarget "genbank:AY705785" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19841371 ;
-    owl:annotatedTarget "refseq:NC_003755" .
-
-[] a owl:Axiom ;
-    rdfs:label "S" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710332 ;
-    owl:annotatedTarget "genbank:D00645" .
-
-[] a owl:Axiom ;
-    rdfs:label "S6" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "refseq:NC_007157" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710072 ;
-    owl:annotatedTarget "genbank:X01572" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710165 ;
-    owl:annotatedTarget "refseq:NC_022004" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710168 ;
-    owl:annotatedTarget "genbank:AJ277268" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760712 ;
-    owl:annotatedTarget "refseq:NC_003621" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871298 ;
-    owl:annotatedTarget "genbank:L07937" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA11" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "refseq:NC_003767" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710223 ;
-    owl:annotatedTarget "refseq:NC_003839" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821203 ;
-    owl:annotatedTarget "genbank:S46028" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871286 ;
-    owl:annotatedTarget "refseq:NC_021095" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871274 ;
-    owl:annotatedTarget "refseq:NC_011557" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA4" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "refseq:NC_003761" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871286 ;
-    owl:annotatedTarget "genbank:JX971976" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821222 ;
-    owl:annotatedTarget "genbank:U93192" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19841371 ;
-    owl:annotatedTarget "genbank:X53563" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA4" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "genbank:U36562" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871295 ;
-    owl:annotatedTarget "genbank:KC595304" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871285 ;
-    owl:annotatedTarget "genbank:JX971979" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA8" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "genbank:U36565" .
-
-[] a owl:Axiom ;
-    rdfs:label "S9" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "refseq:NC_007156" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710326 ;
-    owl:annotatedTarget "genbank:X14006" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871274 ;
-    owl:annotatedTarget "genbank:EU489062" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA7" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "genbank:U36402" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "genbank:U73202" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710142 ;
-    owl:annotatedTarget "refseq:NC_004007" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821220 ;
-    owl:annotatedTarget "refseq:NC_008038" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA10" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "genbank:U36567" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871284 ;
-    owl:annotatedTarget "refseq:NC_021099" .
-
-[] a owl:Axiom ;
-    rdfs:label "S7" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19790780 ;
-    owl:annotatedTarget "genbank:AB011024" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710142 ;
-    owl:annotatedTarget "refseq:NC_004008" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710219 ;
-    owl:annotatedTarget "genbank:AY303787" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA4" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791045 ;
-    owl:annotatedTarget "refseq:NC_007542" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760691 ;
-    owl:annotatedTarget "refseq:NC_003547" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871286 ;
-    owl:annotatedTarget "genbank:JX971977" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871295 ;
-    owl:annotatedTarget "genbank:KC595305" .
-
-[] a owl:Axiom ;
-    rdfs:label "S1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "refseq:NC_007159" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19811120 ;
-    owl:annotatedTarget "genbank:L18870" .
-
-[] a owl:Axiom ;
-    rdfs:label "S" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710332 ;
-    owl:annotatedTarget "refseq:NC_002051" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821202 ;
-    owl:annotatedTarget "refseq:NC_003756" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710163 ;
-    owl:annotatedTarget "genbank:M14913" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710144 ;
-    owl:annotatedTarget "genbank:M28817" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19750354 ;
-    owl:annotatedTarget "refseq:NC_003478" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710165 ;
-    owl:annotatedTarget "refseq:NC_022006" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19750354 ;
-    owl:annotatedTarget "genbank:J04342" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760712 ;
-    owl:annotatedTarget "refseq:NC_003622" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760700 ;
-    owl:annotatedTarget "genbank:AF226160" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710144 ;
-    owl:annotatedTarget "refseq:NC_003543" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760692 ;
-    owl:annotatedTarget "refseq:NC_009537" .
-
-[] a owl:Axiom ;
-    rdfs:label "S8" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760511 ;
-    owl:annotatedTarget "genbank:L76561" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871294 ;
-    owl:annotatedTarget "genbank:AF225954" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871282 ;
-    owl:annotatedTarget "refseq:NC_006276" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821220 ;
-    owl:annotatedTarget "refseq:NC_008039" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871274 ;
-    owl:annotatedTarget "refseq:NC_011556" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710166 ;
-    owl:annotatedTarget "genbank:D10538" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821202 ;
-    owl:annotatedTarget "refseq:NC_003775" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710327 ;
-    owl:annotatedTarget "refseq:NC_003805" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19811120 ;
-    owl:annotatedTarget "refseq:NC_003531" .
-
-[] a owl:Axiom ;
-    rdfs:label "S9" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19790780 ;
-    owl:annotatedTarget "genbank:AB011026" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760686 ;
-    owl:annotatedTarget "genbank:Z46351" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791045 ;
-    owl:annotatedTarget "refseq:NC_007541" .
-
-[] a owl:Axiom ;
-    rdfs:label "S4" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "genbank:AF049705" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710159 ;
-    owl:annotatedTarget "genbank:AF394607" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760682 ;
-    owl:annotatedTarget "genbank:U15730" .
-
-[] a owl:Axiom ;
-    rdfs:label "S2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "genbank:AF049704" .
-
-[] a owl:Axiom ;
-    rdfs:label "S6" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "genbank:AF356083" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710163 ;
-    owl:annotatedTarget "refseq:NC_003738" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760712 ;
-    owl:annotatedTarget "genbank:X15346" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "refseq:NC_003774" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA9" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "genbank:U36566" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760694 ;
-    owl:annotatedTarget "refseq:NC_003569" .
-
-[] a owl:Axiom ;
-    rdfs:label "S8" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "genbank:AY297693" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871298 ;
-    owl:annotatedTarget "genbank:L07938" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710163 ;
-    owl:annotatedTarget "genbank:X64886" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760691 ;
-    owl:annotatedTarget "refseq:NC_003548" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710144 ;
-    owl:annotatedTarget "genbank:M65139" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710218 ;
-    owl:annotatedTarget "refseq:NC_003623" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA12" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "refseq:NC_003768" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821214 ;
-    owl:annotatedTarget "refseq:NC_003465" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710160 ;
-    owl:annotatedTarget "genbank:FJ028650" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA11" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "genbank:U36568" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710218 ;
-    owl:annotatedTarget "genbank:X16907" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710221 ;
-    owl:annotatedTarget "genbank:KJ556849" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA6" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "refseq:NC_003763" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760692 ;
-    owl:annotatedTarget "genbank:EF584665" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871298 ;
-    owl:annotatedTarget "refseq:NC_002041" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821220 ;
-    owl:annotatedTarget "genbank:U57648" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA12" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760515 ;
-    owl:annotatedTarget "genbank:M11133" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821222 ;
-    owl:annotatedTarget "refseq:NC_003809" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA10" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760515 ;
-    owl:annotatedTarget "genbank:M24114" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871298 ;
-    owl:annotatedTarget "refseq:NC_002042" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760712 ;
-    owl:annotatedTarget "genbank:X15163" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791047 ;
-    owl:annotatedTarget "genbank:AY156522" .
-
-[] a owl:Axiom ;
-    rdfs:label "S10" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "genbank:AY297694" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA9" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760515 ;
-    owl:annotatedTarget "genbank:M24115" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760692 ;
-    owl:annotatedTarget "genbank:U17389" .
-
-[] a owl:Axiom ;
-    rdfs:label "S3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "genbank:AF359556" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710161 ;
-    owl:annotatedTarget "refseq:NC_003550" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710222 ;
-    owl:annotatedTarget "refseq:NC_004440" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA4" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19841371 ;
-    owl:annotatedTarget "refseq:NC_003753" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821222 ;
-    owl:annotatedTarget "genbank:U93193" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821192 ;
-    owl:annotatedTarget "refseq:NC_003544" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821203 ;
-    owl:annotatedTarget "refseq:NC_003806" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710166 ;
-    owl:annotatedTarget "refseq:NC_002034" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA5" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "refseq:NC_003762" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19811120 ;
-    owl:annotatedTarget "genbank:M88589" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821223 ;
-    owl:annotatedTarget "genbank:U75538" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821192 ;
-    owl:annotatedTarget "refseq:NC_003545" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791038 ;
-    owl:annotatedTarget "refseq:NC_022799" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760694 ;
-    owl:annotatedTarget "genbank:U34050" .
-
-[] a owl:Axiom ;
-    rdfs:label "S1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "genbank:AY029520" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791045 ;
-    owl:annotatedTarget "refseq:NC_007539" .
-
-[] a owl:Axiom ;
-    rdfs:label "S3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "refseq:NC_007158" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791045 ;
-    owl:annotatedTarget "genbank:AF296439" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821221 ;
-    owl:annotatedTarget "genbank:JN416772" .
-
-[] a owl:Axiom ;
-    rdfs:label "S8" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "refseq:NC_007161" .
-
-[] a owl:Axiom ;
-    rdfs:label "L" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710332 ;
-    owl:annotatedTarget "refseq:NC_002052" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871284 ;
-    owl:annotatedTarget "refseq:NC_021098" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710166 ;
-    owl:annotatedTarget "refseq:NC_002035" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760694 ;
-    owl:annotatedTarget "refseq:NC_003570" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710162 ;
-    owl:annotatedTarget "refseq:NC_010710" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710143 ;
-    owl:annotatedTarget "genbank:X58456" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710327 ;
-    owl:annotatedTarget "refseq:NC_003811" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710166 ;
-    owl:annotatedTarget "genbank:D00355" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791047 ;
-    owl:annotatedTarget "refseq:NC_005977" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19750354 ;
-    owl:annotatedTarget "genbank:X03854" .
-
-[] a owl:Axiom ;
-    rdfs:label "S2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "refseq:NC_007154" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760694 ;
-    owl:annotatedTarget "refseq:NC_003568" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821221 ;
-    owl:annotatedTarget "genbank:JN416771" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821220 ;
-    owl:annotatedTarget "refseq:NC_008037" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710219 ;
-    owl:annotatedTarget "genbank:AY303788" .
-
-[] a owl:Axiom ;
-    rdfs:label "M" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710332 ;
-    owl:annotatedTarget "genbank:S48091" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821222 ;
-    owl:annotatedTarget "refseq:NC_003808" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821254 ;
-    owl:annotatedTarget "refseq:NC_015493" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871281 ;
-    owl:annotatedTarget "refseq:NC_007241" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760700 ;
-    owl:annotatedTarget "refseq:NC_003833" .
-
-[] a owl:Axiom ;
-    rdfs:label "L" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710332 ;
-    owl:annotatedTarget "genbank:D10066" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871294 ;
-    owl:annotatedTarget "genbank:AF225953" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710219 ;
-    owl:annotatedTarget "refseq:NC_005266" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871282 ;
-    owl:annotatedTarget "genbank:AY705784" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760691 ;
-    owl:annotatedTarget "genbank:U17726" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821214 ;
-    owl:annotatedTarget "genbank:AF174585" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871284 ;
-    owl:annotatedTarget "genbank:JX971981" .
-
-[] a owl:Axiom ;
-    rdfs:label "S7" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760514 ;
-    owl:annotatedTarget "refseq:NC_007163" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19811120 ;
-    owl:annotatedTarget "refseq:NC_003530" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710161 ;
-    owl:annotatedTarget "refseq:NC_003549" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA4" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791045 ;
-    owl:annotatedTarget "genbank:AF296442" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760691 ;
-    owl:annotatedTarget "genbank:U23715" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "genbank:U72757" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710142 ;
-    owl:annotatedTarget "genbank:M65138" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791038 ;
-    owl:annotatedTarget "genbank:KC832892" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760694 ;
-    owl:annotatedTarget "genbank:U57047" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710161 ;
-    owl:annotatedTarget "genbank:X00729" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821214 ;
-    owl:annotatedTarget "refseq:NC_003480" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760694 ;
-    owl:annotatedTarget "genbank:U85399" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760682 ;
-    owl:annotatedTarget "genbank:U15729" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821203 ;
-    owl:annotatedTarget "refseq:NC_003807" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871293 ;
-    owl:annotatedTarget "genbank:AB084451" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710217 ;
-    owl:annotatedTarget "genbank:AY303786" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871275 ;
-    owl:annotatedTarget "genbank:HM560702" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "refseq:NC_003772" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821221 ;
-    owl:annotatedTarget "genbank:JN416773" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760700 ;
-    owl:annotatedTarget "refseq:NC_003835" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710218 ;
-    owl:annotatedTarget "refseq:NC_003615" .
-
-[] a owl:Axiom ;
-    rdfs:label "S8" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19790780 ;
-    owl:annotatedTarget "genbank:AB011025" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710217 ;
-    owl:annotatedTarget "refseq:NC_006057" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710168 ;
-    owl:annotatedTarget "genbank:D10044" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821214 ;
-    owl:annotatedTarget "refseq:NC_003464" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760691 ;
-    owl:annotatedTarget "refseq:NC_003546" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA4" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760515 ;
-    owl:annotatedTarget "genbank:M24117" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871293 ;
-    owl:annotatedTarget "refseq:NC_005289" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA7" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "refseq:NC_003760" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871293 ;
-    owl:annotatedTarget "genbank:AB084450" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710144 ;
-    owl:annotatedTarget "refseq:NC_003541" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791038 ;
-    owl:annotatedTarget "genbank:KC832887" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710163 ;
-    owl:annotatedTarget "refseq:NC_003741" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710165 ;
-    owl:annotatedTarget "genbank:GU810904" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821254 ;
-    owl:annotatedTarget "genbank:FN691934" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710326 ;
-    owl:annotatedTarget "refseq:NC_002036" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710144 ;
-    owl:annotatedTarget "genbank:M28818" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710143 ;
-    owl:annotatedTarget "genbank:X58458" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760682 ;
-    owl:annotatedTarget "refseq:NC_002038" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871285 ;
-    owl:annotatedTarget "refseq:NC_021096" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871296 ;
-    owl:annotatedTarget "genbank:L07269" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710168 ;
-    owl:annotatedTarget "genbank:D10663" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821254 ;
-    owl:annotatedTarget "refseq:NC_015492" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710142 ;
-    owl:annotatedTarget "genbank:M60291" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871281 ;
-    owl:annotatedTarget "genbank:AY751737" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710162 ;
-    owl:annotatedTarget "genbank:AB295644" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710326 ;
-    owl:annotatedTarget "genbank:X51828" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871274 ;
-    owl:annotatedTarget "genbank:EU489061" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710326 ;
-    owl:annotatedTarget "refseq:NC_001368" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710222 ;
-    owl:annotatedTarget "genbank:AY157993" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760682 ;
-    owl:annotatedTarget "refseq:NC_002039" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19841371 ;
-    owl:annotatedTarget "refseq:NC_003776" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710327 ;
-    owl:annotatedTarget "genbank:Z36974" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760682 ;
-    owl:annotatedTarget "genbank:U15728" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821254 ;
-    owl:annotatedTarget "genbank:FN691935" .
-
-[] a owl:Axiom ;
-    rdfs:label "S7" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760511 ;
-    owl:annotatedTarget "genbank:L76562" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710142 ;
-    owl:annotatedTarget "genbank:M64713" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710161 ;
-    owl:annotatedTarget "genbank:X00206" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791009 ;
-    owl:annotatedTarget "genbank:U17391" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791045 ;
-    owl:annotatedTarget "genbank:AF296441" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791038 ;
-    owl:annotatedTarget "refseq:NC_022798" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710166 ;
-    owl:annotatedTarget "genbank:D00356" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821214 ;
-    owl:annotatedTarget "genbank:AF174584" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA11" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760515 ;
-    owl:annotatedTarget "genbank:X14219" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821223 ;
-    owl:annotatedTarget "refseq:NC_003844" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760692 ;
-    owl:annotatedTarget "refseq:NC_009536" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871282 ;
-    owl:annotatedTarget "refseq:NC_006275" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871286 ;
-    owl:annotatedTarget "refseq:NC_021094" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710144 ;
-    owl:annotatedTarget "refseq:NC_003542" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710164 ;
-    owl:annotatedTarget "genbank:EU421060" .
-
-[] a owl:Axiom ;
-    rdfs:label "S10" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19790780 ;
-    owl:annotatedTarget "genbank:AB011027" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871295 ;
-    owl:annotatedTarget "refseq:NC_023017" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710165 ;
-    owl:annotatedTarget "genbank:GU810903" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821202 ;
-    owl:annotatedTarget "genbank:J04357" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821223 ;
-    owl:annotatedTarget "genbank:X00435" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19791047 ;
-    owl:annotatedTarget "refseq:NC_005976" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19841371 ;
-    owl:annotatedTarget "refseq:NC_003754" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760700 ;
-    owl:annotatedTarget "refseq:NC_003834" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA3" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19710168 ;
-    owl:annotatedTarget "refseq:NC_003836" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821202 ;
-    owl:annotatedTarget "genbank:X08021" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19871294 ;
-    owl:annotatedTarget "refseq:NC_003004" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA1" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19821203 ;
-    owl:annotatedTarget "genbank:L07884" .
-
-[] a owl:Axiom ;
-    rdfs:label "S10" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760511 ;
-    owl:annotatedTarget "genbank:L76560" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA10" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19760513 ;
-    owl:annotatedTarget "refseq:NC_003766" .
-
-[] a owl:Axiom ;
-    rdfs:label "RNA2" ;
-    owl:annotatedProperty oio:hasDbXref ;
-    owl:annotatedSource ictv:19790979 ;
-    owl:annotatedTarget "genbank:L16239" .
 
