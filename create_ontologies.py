@@ -13,6 +13,8 @@ OBSOLESCENCE_REASON = "http://purl.obolibrary.org/obo/IAO_0000225"
 TERM_SPLIT = "http://purl.obolibrary.org/obo/IAO_0000229"
 TERMS_MERGED = "http://purl.obolibrary.org/obo/IAO_0000227"
 SYNONYM = "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
+SYNONYM_TYPE = "http://www.geneontology.org/formats/oboInOwl#hasSynonymType"
+PREVIOUS_NAME = "http://purl.obolibrary.org/obo/OMO_0003008"
 XREF = "http://www.geneontology.org/formats/oboInOwl#hasDbXref"
 DEPRECATED = "http://www.w3.org/2002/07/owl#deprecated"
 
@@ -28,20 +30,27 @@ def main():
     releases = nodes[(nodes['level_id'] == '100') & (nodes['name'] != 'empty_tree')]
 
     prefix = 'https://ictv.global/taxonomy/taxondetails?taxnode_id='
+  
+    ontologies = []
 
     for release in releases.itertuples():
-        print(f'Processing release {release.name}')
+
+        if release.name != '2023' and release.name != '2022':
+            continue
+
+        print(f'Creating ontology for ICTV release {release.name}')
 
         taxnode_id_to_ictv_id = {}
 
         id = 'ictv_' + release.name
         release_num = release.msl_release_num
-        owl_filename = 'out/' + id + '.owl.ttl'
         ontology_iri = f'{prefix}{id}'
 
         nodes_in_release = nodes[(nodes['msl_release_num'] == release_num) & (nodes['level_id'] != '100')]
 
         g = rdflib.Graph() + common_graph
+        ontologies.append(g)
+
         g.add((URIRef(ontology_iri), RDF.type, OWL.Ontology))
         g.add((URIRef(ontology_iri), RDFS.label, Literal("ICTV Taxonomy (" + release.name + ")")))
         g.add((URIRef(ontology_iri), RDFS.comment, Literal("International Committee on Taxonomy of Viruses (ICTV)")))
@@ -80,6 +89,8 @@ def main():
             g.add((class_iri, RDF.type, OWL.Class))
             g.add((class_iri, RDFS.label, Literal(node.name)))
             g.add((class_iri, URIRef("http://ictv.global/ictv_id"), Literal(node.ictv_id)))
+            g.add((class_iri, OWL.versionInfo, Literal(str(release_num))))
+
             if node.parent_id != release.ictv_id:
                 if node.parent_id in taxnode_id_to_ictv_id:
                     g.add((class_iri, RDFS.subClassOf, URIRef(f'{prefix}{taxnode_id_to_ictv_id[node.parent_id]}')))
@@ -96,7 +107,7 @@ def main():
             taxnode_isolates = isolates[isolates['taxnode_id'] == node.taxnode_id]
 
             for isolate in taxnode_isolates.itertuples():
-                isolate_iri = f'https://ictv.global/isolate_{isolate.isolate_id}'
+                isolate_iri = f'https://ictv.global/isolates#isolate_{isolate.isolate_id}'
                 g.add((URIRef(isolate_iri), RDF.type, OWL.NamedIndividual))
                 g.add((URIRef(isolate_iri), RDF.type, class_iri))
                 g.add((URIRef(isolate_iri), RDFS.isDefinedBy, URIRef(ontology_iri)))
@@ -119,16 +130,63 @@ def main():
         g.bind('owl', OWL)
         g.bind('iao', 'http://purl.obolibrary.org/obo/IAO_')
         g.bind('oio', 'http://www.geneontology.org/formats/oboInOwl#')
+        g.bind('omo', 'http://purl.obolibrary.org/obo/OMO_')
         g.bind('ictv', prefix)
 
+    print(f'Merging all the ontologies into a big graph for querying...')
+    g_all_versions_together = rdflib.Graph()
+    for g in ontologies:
+        ontology = g.value(predicate=RDF.type, object=OWL.Ontology)
+        ontology_id = ontology.split('=')[-1]
+        print(ontology_id)
+        g_all_versions_together += g
+
+    print(f'Annotating synonyms...')
+    for g in ontologies:
+        ontology = g.value(predicate=RDF.type, object=OWL.Ontology)
+        ontology_id = ontology.split('=')[-1]
+        print(ontology_id)
+        for c in g.subjects(predicate=RDF.type, object=OWL.Class):
+            ictv_id = g.value(subject=c, predicate=URIRef("http://ictv.global/ictv_id"))
+            prev_versions = list(g_all_versions_together.subjects(predicate=URIRef("http://ictv.global/ictv_id"), object=ictv_id))
+            cur_name = g.value(subject=c, predicate=RDFS.label)
+            prev_names = []
+            for prev_version in prev_versions:
+                prev_name = g_all_versions_together.value(subject=prev_version, predicate=RDFS.label)
+                if prev_name and prev_name != cur_name:
+                    prev_names.append(prev_name)
+            if len(prev_names) > 0:
+                for name in prev_names:
+                    g.add((c, URIRef(SYNONYM), Literal(name)))
+                    stmt = BNode()
+                    g.add((stmt, RDF.type, OWL.Axiom))
+                    g.add((stmt, OWL.annotatedSource, c))
+                    g.add((stmt, OWL.annotatedProperty, URIRef(SYNONYM)))
+                    g.add((stmt, OWL.annotatedTarget, Literal(name)))
+                    g.add((stmt, URIRef(SYNONYM_TYPE), URIRef(PREVIOUS_NAME)))
+
+    for g in ontologies:
+        ontology = g.value(predicate=RDF.type, object=OWL.Ontology)
+        ontology_id = ontology.split('=')[-1]
+        owl_filename = 'out/' + ontology_id + '.owl.ttl'
+        print(f'Saving OWL file ' + owl_filename)
         g.serialize(owl_filename, format='turtle')
 
     owl_files = [f for f in os.listdir('out') if f.endswith('.owl.ttl')]
     ols_config = {
-        'ontologies': list(map(lambda f: {
+        'ontologies':[
+            {
+                "id": "oio",
+                "ontology_purl": "https://raw.githubusercontent.com/geneontology/go-ontology/master/contrib/oboInOwl",
+                "base_uri": [
+                    "http://www.geneontology.org/formats/oboInOwl#"
+                ]
+            }
+         ] + list(map(lambda f: {
             'id': f.split('.')[0],
-            'ontology_purl': './out/' + f,
-            'preferredPrefix': prefix
+            'ontology_purl': 'file:///opt/dataload/out/' + f,
+            'preferredPrefix': prefix,
+            'base_uri': ["https://ictv.global/taxonomy/taxondetails?taxnode_id=","https://ictv.global/isolates#"]
         }, owl_files))
     }
     with open('ols_config.json', 'w') as f:
