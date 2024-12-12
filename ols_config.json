@@ -1,6 +1,10 @@
 {
   "ontologies": [
     {
+      "id": "evora",
+      "ontology_purl": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/dev/owl/schema.owl.ttl"
+    },
+    {
       "id": "oio",
       "ontology_purl": "https://raw.githubusercontent.com/geneontology/go-ontology/master/contrib/oboInOwl",
       "base_uri": [
@@ -199,6 +203,15 @@
     {
       "id": "ictv_1975",
       "ontology_purl": "file:///opt/dataload/out/ictv_1975.owl.ttl",
+      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
+      "base_uri": [
+        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
+        "https://ictv.global/isolates#"
+      ]
+    },
+    {
+      "id": "evora",
+      "ontology_purl": "file:///opt/dataload/out/evora.owl.ttl",
       "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
       "base_uri": [
         "https://ictv.global/taxonomy/taxondetails?taxnode_id=",

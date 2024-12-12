@@ -1,0 +1,3321 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdp: <http://www.wikidata.org/prop/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+schema1:Audio a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Audio" ;
+    rdfs:subClassOf schema1:File ;
+    skos:altLabel "Audio" ;
+    skos:closeMatch wd:Q26987229 ;
+    skos:definition "Subclass of File representing sound recordings or audio tracks" ;
+    skos:inScheme <schema> .
+
+schema1:Bacterium a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Bacterium" ;
+    rdfs:subClassOf schema1:Pathogen ;
+    skos:altLabel "Bacterium" ;
+    skos:closeMatch wd:Q10876 ;
+    skos:definition "The bacterium as a biological material" ;
+    skos:inScheme <schema> .
+
+schema1:Bundle a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Bundle" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom schema1:File ;
+            owl:onProperty schema1:complementaryDocument ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:complementaryDocument ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:productsOfTheBundle ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Product ;
+            owl:onProperty schema1:productsOfTheBundle ],
+        schema1:Product ;
+    skos:altLabel "Bundle" ;
+    skos:closeMatch wd:Q1020767 ;
+    skos:definition "A group of products" ;
+    skos:inScheme <schema> .
+
+schema1:DetectionKit a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Detection Kit" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:targetedRegion ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:targetedRegion ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:File ;
+            owl:onProperty schema1:hasSOPFile ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty schema1:specificityDocumented ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:specificityDocumented ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:hasSOPFile ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:specificity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:specificityDocumented ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:specificity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:specificity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:targetedRegion ],
+        schema1:Product ;
+    skos:altLabel "Detection Kit" ;
+    skos:definition "A detection kit for specific pathogens" ;
+    skos:inScheme <schema> .
+
+schema1:Fungus a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Fungus" ;
+    rdfs:subClassOf schema1:Pathogen ;
+    skos:altLabel "Fungus" ;
+    skos:closeMatch wd:Q764 ;
+    skos:definition "The fungus as a biological material" ;
+    skos:inScheme <schema> .
+
+schema1:Hybridoma a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Hybridoma" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:hybridomaDescription ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:hybridomaDescription ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:hybridomaDescription ],
+        schema1:Antibody ;
+    skos:altLabel "Hybridoma" ;
+    skos:closeMatch wd:Q27554370 ;
+    skos:definition "An hybridoma that provides antibodies that can be related to a pathogen" ;
+    skos:inScheme <schema> .
+
+schema1:NaturalPartOrigin a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "NaturalPartOrigin" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Country ;
+            owl:onProperty schema1:countryOfCollection ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty schema1:beforeDate ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:reportingToAuthorities ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:IPLCOrigin ;
+            owl:onProperty schema1:indigenousPoepleAndLocalCommunityOrigin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:indigenousPoepleAndLocalCommunityOrigin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:countryOfCollection ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:indigenousPoepleAndLocalCommunityOrigin ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:collectionDate ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:reportingToAuthorities ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:beforeDate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Datetime ;
+            owl:onProperty schema1:collectionDate ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:countryOfCollection ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:beforeDate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:reportingToAuthorities ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:collectionDate ],
+        schema1:BiologicalPartOrigin ;
+    skos:altLabel "Natural part origin" ;
+    skos:definition "Information on the origin of a natural part that composes the biological material" ;
+    skos:inScheme <schema> .
+
+schema1:NucleicAcid a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Nucleic Acid" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:identificationTechnique ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:isItAClonedNucleicAcid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:PlasmidSelection ;
+            owl:onProperty schema1:pasmidSelection ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:regionEncompassedInThisProduct ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:mutationObserved ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:observedMutations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:identificationTechnique ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:regionEncompassedInThisProduct ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:sequencing ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:ProteinTag ;
+            owl:onProperty schema1:hasTAG ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:titer ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:biologicalMaterialOrigin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:hasGbFileOfTheConstruct ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Data ;
+            owl:onProperty schema1:hasGbFileOfTheConstruct ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty schema1:mutationObserved ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:titer ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:hasTAG ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:clonedIntoPlasmid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:hasTAG ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:clonedIntoPlasmid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:BiologicalMaterialOrigin ;
+            owl:onProperty schema1:biologicalMaterialOrigin ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:observedMutations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Sequence ;
+            owl:onProperty schema1:sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:ExpressionVector ;
+            owl:onProperty schema1:clonedIntoPlasmid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:identificationTechnique ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:sequencing ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty schema1:sequenceChecked ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:sequencing ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:pasmidSelection ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:observedMutations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:regionEncompassedInThisProduct ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:biologicalMaterialOrigin ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:titer ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:sequenceChecked ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:isItAClonedNucleicAcid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:mutationObserved ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:sequenceChecked ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty schema1:isItAClonedNucleicAcid ],
+        schema1:Product ;
+    skos:altLabel "Nucleic Acid" ;
+    skos:closeMatch wd:Q123619 ;
+    skos:definition "Nucleic acid related to a pathogen. It can be extracted or synthetic" ;
+    skos:inScheme <schema> .
+
+schema1:Person a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:oRCIDiD ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:oRCIDiD ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:oRCIDiD ],
+        schema1:PersonOrOrganization ;
+    skos:altLabel "Person" ;
+    skos:closeMatch wd:Q215627 ;
+    skos:definition "An individual" ;
+    skos:inScheme <schema> .
+
+schema1:Prion a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Prion" ;
+    rdfs:subClassOf schema1:Pathogen ;
+    skos:altLabel "Prion" ;
+    skos:closeMatch wd:Q47051 ;
+    skos:definition "The prion as a biological material" ;
+    skos:inScheme <schema> .
+
+schema1:Protein a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Protein" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom schema1:ProteinTag ;
+            owl:onProperty schema1:proteinTAG ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:expressedAs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:BiologicalMaterialOrigin ;
+            owl:onProperty schema1:biologicalMaterialOrigin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:inclusionBodiesType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:biologicalMaterialOrigin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:typeOfFunctionalCharacterization ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:functionalCharacterization ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:inclusionBodiesType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:expressedAs ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:specialFeature ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:SpecialFeature ;
+            owl:onProperty schema1:specialFeature ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Sequence ;
+            owl:onProperty schema1:sequence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:functionalTechnicalDescription ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:PDBReference ;
+            owl:onProperty schema1:relatedPDB ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:expressionSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:expressionSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:functionalTechnicalDescription ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:biologicalMaterialOrigin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:proteinPurification ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:sequence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:proteinPurification ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:functionalCharacterization ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:relatedPDB ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:proteinTAG ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:typeOfFunctionalCharacterization ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:theTAGStatusOfTheSolubilizedProtein ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:theTAGStatusOfTheSolubilizedProtein ],
+        schema1:Product ;
+    skos:altLabel "Protein" ;
+    skos:closeMatch wd:Q8054 ;
+    skos:definition "A protein as a derived product from a pathogen" ;
+    skos:inScheme <schema> .
+
+schema1:Protozoan a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Protozoan" ;
+    rdfs:subClassOf schema1:Pathogen ;
+    skos:altLabel "Protozoan" ;
+    skos:closeMatch wd:Q101274 ;
+    skos:definition "The protozoan as a biological material" ;
+    skos:inScheme <schema> .
+
+schema1:Publication a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Publication" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Journal ;
+            owl:onProperty schema1:journal ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:relatedDOI ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:authors ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:abstract ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:authors ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:abstract ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:relatedDOI ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:authors ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:abstract ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:journal ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:journal ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:DOI ;
+            owl:onProperty schema1:relatedDOI ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:title ],
+        schema1:Dataset ;
+    skos:altLabel "Publication" ;
+    skos:closeMatch wd:Q591041 ;
+    skos:definition "A scientific publication" ;
+    skos:inScheme <schema> .
+
+schema1:Service a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Service" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:modelSpecies ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:modelType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:modelType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:modelSpecies ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:modelSpecies ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:modelType ],
+        schema1:ProductOrService ;
+    skos:altLabel "Service" ;
+    skos:closeMatch wd:Q7406919 ;
+    skos:definition "A service" ;
+    skos:inScheme <schema> .
+
+schema1:SyntheticPartOrigin a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SyntheticPartOrigin" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:descriptionOfModificationsMadeFromTheReferenceSequences ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:descriptionOfModificationsMadeFromTheReferenceSequences ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:modificationsFromTheReferenceSequences ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:modificationsFromTheReferenceSequences ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:descriptionOfModificationsMadeFromTheReferenceSequences ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty schema1:modificationsFromTheReferenceSequences ],
+        schema1:BiologicalPartOrigin ;
+    skos:altLabel "Synthetic part origin" ;
+    skos:definition "Information on the origin of a synthetic part that composes the biological material" ;
+    skos:inScheme <schema> .
+
+schema1:Video a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Video" ;
+    rdfs:subClassOf schema1:File ;
+    skos:altLabel "Video" ;
+    skos:closeMatch wd:Q98405806 ;
+    skos:definition "Subclass of File representing moving visual media, such as recordings, presentations, or movies" ;
+    skos:inScheme <schema> .
+
+schema1:Viroid a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Viroid" ;
+    rdfs:subClassOf schema1:Pathogen ;
+    skos:altLabel "Viroid" ;
+    skos:closeMatch wd:Q209917 ;
+    skos:definition "The viroid as a biological material" ;
+    skos:inScheme <schema> .
+
+schema1:Virus a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Virus" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:mycoplasmicContent ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:coInfectingViruses ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:VirusName ;
+            owl:onProperty schema1:coInfectingViruses ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:mycoplasmicContent ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:contaminationWithCoInfectingViruses ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty schema1:contaminationWithCoInfectingViruses ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:contaminationWithCoInfectingViruses ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty schema1:mycoplasmicContent ],
+        schema1:Pathogen ;
+    skos:altLabel "Virus" ;
+    skos:closeMatch wd:Q808 ;
+    skos:definition "The virus as a biological material" ;
+    skos:inScheme <schema> .
+
+schema1:Antibody a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Antibody" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:productionSystem ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:productionSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:SequenceReference ;
+            owl:onProperty schema1:sequenceReference ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty schema1:antibodyPurifiedByAffinity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:targetedAntigen ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:antibodyPurifiedByAffinity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:antibodyPurifiedByAffinity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:productionSystem ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:specificityDocumented ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty schema1:specificityDocumented ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:targetedAntigen ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:targetedAntigen ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:specificityDocumented ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:sequenceReference ],
+        schema1:Product ;
+    skos:altLabel "Antibody" ;
+    skos:closeMatch wd:Q79460 ;
+    skos:definition "Protein that can bind to certain types of foreign bodies, such as pathogens" ;
+    skos:inScheme <schema> .
+
+schema1:Certification a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Certification" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:resourceURL ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:logo ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Document ;
+            owl:onProperty schema1:certificationDocument ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Image ;
+            owl:onProperty schema1:logo ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uri ;
+            owl:onProperty schema1:resourceURL ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:logo ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:resourceURL ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:certificationDocument ],
+        schema1:Nameable ;
+    skos:altLabel "Certification" ;
+    skos:closeMatch wd:Q374814 ;
+    skos:definition "Assurance given by an independent certification body that a product, service or system meets the requirements of a standard" ;
+    skos:inScheme <schema> .
+
+schema1:Collection a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Collection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom schema1:DataProvider ;
+            owl:onProperty schema1:DataProvider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:DataProvider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:collectionItem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:ProductOrService ;
+            owl:onProperty schema1:collectionItem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:DataProvider ],
+        schema1:Catalogue ;
+    skos:altLabel "Collection" ;
+    skos:closeMatch wd:Q2668072 ;
+    skos:definition "Set of products and services with some common characteristics" ;
+    skos:inScheme <schema> .
+
+schema1:Data a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Data" ;
+    rdfs:subClassOf schema1:File ;
+    skos:altLabel "Data" ;
+    skos:closeMatch wd:Q42848 ;
+    skos:definition "Subclass of File representing structured or unstructured datasets, often used for analysis, storage, or transfer of information" ;
+    skos:inScheme <schema> .
+
+schema1:DataService a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "DataService" ;
+    rdfs:subClassOf schema1:Nameable ;
+    skos:altLabel "Data Service" ;
+    skos:definition "A collection of operations that provides access to one or more datasets or data processing functions" ;
+    skos:exactMatch dcat:DataService ;
+    skos:inScheme <schema> .
+
+schema1:ExpressionVector a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ExpressionVector" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "Expression vector" ;
+    skos:closeMatch wd:Q5421712 ;
+    skos:definition "A reference to an expression vector plasmid, typically embedding a resistance marker for inducible protein expression" ;
+    skos:inScheme <schema> .
+
+schema1:ExternalRelatedReference a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ExternalRelatedReference" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:referenceProviderName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:referenceLabel ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:referenceLabel ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:referenceProviderPrefix ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:reference ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:referenceProviderPrefix ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:referenceLabel ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:referenceProviderName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:referenceProviderName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:reference ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:referenceProviderPrefix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:reference ],
+        schema1:Dataset ;
+    skos:altLabel "External related reference" ;
+    skos:definition "A reference that permits to retrieve an item from an external provider" ;
+    skos:inScheme <schema> .
+
+schema1:IATAClassification a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "IATAClassification" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "IATA classification" ;
+    skos:definition "The corresponding International Air Transport Association (IATA)'s category for dangerous goods that are transported by air" ;
+    skos:inScheme <schema> .
+
+schema1:IPLCOrigin a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "IPLCOrigin" ;
+    rdfs:subClassOf schema1:GeographicalOrigin ;
+    skos:altLabel "IPLC origin" ;
+    skos:definition "The IPLC area (Indigenous People and Local Communities) from which a physical item, originates or is naturally found" ;
+    skos:inScheme <schema> .
+
+schema1:IsolationHost a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "IsolationHost" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "Isolation host" ;
+    skos:definition "Host organism from which the pathogen was isolated" ;
+    skos:inScheme <schema> .
+
+schema1:Journal a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Journal" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "Journal" ;
+    skos:closeMatch wd:Q5633421 ;
+    skos:definition "Periodical journal publishing scientific research" ;
+    skos:inScheme <schema> .
+
+schema1:Keyword a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Keyword" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "Keyword" ;
+    skos:closeMatch wd:Q1128340 ;
+    skos:definition "A term or phrase used to tag and categorize content" ;
+    skos:inScheme <schema> .
+
+schema1:MSDS a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "MSDS" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:stabilityAndReactivity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:accidentalReleaseMeasures ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:transportInformation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:msdsContact ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:msdsContact ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:handlingAndStorage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:exposureControlsPersonalProtection ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:exposureControlsPersonalProtection ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:ecologicalInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:physicalChemicalProperties ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:handlingAndStorage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:regulatoryInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:accidentalReleaseMeasures ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:firstAidMeasures ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:fireFightingMeasures ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:furtherInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:hazardsIdentification ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:fireFightingMeasures ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:stabilityAndReactivity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:regulatoryInformation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:physicalChemicalProperties ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:disposalConsiderations ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:hazardsIdentification ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:handlingAndStorage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:disposalConsiderations ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:exposureControlsPersonalProtection ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:transportInformation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:toxicologicalInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:ecologicalInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:stabilityAndReactivity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:physicalChemicalProperties ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:hazardsIdentification ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:fireFightingMeasures ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:firstAidMeasures ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:ecologicalInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:transportInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:toxicologicalInformation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:furtherInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:ContactPoint ;
+            owl:onProperty schema1:msdsContact ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:furtherInformation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:toxicologicalInformation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:regulatoryInformation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:firstAidMeasures ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:accidentalReleaseMeasures ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:disposalConsiderations ],
+        schema1:Dataset ;
+    skos:altLabel "MSDS" ;
+    skos:closeMatch wd:Q222067 ;
+    skos:definition "A Material Safety Data Sheet (MSDS) or Safety Data Sheet (SDS) is a standardized document that contains crucial occupational safety and health information related to the product" ;
+    skos:inScheme <schema> .
+
+schema1:Originator a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Originator" ;
+    rdfs:subClassOf schema1:PersonOrOrganization ;
+    skos:altLabel "Originator" ;
+    skos:definition "The individual or organization responsible for the original discovery, isolation, or creation of an item, providing information about the source or origin of the sample" ;
+    skos:inScheme <schema> .
+
+schema1:PDBReference a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "PDBReference" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "PDB reference" ;
+    skos:closeMatch wdp:Q42415644 ;
+    skos:definition "Identifier for 3D structural data as per the PDB (Protein Data Bank) database" ;
+    skos:inScheme <schema> .
+
+schema1:PathogenIdentification a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "PathogenIdentification" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:hostType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:pathogenType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:pathogenName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:CommonName ;
+            owl:onProperty schema1:pathogenName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:taxon ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:serotype ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:genotype ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:variant ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:isolate ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:genotype ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:pathogenType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:hostType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:strain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:subspecies ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:serotype ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:strain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:pathogenType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Variant ;
+            owl:onProperty schema1:variant ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:subspecies ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:variant ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:genotype ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:isolate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:isolate ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:subspecies ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:strain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Taxon ;
+            owl:onProperty schema1:taxon ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:pathogenName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:serotype ],
+        schema1:Dataset ;
+    skos:altLabel "Pathogen identification" ;
+    skos:definition "A collection of distinguishing information that enables the differentiation of a pathogen from another" ;
+    skos:inScheme <schema> .
+
+schema1:PlasmidSelection a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "PlasmidSelection" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "Plasmid selection" ;
+    skos:definition "The process of identifying cells that have successfully incorporated a plasmid, typically using antibiotic resistance markers" ;
+    skos:inScheme <schema> .
+
+schema1:ProductionCellLine a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ProductionCellLine" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "Production cell line" ;
+    skos:closeMatch wd:Q21014462 ;
+    skos:definition "A population of cells that originates from a primary culture, adapted to grow and divide under laboratory conditions. Used in biotechnology to consistently produce biological substances" ;
+    skos:inScheme <schema> .
+
+schema1:PropagationHost a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "PropagationHost" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "Propagation host" ;
+    skos:definition "The organism used to grow and multiply the pathogen under controlled conditions" ;
+    skos:inScheme <schema> .
+
+schema1:Provider a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Provider" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:memberOfRI ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:RI ;
+            owl:onProperty schema1:memberOfRI ],
+        schema1:Organization ;
+    skos:altLabel "Provider" ;
+    skos:definition "A provider of products or services, as a specific organization" ;
+    skos:inScheme <schema> .
+
+schema1:RI a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "RI" ;
+    rdfs:subClassOf schema1:Organization ;
+    skos:altLabel "RI" ;
+    skos:closeMatch wd:Q1438053 ;
+    skos:definition "A research infrastructure" ;
+    skos:inScheme <schema> .
+
+schema1:RecombinantPartIdentification a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "RecombinantPartIdentification" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:partIdentification ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Sequence ;
+            owl:onProperty schema1:sequence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:partIdentification ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:partIdentification ] ;
+    skos:altLabel "Recombinant part identification" ;
+    skos:definition "Identification of a recombinant part" ;
+    skos:inScheme <schema> .
+
+schema1:RiskGroup a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "RiskGroup" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "Risk group" ;
+    skos:closeMatch wd:Q125449255 ;
+    skos:definition "Risk group classification guides initial handling of biological agents in labs but doesn't systematically equate to biosafety levels. Actual risk varies with the agent, procedures, and personnel competence" ;
+    skos:inScheme <schema> ;
+    skos:note "Use of Data provider if any or manual import of information from wd:Q125449389, wd:Q125449412, wd:Q125449429, wd:Q125449439" .
+
+schema1:SpecialFeature a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SpecialFeature" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "Special feature" ;
+    skos:definition "Distinctive attributes of a product that set it apart from other similar items e.g., Reference strain, Vaccinal strain, Antiviral resistant strain ..." ;
+    skos:inScheme <schema> ;
+    skos:note "These special features help researchers and professionals in the field to select appropriate virus strains for their specific research needs and applications." .
+
+schema1:TransmissionMethod a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "TransmissionMethod" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "Transmission method" ;
+    skos:definition "The process by which the pathogen spreads between hosts" ;
+    skos:inScheme <schema> .
+
+schema1:Variant a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Variant" ;
+    rdfs:subClassOf schema1:CommonName ;
+    skos:altLabel "Variant" ;
+    skos:closeMatch wd:Q104795308 ;
+    skos:definition "An organism with one or more new mutations is referred to as a “variant” of the original organism if not sufficiently different to be termed a distinct strain" ;
+    skos:inScheme <schema> .
+
+schema1:Version a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Version" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uri ;
+            owl:onProperty schema1:versionOf ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:ID ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:versionOf ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:ID ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:versionOf ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:ID ],
+        schema1:Dataset ;
+    skos:altLabel "Version" ;
+    skos:closeMatch wd:Q114469879 ;
+    skos:definition "Numeric code assigned to identify a particular historical version of a work (e.g. software or technical standards)" ;
+    skos:inScheme <schema> .
+
+schema1:VirusName a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "VirusName" ;
+    rdfs:subClassOf schema1:CommonName ;
+    skos:altLabel "Virus Name" ;
+    skos:closeMatch wd:Q125481078 ;
+    skos:definition "A virus vernacular name or a name that describes a group of viruses" ;
+    skos:inScheme <schema> .
+
+schema1:Vocabulary a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Vocabulary" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:term ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:DataProvider ;
+            owl:onProperty schema1:termDataProvider ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Term ;
+            owl:onProperty schema1:term ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:termDataProvider ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:termDataProvider ],
+        schema1:Catalogue ;
+    skos:altLabel "Vocabulary" ;
+    skos:closeMatch wd:Q6499736 ;
+    skos:definition "A subset of words or phrases specific to a particular subject or field" ;
+    skos:inScheme <schema> .
+
+schema1:AlternateName a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "AlternateName" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom schema1:AlternateName ;
+            owl:onProperty schema1:alternateName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:alternateName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:sourceOfInformation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:sourceOfInformation ],
+        schema1:Term ;
+    skos:altLabel "Alternate Name" ;
+    skos:closeMatch wd:Q7662595 ;
+    skos:definition "List of alternate names for things" ;
+    skos:inScheme <schema> .
+
+schema1:DOI a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "DOI" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "DOI" ;
+    skos:closeMatch wd:Q25670 ;
+    skos:definition "A unique string identifier assigned to a digital object, providing a permanent link for reliable citation and access.  The Digital Object Identifier (DOI) is a persistent identifier that is an ISO standard" ;
+    skos:inScheme <schema> .
+
+schema1:Document a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Document" ;
+    rdfs:subClassOf schema1:File ;
+    skos:altLabel "Document" ;
+    skos:closeMatch wd:Q49848 ;
+    skos:definition "Subclass of File representing textual or written files such as reports, manuals, or forms" ;
+    skos:inScheme <schema> .
+
+schema1:GeographicalOrigin a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "GeographicalOrigin" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "Geographical origin" ;
+    skos:closeMatch wd:Q3885844 ;
+    skos:definition "The specific location or region where a physical item, originates or is naturally found" ;
+    skos:inScheme <schema> ;
+    skos:note "geonames.org API could be a good service data provider as suggested by DCAT-AP" .
+
+schema1:License a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "License" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:licensingOrAttribution ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:logo ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:resourceURL ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:resourceURL ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:licensingOrAttribution ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Image ;
+            owl:onProperty schema1:logo ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uri ;
+            owl:onProperty schema1:resourceURL ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:logo ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:licensingOrAttribution ],
+        schema1:Nameable ;
+    skos:altLabel "License" ;
+    skos:closeMatch wd:Q79719 ;
+    skos:definition "The legal terms and conditions under which the subject can be used, shared, or distributed, indicating any restrictions or permissions" ;
+    skos:inScheme <schema> .
+
+schema1:NamedDataset a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "NamedDataset" ;
+    rdfs:subClassOf schema1:Nameable ;
+    skos:altLabel "Named Dataset" ;
+    skos:definition "A collection of data, that has a name and can have a description, published or curated by a single agent, and available for access" ;
+    skos:exactMatch dcat:Dataset ;
+    skos:inScheme <schema> .
+
+schema1:Organization a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Organization" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:alternateName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:alternateName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:country ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:alternateName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:country ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Country ;
+            owl:onProperty schema1:country ],
+        schema1:PersonOrOrganization ;
+    skos:altLabel "Organization" ;
+    skos:closeMatch wd:Q43229 ;
+    skos:definition "A social entity established to meet needs or pursue specific goals" ;
+    skos:inScheme <schema> .
+
+schema1:ProteinTag a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ProteinTag" ;
+    rdfs:subClassOf schema1:Term ;
+    skos:altLabel "Protein tag" ;
+    skos:closeMatch wd:Q645590 ;
+    skos:definition "Peptide sequence genetically grafted onto a recombinant protein" ;
+    skos:inScheme <schema> .
+
+schema1:SequenceReference a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SequenceReference" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:sequenceProvider ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:accessionNumber ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:accessionNumber ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:sequenceProvider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:accessionNumber ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:sequenceProvider ],
+        schema1:Dataset ;
+    skos:altLabel "Sequence reference" ;
+    skos:definition "A reference that permits to retrieve the sequence information from a sequence provider" ;
+    skos:inScheme <schema> ;
+    skos:note "A work on making it a subclass of External related reference might be consistent and beneficial for data structuration but special attention will have to be take to ensure it remains consistent with the actual the use cases for users" .
+
+schema1:TaxonomicRank a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "TaxonomicRank" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:taxonomy ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Taxonomy ;
+            owl:onProperty schema1:taxonomy ],
+        schema1:Term ;
+    skos:altLabel "Taxonomic rank" ;
+    skos:closeMatch wd:Q427626 ;
+    skos:definition "The possible taxonomic ranks and their description" ;
+    skos:inScheme <schema> ;
+    skos:note "Use of Data provider recommended" .
+
+schema1:Taxonomy a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Taxonomy" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:taxonDataProvider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:versionDataProvider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:rankDataProvider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:DataProvider ;
+            owl:onProperty schema1:rankDataProvider ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:rankDataProvider ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Version ;
+            owl:onProperty schema1:version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:TaxonomicRank ;
+            owl:onProperty schema1:rank ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:rank ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:versionDataProvider ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:taxonDataProvider ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:DataProvider ;
+            owl:onProperty schema1:versionDataProvider ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:DataProvider ;
+            owl:onProperty schema1:taxonDataProvider ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Taxon ;
+            owl:onProperty schema1:taxon ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:version ],
+        schema1:Catalogue ;
+    skos:altLabel "Taxonomy" ;
+    skos:closeMatch wd:Q8269924 ;
+    skos:definition "Science of naming, defining and classifying organisms" ;
+    skos:inScheme <schema> .
+
+schema1:additionalCategory a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "additionalCategory" ;
+    skos:inScheme <schema> .
+
+schema1:biologicalPartOrigin a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "biologicalPartOrigin" ;
+    skos:inScheme <schema> .
+
+schema1:certification a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "certification" ;
+    skos:inScheme <schema> .
+
+schema1:certificationDocument a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "certificationDocument" ;
+    skos:inScheme <schema> .
+
+schema1:coInfectingViruses a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "coInfectingViruses" ;
+    skos:inScheme <schema> .
+
+schema1:collection a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "collection" ;
+    skos:inScheme <schema> .
+
+schema1:collectionItem a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "collectionItem" ;
+    skos:inScheme <schema> .
+
+schema1:domain a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "domain" ;
+    skos:inScheme <schema> .
+
+schema1:expressedAs a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "expressedAs" ;
+    skos:inScheme <schema> .
+
+schema1:expressionSystem a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "expressionSystem" ;
+    skos:inScheme <schema> .
+
+schema1:externalEquivalentTaxon a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "externalEquivalentTaxon" ;
+    skos:inScheme <schema> .
+
+schema1:externalRelatedReference a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "externalRelatedReference" ;
+    skos:inScheme <schema> .
+
+schema1:functionalCharacterization a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "functionalCharacterization" ;
+    skos:inScheme <schema> .
+
+schema1:functionalTechnicalDescription a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "functionalTechnicalDescription" ;
+    skos:inScheme <schema> .
+
+schema1:hasGbFileOfTheConstruct a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hasGbFileOfTheConstruct" ;
+    skos:inScheme <schema> .
+
+schema1:hasSOPFile a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hasSOPFile" ;
+    skos:inScheme <schema> .
+
+schema1:hostType a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hostType" ;
+    skos:inScheme <schema> .
+
+schema1:inclusionBodiesType a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "inclusionBodiesType" ;
+    skos:inScheme <schema> .
+
+schema1:isolationHost a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "isolationHost" ;
+    skos:inScheme <schema> .
+
+schema1:keywords a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "keywords" ;
+    skos:inScheme <schema> .
+
+schema1:memberOfRI a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "memberOfRI" ;
+    skos:inScheme <schema> .
+
+schema1:pasmidSelection a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pasmidSelection" ;
+    skos:inScheme <schema> .
+
+schema1:pathogenIdentification a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pathogenIdentification" ;
+    skos:inScheme <schema> .
+
+schema1:previouslyKnownAs a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "previouslyKnownAs" ;
+    skos:inScheme <schema> .
+
+schema1:productPicture a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "productPicture" ;
+    skos:inScheme <schema> .
+
+schema1:productionCellLine a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "productionCellLine" ;
+    skos:inScheme <schema> .
+
+schema1:productsOfTheBundle a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "productsOfTheBundle" ;
+    skos:inScheme <schema> .
+
+schema1:propagationHost a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "propagationHost" ;
+    skos:inScheme <schema> .
+
+schema1:proteinPurification a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "proteinPurification" ;
+    skos:inScheme <schema> .
+
+schema1:proteinTAG a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "proteinTAG" ;
+    skos:inScheme <schema> .
+
+schema1:relatedPDB a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "relatedPDB" ;
+    skos:inScheme <schema> .
+
+schema1:specialFeature a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "specialFeature" ;
+    skos:inScheme <schema> .
+
+schema1:suspectedEpidemiologicalOrigin a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "suspectedEpidemiologicalOrigin" ;
+    skos:inScheme <schema> .
+
+schema1:term a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "term" ;
+    skos:inScheme <schema> .
+
+schema1:theTAGStatusOfTheSolubilizedProtein a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "theTAGStatusOfTheSolubilizedProtein" ;
+    skos:inScheme <schema> .
+
+schema1:transmissionMethod a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "transmissionMethod" ;
+    skos:inScheme <schema> .
+
+schema1:typeOfFunctionalCharacterization a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "typeOfFunctionalCharacterization" ;
+    skos:inScheme <schema> .
+
+schema1:BiologicalMaterialOrigin a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "BiologicalMaterialOrigin" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom schema1:BiologicalPartOrigin ;
+            owl:onProperty schema1:biologicalPartOrigin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:biologicalSourceType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:thirdPartyDistributionConsent ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:usageRestrictions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty schema1:biologicalSourceType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:biologicalSourceType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:recombinantMaterial ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:usageRestrictions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty schema1:recombinantMaterial ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:usageRestrictions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:thirdPartyDistributionConsent ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:biologicalPartOrigin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:recombinantMaterial ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:thirdPartyDistributionConsent ],
+        schema1:Dataset ;
+    skos:altLabel "Biological material origin" ;
+    skos:definition "Information about the origin of the biological material, compulsory for access, utilization, and benefit-sharing of genetic resources in compliance with the Nagoya Protocol" ;
+    skos:inScheme <schema> .
+
+schema1:BiologicalPartOrigin a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "BiologicalPartOrigin" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:recombinantPartIdentification ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:recombinantPartIdentification ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:RecombinantPartIdentification ;
+            owl:onProperty schema1:recombinantPartIdentification ],
+        schema1:Dataset ;
+    skos:altLabel "Biological part origin" ;
+    skos:definition "Information on the origin of a unitary, cohesive part that is part of, or constitutes the biological material. It can be multiple parts in case of a recombinant biological material" ;
+    skos:inScheme <schema> .
+
+schema1:Catalogue a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Catalogue" ;
+    rdfs:subClassOf schema1:Nameable ;
+    skos:altLabel "Catalogue" ;
+    skos:definition "A curated collection of metadata about resources" ;
+    skos:exactMatch dcat:Catalog ;
+    skos:inScheme <schema> .
+
+schema1:CommonName a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "CommonName" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:sourceOfInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:AlternateName ;
+            owl:onProperty schema1:alternateName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:sourceOfInformation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:alternateName ],
+        schema1:Term ;
+    skos:altLabel "Common Name" ;
+    skos:closeMatch wd:Q502895 ;
+    skos:definition "Vernacular name that is the name used in everyday language to refer to an organism or group of organisms. This name is typically easier to remember and pronounce compared to the scientific name" ;
+    skos:inScheme <schema> .
+
+schema1:ContactPoint a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ContactPoint" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:addressLocality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Country ;
+            owl:onProperty schema1:addressCountry ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:postalCode ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:email ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:telephone ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:oRCIDiD ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:telephone ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:addressRegion ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:addressCountry ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:streetAddress ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:addressRegion ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:postalCode ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:postalCode ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:oRCIDiD ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:addressLocality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:oRCIDiD ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:telephone ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:addressCountry ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:streetAddress ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:addressRegion ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:addressLocality ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:streetAddress ],
+        schema1:Nameable ;
+    skos:altLabel "Contact Point" ;
+    skos:closeMatch wd:Q30322502 ;
+    skos:definition "Entity serving as focal point of information" ;
+    skos:inScheme <schema> .
+
+schema1:Country a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Country" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:alpha2Code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:alpha2Code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:alpha2Code ],
+        schema1:Term ;
+    skos:altLabel "Country" ;
+    skos:closeMatch wd:Q6256 ;
+    skos:definition "The country as of ISO3166" ;
+    skos:inScheme <schema> ;
+    skos:note "Use of Data provider recommended... serve as a local cache for ISO3166" .
+
+schema1:ID a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ID" ;
+    skos:inScheme <schema> .
+
+schema1:PersonOrOrganization a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "PersonOrOrganization" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Image ;
+            owl:onProperty schema1:logo ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:homePage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uri ;
+            owl:onProperty schema1:homePage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:contactPoint ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:logo ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:ContactPoint ;
+            owl:onProperty schema1:contactPoint ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:homePage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:contactPoint ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:logo ],
+        schema1:Nameable ;
+    skos:altLabel "Person Or Organization" ;
+    skos:definition "A person or an organization" ;
+    skos:inScheme <schema> .
+
+schema1:ProductCategory a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ProductCategory" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom schema1:ProductCategory ;
+            owl:onProperty schema1:parentCategory ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:parentCategory ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:parentCategory ],
+        schema1:Term ;
+    skos:altLabel "Product category" ;
+    skos:closeMatch wd:Q63981612 ;
+    skos:definition "A term used to classify a group of products that share common characteristics or functions, which helps in their organization" ;
+    skos:inScheme <schema> .
+
+schema1:ProductOrService a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ProductOrService" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Collection ;
+            owl:onProperty schema1:collection ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:refSKU ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:availability ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:note ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:availability ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:technicalRecommendation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:keywords ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:accessPointURL ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:contactPoint ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Certification ;
+            owl:onProperty schema1:certification ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:PathogenIdentification ;
+            owl:onProperty schema1:pathogenIdentification ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:DOI ;
+            owl:onProperty schema1:relatedDOI ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:refSKU ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:riskGroup ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:ProductCategory ;
+            owl:onProperty schema1:category ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:contactPoint ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:unitCost ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:provider ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Keyword ;
+            owl:onProperty schema1:keywords ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:complementaryDocument ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:category ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Document ;
+            owl:onProperty schema1:complementaryDocument ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:internalReference ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Boolean ;
+            owl:onProperty schema1:canItBeUsedToProduceGMO ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:qualityGrading ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:refSKU ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:additionalCategory ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:ProductCategory ;
+            owl:onProperty schema1:additionalCategory ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:internalReference ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:certification ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uri ;
+            owl:onProperty schema1:accessPointURL ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:unitCost ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:qualityGrading ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Provider ;
+            owl:onProperty schema1:provider ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:internalReference ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:ExternalRelatedReference ;
+            owl:onProperty schema1:externalRelatedReference ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:category ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:note ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:biosafetyRestrictions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:qualityGrading ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:canItBeUsedToProduceGMO ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:availability ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:unitDefinition ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:RiskGroup ;
+            owl:onProperty schema1:riskGroup ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:pathogenIdentification ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:unitDefinition ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:productPicture ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:note ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:ContactPoint ;
+            owl:onProperty schema1:contactPoint ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:technicalRecommendation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:relatedDOI ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:unitCost ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:riskGroup ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:accessPointURL ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:biosafetyRestrictions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Image ;
+            owl:onProperty schema1:productPicture ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:technicalRecommendation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:provider ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:unitDefinition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:biosafetyRestrictions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:externalRelatedReference ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:collection ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:canItBeUsedToProduceGMO ],
+        schema1:NamedDataset ;
+    skos:altLabel "Product or service" ;
+    skos:definition "A product or a service" ;
+    skos:inScheme <schema> ;
+    skos:note "part of  wd:Q2897903 (goods and services )" .
+
+schema1:abstract a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "abstract" ;
+    skos:inScheme <schema> .
+
+schema1:accessPointURL a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "accessPointURL" ;
+    skos:inScheme <schema> .
+
+schema1:accessionNumber a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "accessionNumber" ;
+    skos:inScheme <schema> .
+
+schema1:accidentalReleaseMeasures a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "accidentalReleaseMeasures" ;
+    skos:inScheme <schema> .
+
+schema1:addressCountry a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "addressCountry" ;
+    skos:inScheme <schema> .
+
+schema1:addressLocality a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "addressLocality" ;
+    skos:inScheme <schema> .
+
+schema1:addressRegion a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "addressRegion" ;
+    skos:inScheme <schema> .
+
+schema1:alpha2Code a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "alpha2Code" ;
+    skos:inScheme <schema> .
+
+schema1:altText a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "altText" ;
+    skos:inScheme <schema> .
+
+schema1:antibodyPurifiedByAffinity a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "antibodyPurifiedByAffinity" ;
+    skos:inScheme <schema> .
+
+schema1:authors a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "authors" ;
+    skos:inScheme <schema> .
+
+schema1:availability a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "availability" ;
+    skos:inScheme <schema> .
+
+schema1:beforeDate a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "beforeDate" ;
+    skos:inScheme <schema> .
+
+schema1:biologicalSourceType a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "biologicalSourceType" ;
+    skos:inScheme <schema> .
+
+schema1:biosafetyRestrictions a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "biosafetyRestrictions" ;
+    skos:inScheme <schema> .
+
+schema1:canItBeUsedToProduceGMO a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "canItBeUsedToProduceGMO" ;
+    skos:inScheme <schema> .
+
+schema1:category a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "category" ;
+    skos:inScheme <schema> .
+
+schema1:clinicalInformation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "clinicalInformation" ;
+    skos:inScheme <schema> .
+
+schema1:clonedIntoPlasmid a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "clonedIntoPlasmid" ;
+    skos:inScheme <schema> .
+
+schema1:collectionDate a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "collectionDate" ;
+    skos:inScheme <schema> .
+
+schema1:contaminationWithCoInfectingViruses a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "contaminationWithCoInfectingViruses" ;
+    skos:inScheme <schema> .
+
+schema1:contentType a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "contentType" ;
+    skos:inScheme <schema> .
+
+schema1:contentURL a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "contentURL" ;
+    skos:inScheme <schema> .
+
+schema1:country a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "country" ;
+    skos:inScheme <schema> .
+
+schema1:countryOfCollection a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "countryOfCollection" ;
+    skos:inScheme <schema> .
+
+schema1:cultivability a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "cultivability" ;
+    skos:inScheme <schema> .
+
+schema1:description a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "description" ;
+    skos:inScheme <schema> .
+
+schema1:descriptionOfModificationsMadeFromTheReferenceSequences a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "descriptionOfModificationsMadeFromTheReferenceSequences" ;
+    skos:inScheme <schema> .
+
+schema1:disposalConsiderations a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "disposalConsiderations" ;
+    skos:inScheme <schema> .
+
+schema1:ecologicalInformation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ecologicalInformation" ;
+    skos:inScheme <schema> .
+
+schema1:email a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "email" ;
+    skos:inScheme <schema> .
+
+schema1:exposureControlsPersonalProtection a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "exposureControlsPersonalProtection" ;
+    skos:inScheme <schema> .
+
+schema1:fireFightingMeasures a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "fireFightingMeasures" ;
+    skos:inScheme <schema> .
+
+schema1:firstAidMeasures a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "firstAidMeasures" ;
+    skos:inScheme <schema> .
+
+schema1:format a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "format" ;
+    skos:inScheme <schema> .
+
+schema1:furtherInformation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "furtherInformation" ;
+    skos:inScheme <schema> .
+
+schema1:genotype a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "genotype" ;
+    skos:inScheme <schema> .
+
+schema1:handlingAndStorage a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "handlingAndStorage" ;
+    skos:inScheme <schema> .
+
+schema1:hasIATAClassification a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hasIATAClassification" ;
+    skos:inScheme <schema> .
+
+schema1:hasTAG a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hasTAG" ;
+    skos:inScheme <schema> .
+
+schema1:hazardsIdentification a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hazardsIdentification" ;
+    skos:inScheme <schema> .
+
+schema1:homePage a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "homePage" ;
+    skos:inScheme <schema> .
+
+schema1:hybridomaDescription a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hybridomaDescription" ;
+    skos:inScheme <schema> .
+
+schema1:inVocabulary a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "inVocabulary" ;
+    skos:inScheme <schema> .
+
+schema1:indigenousPoepleAndLocalCommunityOrigin a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "indigenousPoepleAndLocalCommunityOrigin" ;
+    skos:inScheme <schema> .
+
+schema1:infectivity a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "infectivity" ;
+    skos:inScheme <schema> .
+
+schema1:infectivityTest a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "infectivityTest" ;
+    skos:inScheme <schema> .
+
+schema1:internalReference a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "internalReference" ;
+    skos:inScheme <schema> .
+
+schema1:isItAClonedNucleicAcid a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "isItAClonedNucleicAcid" ;
+    skos:inScheme <schema> .
+
+schema1:isolate a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "isolate" ;
+    skos:inScheme <schema> .
+
+schema1:isolationConditions a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "isolationConditions" ;
+    skos:inScheme <schema> .
+
+schema1:isolationTechnique a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "isolationTechnique" ;
+    skos:inScheme <schema> .
+
+schema1:journal a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "journal" ;
+    skos:inScheme <schema> .
+
+schema1:letterOfAuthority a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "letterOfAuthority" ;
+    skos:inScheme <schema> .
+
+schema1:licensingOrAttribution a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "licensingOrAttribution" ;
+    skos:inScheme <schema> .
+
+schema1:loginRequestMethod a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "loginRequestMethod" ;
+    skos:inScheme <schema> .
+
+schema1:loginTokenName a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "loginTokenName" ;
+    skos:inScheme <schema> .
+
+schema1:loginURL a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "loginURL" ;
+    skos:inScheme <schema> .
+
+schema1:materialSafetyDataSheet a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "materialSafetyDataSheet" ;
+    skos:inScheme <schema> .
+
+schema1:modelSpecies a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "modelSpecies" ;
+    skos:inScheme <schema> .
+
+schema1:modelType a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "modelType" ;
+    skos:inScheme <schema> .
+
+schema1:modificationsFromTheReferenceSequences a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "modificationsFromTheReferenceSequences" ;
+    skos:inScheme <schema> .
+
+schema1:msdsContact a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "msdsContact" ;
+    skos:inScheme <schema> .
+
+schema1:mutationObserved a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "mutationObserved" ;
+    skos:inScheme <schema> .
+
+schema1:mycoplasmicContent a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "mycoplasmicContent" ;
+    skos:inScheme <schema> .
+
+schema1:name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "name" ;
+    skos:inScheme <schema> .
+
+schema1:note a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "note" ;
+    skos:inScheme <schema> .
+
+schema1:observedMutations a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "observedMutations" ;
+    skos:inScheme <schema> .
+
+schema1:originator a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "originator" ;
+    skos:inScheme <schema> .
+
+schema1:parentCategory a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "parentCategory" ;
+    skos:inScheme <schema> .
+
+schema1:parentTaxon a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "parentTaxon" ;
+    skos:inScheme <schema> .
+
+schema1:partIdentification a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "partIdentification" ;
+    skos:inScheme <schema> .
+
+schema1:passage a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "passage" ;
+    skos:inScheme <schema> .
+
+schema1:pathogenName a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pathogenName" ;
+    skos:inScheme <schema> .
+
+schema1:pathogenType a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pathogenType" ;
+    skos:inScheme <schema> .
+
+schema1:physicalChemicalProperties a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "physicalChemicalProperties" ;
+    skos:inScheme <schema> .
+
+schema1:postalCode a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "postalCode" ;
+    skos:inScheme <schema> .
+
+schema1:productionSystem a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "productionSystem" ;
+    skos:inScheme <schema> .
+
+schema1:providedEntityType a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "providedEntityType" ;
+    skos:inScheme <schema> .
+
+schema1:provider a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "provider" ;
+    skos:inScheme <schema> .
+
+schema1:qualityGrading a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "qualityGrading" ;
+    skos:inScheme <schema> .
+
+schema1:queryMethod a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "queryMethod" ;
+    skos:inScheme <schema> .
+
+schema1:queryURL a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "queryURL" ;
+    skos:inScheme <schema> .
+
+schema1:rankDataProvider a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "rankDataProvider" ;
+    skos:inScheme <schema> .
+
+schema1:recombinantMaterial a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "recombinantMaterial" ;
+    skos:inScheme <schema> .
+
+schema1:recombinantPartIdentification a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "recombinantPartIdentification" ;
+    skos:inScheme <schema> .
+
+schema1:refSKU a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "refSKU" ;
+    skos:inScheme <schema> .
+
+schema1:reference a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "reference" ;
+    skos:inScheme <schema> .
+
+schema1:referenceLabel a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "referenceLabel" ;
+    skos:inScheme <schema> .
+
+schema1:referenceProviderName a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "referenceProviderName" ;
+    skos:inScheme <schema> .
+
+schema1:referenceProviderPrefix a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "referenceProviderPrefix" ;
+    skos:inScheme <schema> .
+
+schema1:regionEncompassedInThisProduct a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "regionEncompassedInThisProduct" ;
+    skos:inScheme <schema> .
+
+schema1:regulatoryInformation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "regulatoryInformation" ;
+    skos:inScheme <schema> .
+
+schema1:reportingToAuthorities a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "reportingToAuthorities" ;
+    skos:inScheme <schema> .
+
+schema1:riskGroup a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "riskGroup" ;
+    skos:inScheme <schema> .
+
+schema1:sequenceChecked a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sequenceChecked" ;
+    skos:inScheme <schema> .
+
+schema1:sequenceProvider a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sequenceProvider" ;
+    skos:inScheme <schema> .
+
+schema1:serotype a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "serotype" ;
+    skos:inScheme <schema> .
+
+schema1:shippingConditions a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "shippingConditions" ;
+    skos:inScheme <schema> .
+
+schema1:specificity a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "specificity" ;
+    skos:inScheme <schema> .
+
+schema1:stabilityAndReactivity a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "stabilityAndReactivity" ;
+    skos:inScheme <schema> .
+
+schema1:storageConditions a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "storageConditions" ;
+    skos:inScheme <schema> .
+
+schema1:strain a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "strain" ;
+    skos:inScheme <schema> .
+
+schema1:streetAddress a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "streetAddress" ;
+    skos:inScheme <schema> .
+
+schema1:subspecies a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "subspecies" ;
+    skos:inScheme <schema> .
+
+schema1:targetedAntigen a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "targetedAntigen" ;
+    skos:inScheme <schema> .
+
+schema1:targetedRegion a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "targetedRegion" ;
+    skos:inScheme <schema> .
+
+schema1:taxonDataProvider a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "taxonDataProvider" ;
+    skos:inScheme <schema> .
+
+schema1:taxonomicID a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "taxonomicID" ;
+    skos:inScheme <schema> .
+
+schema1:taxonomicNodeID a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "taxonomicNodeID" ;
+    skos:inScheme <schema> .
+
+schema1:technicalRecommendation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "technicalRecommendation" ;
+    skos:inScheme <schema> .
+
+schema1:telephone a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "telephone" ;
+    skos:inScheme <schema> .
+
+schema1:termDataProvider a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "termDataProvider" ;
+    skos:inScheme <schema> .
+
+schema1:thirdPartyDistributionConsent a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "thirdPartyDistributionConsent" ;
+    skos:inScheme <schema> .
+
+schema1:title a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "title" ;
+    skos:inScheme <schema> .
+
+schema1:toxicologicalInformation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "toxicologicalInformation" ;
+    skos:inScheme <schema> .
+
+schema1:transportInformation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "transportInformation" ;
+    skos:inScheme <schema> .
+
+schema1:unitCost a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "unitCost" ;
+    skos:inScheme <schema> .
+
+schema1:unitDefinition a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "unitDefinition" ;
+    skos:inScheme <schema> .
+
+schema1:usageRestrictions a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "usageRestrictions" ;
+    skos:inScheme <schema> .
+
+schema1:variant a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "variant" ;
+    skos:inScheme <schema> .
+
+schema1:version a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "version" ;
+    skos:inScheme <schema> .
+
+schema1:versionDataProvider a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "versionDataProvider" ;
+    skos:inScheme <schema> .
+
+schema1:versionOf a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "versionOf" ;
+    skos:inScheme <schema> .
+
+schema1:Image a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Image" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:altText ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:altText ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:altText ],
+        schema1:File ;
+    skos:altLabel "Image" ;
+    skos:closeMatch wd:Q860625 ;
+    skos:definition "Subclass of File representing visual content such as pictures, diagrams, or illustrations" ;
+    skos:inScheme <schema> .
+
+schema1:Sequence a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Sequence" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom schema1:SequenceReference ;
+            owl:onProperty schema1:sequenceReference ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:sequence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:sequenceReference ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:sequence ],
+        schema1:Dataset ;
+    skos:altLabel "Sequence" ;
+    skos:closeMatch wd:Q3511065 ;
+    skos:definition "A nucleic acid or protein sequence information" ;
+    skos:inScheme <schema> .
+
+schema1:complementaryDocument a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "complementaryDocument" ;
+    skos:inScheme <schema> .
+
+schema1:sequenceReference a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sequenceReference" ;
+    skos:inScheme <schema> .
+
+schema1:sourceOfInformation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sourceOfInformation" ;
+    skos:inScheme <schema> .
+
+schema1:taxonomy a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "taxonomy" ;
+    skos:inScheme <schema> .
+
+schema1:Taxon a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Taxon" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:taxonomicID ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:rank ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:taxonomicID ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:externalEquivalentTaxon ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:taxonomicNodeID ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:previouslyKnownAs ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:taxonomy ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Taxonomy ;
+            owl:onProperty schema1:taxonomy ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:parentTaxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Taxon ;
+            owl:onProperty schema1:externalEquivalentTaxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:taxonomicID ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:TaxonomicRank ;
+            owl:onProperty schema1:rank ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:rank ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:taxonomicNodeID ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Taxon ;
+            owl:onProperty schema1:previouslyKnownAs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Taxon ;
+            owl:onProperty schema1:parentTaxon ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:parentTaxon ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:taxonomicNodeID ],
+        schema1:Term ;
+    skos:altLabel "Taxon" ;
+    skos:closeMatch wd:Q16521 ;
+    skos:definition "Conceptual entity that groups one or more populations of an organism or organisms, as seen by taxonomists, to form a unit" ;
+    skos:inScheme <schema> ;
+    skos:note "The taxonomic taxons connected to their parent so that a full lienage can be rebuild. Use of Data provider recommended" .
+
+schema1:rank a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "rank" ;
+    skos:inScheme <schema> .
+
+schema1:relatedDOI a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "relatedDOI" ;
+    skos:inScheme <schema> .
+
+schema1:taxon a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "taxon" ;
+    skos:inScheme <schema> .
+
+schema1:Pathogen a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Pathogen" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:clinicalInformation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:biologicalMaterialOrigin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:isolationTechnique ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:infectivity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:passage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:titer ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:cultivability ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:sequencing ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:letterOfAuthority ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:infectivityTest ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Sequence ;
+            owl:onProperty schema1:sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:infectivity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:transmissionMethod ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:clinicalInformation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:identificationTechnique ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:isolationTechnique ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:isolationConditions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:sequencing ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:PropagationHost ;
+            owl:onProperty schema1:propagationHost ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:isolationConditions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:titer ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:TransmissionMethod ;
+            owl:onProperty schema1:transmissionMethod ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:ProductionCellLine ;
+            owl:onProperty schema1:productionCellLine ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:propagationHost ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:IsolationHost ;
+            owl:onProperty schema1:isolationHost ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:letterOfAuthority ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:cultivability ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:identificationTechnique ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:biologicalMaterialOrigin ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:passage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:productionCellLine ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:titer ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:isolationHost ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:infectivityTest ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:infectivityTest ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:clinicalInformation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:suspectedEpidemiologicalOrigin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:sequencing ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:isolationConditions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:infectivity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:isolationTechnique ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:letterOfAuthority ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:cultivability ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:passage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:identificationTechnique ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:GeographicalOrigin ;
+            owl:onProperty schema1:suspectedEpidemiologicalOrigin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:BiologicalMaterialOrigin ;
+            owl:onProperty schema1:biologicalMaterialOrigin ],
+        schema1:Product ;
+    skos:altLabel "Pathogen" ;
+    skos:closeMatch wd:Q170065 ;
+    skos:definition "Biological entity that causes disease in its host, which is typically an infectious microorganism or agent, such as a virus, bacterium, protozoan, prion, viroid, or fungus" ;
+    skos:inScheme <schema> .
+
+schema1:contactPoint a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "contactPoint" ;
+    skos:inScheme <schema> .
+
+schema1:identificationTechnique a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "identificationTechnique" ;
+    skos:inScheme <schema> .
+
+schema1:license a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "license" ;
+    skos:inScheme <schema> .
+
+schema1:oRCIDiD a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "oRCIDiD" ;
+    skos:inScheme <schema> .
+
+schema1:resourceURL a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "resourceURL" ;
+    skos:inScheme <schema> .
+
+schema1:sequencing a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sequencing" ;
+    skos:inScheme <schema> .
+
+schema1:specificityDocumented a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "specificityDocumented" ;
+    skos:inScheme <schema> .
+
+schema1:titer a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "titer" ;
+    skos:inScheme <schema> .
+
+schema1:weight a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "weight" ;
+    skos:inScheme <schema> .
+
+schema1:File a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "File" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:license ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uri ;
+            owl:onProperty schema1:contentURL ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:contentURL ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:format ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:License ;
+            owl:onProperty schema1:license ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:contentURL ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:license ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:format ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:format ],
+        schema1:Nameable ;
+    skos:altLabel "File" ;
+    skos:closeMatch wd:Q82753 ;
+    skos:definition "Digital document or record stored in a specific format that contains data or information" ;
+    skos:inScheme <schema> .
+
+schema1:Product a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Product" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom schema1:IATAClassification ;
+            owl:onProperty schema1:hasIATAClassification ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:storageConditions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:materialSafetyDataSheet ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:hasIATAClassification ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:storageConditions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:storageConditions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:shippingConditions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:shippingConditions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Originator ;
+            owl:onProperty schema1:originator ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:materialSafetyDataSheet ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:originator ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:hasIATAClassification ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:MSDS ;
+            owl:onProperty schema1:materialSafetyDataSheet ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:shippingConditions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:originator ],
+        schema1:ProductOrService ;
+    skos:altLabel "Product" ;
+    skos:closeMatch wd:Q2424752 ;
+    skos:definition "A product" ;
+    skos:inScheme <schema> .
+
+schema1:alternateName a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "alternateName" ;
+    skos:inScheme <schema> .
+
+schema1:DataProvider a owl:Class,
+        owl:ObjectProperty,
+        linkml:ClassDefinition,
+        linkml:SlotDefinition ;
+    rdfs:label "DataProvider" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:license ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uri ;
+            owl:onProperty schema1:providedEntityType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:queryURL ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:contentType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:weight ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:providedEntityType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:loginRequestMethod ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:queryMethod ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:loginRequestMethod ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uri ;
+            owl:onProperty schema1:loginURL ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:License ;
+            owl:onProperty schema1:license ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:loginTokenName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uri ;
+            owl:onProperty schema1:queryURL ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:loginTokenName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:queryMethod ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:contentType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:weight ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:loginURL ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:loginTokenName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:license ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:queryURL ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:contentType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:loginRequestMethod ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:providedEntityType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Decimal ;
+            owl:onProperty schema1:weight ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:queryMethod ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:loginURL ],
+        schema1:DataService ;
+    skos:altLabel "Data provider" ;
+    skos:closeMatch wd:Q122625839 ;
+    skos:definition "An external API (Application Programming Interface) or Endpoint that permits to retrieve data from other sources" ;
+    skos:inScheme <schema> .
+
+schema1:Nameable a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Nameable" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty schema1:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty schema1:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:name ] ;
+    skos:altLabel "Nameable" ;
+    skos:definition "Any entity that has a name and can have a textual description" ;
+    skos:inScheme <schema> .
+
+schema1:Dataset a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Dataset" ;
+    skos:altLabel "Dataset" ;
+    skos:definition "A collection of data, published or curated by a single agent, and available for access" ;
+    skos:exactMatch dcat:Dataset ;
+    skos:inScheme <schema> .
+
+schema1:biologicalMaterialOrigin a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "biologicalMaterialOrigin" ;
+    skos:inScheme <schema> .
+
+schema1:logo a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "logo" ;
+    skos:inScheme <schema> .
+
+schema1:sequence a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sequence" ;
+    skos:inScheme <schema> .
+
+schema1:Term a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Term" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:inVocabulary ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Decimal ;
+            owl:onProperty schema1:weight ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom schema1:Vocabulary ;
+            owl:onProperty schema1:inVocabulary ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:weight ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty schema1:inVocabulary ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty schema1:weight ],
+        schema1:NamedDataset ;
+    skos:altLabel "Term" ;
+    skos:closeMatch wd:Q1969448 ;
+    skos:definition "Word or phrase from a specialized area of knowledge" ;
+    skos:inScheme <schema> .
+
+<schema> a owl:Ontology ;
+    rdfs:label "schema" .
+
