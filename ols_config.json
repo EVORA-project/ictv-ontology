@@ -2,7 +2,7 @@
   "ontologies": [
     {
       "id": "evora",
-      "ontology_purl": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/dev/owl/schema.owl.ttl"
+      "ontology_purl": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl"
     },
     {
       "id": "oio",
