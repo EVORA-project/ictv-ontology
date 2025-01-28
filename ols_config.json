@@ -2,14 +2,7 @@
   "ontologies": [
     {
       "id": "evora",
-      "ontology_purl": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl"
-    },
-    {
-      "id": "oio",
-      "ontology_purl": "https://raw.githubusercontent.com/geneontology/go-ontology/master/contrib/oboInOwl",
-      "base_uri": [
-        "http://www.geneontology.org/formats/oboInOwl#"
-      ]
+      "ontology_purl": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/dev/owl/schema.owl.ttl"
     },
     {
       "id": "ictv_2023",
