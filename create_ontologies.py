@@ -1,4 +1,5 @@
 
+
 import rdflib
 from rdflib import URIRef, BNode, Literal
 from rdflib.collection import Collection
@@ -16,7 +17,7 @@ SYNONYM = "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
 SYNONYM_TYPE = "http://www.geneontology.org/formats/oboInOwl#hasSynonymType"
 PREVIOUS_NAME = "http://purl.obolibrary.org/obo/OMO_0003008"
 XREF = "http://www.geneontology.org/formats/oboInOwl#hasDbXref"
-DEPRECATED = "http://www.w3.org/2002/07/owl#deprecated"
+SOURCE = "http://purl.org/dc/terms/source"
 
 def main():
 
@@ -35,8 +36,8 @@ def main():
 
     for release in releases.itertuples():
 
-        if release.name != '2023' and release.name != '2022':
-            continue
+        #if release.name != '2023' and release.name != '2022':
+            #continue
 
         print(f'Creating ontology for ICTV release {release.name}')
 
@@ -48,7 +49,7 @@ def main():
 
         nodes_in_release = nodes[(nodes['msl_release_num'] == release_num) & (nodes['level_id'] != '100')]
 
-        g = rdflib.Graph() + common_graph
+        g = rdflib.Graph()
         ontologies.append(g)
 
         g.add((URIRef(ontology_iri), RDF.type, OWL.Ontology))
@@ -127,60 +128,57 @@ def main():
                         g.add((class_iri, SKOS.narrowMatch, Literal("refseq:" + xref.strip())))
 
 
+    for g_orig in ontologies:
+        g = rdflib.Graph()
+        g += g_orig
+        ontology = g.value(predicate=RDF.type, object=OWL.Ontology)
+        ontology_id = ontology.split('=')[-1]
+        version = g.value(subject=ontology, predicate=OWL.versionInfo)
+        print(f'Building final ontology for {ontology_id} (version = {version})')
+        for other_g in ontologies:
+            other_ontology = other_g.value(predicate=RDF.type, object=OWL.Ontology)
+            other_version = other_g.value(subject=other_ontology, predicate=OWL.versionInfo)
+            if other_version < version:
+                print(f'- merging {other_version} into {version}')
+                for c in g.subjects(predicate=RDF.type, object=OWL.Class):
+                    ictv_id = g.value(subject=c, predicate=URIRef("http://ictv.global/ictv_id"))
+                    prev_versions = list(other_g.subjects(predicate=URIRef("http://ictv.global/ictv_id"), object=ictv_id))
+                    cur_name = g.value(subject=c, predicate=RDFS.label)
+                    for prev_version in prev_versions:
+                        prev_name = other_g.value(subject=prev_version, predicate=RDFS.label)
+                        if prev_name and prev_name != cur_name:
+                            if len(list(g.triples((c, URIRef(SYNONYM), Literal(prev_name))))) == 0:
+                                g.add((c, URIRef(SYNONYM), Literal(prev_name)))
+                                stmt = BNode()
+                                g.add((stmt, RDF.type, OWL.Axiom))
+                                g.add((stmt, OWL.annotatedSource, c))
+                                g.add((stmt, OWL.annotatedProperty, URIRef(SYNONYM)))
+                                g.add((stmt, OWL.annotatedTarget, Literal(name)))
+                                g.add((stmt, URIRef(SYNONYM_TYPE), URIRef(PREVIOUS_NAME)))
+                                g.add((stmt, RDFS.isDefinedBy, other_ontology))
+                other_g_copy = rdflib.Graph()
+                other_g_copy += other_g
+                other_g_copy.remove((URIRef(ontology_iri), RDF.type, OWL.Ontology))
+                other_g_copy.remove((next(other_g_copy.subjects(RDF.type, OWL.Ontology), None), None, None))
+                g += other_g_copy
+
+        owl_filename = 'out/' + ontology_id + '.owl.ttl'
+        print(f'Saving OWL file ' + owl_filename)
+        g += common_graph
         g.bind('owl', OWL)
         g.bind('iao', 'http://purl.obolibrary.org/obo/IAO_')
         g.bind('oio', 'http://www.geneontology.org/formats/oboInOwl#')
         g.bind('omo', 'http://purl.obolibrary.org/obo/OMO_')
+        g.bind('dcterms', 'http://purl.org/dc/terms/')
         g.bind('ictv', prefix)
-
-    print(f'Merging all the ontologies into a big graph for querying...')
-    g_all_versions_together = rdflib.Graph()
-    for g in ontologies:
-        ontology = g.value(predicate=RDF.type, object=OWL.Ontology)
-        ontology_id = ontology.split('=')[-1]
-        print(ontology_id)
-        g_all_versions_together += g
-
-    print(f'Annotating synonyms...')
-    for g in ontologies:
-        ontology = g.value(predicate=RDF.type, object=OWL.Ontology)
-        ontology_id = ontology.split('=')[-1]
-        print(ontology_id)
-        for c in g.subjects(predicate=RDF.type, object=OWL.Class):
-            ictv_id = g.value(subject=c, predicate=URIRef("http://ictv.global/ictv_id"))
-            prev_versions = list(g_all_versions_together.subjects(predicate=URIRef("http://ictv.global/ictv_id"), object=ictv_id))
-            cur_name = g.value(subject=c, predicate=RDFS.label)
-            prev_names = []
-            for prev_version in prev_versions:
-                prev_name = g_all_versions_together.value(subject=prev_version, predicate=RDFS.label)
-                if prev_name and prev_name != cur_name:
-                    prev_names.append(prev_name)
-            if len(prev_names) > 0:
-                for name in prev_names:
-                    g.add((c, URIRef(SYNONYM), Literal(name)))
-                    stmt = BNode()
-                    g.add((stmt, RDF.type, OWL.Axiom))
-                    g.add((stmt, OWL.annotatedSource, c))
-                    g.add((stmt, OWL.annotatedProperty, URIRef(SYNONYM)))
-                    g.add((stmt, OWL.annotatedTarget, Literal(name)))
-                    g.add((stmt, URIRef(SYNONYM_TYPE), URIRef(PREVIOUS_NAME)))
-
-    for g in ontologies:
-        ontology = g.value(predicate=RDF.type, object=OWL.Ontology)
-        ontology_id = ontology.split('=')[-1]
-        owl_filename = 'out/' + ontology_id + '.owl.ttl'
-        print(f'Saving OWL file ' + owl_filename)
-        g.serialize(owl_filename, format='turtle')
+        g.serialize(owl_filename, format="ttl")
 
     owl_files = [f for f in os.listdir('out') if f.endswith('.owl.ttl')]
     ols_config = {
         'ontologies':[
             {
-                "id": "oio",
-                "ontology_purl": "https://raw.githubusercontent.com/geneontology/go-ontology/master/contrib/oboInOwl",
-                "base_uri": [
-                    "http://www.geneontology.org/formats/oboInOwl#"
-                ]
+                "id": "evora",
+                "ontology_purl": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/dev/owl/schema.owl.ttl"
             }
          ] + list(map(lambda f: {
             'id': f.split('.')[0],
