@@ -18,6 +18,9 @@ SYNONYM_TYPE = "http://www.geneontology.org/formats/oboInOwl#hasSynonymType"
 PREVIOUS_NAME = "http://purl.obolibrary.org/obo/OMO_0003008"
 XREF = "http://www.geneontology.org/formats/oboInOwl#hasDbXref"
 SOURCE = "http://purl.org/dc/terms/source"
+REPLACES = "http://purl.org/dc/terms/replaces"
+REPLACED_BY = "http://purl.org/dc/terms/isReplacedBy"
+EDITOR_NOTE = "http://purl.obolibrary.org/obo/IAO_0000116"
 
 def main():
 
@@ -36,8 +39,8 @@ def main():
 
     for release in releases.itertuples():
 
-        #if release.name != '2023' and release.name != '2022':
-            #continue
+        if release.name != '2023' and release.name != '2022':
+            continue
 
         print(f'Creating ontology for ICTV release {release.name}')
 
@@ -78,14 +81,33 @@ def main():
                 is_new = replacements['is_new'].value_counts().get('1', 0) > 0
                 is_deleted = replacements['is_deleted'].value_counts().get('1', 0) > 0
 
+                # g.add((class_iri, OWL.deprecated, Literal('true', datatype=URIRef('http://www.w3.org/2001/XMLSchema#boolean'))))
+
                 for replacement in replacements.itertuples():
                     if not pd.isna(replacement.new_taxid):
                         g.add((class_iri, URIRef(TERM_REPLACED_BY), URIRef(prefix+replacement.new_taxid)))
+                        g.add((class_iri, URIRef(REPLACED_BY), URIRef(prefix+replacement.new_taxid)))
+                        g.add((URIRef(prefix+replacement.new_taxid), URIRef(REPLACES), class_iri))
 
-                if is_merged:
+                if is_new:
+                    year = replacements['new_taxid'][:4]
+                    g.add((class_iri, URIRef(EDITOR_NOTE), Literal(f"New in " + year)))
+                elif is_merged:
+                    g.add((class_iri, URIRef(EDITOR_NOTE), Literal(f"Merged into {', '.join(replacements['new_taxid'].values)}")))
                     g.add((class_iri, URIRef(OBSOLESCENCE_REASON), URIRef(TERMS_MERGED)))
-                if is_split:
+                elif is_split:
+                    g.add((class_iri, URIRef(EDITOR_NOTE), Literal(f"Split into {', '.join(replacements['new_taxid'].values)}")))
                     g.add((class_iri, URIRef(OBSOLESCENCE_REASON), URIRef(TERM_SPLIT)))
+                elif is_moved:
+                    g.add((class_iri, URIRef(EDITOR_NOTE), Literal(f"Moved to {', '.join(replacements['new_taxid'].values)}")))
+                elif is_promoted:
+                    g.add((class_iri, URIRef(EDITOR_NOTE), Literal(f"Promoted, see {', '.join(replacements['new_taxid'].values)}")))
+                elif is_demoted:
+                    g.add((class_iri, URIRef(EDITOR_NOTE), Literal(f"Demoted, see {', '.join(replacements['new_taxid'].values)}")))
+                elif is_renamed:
+                    g.add((class_iri, URIRef(EDITOR_NOTE), Literal(f"Renamed, see {', '.join(replacements['new_taxid'].values)}")))
+                elif is_deleted:
+                    g.add((class_iri, URIRef(EDITOR_NOTE), Literal(f"Deleted")))
 
             g.add((class_iri, RDF.type, OWL.Class))
             g.add((class_iri, RDFS.label, Literal(node.name)))
@@ -178,9 +200,9 @@ def main():
         'ontologies':[
             {
                 "id": "evora",
-                "ontology_purl": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/dev/owl/schema.owl.ttl"
+                "ontology_purl": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl"
             }
-         ] + list(map(lambda f: {
+         ] + json.load(open('supporting_ontologies.json'))['ontologies'] + list(map(lambda f: {
             'id': f.split('.')[0],
             'ontology_purl': 'file:///opt/dataload/out/' + f,
             'preferredPrefix': prefix,

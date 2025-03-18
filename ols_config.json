@@ -2,7 +2,110 @@
   "ontologies": [
     {
       "id": "evora",
-      "ontology_purl": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/dev/owl/schema.owl.ttl"
+      "ontology_purl": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl"
+    },
+    {
+      "activity_status": "active",
+      "build": {
+        "method": "owl2obo",
+        "source_url": "http://purl.obolibrary.org/obo/iao.owl"
+      },
+      "contact": {
+        "email": "zhengj2007@gmail.com",
+        "github": "zhengj2007",
+        "label": "Jie Zheng",
+        "orcid": "0000-0002-2999-0103"
+      },
+      "depicted_by": "https://avatars0.githubusercontent.com/u/13591168?v=3&s=200",
+      "description": "An ontology of information entities.",
+      "domain": "information",
+      "homepage": "https://github.com/information-artifact-ontology/IAO/",
+      "id": "iao",
+      "layout": "ontology_detail",
+      "license": {
+        "label": "CC BY 4.0",
+        "logo": "http://mirrors.creativecommons.org/presskit/buttons/80x15/png/by.png",
+        "url": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      "ontology_purl": "http://purl.obolibrary.org/obo/iao.owl",
+      "preferredPrefix": "IAO",
+      "products": [
+        {
+          "id": "iao.owl",
+          "ontology_purl": "http://purl.obolibrary.org/obo/iao.owl"
+        },
+        {
+          "id": "iao/ontology-metadata.owl",
+          "ontology_purl": "http://purl.obolibrary.org/obo/iao/ontology-metadata.owl",
+          "page": "https://github.com/information-artifact-ontology/IAO/wiki/OntologyMetadata",
+          "title": "IAO ontology metadata"
+        },
+        {
+          "id": "iao/dev/iao.owl",
+          "ontology_purl": "http://purl.obolibrary.org/obo/iao/dev/iao.owl",
+          "title": "IAO dev"
+        },
+        {
+          "contact": {
+            "email": "mbrochhausen@gmail.com",
+            "label": "Mathias Brochhausen"
+          },
+          "description": "An ontology based on a theory of document acts describing what people can do with documents",
+          "id": "iao/d-acts.owl",
+          "ontology_purl": "http://purl.obolibrary.org/obo/iao/d-acts.owl",
+          "title": "ontology of document acts"
+        }
+      ],
+      "repository": "https://github.com/information-artifact-ontology/IAO",
+      "title": "Information Artifact Ontology",
+      "tracker": "https://github.com/information-artifact-ontology/IAO/issues",
+      "usages": [
+        {
+          "description": "IAO is used widely by multiple OBO ontologies for information representation.",
+          "type": "owl_import",
+          "user": "http://obofoundry.org"
+        }
+      ]
+    },
+    {
+      "activity_status": "active",
+      "contact": {
+        "email": "cjmungall@lbl.gov",
+        "github": "cmungall",
+        "label": "Chris Mungall",
+        "orcid": "0000-0002-6601-2165"
+      },
+      "description": "An ontology specifies terms that are used to annotate ontology terms for all OBO ontologies. The ontology was developed as part of Information Artifact Ontology (IAO).",
+      "domain": "information",
+      "homepage": "https://github.com/information-artifact-ontology/ontology-metadata",
+      "id": "omo",
+      "layout": "ontology_detail",
+      "license": {
+        "label": "CC0 1.0",
+        "logo": "http://mirrors.creativecommons.org/presskit/buttons/80x15/png/cc-zero.png",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "ontology_purl": "http://purl.obolibrary.org/obo/omo.owl",
+      "preferredPrefix": "OMO",
+      "products": [
+        {
+          "id": "omo.owl",
+          "ontology_purl": "http://purl.obolibrary.org/obo/omo.owl"
+        }
+      ],
+      "repository": "https://github.com/information-artifact-ontology/ontology-metadata",
+      "tags": [
+        "ontology term annotation"
+      ],
+      "title": "OBO Metadata Ontology",
+      "tracker": "https://github.com/information-artifact-ontology/ontology-metadata/issues",
+      "usages": [
+        {
+          "description": "OMO is imported by multiple OBO ontologies for ontology term annotations.",
+          "type": "owl_import",
+          "user": "http://obofoundry.org"
+        }
+      ]
     },
     {
       "id": "ictv_2023",
@@ -14,341 +117,8 @@
       ]
     },
     {
-      "id": "ictv_2018a",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2018a.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1971",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1971.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2018b",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2018b.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2017",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2017.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2011",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2011.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1987",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1987.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2005",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2005.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1974",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1974.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2012",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2012.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2020",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2020.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2014",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2014.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2008",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2008.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1976",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1976.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1982",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1982.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1998",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1998.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1999a",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1999a.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2009",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2009.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1991",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1991.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1979",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1979.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1997",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1997.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1975",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1975.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1993",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1993.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2021",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2021.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2002b",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2002b.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2002a",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2002a.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1999b",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1999b.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2019",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2019.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1978",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1978.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1995",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1995.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1996",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1996.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2013",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2013.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1981",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1981.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2016",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2016.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1984",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1984.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
       "id": "ictv_2022",
       "ontology_purl": "file:///opt/dataload/out/ictv_2022.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2004",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2004.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_2015",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2015.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-      "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
-      ]
-    },
-    {
-      "id": "ictv_1990",
-      "ontology_purl": "file:///opt/dataload/out/ictv_1990.owl.ttl",
       "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
       "base_uri": [
         "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
