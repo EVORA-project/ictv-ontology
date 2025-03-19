@@ -1,6 +1,10 @@
 {
     "ontologies": [
         {
+            "id": "evora",
+            "ontology_purl": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl"
+        },
+        {
             "activity_status": "active",
             "build": {
                 "method": "owl2obo",
