@@ -53,8 +53,8 @@ def main():
 
     for release in releases.itertuples():
 
-        if int(release.msl_release_num) < 38:
-            continue
+        #if int(release.msl_release_num) < 38:
+            #continue
 
         print(f'Creating ontology for ICTV release {release.name}')
 
@@ -92,7 +92,16 @@ def main():
 
                 g.add((class_iri, OWL.deprecated, Literal('true', datatype=URIRef('http://www.w3.org/2001/XMLSchema#boolean'))))
 
-                replacement_iris = [f'http://ictv.global/id/MSL{replacement.msl}/ICTV{taxnode_id_to_ictv_id[replacement.new_taxid]}' for replacement in replacements.itertuples() if not pd.isna(replacement.new_taxid)]
+                replacement_iris = []
+
+                for replacement in replacements.itertuples():
+                    if pd.isna(replacement.new_taxid):
+                        continue
+                    if replacement.new_taxid in taxnode_id_to_ictv_id:
+                        replacement_iris.append(f'http://ictv.global/id/MSL{replacement.msl}/ICTV'+taxnode_id_to_ictv_id[replacement.new_taxid])
+                    else:
+                        print('Warning: replacement taxid ' + replacement.new_taxid + ' not found in release ' + replacement.msl)
+                        replacement_iris.append(f'http://ictv.global/id/MSL{replacement.msl}/ICTV'+replacement.new_taxid)
 
                 for replacement_iri in replacement_iris:
                     g.add((class_iri, URIRef(TERM_REPLACED_BY), URIRef(replacement_iri)))
