@@ -108,21 +108,323 @@
       ]
     },
     {
-      "id": "ictv_2023",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2023.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
+      "id": "MSL36",
+      "ontology_purl": "file:///opt/dataload/out/MSL36.owl.ttl",
+      "preferredPrefix": "ICTV",
       "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
+        "http://ictv.global/id/MSL36/"
       ]
     },
     {
-      "id": "ictv_2022",
-      "ontology_purl": "file:///opt/dataload/out/ictv_2022.owl.ttl",
-      "preferredPrefix": "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
+      "id": "MSL27",
+      "ontology_purl": "file:///opt/dataload/out/MSL27.owl.ttl",
+      "preferredPrefix": "ICTV",
       "base_uri": [
-        "https://ictv.global/taxonomy/taxondetails?taxnode_id=",
-        "https://ictv.global/isolates#"
+        "http://ictv.global/id/MSL27/"
+      ]
+    },
+    {
+      "id": "MSL9",
+      "ontology_purl": "file:///opt/dataload/out/MSL9.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL9/"
+      ]
+    },
+    {
+      "id": "MSL32",
+      "ontology_purl": "file:///opt/dataload/out/MSL32.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL32/"
+      ]
+    },
+    {
+      "id": "MSL12",
+      "ontology_purl": "file:///opt/dataload/out/MSL12.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL12/"
+      ]
+    },
+    {
+      "id": "MSL14",
+      "ontology_purl": "file:///opt/dataload/out/MSL14.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL14/"
+      ]
+    },
+    {
+      "id": "MSL37",
+      "ontology_purl": "file:///opt/dataload/out/MSL37.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL37/"
+      ]
+    },
+    {
+      "id": "MSL40",
+      "ontology_purl": "file:///opt/dataload/out/MSL40.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL40/"
+      ]
+    },
+    {
+      "id": "MSL4",
+      "ontology_purl": "file:///opt/dataload/out/MSL4.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL4/"
+      ]
+    },
+    {
+      "id": "MSL33",
+      "ontology_purl": "file:///opt/dataload/out/MSL33.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL33/"
+      ]
+    },
+    {
+      "id": "MSL2",
+      "ontology_purl": "file:///opt/dataload/out/MSL2.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL2/"
+      ]
+    },
+    {
+      "id": "MSL5",
+      "ontology_purl": "file:///opt/dataload/out/MSL5.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL5/"
+      ]
+    },
+    {
+      "id": "MSL39",
+      "ontology_purl": "file:///opt/dataload/out/MSL39.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL39/"
+      ]
+    },
+    {
+      "id": "MSL13",
+      "ontology_purl": "file:///opt/dataload/out/MSL13.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL13/"
+      ]
+    },
+    {
+      "id": "MSL18",
+      "ontology_purl": "file:///opt/dataload/out/MSL18.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL18/"
+      ]
+    },
+    {
+      "id": "MSL31",
+      "ontology_purl": "file:///opt/dataload/out/MSL31.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL31/"
+      ]
+    },
+    {
+      "id": "MSL19",
+      "ontology_purl": "file:///opt/dataload/out/MSL19.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL19/"
+      ]
+    },
+    {
+      "id": "MSL17",
+      "ontology_purl": "file:///opt/dataload/out/MSL17.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL17/"
+      ]
+    },
+    {
+      "id": "MSL34",
+      "ontology_purl": "file:///opt/dataload/out/MSL34.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL34/"
+      ]
+    },
+    {
+      "id": "MSL16",
+      "ontology_purl": "file:///opt/dataload/out/MSL16.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL16/"
+      ]
+    },
+    {
+      "id": "MSL20",
+      "ontology_purl": "file:///opt/dataload/out/MSL20.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL20/"
+      ]
+    },
+    {
+      "id": "MSL21",
+      "ontology_purl": "file:///opt/dataload/out/MSL21.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL21/"
+      ]
+    },
+    {
+      "id": "MSL7",
+      "ontology_purl": "file:///opt/dataload/out/MSL7.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL7/"
+      ]
+    },
+    {
+      "id": "MSL3",
+      "ontology_purl": "file:///opt/dataload/out/MSL3.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL3/"
+      ]
+    },
+    {
+      "id": "MSL28",
+      "ontology_purl": "file:///opt/dataload/out/MSL28.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL28/"
+      ]
+    },
+    {
+      "id": "MSL22",
+      "ontology_purl": "file:///opt/dataload/out/MSL22.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL22/"
+      ]
+    },
+    {
+      "id": "MSL11",
+      "ontology_purl": "file:///opt/dataload/out/MSL11.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL11/"
+      ]
+    },
+    {
+      "id": "MSL8",
+      "ontology_purl": "file:///opt/dataload/out/MSL8.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL8/"
+      ]
+    },
+    {
+      "id": "MSL30",
+      "ontology_purl": "file:///opt/dataload/out/MSL30.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL30/"
+      ]
+    },
+    {
+      "id": "MSL24",
+      "ontology_purl": "file:///opt/dataload/out/MSL24.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL24/"
+      ]
+    },
+    {
+      "id": "MSL35",
+      "ontology_purl": "file:///opt/dataload/out/MSL35.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL35/"
+      ]
+    },
+    {
+      "id": "MSL15",
+      "ontology_purl": "file:///opt/dataload/out/MSL15.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL15/"
+      ]
+    },
+    {
+      "id": "MSL1",
+      "ontology_purl": "file:///opt/dataload/out/MSL1.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL1/"
+      ]
+    },
+    {
+      "id": "MSL23",
+      "ontology_purl": "file:///opt/dataload/out/MSL23.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL23/"
+      ]
+    },
+    {
+      "id": "MSL6",
+      "ontology_purl": "file:///opt/dataload/out/MSL6.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL6/"
+      ]
+    },
+    {
+      "id": "MSL38",
+      "ontology_purl": "file:///opt/dataload/out/MSL38.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL38/"
+      ]
+    },
+    {
+      "id": "MSL25",
+      "ontology_purl": "file:///opt/dataload/out/MSL25.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL25/"
+      ]
+    },
+    {
+      "id": "MSL10",
+      "ontology_purl": "file:///opt/dataload/out/MSL10.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL10/"
+      ]
+    },
+    {
+      "id": "MSL26",
+      "ontology_purl": "file:///opt/dataload/out/MSL26.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL26/"
+      ]
+    },
+    {
+      "id": "MSL29",
+      "ontology_purl": "file:///opt/dataload/out/MSL29.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL29/"
       ]
     }
   ]
