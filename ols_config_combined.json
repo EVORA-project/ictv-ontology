@@ -1,0 +1,158 @@
+{
+  "ontologies": [
+    {
+      "id": "evora",
+      "ontology_purl": "https://raw.githubusercontent.com/EVORA-project/evora-ontology/refs/heads/main/models/owl/evora_ontology.owl.ttl"
+    },
+    {
+      "activity_status": "active",
+      "build": {
+        "method": "owl2obo",
+        "source_url": "http://purl.obolibrary.org/obo/iao.owl"
+      },
+      "contact": {
+        "email": "zhengj2007@gmail.com",
+        "github": "zhengj2007",
+        "label": "Jie Zheng",
+        "orcid": "0000-0002-2999-0103"
+      },
+      "depicted_by": "https://avatars0.githubusercontent.com/u/13591168?v=3&s=200",
+      "description": "An ontology of information entities.",
+      "domain": "information",
+      "homepage": "https://github.com/information-artifact-ontology/IAO/",
+      "id": "iao",
+      "layout": "ontology_detail",
+      "license": {
+        "label": "CC BY 4.0",
+        "logo": "http://mirrors.creativecommons.org/presskit/buttons/80x15/png/by.png",
+        "url": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      "ontology_purl": "http://purl.obolibrary.org/obo/iao.owl",
+      "preferredPrefix": "IAO",
+      "products": [
+        {
+          "id": "iao.owl",
+          "ontology_purl": "http://purl.obolibrary.org/obo/iao.owl"
+        },
+        {
+          "id": "iao/ontology-metadata.owl",
+          "ontology_purl": "http://purl.obolibrary.org/obo/iao/ontology-metadata.owl",
+          "page": "https://github.com/information-artifact-ontology/IAO/wiki/OntologyMetadata",
+          "title": "IAO ontology metadata"
+        },
+        {
+          "id": "iao/dev/iao.owl",
+          "ontology_purl": "http://purl.obolibrary.org/obo/iao/dev/iao.owl",
+          "title": "IAO dev"
+        },
+        {
+          "contact": {
+            "email": "mbrochhausen@gmail.com",
+            "label": "Mathias Brochhausen"
+          },
+          "description": "An ontology based on a theory of document acts describing what people can do with documents",
+          "id": "iao/d-acts.owl",
+          "ontology_purl": "http://purl.obolibrary.org/obo/iao/d-acts.owl",
+          "title": "ontology of document acts"
+        }
+      ],
+      "repository": "https://github.com/information-artifact-ontology/IAO",
+      "title": "Information Artifact Ontology",
+      "tracker": "https://github.com/information-artifact-ontology/IAO/issues",
+      "usages": [
+        {
+          "description": "IAO is used widely by multiple OBO ontologies for information representation.",
+          "type": "owl_import",
+          "user": "http://obofoundry.org"
+        }
+      ]
+    },
+    {
+      "activity_status": "active",
+      "contact": {
+        "email": "cjmungall@lbl.gov",
+        "github": "cmungall",
+        "label": "Chris Mungall",
+        "orcid": "0000-0002-6601-2165"
+      },
+      "description": "An ontology specifies terms that are used to annotate ontology terms for all OBO ontologies. The ontology was developed as part of Information Artifact Ontology (IAO).",
+      "domain": "information",
+      "homepage": "https://github.com/information-artifact-ontology/ontology-metadata",
+      "id": "omo",
+      "layout": "ontology_detail",
+      "license": {
+        "label": "CC0 1.0",
+        "logo": "http://mirrors.creativecommons.org/presskit/buttons/80x15/png/cc-zero.png",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "ontology_purl": "http://purl.obolibrary.org/obo/omo.owl",
+      "preferredPrefix": "OMO",
+      "products": [
+        {
+          "id": "omo.owl",
+          "ontology_purl": "http://purl.obolibrary.org/obo/omo.owl"
+        }
+      ],
+      "repository": "https://github.com/information-artifact-ontology/ontology-metadata",
+      "tags": [
+        "ontology term annotation"
+      ],
+      "title": "OBO Metadata Ontology",
+      "tracker": "https://github.com/information-artifact-ontology/ontology-metadata/issues",
+      "usages": [
+        {
+          "description": "OMO is imported by multiple OBO ontologies for ontology term annotations.",
+          "type": "owl_import",
+          "user": "http://obofoundry.org"
+        }
+      ]
+    },
+    {
+      "id": "ictv",
+      "ontology_purl": "file:///opt/dataload/out/ictv_all_versions.owl.ttl",
+      "preferredPrefix": "ICTV",
+      "base_uri": [
+        "http://ictv.global/id/MSL36/",
+        "http://ictv.global/id/MSL27/",
+        "http://ictv.global/id/MSL9/",
+        "http://ictv.global/id/MSL32/",
+        "http://ictv.global/id/MSL12/",
+        "http://ictv.global/id/MSL14/",
+        "http://ictv.global/id/MSL37/",
+        "http://ictv.global/id/MSL40/",
+        "http://ictv.global/id/MSL4/",
+        "http://ictv.global/id/MSL33/",
+        "http://ictv.global/id/MSL2/",
+        "http://ictv.global/id/MSL5/",
+        "http://ictv.global/id/MSL39/",
+        "http://ictv.global/id/MSL13/",
+        "http://ictv.global/id/MSL18/",
+        "http://ictv.global/id/MSL31/",
+        "http://ictv.global/id/MSL19/",
+        "http://ictv.global/id/MSL17/",
+        "http://ictv.global/id/MSL34/",
+        "http://ictv.global/id/MSL16/",
+        "http://ictv.global/id/MSL20/",
+        "http://ictv.global/id/MSL21/",
+        "http://ictv.global/id/MSL7/",
+        "http://ictv.global/id/MSL3/",
+        "http://ictv.global/id/MSL28/",
+        "http://ictv.global/id/MSL22/",
+        "http://ictv.global/id/MSL11/",
+        "http://ictv.global/id/MSL8/",
+        "http://ictv.global/id/MSL30/",
+        "http://ictv.global/id/MSL24/",
+        "http://ictv.global/id/MSL35/",
+        "http://ictv.global/id/MSL15/",
+        "http://ictv.global/id/MSL1/",
+        "http://ictv.global/id/MSL23/",
+        "http://ictv.global/id/MSL6/",
+        "http://ictv.global/id/MSL38/",
+        "http://ictv.global/id/MSL25/",
+        "http://ictv.global/id/MSL10/",
+        "http://ictv.global/id/MSL26/",
+        "http://ictv.global/id/MSL29/"
+      ]
+    }
+  ]
+}
