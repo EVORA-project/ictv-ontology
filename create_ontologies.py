@@ -33,7 +33,6 @@ IDENTIFIER = "http://purl.org/dc/terms/identifier"
 def main():
 
     common_graph = rdflib.Graph()
-    common_graph.parse(location='ictv_molecules.owl')
     
     nodes = pd.read_csv('data/taxonomy_node_export.utf8.txt', sep='\t', on_bad_lines=lambda x: x[:-1], engine='python', dtype=str)
     delta = pd.read_csv('data/taxonomy_node_delta.utf8.txt', sep='\t', dtype=str)

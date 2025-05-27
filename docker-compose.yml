@@ -1,17 +1,18 @@
 version: '3'
 services:
     evora-ols-dataload:
-      image: ghcr.io/ebispot/ols4-dataload:dev
+      image: ghcr.io/ebispot/ols4-dataload:embeddings
       volumes:
         - evora-ols-solr-data:/opt/solr/server/solr:rw
         - evora-ols-neo4j-data:/opt/neo4j/data:rw
-        - ./ols_config.json:/mnt/config.json:ro
+        - ./ols_config_combined.json:/mnt/config/config.json:ro
         - ./out:/opt/dataload/out:ro
       command: ./dataload.dockersh --loadLocalFiles
     evora-ols-solr:
-      image: solr:9.0.0
+      image: solr:9.8.1
       environment:
         - SOLR_HOME=/mnt/evora-ols-solr-data
+        - JAVA_OPTS=--add-modules jdk.incubator.vector
       ports:
         - 8983:8983
       volumes:
@@ -21,7 +22,7 @@ services:
         evora-ols-dataload:
           condition: service_completed_successfully
     evora-ols-neo4j:
-      image: neo4j:4.4.9-community
+      image: neo4j:2025.03.0-community
       ports:
         - 7474:7474
         - 7687:7687
@@ -29,11 +30,12 @@ services:
         - evora-ols-neo4j-data:/var/lib/neo4j/data
       environment:
         - NEO4J_AUTH=none
+        - JAVA_OPTS=--add-modules jdk.incubator.vector
       depends_on:
         evora-ols-dataload:
           condition: service_completed_successfully
     evora-ols-backend:
-      image: ghcr.io/ebispot/ols4-backend:dev
+      image: ghcr.io/ebispot/ols4-backend:embeddings
       ports:
         - 8080:8080
       environment:
@@ -46,7 +48,7 @@ services:
         - evora-ols-solr
         - evora-ols-neo4j 
     evora-ols-frontend:
-      image: ghcr.io/ebispot/ols4-frontend:dev
+      image: ghcr.io/ebispot/ols4-frontend:embeddings
       env_file: .env.evora_ols
       ports:
         - 8081:8080
