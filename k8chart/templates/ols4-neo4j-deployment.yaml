@@ -24,7 +24,7 @@ spec:
             claimName: {{ .Release.Name }}-neo4j-pvc
       containers:
         - name: neo4j
-          image: ghcr.io/ebispot/ols4-neo4j:4.4.9-community
+          image: ghcr.io/ebispot/ols4-neo4j:2025.03.0-community
           volumeMounts:
             - mountPath: "/data"
               name: {{ .Release.Name }}-neo4j-storage
@@ -36,12 +36,14 @@ spec:
               memory: 4Gi
               cpu: 1
           env:
-            - name: NEO4J_HEAP_MEMORY
-              value: 3g
-            - name: NEO4J_dbms_memory_heap_maxSize
-              value: 3g
+            # - name: NEO4J_HEAP_MEMORY
+            #   value: 3g
+            # - name: NEO4J_dbms_memory_heap_maxSize
+            #   value: 3g
             - name: NEO4J_AUTH
               value: none
+            - name: JAVA_OPTS
+              value: --add-modules jdk.incubator.vector
           ports:
             - containerPort: 7474
             - containerPort: 7687

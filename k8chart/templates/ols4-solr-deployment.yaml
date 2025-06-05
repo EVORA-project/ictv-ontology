@@ -20,7 +20,7 @@ spec:
             claimName: {{ .Release.Name }}-solr-pvc
       containers:
         - name: solr
-          image: solr:9.5.0
+          image: solr:9.8.1
           volumeMounts:
             - mountPath: "/data"
               name: {{ .Release.Name }}-solr-storage
@@ -34,6 +34,8 @@ spec:
           env:
             - name: SOLR_HOME
               value: /data
+            - name: JAVA_OPTS
+              value: --add-modules jdk.incubator.vector
           ports:
             - containerPort: 8983
 
