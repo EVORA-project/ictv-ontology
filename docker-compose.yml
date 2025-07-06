@@ -1,7 +1,7 @@
 version: '3'
 services:
     evora-ols-dataload:
-      image: ghcr.io/ebispot/ols4-dataload:embeddings
+      image: ghcr.io/ebispot/ols4-dataload:dev
       volumes:
         - evora-ols-solr-data:/opt/solr/server/solr:rw
         - evora-ols-neo4j-data:/opt/neo4j/data:rw
@@ -35,7 +35,7 @@ services:
         evora-ols-dataload:
           condition: service_completed_successfully
     evora-ols-backend:
-      image: ghcr.io/ebispot/ols4-backend:embeddings
+      image: ghcr.io/ebispot/ols4-backend:dev
       ports:
         - 8080:8080
       environment:
@@ -48,7 +48,7 @@ services:
         - evora-ols-solr
         - evora-ols-neo4j 
     evora-ols-frontend:
-      image: ghcr.io/ebispot/ols4-frontend:embeddings
+      image: ghcr.io/ebispot/ols4-frontend:dev
       env_file: .env.evora_ols
       ports:
         - 8081:8080

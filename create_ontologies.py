@@ -22,6 +22,7 @@ REPLACES = "http://purl.org/dc/terms/replaces"
 REPLACED_BY = "http://purl.org/dc/terms/isReplacedBy"
 EDITOR_NOTE = "http://purl.obolibrary.org/obo/IAO_0000116"
 IDENTIFIER = "http://purl.org/dc/terms/identifier"
+RANK = "http://purl.obolibrary.org/obo/TAXRANK_1000000"
 
 
 # taxnode_id: Taxon within a specific release
@@ -33,6 +34,7 @@ IDENTIFIER = "http://purl.org/dc/terms/identifier"
 def main():
 
     common_graph = rdflib.Graph()
+    common_graph.parse('imported_terms.ttl', format='ttl')
     
     nodes = pd.read_csv('data/taxonomy_node_export.utf8.txt', sep='\t', on_bad_lines=lambda x: x[:-1], engine='python', dtype=str)
     delta = pd.read_csv('data/taxonomy_node_delta.utf8.txt', sep='\t', dtype=str)
@@ -52,8 +54,8 @@ def main():
 
     for release in releases.itertuples():
 
-        #if int(release.msl_release_num) < 38:
-            #continue
+        if int(release.msl_release_num) < 39:
+            continue
 
         print(f'Creating ontology for ICTV release {release.name}')
 
@@ -130,6 +132,11 @@ def main():
             g.add((class_iri, RDFS.label, Literal(node.name)))
             g.add((class_iri, URIRef(IDENTIFIER), Literal("ICTV" + node.ictv_id)))
             g.add((class_iri, OWL.versionInfo, Literal(str(msl_id))))
+            g.add((class_iri, URIRef(RANK), URIRef(map_rank(node.rank))))
+
+            if node.rank == "realm":
+                # "Viruses" from NCBITaxon used as the root for the ontology
+                g.add((class_iri, RDFS.subClassOf, URIRef('http://purl.obolibrary.org/obo/NCBITaxon_10239')))
 
             if node.parent_id != release.ictv_id:
                 if node.parent_id in taxnode_id_to_ictv_id:
@@ -225,24 +232,16 @@ def main():
                                 g.add((stmt, URIRef(SYNONYM_TYPE), URIRef(PREVIOUS_NAME)))
                                 # g.add((stmt, RDFS.isDefinedBy, other_ontology))
                                 g.add((stmt, OWL.versionInfo, Literal( other_ontology.split('/')[-1])))
-                #other_g_copy = rdflib.Graph()
-                #other_g_copy += other_g
-                #other_g_copy.remove((URIRef(ontology_iri), RDF.type, OWL.Ontology))
-                #other_g_copy.remove((next(other_g_copy.subjects(RDF.type, OWL.Ontology), None), None, None))
-                #g += other_g_copy
-
-        owl_filename = 'out/' + ontology_id + '.owl.ttl'
-        print(f'Saving OWL file ' + owl_filename)
         g += common_graph
-        g.bind('owl', OWL)
-        g.bind('iao', 'http://purl.obolibrary.org/obo/IAO_')
-        g.bind('oio', 'http://www.geneontology.org/formats/oboInOwl#')
-        g.bind('omo', 'http://purl.obolibrary.org/obo/OMO_')
-        g.bind('dcterms', 'http://purl.org/dc/terms/')
-        # g.bind('ictv', 'http://ictv.global/')
-        g.serialize(owl_filename, format="ttl")
         all_g_merged += g
 
+    all_g_merged.bind('owl', OWL)
+    all_g_merged.bind('iao', 'http://purl.obolibrary.org/obo/IAO_')
+    all_g_merged.bind('oio', 'http://www.geneontology.org/formats/oboInOwl#')
+    all_g_merged.bind('omo', 'http://purl.obolibrary.org/obo/OMO_')
+    all_g_merged.bind('dcterms', 'http://purl.org/dc/terms/')
+    all_g_merged.bind('rdfs', RDFS)
+    all_g_merged.bind('taxrank', 'http://purl.obolibrary.org/obo/TAXRANK_')
     all_g_merged.serialize('out/ictv_all_versions.owl.ttl', format="ttl")
 
     owl_files = [f for f in os.listdir('out') if f.startswith('MSL') and f.endswith('.owl.ttl')]
@@ -262,6 +261,7 @@ def main():
             'id': 'ictv',
             'ontology_purl': 'file:///opt/dataload/out/ictv_all_versions.owl.ttl',
             'preferredPrefix': "ICTV",
+            'preferred_root_term': ['http://purl.obolibrary.org/obo/NCBITaxon_10239'],
             'base_uri': list(map(lambda f: 'http://ictv.global/id/' + f.split('.')[0] + '/', owl_files))
         }]
     }
@@ -284,6 +284,39 @@ def add_xrefs(g, class_iri, field, prefix):
             g.add((stmt, RDFS.label, Literal(k)))
         else:
             g.add((class_iri, URIRef(XREF), Literal(prefix + entry)))
+
+def map_rank(rank):
+    if rank == "realm":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0001004" # clade
+    if rank == "kingdom":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0000017"
+    if rank == "subkingdom":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0000029"
+    if rank == "phylum":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0000001"
+    if rank == "subphylum":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0000008"
+    if rank == "class":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0000002"
+    if rank == "subclass":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0000007"
+    if rank == "order":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0000003"
+    if rank == "suborder":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0000014"
+    if rank == "family":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0000004"
+    if rank == "subfamily":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0000024"
+    if rank == "genus":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0000005"
+    if rank == "subgenus":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0000009"
+    if rank == "species":
+        return "http://purl.obolibrary.org/obo/TAXRANK_0000006"
+
+
+
 
 
 
