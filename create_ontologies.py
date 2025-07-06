@@ -54,8 +54,8 @@ def main():
 
     for release in releases.itertuples():
 
-        if int(release.msl_release_num) < 39:
-            continue
+        #if int(release.msl_release_num) < 39:
+            #continue
 
         print(f'Creating ontology for ICTV release {release.name}')
 
