@@ -2,7 +2,7 @@
 
 # ICTV Ontology
 
-**The ICTV ontologies can be accessed via OLS at [http://wwwdev.ebi.ac.uk/ols4]( http://wwwdev.ebi.ac.uk/ols4)**
+**The ICTV ontologies can be accessed via OLS at **[https://www.ebi.ac.uk/ols4/ontologies/ictv](https://www.ebi.ac.uk/ols4/ontologies/ictv)**.
 
 Ontology representation of the [International Committee on Taxonomy of Viruses (ICTV)](https://ictv.global/) for the [EVORA project](https://evora-project.eu/)
 
