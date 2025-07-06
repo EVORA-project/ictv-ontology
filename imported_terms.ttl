@@ -1,0 +1,136 @@
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://purl.obolibrary.org/obo/IAO_0100001> a owl:AnnotationProperty ; 
+    rdfs:label "term replaced by" ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
+
+<http://purl.obolibrary.org/obo/IAO_0000225> a owl:AnnotationProperty ;
+    rdfs:label "obsolescence reason specification" ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
+
+<http://purl.obolibrary.org/obo/IAO_0000229> a owl:AnnotationProperty ;
+    rdfs:label "term split" ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
+
+<http://purl.obolibrary.org/obo/IAO_0000227> a owl:AnnotationProperty ;
+    rdfs:label "terms merged" ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
+
+<http://purl.obolibrary.org/obo/IAO_0000116> a owl:AnnotationProperty ;
+    rdfs:label "editor note" ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/iao.owl> .
+
+<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> a owl:AnnotationProperty ;
+    rdfs:label "has exact synonym" ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omo.owl> .
+
+<http://www.geneontology.org/formats/oboInOwl#hasSynonymType> a owl:AnnotationProperty ;
+    rdfs:label "has synonym type" ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omo.owl> .
+
+<http://purl.obolibrary.org/obo/OMO_0003008> a owl:AnnotationProperty ;
+    rdfs:label "previous name" ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omo.owl> .
+
+<http://www.geneontology.org/formats/oboInOwl#hasDbXref> a owl:AnnotationProperty ;
+    rdfs:label "hasDbXref" ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/omo.owl> .
+
+<http://purl.org/dc/terms/source> a owl:AnnotationProperty ;
+    rdfs:label "source" ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+
+<http://purl.org/dc/terms/replaces> a owl:AnnotationProperty ;
+    rdfs:label "replaces" ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+
+<http://purl.org/dc/terms/isReplacedBy> a owl:AnnotationProperty ;
+    rdfs:label "replaced by" ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+
+<http://purl.org/dc/terms/identifier> a owl:AnnotationProperty ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+
+<http://purl.obolibrary.org/obo/TAXRANK_1000000> a owl:AnnotationProperty ;
+    rdfs:label "has rank" ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> .
+
+<http://purl.obolibrary.org/obo/NCBITaxon_10239> a owl:Class ;
+    rdfs:label "Viruses" ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> .
+    
+<http://purl.obolibrary.org/obo/TAXRANK_0001004> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "clade" .
+    
+<http://purl.obolibrary.org/obo/TAXRANK_0000017> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "kingdom" .
+
+<http://purl.obolibrary.org/obo/TAXRANK_0000029> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "subkingdom" .
+
+<http://purl.obolibrary.org/obo/TAXRANK_0000001> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "phylum" .
+
+<http://purl.obolibrary.org/obo/TAXRANK_0000008> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "subphylum" .
+
+<http://purl.obolibrary.org/obo/TAXRANK_0000002> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "class" .
+
+<http://purl.obolibrary.org/obo/TAXRANK_0000007> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "subclass" .
+
+<http://purl.obolibrary.org/obo/TAXRANK_0000003> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "order" .
+
+<http://purl.obolibrary.org/obo/TAXRANK_0000014> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "suborder" .
+
+<http://purl.obolibrary.org/obo/TAXRANK_0000004> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "family" .
+
+<http://purl.obolibrary.org/obo/TAXRANK_0000024> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "subfamily" .
+
+<http://purl.obolibrary.org/obo/TAXRANK_0000005> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "genus" .
+
+<http://purl.obolibrary.org/obo/TAXRANK_0000009> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "subgenus" .
+
+<http://purl.obolibrary.org/obo/TAXRANK_0000006> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
+    rdfs:label "species" .
+
+<http://www.w3.org/2004/02/skos/core#narrowMatch> a owl:AnnotationProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+    rdfs:label "has narrower match" .
+
+<http://www.w3.org/2004/02/skos/core#narrowMatch> a owl:AnnotationProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+    rdfs:label "has narrower match" .
+
+<http://www.w3.org/2004/02/skos/core#broadMatch> a owl:AnnotationProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+    rdfs:label "has broader match" .
+
+<http://www.w3.org/2004/02/skos/core#exactMatch> a owl:AnnotationProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+    rdfs:label "has exact match" .
+
