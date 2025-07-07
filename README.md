@@ -6,7 +6,7 @@
 
 Ontology representation of the [International Committee on Taxonomy of Viruses (ICTV)](https://ictv.global/) for the [EVORA project](https://evora-project.eu/)
 
-Uses data from: https://github.com/ICTV-Virus-Knowledgebase/ICTVonlineDbLoad
+Uses data from: https://github.com/ICTV-Virus-Knowledgebase/ICTVdatabase
 
 To start an [Ontology Lookup Service (OLS)](https://github.com/EBISPOT/ols4) instance with all versions of ICTV 1971-present:
 
