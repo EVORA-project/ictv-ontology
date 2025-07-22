@@ -131,6 +131,8 @@ def main():
 
     print('Building the final output ontology ...')
 
+    g_all += common_graph
+
     g_all.add((URIRef(ontology_iri), RDF.type, OWL.Ontology))
     g_all.add((URIRef(ontology_iri), RDFS.label, Literal("ICTV Taxonomy")))
     g_all.add((URIRef(ontology_iri), RDFS.comment, Literal("International Committee on Taxonomy of Viruses (ICTV)")))
