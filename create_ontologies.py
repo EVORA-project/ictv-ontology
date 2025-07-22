@@ -85,7 +85,7 @@ def main():
     # If they are not from the latest ICTV version mark them as deprecated
     for c in g_all.subjects(predicate=RDF.type, object=OWL.Class):
         version = g_all.value(subject=c, predicate=OWL.versionInfo)
-        if version and version != 'MSL' + str(latest_release):
+        if version and str(version) != 'MSL'+latest_release:
             g_all.add((c, OWL.deprecated, Literal(True)))
 
     print('Annotating terms with their final replacement(s) ...')
@@ -113,9 +113,9 @@ def main():
         cur_name = g_all.value(subject=cl, predicate=RDFS.label)
         other_versions = list(g_all.subjects(predicate=URIRef(IDENTIFIER), object=g_all.value(subject=cl, predicate=URIRef(IDENTIFIER))))
         for other_term in other_versions:
-            other_version = g_all.value(subject=other_term, predicate=OWL.versionInfo)
+            other_version = str(g_all.value(subject=other_term, predicate=OWL.versionInfo))
             # if older version
-            if other_version and int(other_version.split('MSL')[1]) < int(g_all.value(subject=cl, predicate=OWL.versionInfo).split('MSL')[1]):
+            if other_version and int(other_version.split('MSL')[1]) < int(str(g_all.value(subject=cl, predicate=OWL.versionInfo)).split('MSL')[1]):
                 older_name = g_all.value(subject=other_term, predicate=RDFS.label)
                 if older_name and older_name != cur_name:
                     if len(list(g_all.triples((cl, URIRef(SYNONYM), Literal(older_name))))) == 0:
@@ -135,6 +135,7 @@ def main():
     g_all.add((URIRef(ontology_iri), RDFS.label, Literal("ICTV Taxonomy")))
     g_all.add((URIRef(ontology_iri), RDFS.comment, Literal("International Committee on Taxonomy of Viruses (ICTV)")))
     g_all.add((URIRef(ontology_iri), FOAF.homepage, URIRef("http://ictv.global/")))
+    g_all.add((URIRef(ontology_iri), URIRef('http://purl.obolibrary.org/obo/IAO_0000700'), URIRef('http://purl.obolibrary.org/obo/NCBITaxon_10239')))
 
     g_all.bind('owl', OWL)
     g_all.bind('iao', 'http://purl.obolibrary.org/obo/IAO_')
@@ -163,7 +164,6 @@ def main():
             'id': 'ictv',
             'ontology_purl': 'file:///opt/dataload/out/ictv_all_versions.owl.ttl',
             'preferredPrefix': "ICTV",
-            'preferred_root_term': ['http://purl.obolibrary.org/obo/NCBITaxon_10239'],
             'base_uri': list(map(lambda f: 'http://ictv.global/id/' + f.split('.')[0] + '/', owl_files))
         }]
     }
@@ -251,11 +251,10 @@ def build_ontology_for_release(release):
         g.add((class_iri, OWL.versionInfo, Literal(str(msl_id))))
         g.add((class_iri, URIRef(RANK), URIRef(map_rank(node.rank))))
 
-        if node.rank == "realm":
+        if node.parent_id == release['taxnode_id']:
             # "Viruses" from NCBITaxon used as the root for the ontology
             g.add((class_iri, RDFS.subClassOf, URIRef('http://purl.obolibrary.org/obo/NCBITaxon_10239')))
-
-        if node.parent_id != release['taxnode_id']:
+        else:
             if node.parent_id in taxnode_id_to_ictv_id:
                 g.add((class_iri, RDFS.subClassOf, URIRef(f'http://ictv.global/id/{msl_id}/ICTV{taxnode_id_to_ictv_id[node.parent_id]}')))
         g.add((class_iri, RDFS.isDefinedBy, URIRef(ontology_iri)))
