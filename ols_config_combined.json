@@ -4,9 +4,6 @@
       "id": "ictv",
       "ontology_purl": "file:///opt/dataload/out/ictv_all_versions.owl.ttl",
       "preferredPrefix": "ICTV",
-      "preferred_root_term": [
-        "http://purl.obolibrary.org/obo/NCBITaxon_10239"
-      ],
       "base_uri": []
     }
   ]
