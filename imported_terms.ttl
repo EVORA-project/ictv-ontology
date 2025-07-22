@@ -118,9 +118,9 @@
     rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
     rdfs:label "species" .
 
-<http://www.w3.org/2004/02/skos/core#narrowMatch> a owl:AnnotationProperty ;
+<http://www.w3.org/2004/02/skos/core#exactMatch> a owl:AnnotationProperty ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:label "has narrower match" .
+    rdfs:label "has exact match" .
 
 <http://www.w3.org/2004/02/skos/core#narrowMatch> a owl:AnnotationProperty ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
@@ -130,7 +130,12 @@
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:label "has broader match" .
 
-<http://www.w3.org/2004/02/skos/core#exactMatch> a owl:AnnotationProperty ;
-    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:label "has exact match" .
+<http://www.w3.org/ns/prov#wasRevisionOf> a owl:AnnotationProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov#> ;
+    rdfs:label "wasRevisionOf" .
+
+<http://www.w3.org/ns/prov#hadRevision> a owl:AnnotationProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov#> ;
+    rdfs:label "hadRevision" .
+
 
