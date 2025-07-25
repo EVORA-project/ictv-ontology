@@ -34,5 +34,12 @@ Then run the `create_ontologies.py` script:
 
     python3 create_ontologies.py
 
+## License
 
+This repository uses separate licenses for code and data:
+
+- **Code:** Licensed under the [Apache License 2.0](./LICENSE). See the LICENSE file for full terms.
+- **Data:** See [DATA_LICENSE](./DATA_LICENSE) for detailed information on data licensing, provenance, and attribution requirements.
+
+Please review both files to understand the licensing terms when using this repository.
 
