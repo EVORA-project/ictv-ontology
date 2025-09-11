@@ -1,8 +1,6 @@
 
 import requests
 import urllib.parse
-import networkx as nx
-import matplotlib.pyplot as plt
 
 VERSION_INFO = urllib.parse.quote("http://www.w3.org/2002/07/owl#versionInfo")
 IDENTIFIER = urllib.parse.quote("http://purl.org/dc/terms/identifier")
@@ -20,7 +18,7 @@ class ICTVOLSClient:
         if not isinstance(release, str):
             raise ValueError(f"Release must be a string, got {type(release)}")
         if not release.startswith("MSL"):
-            raise ValueError("MSL must start with 'MSL'")
+            raise ValueError(f"MSL must start with 'MSL', got {release}")
 
     def get_all_taxa_by_release(self, release):
         self._validate_release(release)
@@ -29,7 +27,7 @@ class ICTVOLSClient:
             f"{self.base_url}/classes?{VERSION_INFO}={release}&isObsolete=true",
         ])))
 
-    def get_taxon_by_release(self, release, id_or_label):
+    def get_taxon_by_release(self, id_or_label, release):
         self._validate_release(release)
         res = self._get_all_merged([
             f"{self.base_url}/classes?{VERSION_INFO}={release}&isObsolete=false&{IDENTIFIER}={id_or_label}",
@@ -43,56 +41,35 @@ class ICTVOLSClient:
             raise ValueError(f"Multiple taxa found with identifier/label {id_or_label} in release {release}")
         return self._map_entity( res[0] )
 
-    def get_replacements(self, release, id_or_label):
-        taxon = self.get_taxon_by_release(release, id_or_label)
-        return self._resolve_iris(taxon['replacements'])
+    def get_current_replacements(self, id_or_label, release=None):
+        if release != None:
+            taxon = self.get_taxon_by_release(id_or_label, release)
+            return self._resolve_iris(taxon['current_replacements'])
+        else:
+            not_obsolete = self._get_all_merged([
+                f"{self.base_url}/classes?isObsolete=false&{IDENTIFIER}={id_or_label}",
+                f"{self.base_url}/classes?isObsolete=false&label={id_or_label}",
+            ])
+            if len(not_obsolete) > 0:
+                return [self._map_entity( not_obsolete[0] )]
+            obsolete = self._get_all_merged([
+                f"{self.base_url}/classes?isObsolete=true&{IDENTIFIER}={id_or_label}",
+                f"{self.base_url}/classes?isObsolete=true&label={id_or_label}",
+            ])
+            if len(obsolete) > 0:
+                replacement_iris = self._map_entity(obsolete[0])['current_replacements']
+                replacements = self._resolve_iris(replacement_iris)
+                replacements = [r for r in replacements if r['is_obsolete'] != True]
+                return replacements
+            return []
 
-    def get_historical_parents(self, release, id_or_label):
-        taxon = self.get_taxon_by_release(release, id_or_label)
-        return self._resolve_iris(taxon['historical_parents'])
+    def get_historical_parents(self, id_or_label, release=None):
+        taxon = self.get_taxon_by_release(id_or_label, release)
+        return self._resolve_iris(taxon['replaces'])
 
-    def get_taxonomic_parents(self, release, id_or_label):
-        taxon = self.get_taxon_by_release(release, id_or_label)
+    def get_taxonomic_parents(self, id_or_label, release=None):
+        taxon = self.get_taxon_by_release(id_or_label, release)
         return self._resolve_iris(taxon['taxonomic_parents'])
-
-    def get_history_graph(self, release, id_or_label):
-        taxon = self.get_taxon_by_release(release, id_or_label)
-        if not taxon:
-            raise ValueError(f"Taxon with identifier/label {id_or_label} not found in release {release}")
-        return self._get_history_graph(release, id_or_label)
-
-    def _get_history_graph(self, release, id_or_label, _visited=None):
-        if _visited is None:
-            _visited = set()
-        taxon = self.get_taxon_by_release(release, id_or_label)
-        if not taxon:
-            raise ValueError(f"Taxon with identifier/label {id_or_label} not found in release {release}")
-        
-        G = nx.DiGraph()
-        G.add_node(taxon['ictv_id'], label=taxon['label'])
-
-        parents = self.get_historical_parents(release, id_or_label)
-        for parent in parents:
-            if parent['ictv_id'] not in _visited:
-                _visited.add(parent['ictv_id'])
-                G.add_edge(taxon['ictv_id'], parent['ictv_id'])
-                G = nx.compose(G, self._get_history_graph(release, parent['ictv_id'], _visited))
-
-        replacements = self.get_replacements(release, id_or_label)
-        for replacement in replacements:
-            if replacement['ictv_id'] not in _visited:
-                _visited.add(replacement['ictv_id'])
-                G.add_edge(taxon['ictv_id'], replacement['ictv_id'])
-                G = nx.compose(G, self._get_history_graph(release, replacement['ictv_id'], _visited))
-
-        return G
-
-                
-
-
-
-
-        
 
 
 
@@ -128,10 +105,12 @@ class ICTVOLSClient:
             "msl": entity["http://www.w3.org/2002/07/owl#versionInfo"],
             "ictv_id": entity["http://purl.org/dc/terms/identifier"],
             "label": self._ensure_list(entity, "label")[0],
+            "is_obsolete": entity.get("isObsolete", False),
             "obsolescence_reason": self._map_obsolescence_reason( entity.get("http://purl.obolibrary.org/obo/IAO_0000225", None) ),
             "taxonomic_parents": self._ensure_list(entity, "http://www.w3.org/2000/01/rdf-schema#subClassOf"),
-            "historical_parents": self._ensure_list(entity, "http://purl.org/dc/terms/replaces"),
-            "replacements" : self._ensure_list(entity, "http://purl.org/dc/terms/isReplacedBy"),
+            "replaces": self._ensure_list(entity, "http://www.w3.org/ns/prov#wasRevisionOf"),
+            "replaced_by": self._ensure_list(entity, "http://www.w3.org/ns/prov#hadRevision"),
+            "current_replacements" : self._ensure_list(entity, "http://purl.obolibrary.org/obo/IAO_0100001"),
         }
 
     def _map_obsolescence_reason(self, reason):
@@ -167,7 +146,7 @@ class ICTVOLSClient:
         res = []
         for parent in iris:
             parent_msl, parent_ictv_id = self._split_iri(parent)
-            parent = self.get_taxon_by_release(parent_msl, parent_ictv_id)
+            parent = self.get_taxon_by_release(parent_ictv_id, parent_msl)
             res.append(parent)
         return res
 
