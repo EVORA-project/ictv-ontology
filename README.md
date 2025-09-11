@@ -8,6 +8,8 @@ Ontology representation of the [International Committee on Taxonomy of Viruses (
 
 Uses data from: https://github.com/ICTV-Virus-Knowledgebase/ICTVdatabase
 
+SSSOM mappings to NCBITaxon: https://github.com/EVORA-project/virus-taxonomy-mappings
+
 # Running a local OLS
 
 To start an [Ontology Lookup Service (OLS)](https://github.com/EBISPOT/ols4) instance with all versions of ICTV 1971-present:
