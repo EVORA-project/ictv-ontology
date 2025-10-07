@@ -22,7 +22,7 @@ It handles:
 
 | File | Description |
 |------|--------------|
-| [`ictv-api.js`](ictv-api.js) | Helper class for interacting with the ICTV ontology API (ES6 module). |
+|[`ictv-api.js`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/js/ictv-api.js) | Helper class for interacting with the ICTV ontology API (ES6 module). |
 
 ---
 
