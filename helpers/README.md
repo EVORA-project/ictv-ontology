@@ -41,3 +41,39 @@ It handles:
     .then(result => console.log(result))
     .catch(err => console.error(err));
 </script>
+```
+
+## 🌐 Live Showcase
+
+A live demonstration using this helper is available here:
+👉 [ICTV Taxon Resolver](https://evora-project.github.io/ictv-resolver/)
+
+You can also view or contribute to the source code at:
+📁 [EVORA-project/ictv-resolver](https://github.com/EVORA-project/ictv-resolver)
+
+The ICTV Resolver allows users to test this helper interactively through a browser interface.
+
+🧠 Dependencies
+
+None — pure ES6 JavaScript, works in modern browsers and Node (with fetch).
+
+🧩 Related Resources
+
+Ontology: [ICTV Ontology on OLS](https://www.ebi.ac.uk/ols4/ontologies/ictv)
+
+Repository: [EVORA-project/ictv-ontology
+](https://github.com/EVORA-project/ictv-ontology)
+ICTV official taxonomy site: [https://ictv.global/taxonomy](https://ictv.global/taxonomy)
+
+Web showcase: [ICTV Resolver](https://evora-project.github.io/ictv-resolver/)
+
+⚖️ License
+
+Data © International Committee on Taxonomy of Viruses (ICTV),
+licensed under CC BY 4.0
+.
+
+Code © 2025 EVORA Project
+,
+licensed under the MIT License
+.
