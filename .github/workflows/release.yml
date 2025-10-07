@@ -21,6 +21,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       
+      - name: Create output directory
+        run: |
+          mkdir -p out
+      
       - name: Build ontology
         run: |
           uv run create_ontologies.py
