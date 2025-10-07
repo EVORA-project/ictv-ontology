@@ -32,7 +32,7 @@ It handles:
 
 ```html
 <script type="module">
-  import { ICTVApi } from 'https://raw.githubusercontent.com/EVORA-project/ictv-ontology/main/helpers/js/ictv-api.js';
+  import { ICTVApi } from 'https://cdn.jsdelivr.net/gh/EVORA-project/ictv-ontology/helpers/js/ictv-api.js';
 
   const api = new ICTVApi();
 
