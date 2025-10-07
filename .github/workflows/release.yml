@@ -14,25 +14,22 @@ permissions:
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/astral-sh/uv:latest
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
       - name: Create output directory
-        run: |
-          mkdir -p out
-      
+        run: mkdir -p out
+
       - name: Build ontology
-        run: |
-          uv run create_ontologies.py
-      
+        run: uv run create_ontologies.py
+
       - name: Compress ontology file
-        run: |
-          gzip -c out/ictv_all_versions.owl.ttl > ictv_all_versions.owl.ttl.gz
-      
+        run: gzip -c out/ictv_all_versions.owl.ttl > ictv_all_versions.owl.ttl.gz
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
