@@ -1,0 +1,39 @@
+name: Build and Release Ontology
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (e.g., 2025-Jan-15)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/astral-sh/uv:latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Build ontology
+        run: |
+          uv run create_ontologies.py
+      
+      - name: Compress ontology file
+        run: |
+          gzip -c out/ictv_all_versions.owl.ttl > ictv_all_versions.owl.ttl.gz
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.tag }}
+          name: ${{ inputs.tag }}
+          files: ictv_all_versions.owl.ttl.gz
+          draft: false
+          prerelease: false
