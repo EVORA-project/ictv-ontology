@@ -27,7 +27,13 @@ jobs:
 
       - name: Create output directory
         run: mkdir -p out
-
+        
+      - name: Download latest data
+        run: |
+          rm -rf data
+          git clone https://github.com/ICTV-Virus-Knowledgebase/ICTVdatabase --depth 1
+          cp -r ICTVdatabase/data .
+        
       - name: Build ontology
         run: uv run create_ontologies.py
 
