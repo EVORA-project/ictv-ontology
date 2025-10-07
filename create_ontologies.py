@@ -1,3 +1,10 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "pandas",
+#     "rdflib",
+# ]
+# ///
 
 
 import rdflib
