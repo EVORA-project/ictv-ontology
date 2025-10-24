@@ -323,22 +323,22 @@ export class ICTVApi {
         }
       }
     }
-
-    // 4) label/synonym (classes first)
-    const classes = await this._findClassesByLabelConservative(trimmed);
-    if (classes.length) {
-      base = classes.sort(
+     
+    // 4) then individuals → parent class
+    const parents = await this._findIndividualsAndResolveParents(trimmed);
+    if (parents.length) {
+      base = parents.sort(
         (a, b) =>
           this._parseMslNum(b['http://www.w3.org/2002/07/owl#versionInfo']) -
           this._parseMslNum(a['http://www.w3.org/2002/07/owl#versionInfo'])
       )[0];
       return { base, suggestions };
     }
-
-    // 5) then individuals → parent class
-    const parents = await this._findIndividualsAndResolveParents(trimmed);
-    if (parents.length) {
-      base = parents.sort(
+     
+    // 5) label/synonym (classes first)
+    const classes = await this._findClassesByLabelConservative(trimmed);
+    if (classes.length) {
+      base = classes.sort(
         (a, b) =>
           this._parseMslNum(b['http://www.w3.org/2002/07/owl#versionInfo']) -
           this._parseMslNum(a['http://www.w3.org/2002/07/owl#versionInfo'])
