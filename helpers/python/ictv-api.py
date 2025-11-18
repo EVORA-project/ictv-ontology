@@ -6,7 +6,7 @@
 # and NCBI Taxon IDs to current ICTV taxa.
 #
 # Implementation initially inspired by notebook script created by @jamesamcl
-#   https://github.com/EVORA-project/ictv-ontology/blob/main/notebooks/ictv_ols.py
+# https://github.com/EVORA-project/ictv-ontology/blob/main/notebooks/ictv_ols.py
 #
 # This file provides two classes:
 #   - ICTVOLSClient     : main client for OLS / ICTV ontology

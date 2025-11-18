@@ -5,6 +5,9 @@
  * Lightweight helper to query the ICTV Ontology via the Ontology Lookup Service (OLS4)
  * and to resolve ICTV taxon names, identifiers, and NCBI Taxon IDs to current ICTV taxa.
  *
+ * Implementation initially inspired by notebook script created by @jamesamcl:
+ * https://github.com/EVORA-project/ictv-ontology/blob/main/notebooks/ictv_ols.py
+ *
  * This file provides two classes:
  *  - ICTVOLSClient      : main client for OLS / ICTV ontology
  *  - ICTVtoNCBImapping  : ICTV ↔ NCBI Taxon mapping helper based on SSSOM

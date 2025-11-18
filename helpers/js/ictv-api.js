@@ -1,6 +1,12 @@
 /* ============================================================================
    ICTV Ontology API JavaScript Helper
    ----------------------------------------------------------------------------
+   Lightweight helper for resolving ICTV taxon names, identifiers, and NCBI
+   Taxon IDs using the ICTV Ontology served via the OLS4 API.
+
+   Implementation initially inspired by notebook script created by @jamesamcl:
+   https://github.com/EVORA-project/ictv-ontology/blob/main/notebooks/ictv_ols.py
+
    Data © ICTV (CC BY 4.0) — https://ictv.global/
    Code © EVORA Project / Angatar (d3fk) — MIT License
    Source ontology via OLS4: https://www.ebi.ac.uk/ols4/ontologies/ictv
