@@ -1,6 +1,6 @@
 <?php
 /**
- * ICTV PHP API Helper (ictv-ols-api.php)
+ * ICTV PHP API Helper (ictv-api.php)
  *
  * Lightweight helper to query the ICTV Ontology via the Ontology Lookup Service (OLS4)
  * and to resolve ICTV taxon names, identifiers, and NCBI Taxon IDs to current ICTV taxa.

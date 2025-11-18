@@ -1,4 +1,4 @@
-# ICTV PHP API Helper (`ictv-ols-api.php`)
+# ICTV PHP API Helper (`ictv-api.php`)
 
 Lightweight PHP helper to query the **ICTV Ontology API** (served via the [Ontology Lookup Service](https://www.ebi.ac.uk/ols4/ontologies/ictv)) and resolve virus taxon names, historical ICTV identifiers, and NCBI Taxon IDs to the corresponding current ICTV taxon.
 
@@ -29,7 +29,7 @@ This PHP helper exposes 2 classes:
 Copy the helper file into your project, then include it in your PHP code:
 
 ```php
-require_once __DIR__ . '/helpers/php/ictv-ols-api.php';
+require_once __DIR__ . '/helpers/php/ictv-api.php';
 
 $client = new ICTVOLSClient();
 ```
@@ -375,6 +375,6 @@ try {
 
 - ICTV data as included in the ICTV ontology: ICTV CC BY 4.0  
 - SSSOM mapping: CC0 (see the `virus-taxonomy-mappings` repository)  
-- Helper code (`ictv-ols-api.php`): © EVORA Project — MIT License
+- Helper code (`ictv-api.php`): © EVORA Project — MIT License
 
 If you build a public interface using this helper, please acknowledge both ICTV and the EVORA Project in your documentation or About page.
