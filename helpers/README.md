@@ -1,79 +1,143 @@
-# ICTV Ontology – Helpers
+# ICTV Ontology – Helper Libraries
 
-This folder provides a lightweight helper classes to access the **ICTV Ontology API** as served through the [Ontology Lookup Service (OLS4)](https://www.ebi.ac.uk/ols4/ontologies/ictv).
+This directory provides lightweight client libraries that make it easy to query the **ICTV Ontology API**, as served through the  
+👉 **Ontology Lookup Service (OLS)**: https://www.ebi.ac.uk/ols4/ontologies/ictv
 
----
+These helpers allow you to resolve ICTV taxon names, historical ICTV identifiers, IRIs, and NCBI Taxon IDs to the **current ICTV taxon**, including lineage and replacement history.
 
-## 📘 Overview
-
-The js subfolder contains `ictv-api.js` helper that makes it easy to query ICTV taxonomic data from JavaScript environments, whether you are:
-- Building a browser-based tool (e.g., ICTV Resolver),
-- Embedding taxonomic lookups in web applications,
-- Writing scripts to test ontology term resolution.
-
-It handles:
-- Querying by ICTV identifiers, NCBI Taxon IDs, or synonyms,  
-- Finding historical taxa and resolving to the latest ICTV term,  
-- Returning clean JSON responses from the OLS API.
 
 ---
 
-## 📦 File
+## 📘 Contents
 
-| File | Description |
-|------|--------------|
-|[`ictv-api.js`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/js/ictv-api.js) | Helper class for interacting with the ICTV ontology API (ES6 module). |
+Helpers are available in:
+
+- **JavaScript** ([`js/ictv-api.js`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/js/ictv-api.js))
+- **Python** ([`python/ictv-api.py`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/python/ictv-api.py))
+- **PHP** ([`php/ictv-api.php`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/js/ictv-api.php))
+
+```
+helpers/
+ ├── js/
+ │    └── ictv-api.js
+ ├── python/
+ │    └── ictv-api.py
+ └── php/
+      └── ictv-api.php
+```
 
 ---
 
-## 🚀 Usage
+## 📚 Helper Implementations
 
-### Import directly from GitHub (recommended)
+### 🔹 JavaScript (`js/ictv-api.js`)
+
+ES module suitable for browsers, Node.js, and static sites.
+
+Handles:
+
+- Resolving ICTV IDs, IRIs, labels, synonyms
+- Mapping NCBI Taxon IDs ↔ ICTV IDs
+- Replacement chains and obsolete terms
+- Fetching history across releases
+
+No dependencies — pure ES6.
+
+---
+
+### 🔹 Python (`python/ictv-api.py`)
+
+Lightweight client using `requests`.
+
+Features:
+
+- Full term resolution
+- ICTV ↔ NCBI mapping
+- Fetching releases, history, lineage
+- Mirrors JS helper behaviour
+
+---
+
+### 🔹 PHP (`php/ictv-api.php`)
+
+Standalone PHP helper using cURL.
+
+Ideal for:
+
+- Server-side integrations
+- CMS modules and backends
+
+Equivalent API to JS & Python helpers.
+
+---
+
+## 🚀 Quick Start Examples
+
+### JavaScript
 
 ```html
 <script type="module">
   import { ICTVApi } from 'https://cdn.jsdelivr.net/gh/EVORA-project/ictv-ontology/helpers/js/ictv-api.js';
 
   const api = new ICTVApi();
-
-  // Example: resolve a term by label or ICTV ID
-  api.resolveToLatest('SARS-CoV')
-    .then(result => console.log(result))
-    .catch(err => console.error(err));
+  const result = await api.resolveToLatest("SARS-CoV-2");
+  console.log(result);
 </script>
 ```
 
+### Python
+
+```python
+from ictv_api import ICTVOLSClient
+
+client = ICTVOLSClient()
+res = client.resolveToLatest("Zika virus")
+print(res)
+```
+
+### PHP
+
+```php
+require_once "ictv-api.php";
+
+$api = new ICTVOLSClient();
+$res = $api->resolveToLatest("Tehran virus");
+print_r($res);
+```
+
+---
+
 ## 🌐 Live Showcase
 
-A live demonstration using this helper is available here:
-👉 [ICTV Taxon Resolver](https://evora-project.github.io/ictv-resolver/)
+👉 **ICTV Taxon Resolver**  
+https://evora-project.github.io/ictv-resolver/
 
-You can also view or contribute to the source code at:
-📁 [EVORA-project/ictv-resolver](https://github.com/EVORA-project/ictv-resolver)
+Source code:  
+https://github.com/EVORA-project/ictv-resolver
 
-The ICTV Resolver allows users to test this helper interactively through a browser interface.
+---
 
-🧠 Dependencies
+## 🧠 Dependencies
 
-None — pure ES6 JavaScript, works in modern browsers and Node (with fetch).
+| Language  | Dependencies |
+|----------|--------------|
+| JavaScript | None |
+| Python | requests |
+| PHP | cURL |
 
-🧩 Related Resources
+---
 
-Ontology: [ICTV Ontology on OLS](https://www.ebi.ac.uk/ols4/ontologies/ictv)
+## 🔗 Related Resources
 
-Repository: [EVORA-project/ictv-ontology
-](https://github.com/EVORA-project/ictv-ontology)
-ICTV official taxonomy site: [https://ictv.global/taxonomy](https://ictv.global/taxonomy)
+- ICTV Ontology on OLS: https://www.ebi.ac.uk/ols4/ontologies/ictv  
+- ICTV Taxonomy: https://ictv.global/taxonomy  
+- EVORA Project ICTV Ontology Repository: https://github.com/EVORA-project/ictv-ontology  
+- ICTV Resolver Demo: https://evora-project.github.io/ictv-resolver/
 
-Web showcase: [ICTV Resolver](https://evora-project.github.io/ictv-resolver/)
+---
 
-⚖️ License
+## ⚖️ License
 
-Data © International Committee on Taxonomy of Viruses (ICTV),
-licensed under CC BY 4.0
-.
-
-Code © 2025 EVORA Project
-,
-licensed under the MIT License
-.
+- ICTV data: CC BY 4.0  
+- SSSOM mapping: CC0  
+- Helpers code: MIT License — © EVORA Project
