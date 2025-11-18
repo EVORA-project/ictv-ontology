@@ -2,7 +2,7 @@
    ICTV Ontology API JavaScript Helper
    ----------------------------------------------------------------------------
    Data © ICTV (CC BY 4.0) — https://ictv.global/
-   Code © EVORA Project / Philippe Lieutaud — MIT License
+   Code © EVORA Project / Angatar (d3fk) — MIT License
    Source ontology via OLS4: https://www.ebi.ac.uk/ols4/ontologies/ictv
    ========================================================================== */
 
