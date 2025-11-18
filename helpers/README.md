@@ -14,7 +14,7 @@ Helpers are available in:
 
 - **JavaScript** ([`js/ictv-api.js`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/js/ictv-api.js))
 - **Python** ([`python/ictv-api.py`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/python/ictv-api.py))
-- **PHP** ([`php/ictv-api.php`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/js/ictv-api.php))
+- **PHP** ([`php/ictv-api.php`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/php/ictv-api.php))
 
 ```
 helpers/
