@@ -144,6 +144,7 @@ def main():
     g_all.add((URIRef(ontology_iri), RDFS.label, Literal("ICTV Taxonomy")))
     g_all.add((URIRef(ontology_iri), RDFS.comment, Literal("International Committee on Taxonomy of Viruses (ICTV)")))
     g_all.add((URIRef(ontology_iri), FOAF.homepage, URIRef("http://ictv.global/")))
+    g_all.add((URIRef(ontology_iri), OWL.versionInfo, Literal("MSL"+latest_release)))
     g_all.add((URIRef(ontology_iri), URIRef('http://purl.obolibrary.org/obo/IAO_0000700'), URIRef('http://purl.obolibrary.org/obo/NCBITaxon_10239')))
 
     g_all.bind('owl', OWL)
