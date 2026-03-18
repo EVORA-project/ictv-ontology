@@ -1,0 +1,6 @@
+remote_theme: pages-themes/hacker@v0.2.0
+title: ICTV ontology API
+description: Public programmatic access to the official taxonomy of viruses using ICTV ontology served through the Ontology Lookup Service (OLS) API.
+show_downloads: false
+plugins:
+  - jekyll-remote-theme
