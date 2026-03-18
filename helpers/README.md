@@ -1,4 +1,14 @@
 # Programmatic access to official taxonomy of viruses with **ICTV Ontology API** – Helper Libraries & Direct API Access
+## 📑 Quick Navigation
+- [What is the ICTV OLS API?](#-what-is-the-ictv-ols-api)
+- [Two Approaches](#-two-approaches-to-access-the-ictv-ols-api)
+- [Helper Libraries Quick Start](#-quick-start-with-helper-libraries)
+- [Choose Your Helper](#-choose-your-helper)
+- [Direct API Access](#-advanced-direct-ols-api-access)
+- [Common Use Cases](#-common-use-cases-with-examples)
+- [Practical Example](#-practical-example-querying-for-a-virus-by-name)
+- [Response Structure](#-response-structure-and-navigation)
+- [Support & Feedback](#-support--feedback)
 
 ## 🌍 What is the ICTV OLS API?
 
@@ -472,7 +482,6 @@ For any ICTV IRI, follow this pattern:
 {
   "iri": "http://ictv.global/id/MSL38/ICTV20040588",
   "label": "Severe acute respiratory syndrome-related coronavirus",
-  "description": ["The causative agent of COVID-19..."],
   "synonym": [
     "SARS-CoV",
     {
@@ -633,6 +642,14 @@ The repository includes a comprehensive Jupyter notebook illustrating typical wo
 - OLS API Documentation: https://www.ebi.ac.uk/ols4/docs/
 
 ---
+## 🤝 Support & Feedback
+
+- **Issues or questions?** Open an issue on the [EVORA GitHub](https://github.com/EVORA-project/ictv-ontology/issues)
+- **Found an error in this documentation?** Submit a PR to improve it
+- **Need OLS-specific help?** Check [OLS4 Documentation](https://www.ebi.ac.uk/ols4/api-docs)
+
+---
+
 
 ## ⚖️ License
 
