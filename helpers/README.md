@@ -49,7 +49,7 @@ Lightweight client libraries that **encapsulate the complexity** of direct OLS q
 - Prefer simplified, language-specific APIs
 - Work in JavaScript, Python, or PHP
 
-### 🔧 **Approach 2: Direct OLS API Access (For Advanced Users)**
+### 🔧 **Approach 2: Direct OLS API Access (advanced)**
 Direct HTTP access to the OLS API endpoints, providing **full control and flexibility** for custom queries and advanced workflows.
 
 **Use this if you:**
@@ -188,7 +188,7 @@ Ideal for backend systems needing bulk data access
 | **Release-specific queries** | ❌ | ✅ | ✅ |
 | **Dependencies** | None | `requests` | `curl` (built-in) |
 | **Best for** | 🌐 Web | 📊 Data pipelines | 🖥️ Server-side |
-| **Full Docs** | [js/README](helpers/js/README.md) | [python/README](helpers/python/README.md) | [php/README](helpers/php/README.md) |
+| **Full Docs** | [js/README](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/js/README.md) | [python/README](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/python/README.md) | [php/README](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/php/README.md) |
 
 
 ---
@@ -331,11 +331,10 @@ https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes
 ```json
 {
   "iri": "http://ictv.global/id/MSL40/ICTV20040588",
-  "label": "Severe acute respiratory syndrome coronavirus 2",
-  "description": ["..."],
-  "synonyms": ["SARS-CoV-2", "..."],
+  "label": "Betacoronavirus pandemicum",
+  "synonym": ["SARS-CoV", "..."],
   "isObsolete": false,
-  "parents": [...]
+  "hierarchicalParent": [ "http://ictv.global/id/MSL40/ICTV20186129" ],
 }
 ```
 
@@ -352,7 +351,7 @@ https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes?label=severe%20acute%2
 ```
 
 **Parameters:**
-- `label`: The virus name to search for (URL-encoded)
+- `label`: The taxon name to search for (URL-encoded)
 - `includeObsoleteEntities`: Set to `true` to include obsolete terms
 
 **Response:** List of matching classes, including obsolete ones.
@@ -500,7 +499,7 @@ For any ICTV IRI, follow this pattern:
   ],
   "isObsolete": true,
   "hierarchicalParent": [ "http://ictv.global/id/MSL38/ICTV20186129" ],
-  "hierarchicalAncestor" : [ "http://ictv.global/id/MSL38/ICTV19750006", "http://ictv.global/id/MSL38/ICTV19960002", "http://ictv.global/id/MSL38/ICTV20090624", "http://ictv.global/id/MSL38/ICTV20091082", "http://ictv.global/id/MSL38/ICTV201857095", "http://ictv.global/id/MSL38/ICTV20186105", "http://ictv.global/id/MSL38/ICTV20186129", "http://ictv.global/id/MSL38/ICTV201907198", "http://ictv.global/id/MSL38/ICTV201907209", "http://ictv.global/id/MSL38/ICTV201907210", "http://purl.obolibrary.org/obo/NCBITaxon_10239" ],
+  "hierarchicalAncestor": [ "http://ictv.global/id/MSL38/ICTV19750006", "http://ictv.global/id/MSL38/ICTV19960002", "http://ictv.global/id/MSL38/ICTV20090624", "http://ictv.global/id/MSL38/ICTV20091082", "http://ictv.global/id/MSL38/ICTV201857095", "http://ictv.global/id/MSL38/ICTV20186105", "http://ictv.global/id/MSL38/ICTV20186129", "http://ictv.global/id/MSL38/ICTV201907198", "http://ictv.global/id/MSL38/ICTV201907209", "http://ictv.global/id/MSL38/ICTV201907210", "http://purl.obolibrary.org/obo/NCBITaxon_10239" ],
   "http://purl.obolibrary.org/obo/IAO_0100001" : "http://ictv.global/id/MSL40/ICTV20040588",
   "http://purl.obolibrary.org/obo/TAXRANK_1000000" : "http://purl.obolibrary.org/obo/TAXRANK_0000006",
   "http://purl.org/dc/terms/identifier" : "ICTV20040588"
@@ -524,7 +523,7 @@ For any ICTV IRI, follow this pattern:
 
 ## 🛠️ Working with Replacement Chains
 
-When resolving historical taxa, you may encounter the **term_replaced_by** relationship:
+When resolving historical taxa, you may encounter the **term_replaced_by** relationship (IAO:0100001):
 
 ```
 Original Request:
