@@ -1,69 +1,92 @@
-# Programmatic access to official taxonomy of viruses with **ICTV Ontology API** – Helper Libraries & Direct API Access
+> Resolve virus taxa across ICTV releases programmatically.
+<p align="center">
+  <img src="https://ictv.global/sites/default/files/inline-images/ictvLogo-head.png" alt="ICTV Logo" height="100" style="vertical-align: middle; margin: 0 30px;" />
+  <img src="https://raw.githubusercontent.com/EVORA-project/ictv-resolver/main/assets/images/logo/logo.svg" alt="EVORA Project Logo" height="80" style="vertical-align: middle; margin: 0 30px;" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/EVORA-project/ictv-ontology/tree/main/helpers">
+    <img src="https://img.shields.io/badge/View%20on-GitHub-black?logo=github&style=for-the-badge">
+  </a>
+</p>
+
+# Programmatic access to the official taxonomy of viruses with **ICTV Ontology API** – Helper Libraries & Direct API Access
 ## 📑 Quick Navigation
+
 - [What is the ICTV OLS API?](#-what-is-the-ictv-ols-api)
-- [Two Approaches](#-two-approaches-to-access-the-ictv-ols-api)
-- [Helper Libraries Quick Start](#-quick-start-with-helper-libraries)
-- [Choose Your Helper](#-choose-your-helper)
-- [Direct API Access](#-advanced-direct-ols-api-access)
-- [Common Use Cases](#-common-use-cases-with-examples)
-- [Practical Example](#-practical-example-querying-for-a-virus-by-name)
-- [Response Structure](#-response-structure-and-navigation)
-- [Support & Feedback](#-support--feedback)
+- [Two approaches](#-two-approaches-to-access-the-ictv-ols-api)
+- [Helper libraries overview](#-helper-libraries-overview)
+- [Quick start with helper libraries](#-quick-start-with-helper-libraries)
+- [Choose your helper](#-choose-your-helper)
+- [Direct OLS API access](#-advanced-direct-ols-api-access)
+- [Common use cases](#-common-use-cases-with-examples)
+- [Response structure](#-response-structure-and-navigation)
+- [Related resources](#-related-resources)
+- [Support & feedback](#-support--feedback)
 
 ## 🌍 What is the ICTV OLS API?
 
-The EVORA project (European Viral Outbreak Response Alliance) in collaboration with the ICTV (International Committee on Taxonomy of Viruses) have developed a **public programmatic access to the official taxonomy of viruses** by transforming ICTV releases into the **ICTV ontology** and serving it through the **Ontology Lookup Service (OLS) API**. 
+The EVORA project (European Viral Outbreak Response Alliance) in collaboration with the ICTV (International Committee on Taxonomy of Viruses) has developed a **public programmatic access to the official taxonomy of viruses** by transforming ICTV releases into the **ICTV ontology** and serving it through the **Ontology Lookup Service (OLS)** API. 
 
-OLS API is a REST-based web service that provides programmatic access to latest versions of biomedical ontologies including the developed ICTV ontology. OLS API is hosted and maintained by the European Bioinformatics Institute (EBI) and allows to retrieve semantic information of the ICTV ontology. This is essential for:
-- Automated virus taxon identification pipelines
-- Integration into bioinformatics workflows
-- Ensuring consistent taxonomy across applications
-- Tracking historical and current virus classifications
+OLS is a REST-based web service hosted by EMBL-EBI that provides programmatic access to biomedical ontologies, including the ICTV ontology. This makes it possible to retrieve structured semantic information about virus taxa and their relationships across ICTV releases.
+
+This is useful for:
+
+- automated virus taxon identification pipelines
+- integration into bioinformatics workflows
+- ensuring consistent taxonomy across applications
+- tracking historical and current virus classifications
   
  With the ICTV OLS API, you can:
-- **Query taxonomic entities** by taxon name, identifier, or IRI
-- **Resolve historical and obsolete taxa** to their current replacements using former taxon names, virus names, synonyms, ICTV identifiers, or NCBI taxonomy identifiers
-- **Retrieve lineage information of a taxon** within a specific ICTV release
-- **Access synonyms and historical names** for virus taxonomy
-- **Map NCBI Taxon identifiers** to ICTV entities via a complementary SSSOM file
-- **Retrieve complete ICTV releases** in structured, machine-readable format
+ 
+- **query taxonomic entities** by taxon name, identifier, or IRI
+- **resolve historical and obsolete taxa** to their current replacements using former taxon names, virus names, synonyms, ICTV identifiers, or NCBI taxonomy identifiers
+- **retrieve lineage information of a taxon** within a specific ICTV release
+- **access synonyms and historical names** for virus taxonomy
+- **map NCBI Taxon identifiers** to ICTV entities via a complementary SSSOM mapping
+- **retrieve complete ICTV releases** in structured, machine-readable format
 
 ### 📖 API Documentation
-👉 **Official OLS API Documentation**: https://www.ebi.ac.uk/ols4/api-docs
 
-👉 **ICTV Ontology on OLS**: https://www.ebi.ac.uk/ols4/api/ontologies/ictv
+- **OLS API documentation:** https://www.ebi.ac.uk/ols4/api-docs
+- **ICTV ontology browser page on OLS:** https://www.ebi.ac.uk/ols4/ontologies/ictv
+- **ICTV ontology API metadata endpoint:** https://www.ebi.ac.uk/ols4/api/ontologies/ictv
 
-The ICTV OLS API follows REST principles and returns JSON-formatted responses, making it accessible from any programming language or environment that can make HTTP requests.
+The ICTV OLS API follows REST principles and returns JSON responses, making it accessible from any programming language or environment that can make HTTP requests.
 
 ---
 
 ## 🎯 Two Approaches to Access the ICTV OLS API
 
 The ICTV ontology data can be accessed in **two complementary ways**:
-### ✅ **Approach 1: Helper Libraries (Recommended for Most Users)**
+
+### ✅ **Approach 1: Helper Libraries (recommended for most users)**
+
 Lightweight client libraries that **encapsulate the complexity** of direct OLS queries and provide a simple, domain-friendly interface for common use cases.
 
 **Use this if you:**
-- Want quick integration with minimal code
-- Need standard ICTV resolution workflows
-- Prefer simplified, language-specific APIs
-- Work in JavaScript, Python, or PHP
 
-### 🔧 **Approach 2: Direct OLS API Access (advanced)**
-Direct HTTP access to the OLS API endpoints, providing **full control and flexibility** for custom queries and advanced workflows.
+- want quick integration with minimal code
+- need standard ICTV resolution workflows
+- prefer simplified language-specific APIs
+- work in JavaScript, Python, or PHP
+
+### 🔧 **Approach 2: Direct OLS API access **
+Direct HTTP access to the OLS API endpoints, giving you full control and flexibility for custom queries and advanced workflows.
 
 **Use this if you:**
-- Need fine-grained control over API parameters
-- Have custom or non-standard query patterns
-- Want to build your own abstractions
-- Are integrating into systems where helper libraries aren't available
-- Need to understand the raw OLS response structure
+
+- need fine-grained control over API parameters
+- have custom or non-standard query patterns
+- want to build your own abstractions
+- are integrating into systems where helper libraries are not available
+- need to understand the raw OLS response structure
 
 ---
 
 ## 📘 Helper Libraries Overview
 
-This directory provides lightweight client libraries that make it easy to query the **ICTV Ontology API**, as served through  the OLS API service. 
+This directory provides lightweight client libraries that make it easy to query the **ICTV Ontology API**, as served through the OLS API. 
 
 These helpers allow you to resolve ICTV taxon names, historical ICTV identifiers, IRIs, virus names and NCBI Taxon IDs to the **current ICTV taxon**, including lineage and replacement history.
 
@@ -108,16 +131,16 @@ console.log(result);
 
 **Features:**
 
-- Resolving ICTV IDs, IRIs, taxon or virus labels, synonyms
-- Mapping NCBI Taxon IDs ↔ ICTV IDs
-- Replacement chains and obsolete term resolution
-- Historical lineage retrieval across releases
+- resolution of ICTV IDs, IRIs, taxon or virus labels, and synonyms
+- ICTV ↔ NCBI Taxon mapping
+- replacement chains and obsolete term resolution
+- taxon history retrieval
+- individual/isolate resolution through their parent class
 
-**No dependencies** — pure ES6.
+**No dependencies** — pure ES module.
 
-**Note:** Optimized for single-taxon resolution workflows. For bulk data export or complete release extraction, use Python or PHP helpers.
+👉 **Full JS helper documentation:** See [`helpers/js/README.md`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/js/README.md)
 
-👉 **Full JS helper API library reference & Advanced Examples:** See [`helpers/js/README.md`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/js/README.md)
 ---
 
 ### 🔹 Python (`python/ictv-api.py`)
@@ -138,18 +161,14 @@ print(result)
 
 **Features:**
 
-- Full term resolution (all input types)
+- full term resolution (all input types)
 - ICTV ↔ NCBI mapping
-- **Complete release export** with automatic pagination handling (`getAllFromRelease()`)
-- **Release-specific taxon queries** (`getTaxonByRelease()`)
-- Individual/isolate queries
-- Synonym, history, and obsolescence reason retrieval
+- **complete release export** with pagination handling (`getAllFromRelease()`)
+- **release-specific taxon queries** (`getTaxonByRelease()`)
+- individual/isolate queries
+- synonym, history, and obsolescence reason retrieval
 
-Ideal for building local caches or comprehensive data analysis
-
-**Use Case:** Export entire MSL40 release for downstream processing, data validation, or archival.
-
-👉 **Full Python helper API library reference & Configuration Options:** See [`helpers/python/README.md`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/python/README.md)
+👉 **Full Python helper documentation:** See [`helpers/python/README.md`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/python/README.md)
 
 ---
 
@@ -169,13 +188,17 @@ $result = $api->resolveToLatest("Tehran virus");
 print_r($result);
 ```
 
-**Features:** All features equivalent to Python helper
+**Features:** 
 
-Ideal for backend systems needing bulk data access
+- full term resolution (all input types)
+- ICTV ↔ NCBI mapping
+- **complete release export** with pagination handling (`getAllFromRelease()`)
+- **release-specific taxon queries** (`getTaxonByRelease()`)
+- individual/isolate queries
+- synonym, history, and obsolescence reason retrieval
 
-**Use Case:** CMS/backend system importing/updating to latest ICTV release for website taxonomy database.
 
-👉 **Full PHP helper API library reference & Error Handling Guide:** See [`helpers/php/README.md`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/php/README.md)
+👉 **Full PHP helper documentation:** See [`helpers/php/README.md`](https://github.com/EVORA-project/ictv-ontology/blob/main/helpers/php/README.md)
 
 ---
 
@@ -199,15 +222,15 @@ Ideal for backend systems needing bulk data access
 
 All three helper implementations follow the same general resolution strategy:
 
-1. **Recognize ICTV IRIs and identifiers**
-2. **Optionally map NCBI Taxon identifiers** to ICTV taxa
-3. **Treat individuals** (e.g., isolates) as entry points and resolve them to the corresponding species
-4. **Fall back to labels and synonyms** where needed
-5. **Follow the replacement chain** when an entity is obsolete until final non-obsolete taxa are reached
+1. recognize ICTV IRIs and identifiers
+2. optionally map NCBI Taxon identifiers to ICTV taxa
+3. search classes by label and synonym
+4. search individuals when needed and resolve them upward through their parent class
+5. follow replacement chains when an entity is obsolete until final non-obsolete taxa are reached
 
 ### Normalized Output
 
-The libraries return a **normalized ICTV taxon object** containing:
+The helper libraries return a **normalized ICTV taxon object** containing:
 
 - Identifiers and IRI
 - Label and synonyms
@@ -216,37 +239,27 @@ The libraries return a **normalized ICTV taxon object** containing:
 - Revision links
 - NCBI mappings (where available)
 
-This abstraction allows developers to focus on domain logic rather than the details of the OLS API.
+This abstraction allows developers to focus on domain logic rather than on raw OLS API response handling.
 
 ---
 
 ## 🌐 Live Implementation Example
 
 👉 **ICTV Taxon Resolver**  
-https://evora-project.github.io/ictv-resolver/
+[https://evora-project.github.io/ictv-resolver/](https://evora-project.github.io/ictv-resolver/)
 
-A reference browser-based implementation that demonstrates the helper library logic. It accepts:
-- Historical or current viral taxon from any rank
-- Virus names
+A browser-based demonstration of the helper logic. It accepts:
+
+- historical or current viral taxa from any rank
+- virus names
 - ICTV identifiers
 - IRIs
 - NCBI Taxon identifiers
 
-And returns the latest accepted ICTV taxon with lineage and mapping information.
+and returns the latest accepted ICTV taxon with lineage and mapping information.
 
-**Source code:** https://github.com/EVORA-project/ictv-resolver
+**Source code:** [https://github.com/EVORA-project/ictv-resolver](https://github.com/EVORA-project/ictv-resolver)
 
----
-
-## 🧠 Dependencies Comparison
-
-| Language  | Dependencies | Best For |
-|-----------|--------------|----------|
-| JavaScript | None (pure ES6) | Web applications, browsers, Node.js |
-| Python | `requests` | Scripts, pipelines, Jupyter notebooks |
-| PHP | cURL (built-in) | Server-side, CMS integrations |
-
----
 
 ---
 
@@ -260,7 +273,7 @@ For users who need direct access to the ICTV Ontology Lookup Service API without
 
 The ICTV Ontology is exposed through two main sets of OLS endpoints:
 
-### v1 Endpoints (Legacy but Stable)
+### v1 Endpoints (legacy)
 ```
 https://www.ebi.ac.uk/ols4/api/ontologies/ictv
 ```
@@ -271,76 +284,94 @@ https://www.ebi.ac.uk/ols4/api/ontologies/ictv
 
 **Examples:**
 - List all terms: `https://www.ebi.ac.uk/ols4/api/ontologies/ictv/terms?page=0&size=1000`
-- Search: `https://www.ebi.ac.uk/ols4/api/ontologies/ictv/terms?q=coronavirus`
+- Search: `https://www.ebi.ac.uk/ols4/api/search?ontology=ictv&q=Sarbecovirus`
 
 ---
 
-### v2 Endpoints (Modern and Recommended)
+### v2 endpoints (recommended)
 ```
 https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv
 ```
 
-- **Use case:** Modern integrations requiring richer metadata
+- **Use case:** integrations requiring richer metadata
 - **Features:** Enhanced entity linking, better obsolescence handling
 - **Response format:** Extended JSON with linked entity details
 
 **Examples:**
-- List current classes: `https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes`
-- Get specific class: `https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes/{ENCODED_IRI}`
+- List current classes: `GET /api/v2/ontologies/ictv/classes`
+- Get specific class: `GET /api/v2/ontologies/ictv/classes/{DOUBLE_URL_ENCODED_IRI}`
+- Get specific entity by IRI: `GET /api/v2/ontologies/ictv/entities/{DOUBLE_URL_ENCODED_IRI}`
 
 ---
 
 ## 🎯 Common Use Cases with Examples
 
-### Use Case 1: Building a Local Cache
+### Use Case 1: Building a Local Cache of a former release
 
-**Objective:** Retrieve the entire ICTV taxonomy, including historical terms, for local caching or offline use.
+If you want to retrieve all classes for one ICTV release, your helper code can query the `classes` endpoint while filtering by the release value stored in `owl:versionInfo`, with pagination and the includeObsoleteEntities set to true as all former releases terms are marked as obsolete.
 
-#### Option A: Using v1 `/terms` Endpoint (All Terms Including Historical)
-
-Retrieve all terms across all ICTV releases:
+Example pattern:
 
 ```
-https://www.ebi.ac.uk/ols4/api/ontologies/ictv/terms?page=0&size=1000
+GET /api/v2/ontologies/ictv/classes?http%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23versionInfo=MSL39&page=0&size=10&includeObsoleteEntities=true
 ```
 
 **Parameters:**
 - `page`: Page number (0-indexed)
 - `size`: Number of items per page (up to 1000)
+- `http%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23versionInfo`: version info corresponding to the MSL number in the ICTV ontology
+- `includeObsoleteEntities`: boolean set to `true` to include obsolete terms
 
-**An iteration loop can simply handle paginated results to retreive all terms**
+**An iteration loop can simply handle paginated results to retrieve all terms**
 
-**Response structure:** JSON array of term objects with IRIs, labels, synonyms, and metadata.
+**Response structure:** JSON array of classes objects with IRIs, labels, synonyms, and metadata.
 
----
+### Use Case 2: Building a Local Cache of the latest release
+**Note:** As the ICTV ontology is a unified ontology of all ICTV releases (made available online on OLS typically 24H after a new ICTV release), as all the previous releases terms are marked as obsolete and as the classes endpoint has false for default value of the includeObsoleteEntities parameter,  omitting the versionInfo and the includeObsoleteEntities will automatically return the taxonomic terms of the most recent ICTV release.
 
-#### Option B: Using v2 `/classes` Endpoint (Current Taxa Only)
-
-Retrieve only current taxa from the latest ICTV release with richer metadata:
-
-```
-https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes
-```
-
-**Advantages of v2:**
-- Returns more detailed linked entity information
-- Better suited for understanding taxon relationships
-- Includes direct references to parent/child taxa
+example: `https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes?page=0&size=1000`
 
 **Example response fragment:**
 ```json
 {
-  "iri": "http://ictv.global/id/MSL40/ICTV20040588",
-  "label": "Betacoronavirus pandemicum",
-  "synonym": ["SARS-CoV", "..."],
-  "isObsolete": false,
-  "hierarchicalParent": [ "http://ictv.global/id/MSL40/ICTV20186129" ],
+  "page" : 0,
+  "numElements" : 1000,
+  "totalPages" : 21,
+  "totalElements" : 20845,
+  "elements" : [ {
+    "appearsIn" : [ "ictv" ],
+    "curie" : "ICTV19710003",
+    "directAncestor" : [ "http://ictv.global/id/MSL40/ICTV20080005", "http://ictv.global/id/MSL40/ICTV201857095", "http://ictv.global/id/MSL40/ICTV201907198", "http://ictv.global/id/MSL40/ICTV201907209", "http://ictv.global/id/MSL40/ICTV201907210", "http://purl.obolibrary.org/obo/NCBITaxon_10239" ],
+    "directParent" : [ "http://ictv.global/id/MSL40/ICTV20080005" ],
+    "hasDirectChildren" : true,
+    "hasDirectParents" : true,
+    "hasHierarchicalChildren" : true,
+    "hasHierarchicalParents" : true,
+    "hierarchicalAncestor" : [ "http://ictv.global/id/MSL40/ICTV20080005", "http://ictv.global/id/MSL40/ICTV201857095", "http://ictv.global/id/MSL40/ICTV201907198", "http://ictv.global/id/MSL40/ICTV201907209", "http://ictv.global/id/MSL40/ICTV201907210", "http://purl.obolibrary.org/obo/NCBITaxon_10239" ],
+    "hierarchicalParent" : [ "http://ictv.global/id/MSL40/ICTV20080005" ],
+    "hierarchicalProperty" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+    "imported" : false,
+    "iri" : "http://ictv.global/id/MSL40/ICTV19710003",
+    "isDefiningOntology" : false,
+    "isObsolete" : false,
+    "isPreferredRoot" : false,
+    "label" : [ "Picornaviridae" ],
+    "linkedEntities" : {
+      "http://ictv.global/id/MSL39/ICTV19710003" : {
+        "numAppearsIn" : 1.0,
+        "hasLocalDefinition" : true,
+        "label" : [ "Picornaviridae" ],
+        "curie" : "ICTV19710003",
+        "type" : [ "class", "entity" ]
+      },
+    ...
+
 }
 ```
 
 ---
 
-### Use Case 2: Resolving Historical References
+### Use Case 3: Resolving Historical References
 
 **Objective:** Find the current accepted ICTV taxon for a virus that may be known by a historical or obsolete name.
 
@@ -356,6 +387,8 @@ https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes?label=severe%20acute%2
 
 **Response:** List of matching classes, including obsolete ones.
 
+**Note:** Except in case where it is already known that the searched term is obsolete, it is a good practice to run a first search with `includeObsoleteEntities=false` to seek in the most recent ICTV release first.
+
 ---
 
 #### Step 2: Follow the Replacement Chain
@@ -363,23 +396,27 @@ https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes?label=severe%20acute%2
 When an obsolete entity is found, it typically includes a reference using the **IAO:0100001** property (term_replaced_by), which links to the current/replacement taxon.
 
 **Key metadata fields:**
+
+- `term_replaced_by` ([IAO:0100001](http://purl.obolibrary.org/obo/IAO_0100001)): Points to the current replacement taxon IRI
+- `identifier` (from dcterms): correspond to the ICTV ID of the current class taxon, this ID is persistent across ICTV releases except special events like split, merged, or abolished terms.   
 - `hasExactSynonym` (from oboInOwl): Historical names and synonyms
-- `term_replaced_by` (IAO:0100001): Points to the current replacement taxon IRI
+- `has_rank` ([TAXRANK_1000000](http://purl.obolibrary.org/obo/TAXRANK_1000000)): indicate the rank of the current taxon
+- `iri`: the current term IRI that is, in the ICTV ontology, made of the ontology IRI, the MSL release, and the identifier
 
 **Example workflow:**
 
 ```
 1. Search: "Severe acute respiratory syndrome coronavirus"
-2. Find obsolete entity with IRI: http://ictv.global/id/OLD_RELEASE/ICTV20040587
+2. Find obsolete entity with IRI: http://ictv.global/id/MSL22/ICTV20040588
 3. Check for "term_replaced_by" relationship → points to:
    http://ictv.global/id/MSL40/ICTV20040588
-4. Fetch the replacement entity (see Use Case 3 below)
+4. Fetch the replacement entity (see Use Case 4 below)
 5. Return as the current accepted taxon
 ```
 
 ---
 
-### Use Case 3: Resolving ICTV IDs
+### Use Case 4: Resolving ICTV IDs
 
 **Objective:** Query the ICTV API using stable ICTV IDs, which remain consistent across releases.
 
@@ -390,7 +427,7 @@ ICTV IDs (e.g., `ICTV20040588`) are **stable identifiers** provided by ICTV spec
 The API endpoint pattern for resolving by ICTV ID is:
 
 ```
-https://ebi.ac.uk/ols4/api/v2/ontologies/{ONTOLOGY}/classes/{ENCODED_IRI}
+https://ebi.ac.uk/ols4/api/v2/ontologies/{ONTOLOGY}/classes/{DOUBLE_URL_ENCODED_IRI}
 ```
 
 #### Step-by-Step Example: Resolving SARS-CoV-2
@@ -428,11 +465,11 @@ https://ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes/http%253A%252F%252Fictv.gl
 curl "https://ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes/http%253A%252F%252Fictv.global%252Fid%252FMSL40%252FICTV20040588"
 ```
 
-**Response:** Full JSON object for SARS-CoV-2 including:
+**Response:** Full JSON object for the species of SARS-CoV-2 including:
 - Current label and synonyms
 - Lineage (parents, ancestors)
 - Links to previous/next releases
-- Metadata and annotations
+- Additional metadata and annotations
 
 ---
 
@@ -456,9 +493,12 @@ For any ICTV IRI, follow this pattern:
 | Endpoint | Purpose |
 |----------|---------|
 | `GET /api/v2/ontologies/ictv/classes` | List all current ICTV classes/taxa |
-| `GET /api/v2/ontologies/ictv/classes?label={LABEL}` | Search by taxon name |
-| `GET /api/v2/ontologies/ictv/classes?label={LABEL}&includeObsoleteEntities=true` | Search including obsolete taxa |
-| `GET /api/v2/ontologies/ictv/classes/{ENCODED_IRI}` | Get specific taxon by IRI |
+| `GET /api/v2/ontologies/ictv/classes?label={LABEL}` | Search classes by taxon name |
+| `GET /api/v2/ontologies/ictv/classes?label={LABEL}&includeObsoleteEntities=true` | Search classes by name including obsolete taxa |
+| `GET /api/v2/ontologies/ictv/classes/{ENCODED_IRI}` | Retrieve a specific class by IRI |
+| `GET /api/v2/ontologies/ictv/entities` | List all entities, including classes and individuals |
+| `GET /api/v2/ontologies/ictv/entities?label={LABEL}` |  Search by name across all entity types|
+| `GET /api/v2/ontologies/ictv/entities/{ENCODED_IRI}` | Retrieve a specific entity by IRI |
 | `GET /api/v2/ontologies/ictv/individuals` | List isolates and strains |
 | `GET /api/v2/ontologies/ictv/properties` | List ontology properties |
 
@@ -544,66 +584,30 @@ Follow-up Request:
 Response:
   {
     "iri": "http://ictv.global/id/MSL40/ICTV789012",
-    "label": "Current virus name",
+    "label": "Current taxon name",
     "isObsolete": false,
     ...
   }
 ```
-**Real example request URL on API V2**: https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes/http%253A%252F%252Fictv.global%252Fid%252FMSL38%252FICTV20040588
+**Real example request URL of ICTV ID ICTV20040588 on MSL38 with API V2**: https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes/http%253A%252F%252Fictv.global%252Fid%252FMSL38%252FICTV20040588
 
----
-
-## 💡 Practical Example: Querying for a Virus by Name
-
-### Scenario: Find information about "Zika virus"
-
-#### Step 1: Search for the term
-```bash
-curl "https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes?label=zika%20virus"
-```
-
-#### Step 2: Parse the response
-```json
-{
-  "_embedded": {
-    "classes": [
-      {
-        "iri": "http://ictv.global/id/MSL40/ICTV20040123",
-        "label": "Zika virus",
-        "isObsolete": false
-      }
-    ]
-  }
-}
-```
-
-#### Step 3: Fetch full details
-```bash
-curl "https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes/http%253A%252F%252Fictv.global%252Fid%252FMSL40%252FICTV20040123"
-```
-
-#### Step 4: Extract useful information
-- Label, synonyms, description
-- Lineage (hierarchicalParents)
-- NCBI mappings (if available in annotations)
-- Release history
 
 ---
 
 ## 📖 Additional Resources
 
 ### Official OLS Documentation
-- **OLS4 API Docs:** https://www.ebi.ac.uk/ols4/docs/
-- **OLS GitHub Repository:** https://github.com/EMBL-EBI/OLS
+- **OLS4 API Docs:** [https://www.ebi.ac.uk/ols4/api-docs](https://www.ebi.ac.uk/ols4/api-docs)
+- **OLS GitHub Repository:** [https://github.com/EBISPOT/ols4](https://github.com/EBISPOT/ols4)
   - Includes source code, deployment materials (Docker), and examples
   - Supports external contributions via pull requests
 
 ### ICTV Ontology Resources
-- **ICTV Taxonomy:** https://ictv.global/taxonomy
-- **EVORA Project Repository:** https://github.com/EVORA-project/ictv-ontology
+- **ICTV Taxonomy:** [https://ictv.global/taxonomy](https://ictv.global/taxonomy)
+- **EVORA Project's ICTV ontology repository:** [https://github.com/EVORA-project/ictv-ontology](https://github.com/EVORA-project/ictv-ontology)
   - OWL files for ICTV releases
   - Configuration and deployment materials
-  - Executable Jupyter notebook with example workflows: https://github.com/EVORA-project/ictv-ontology/blob/main/notebooks/ictv.ipynb
+  - Executable Jupyter notebook with example workflows: [https://github.com/EVORA-project/ictv-ontology/blob/main/notebooks/ictv.ipynb](https://github.com/EVORA-project/ictv-ontology/blob/main/notebooks/ictv.ipynb)
 
 ### Jupyter Notebook Example
 The repository includes a comprehensive Jupyter notebook illustrating typical workflows:
@@ -634,16 +638,19 @@ The repository includes a comprehensive Jupyter notebook illustrating typical wo
 
 ## 🔗 Related Resources
 
-- ICTV Ontology on OLS: https://www.ebi.ac.uk/ols4/ontologies/ictv
-- ICTV Taxonomy: https://ictv.global/taxonomy
-- EVORA Project ICTV Ontology Repository: https://github.com/EVORA-project/ictv-ontology
-- ICTV Taxon Resolver Demo: https://evora-project.github.io/ictv-resolver/
-- OLS API Documentation: https://www.ebi.ac.uk/ols4/docs/
+- ICTV ontology browser on OLS: [https://www.ebi.ac.uk/ols4/ontologies/ictv](https://www.ebi.ac.uk/ols4/ontologies/ictv)
+- ICTV ontology API metadata: [https://www.ebi.ac.uk/ols4/api/ontologies/ictv](https://www.ebi.ac.uk/ols4/api/ontologies/ictv)
+- OLS API documentation: [https://www.ebi.ac.uk/ols4/api-docs](https://www.ebi.ac.uk/ols4/api-docs)
+- ICTV taxonomy: [https://ictv.global/taxonomy](https://ictv.global/taxonomy)
+- EVORA ICTV ontology repository: [https://github.com/EVORA-project/ictv-ontology](https://github.com/EVORA-project/ictv-ontology)
+- ICTV taxon resolver demo: [https://evora-project.github.io/ictv-resolver/](https://evora-project.github.io/ictv-resolver/)
+- ICTV taxon resolver source: [https://github.com/EVORA-project/ictv-resolver](https://github.com/EVORA-project/ictv-resolver)
+- Example notebook in this repository: [https://github.com/EVORA-project/ictv-ontology/blob/main/notebooks/ictv.ipynb](https://github.com/EVORA-project/ictv-ontology/blob/main/notebooks/ictv.ipynb)
 
 ---
 ## 🤝 Support & Feedback
 
-- **Issues or questions?** Open an issue on the [EVORA GitHub](https://github.com/EVORA-project/ictv-ontology/issues)
+- **Issues or questions?** Open an issue on our [GitHub repository](https://github.com/EVORA-project/ictv-ontology/issues)
 - **Found an error in this documentation?** Submit a PR to improve it
 - **Need OLS-specific help?** Check [OLS4 Documentation](https://www.ebi.ac.uk/ols4/api-docs)
 
