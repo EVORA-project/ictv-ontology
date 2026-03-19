@@ -30,7 +30,7 @@ The ontology is publicly accessible via the Ontology Lookup Service (OLS):
 
 While OLS provides ontology access through standardised REST API, this repository also provides documentation on how to use the ICTV OLS API directly for taxonomic term resolution, and **ready-to-use helper libraries for practical API usage** (name resolution, obsolete taxa handling, lineage, ICTV ↔ NCBI mapping, etc.).
 
-👉 **See the ICTV API dedictated help documentation:**  
+👉 **See the ICTV API dedicatted help documentation:**  
 
 ➡️ [`ICTV API documentation (GitHub Pages)`](https://evora-project.github.io/ictv-ontology/helpers/)
 
