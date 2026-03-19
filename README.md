@@ -8,7 +8,9 @@
     <img src="https://img.shields.io/badge/View%20on-GitHub-black?logo=github&style=for-the-badge">
   </a>
 </p>
+
 # ICTV Ontology & API
+
 > Resolve virus taxa across ICTV releases programmatically.
 
 The **ICTV Ontology & API** provides a machine-readable representation of the official virus taxonomy maintained by the [International Committee on Taxonomy of Viruses (ICTV)](https://ictv.global/), together with programmatic access through the Ontology Lookup Service (OLS) API.
