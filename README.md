@@ -1,6 +1,17 @@
-# ICTV Ontology & API
+<p align="center">
+  <img src="https://ictv.global/sites/default/files/inline-images/ictvLogo-head.png" alt="ICTV Logo" height="100" style="vertical-align: middle; margin: 0 30px;" />
+  <img src="https://raw.githubusercontent.com/EVORA-project/ictv-resolver/main/assets/images/logo/logo.svg" alt="EVORA Project Logo" height="80" style="vertical-align: middle; margin: 0 30px;" />
+</p>
 
-The **ICTV Ontology & API** provides a machine-readable representation of the official virus taxonomy maintained by the [International Committee on Taxonomy of Viruses (ICTV)](https://ictv.global/), together with programmatic access through ontology services.
+<p align="center">
+  <a href="https://github.com/EVORA-project/ictv-ontology">
+    <img src="https://img.shields.io/badge/View%20on-GitHub-black?logo=github&style=for-the-badge">
+  </a>
+</p>
+# ICTV Ontology & API
+> Resolve virus taxa across ICTV releases programmatically.
+
+The **ICTV Ontology & API** provides a machine-readable representation of the official virus taxonomy maintained by the [International Committee on Taxonomy of Viruses (ICTV)](https://ictv.global/), together with programmatic access through the Ontology Lookup Service (OLS) API.
 
 The ontology integrates all ICTV releases into a unified model, enabling:
 
@@ -9,16 +20,19 @@ The ontology integrates all ICTV releases into a unified model, enabling:
 - interoperability with external resources such as NCBI Taxonomy  
 
 The ontology is publicly accessible via the Ontology Lookup Service (OLS):  
-https://www.ebi.ac.uk/ols4/ontologies/ictv
+[https://www.ebi.ac.uk/ols4/ontologies/ictv](https://www.ebi.ac.uk/ols4/ontologies/ictv)
 
 ---
 
 ## 🔎 Using the ICTV API
 
-While OLS provides low-level ontology access, this repository also provides a **ready-to-use helper for practical API usage** (name resolution, obsolete taxa handling, lineage, ICTV ↔ NCBI mapping, etc.).
+While OLS provides ontology access through standardised REST API, this repository also provides documentation on how to use the ICTV OLS API directly for taxonomic term resolution, and **ready-to-use helper libraries for practical API usage** (name resolution, obsolete taxa handling, lineage, ICTV ↔ NCBI mapping, etc.).
 
-👉 **See the ICTV API helper documentation:**  
-➡️ [`helpers/php/README.md`](https://evora-project.github.io/ictv-ontology/helpers/)
+👉 **See the ICTV API dedictated help documentation:**  
+
+➡️ [`ICTV API documentation (GitHub Pages)`](https://evora-project.github.io/ictv-ontology/helpers/)
+
+➡️ [`Source on GitHub (/helpers)`](https://github.com/EVORA-project/ictv-ontology/tree/main/helpers)
 
 ---
 
@@ -26,9 +40,9 @@ While OLS provides low-level ontology access, this repository also provides a **
 # ICTV Ontology
 
 
-The ontology representation of the [International Committee on Taxonomy of Viruses (ICTV)](https://ictv.global/) developed within the [EVORA project](https://evora-project.eu/) in collaboration with ICTV, uses data from: https://github.com/ICTV-Virus-Knowledgebase/ICTVdatabase
+The ontology representation of the [International Committee on Taxonomy of Viruses (ICTV)](https://ictv.global/) developed within the [EVORA project](https://evora-project.eu/) in collaboration with ICTV, uses data from: [https://github.com/ICTV-Virus-Knowledgebase/ICTVdatabase](https://github.com/ICTV-Virus-Knowledgebase/ICTVdatabase)
 
-Complementary SSSOM mappings to NCBITaxon is also made available in a distinct repository: https://github.com/EVORA-project/virus-taxonomy-mappings
+Complementary SSSOM mappings to NCBITaxon is also made available in a distinct repository: [https://github.com/EVORA-project/virus-taxonomy-mappings](https://github.com/EVORA-project/virus-taxonomy-mappings)
 
 # Running a local OLS
 Cloning this repository allows you to run a local version of OLS.
