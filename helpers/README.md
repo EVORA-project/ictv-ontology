@@ -48,9 +48,9 @@ This is useful for:
 
 ### 📖 API Documentation
 
-- **OLS API documentation:** https://www.ebi.ac.uk/ols4/api-docs
-- **ICTV ontology browser page on OLS:** https://www.ebi.ac.uk/ols4/ontologies/ictv
-- **ICTV ontology API metadata endpoint:** https://www.ebi.ac.uk/ols4/api/ontologies/ictv
+- **OLS API documentation:** [https://www.ebi.ac.uk/ols4/api-docs](https://www.ebi.ac.uk/ols4/api-docs)
+- **ICTV ontology browser page on OLS:** [https://www.ebi.ac.uk/ols4/ontologies/ictv](https://www.ebi.ac.uk/ols4/ontologies/ictv)
+- **ICTV ontology API metadata endpoint:** [https://www.ebi.ac.uk/ols4/api/ontologies/ictv](https://www.ebi.ac.uk/ols4/api/ontologies/ictv)
 
 The ICTV OLS API follows REST principles and returns JSON responses, making it accessible from any programming language or environment that can make HTTP requests.
 
@@ -71,7 +71,7 @@ Lightweight client libraries that **encapsulate the complexity** of direct OLS q
 - prefer simplified language-specific APIs
 - work in JavaScript, Python, or PHP
 
-### 🔧 **Approach 2: Direct OLS API access **
+### 🔧 **Approach 2: Direct OLS API access**
 Direct HTTP access to the OLS API endpoints, giving you full control and flexibility for custom queries and advanced workflows.
 
 **Use this if you:**
@@ -127,7 +127,7 @@ const api = new ICTVApi();
 const result = await api.resolveToLatest("SARS-CoV-2");
 console.log(result);
 ```
-**Note:** Requires a module-compatible environment. Use in HTML with <script type="module"> or in modern Node.js projects with "type": "module" in package.json.
+**Note:** Requires a module-compatible environment. Use in HTML with `script type="module">` or in modern Node.js projects with `"type": "module"` in package.json.
 
 **Features:**
 
@@ -267,31 +267,31 @@ and returns the latest accepted ICTV taxon with lineage and mapping information.
 
 For users who need direct access to the ICTV Ontology Lookup Service API without using helper libraries, this section provides guidance on constructing and executing OLS API queries.
 
-👉 **Official OLS Documentation**: https://www.ebi.ac.uk/ols4/api-docs
+👉 **Official OLS Documentation**: [https://www.ebi.ac.uk/ols4/api-docs](https://www.ebi.ac.uk/ols4/api-docs)
 
 ## 📡 OLS API Endpoints Overview
 
 The ICTV Ontology is exposed through two main sets of OLS endpoints:
 
 ### v1 Endpoints (legacy)
-```
-https://www.ebi.ac.uk/ols4/api/ontologies/ictv
-```
+
+[https://www.ebi.ac.uk/ols4/api/ontologies/ictv](https://www.ebi.ac.uk/ols4/api/ontologies/ictv)
+
 
 - **Use case:** Legacy integrations, access to features like `/api/suggest`
 - **Features:** Still include useful search and suggestion features
 - **Response format:** Original OLS v1 structure
 
 **Examples:**
-- List all terms: `https://www.ebi.ac.uk/ols4/api/ontologies/ictv/terms?page=0&size=1000`
-- Search: `https://www.ebi.ac.uk/ols4/api/search?ontology=ictv&q=Sarbecovirus`
+- List all terms: [https://www.ebi.ac.uk/ols4/api/ontologies/ictv/terms?page=0&size=1000](https://www.ebi.ac.uk/ols4/api/ontologies/ictv/terms?page=0&size=1000)
+- Search: [https://www.ebi.ac.uk/ols4/api/search?ontology=ictv&q=Sarbecovirus](https://www.ebi.ac.uk/ols4/api/search?ontology=ictv&q=Sarbecovirus)
 
 ---
 
 ### v2 endpoints (recommended)
-```
-https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv
-```
+
+[https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv](https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv)
+
 
 - **Use case:** integrations requiring richer metadata
 - **Features:** Enhanced entity linking, better obsolescence handling
@@ -308,7 +308,7 @@ https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv
 
 ### Use Case 1: Building a Local Cache of a former release
 
-If you want to retrieve all classes for one ICTV release, your helper code can query the `classes` endpoint while filtering by the release value stored in `owl:versionInfo`, with pagination and the includeObsoleteEntities set to true as all former releases terms are marked as obsolete.
+If you want to retrieve all classes for one ICTV release, your code can query the `classes` endpoint while filtering by the release value stored in `owl:versionInfo`, with pagination and the includeObsoleteEntities set to true as all former releases terms are marked as obsolete.
 
 Example pattern:
 
@@ -329,7 +329,7 @@ GET /api/v2/ontologies/ictv/classes?http%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23
 ### Use Case 2: Building a Local Cache of the latest release
 **Note:** As the ICTV ontology is a unified ontology of all ICTV releases (made available online on OLS typically 24H after a new ICTV release), as all the previous releases terms are marked as obsolete and as the classes endpoint has false for default value of the includeObsoleteEntities parameter,  omitting the versionInfo and the includeObsoleteEntities will automatically return the taxonomic terms of the most recent ICTV release.
 
-example: `https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes?page=0&size=1000`
+example: [https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes?page=0&size=1000](https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes?page=0&size=1000)
 
 **Example response fragment:**
 ```json
@@ -373,7 +373,7 @@ example: `https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes?page=0&size=
 
 ### Use Case 3: Resolving Historical References
 
-**Objective:** Find the current accepted ICTV taxon for a virus that may be known by a historical or obsolete name.
+**Objective:** Find the current accepted ICTV taxon for a viral taxon that may be known by a historical or obsolete taxon name.
 
 #### Step 1: Search for the Historical Name (Including Obsolete Terms)
 
