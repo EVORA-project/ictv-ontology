@@ -296,6 +296,8 @@ class ICTVOLSClient {
 
         // ordered lineage reconstructed from parent chain
         $lineageLabels = [];
+        $lineageIris = [];
+
         $seen = [];
         $currentIri = $mapped['direct_parent_iri'] ?? null;
 
@@ -312,6 +314,7 @@ class ICTVOLSClient {
             );
             if ($parentLabel) {
                 $lineageLabels[] = $parentLabel;
+                $lineageIris[] = $currentIri;
             }
 
             $currentIri = $this->normalizeValue(
@@ -320,6 +323,7 @@ class ICTVOLSClient {
         }
 
         $mapped['lineage'] = array_reverse($lineageLabels);
+        $mapped['ancestors_iris'] = array_reverse($lineageIris);
         return $mapped;
     }
 

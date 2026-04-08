@@ -258,6 +258,8 @@ class ICTVOLSClient:
     
         # ordered lineage reconstructed from parent chain
         lineage_labels: List[str] = []
+        lineage_iris: List[str] = []
+
         seen = set()
         current_iri = mapped.get('direct_parent_iri')
     
@@ -273,13 +275,17 @@ class ICTVOLSClient:
             )
             if parent_label:
                 lineage_labels.append(parent_label)
+                lineage_iris.append(current_iri)
     
             current_iri = self.normalizeValue(
                 parent_raw.get("directParent") or parent_raw.get("direct_parent")
             )
     
         lineage_labels.reverse()
+        lineage_iris.reverse()
+
         mapped['lineage'] = lineage_labels
+        mapped['ancestors_iris'] = lineage_iris
         return mapped
 
     # -------------------- Mapping (with rank restored) --------------------

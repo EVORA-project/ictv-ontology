@@ -279,6 +279,7 @@ export class ICTVApi {
 
     // ordered lineage reconstructed from parent chain
     const lineageLabels = [];
+    const lineageIris = [];
     const seen = new Set();
     let currentIri = mapped.direct_parent_iri || null;
 
@@ -292,7 +293,10 @@ export class ICTVApi {
         const parentLabel = this._firstOrNull(
           parentRaw?.label ?? parentRaw?.['http://www.w3.org/2000/01/rdf-schema#label']
         );
-        if (parentLabel) lineageLabels.push(parentLabel);
+        if (parentLabel) {
+          lineageLabels.push(parentLabel);
+          lineageIris.push(currentIri);
+        }
 
         currentIri = this._firstOrNull(
           parentRaw?.directParent ?? parentRaw?.direct_parent
@@ -303,6 +307,7 @@ export class ICTVApi {
     }
 
   mapped.lineage = lineageLabels.reverse();
+  mapped.ancestors_iris = lineageIris.reverse();
   return mapped;
 }
 
