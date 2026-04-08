@@ -121,7 +121,7 @@ class ICTVOLSClient:
     # -------------------- Input resolution (tunable) --------------------
     def resolveToLatest(self, inputRaw: Any, options: Dict[str, bool] = None) -> Dict[str, Any]:
         if options is None:
-            options = {'replacements': True, 'enrichLineage': True, 'suggestions': True}
+            options = {'replacements': True, 'Lineage': True, 'suggestions': True}
 
         input_val = inputRaw.strip() if isinstance(inputRaw, str) else inputRaw
         if not input_val:
@@ -192,8 +192,8 @@ class ICTVOLSClient:
             return {'status': 'not-found', 'input': iri}
 
         mapped = self.mapEntity(e)
-        if options.get('enrichLineage'):
-            mapped = self.enrichLineage(mapped)
+        if options.get('Lineage'):
+            mapped = self.Lineage(mapped)
 
         if not mapped['is_obsolete']:
             ncbi = self.ncbiMapper.getNcbiTaxon(mapped['ictv_id'], mapped['msl'])
@@ -233,8 +233,8 @@ class ICTVOLSClient:
                 continue
 
             mapped = self.mapEntity(e)
-            if options.get('enrichLineage'):
-                mapped = self.enrichLineage(mapped)
+            if options.get('Lineage'):
+                mapped = self.Lineage(mapped)
 
             if mapped['is_obsolete'] and mapped.get('replaced_by'):
                 for r in self.toArray(mapped['replaced_by']):
@@ -255,15 +255,31 @@ class ICTVOLSClient:
                 mapped['direct_parent_label'] = self.normalizeValue(
                     p.get('label') or p.get("http://www.w3.org/2000/01/rdf-schema#label")
                 )
-
-        # lineage labels from ancestor IRIs
-        mapped['lineage'] = []
-        for iri in self.toArray(mapped.get('ancestors_iris') or []):
-            a = self.retrieveTaxonByIRI(iri)
-            if a:
-                l = self.normalizeValue(a.get('label') or a.get("http://www.w3.org/2000/01/rdf-schema#label"))
-                if l:
-                    mapped['lineage'].append(l)
+    
+        # ordered lineage reconstructed from parent chain
+        lineage_labels: List[str] = []
+        seen = set()
+        current_iri = mapped.get('direct_parent_iri')
+    
+        while current_iri and current_iri not in seen:
+            seen.add(current_iri)
+    
+            parent_raw = self.retrieveTaxonByIRI(current_iri)
+            if not parent_raw:
+                break
+    
+            parent_label = self.normalizeValue(
+                parent_raw.get('label') or parent_raw.get("http://www.w3.org/2000/01/rdf-schema#label")
+            )
+            if parent_label:
+                lineage_labels.append(parent_label)
+    
+            current_iri = self.normalizeValue(
+                parent_raw.get("directParent") or parent_raw.get("direct_parent")
+            )
+    
+        lineage_labels.reverse()
+        mapped['lineage'] = lineage_labels
         return mapped
 
     # -------------------- Mapping (with rank restored) --------------------
