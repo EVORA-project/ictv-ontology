@@ -294,15 +294,32 @@ class ICTVOLSClient {
             }
         }
 
-        // lineage labels from ancestor IRIs
-        $mapped['lineage'] = [];
-        foreach ($this->toArray($mapped['ancestors_iris'] ?? []) as $iri) {
-            $a = $this->retrieveTaxonByIRI($iri);
-            if ($a) {
-                $l = $this->normalizeValue($a['label'] ?? $a["http://www.w3.org/2000/01/rdf-schema#label"] ?? null);
-                if ($l) $mapped['lineage'][] = $l;
+        // ordered lineage reconstructed from parent chain
+        $lineageLabels = [];
+        $seen = [];
+        $currentIri = $mapped['direct_parent_iri'] ?? null;
+
+        while ($currentIri && !isset($seen[$currentIri])) {
+            $seen[$currentIri] = true;
+
+            $parentRaw = $this->retrieveTaxonByIRI($currentIri);
+            if (!$parentRaw) {
+                break;
             }
+
+            $parentLabel = $this->normalizeValue(
+                $parentRaw['label'] ?? $parentRaw["http://www.w3.org/2000/01/rdf-schema#label"] ?? null
+            );
+            if ($parentLabel) {
+                $lineageLabels[] = $parentLabel;
+            }
+
+            $currentIri = $this->normalizeValue(
+                $parentRaw['directParent'] ?? $parentRaw['direct_parent'] ?? null
+            );
         }
+
+        $mapped['lineage'] = array_reverse($lineageLabels);
         return $mapped;
     }
 

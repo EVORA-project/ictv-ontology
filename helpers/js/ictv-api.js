@@ -277,17 +277,34 @@ export class ICTVApi {
       } catch { /* ignore */ }
     }
 
-    // lineage labels from ancestor IRIs
-    mapped.lineage = [];
-    for (const iri of this._toArray(mapped.ancestors_iris)) {
+    // ordered lineage reconstructed from parent chain
+    const lineageLabels = [];
+    const seen = new Set();
+    let currentIri = mapped.direct_parent_iri || null;
+
+    while (currentIri && !seen.has(currentIri)) {
+      seen.add(currentIri);
+
       try {
-        const a = await this.getEntityByIri(iri);
-        const l = this._firstOrNull(a?.label ?? a?.['http://www.w3.org/2000/01/rdf-schema#label']);
-        if (l) mapped.lineage.push(l);
-      } catch { /* ignore */ }
+        const parentRaw = await this.getEntityByIri(currentIri);
+        if (!parentRaw) break;
+
+        const parentLabel = this._firstOrNull(
+          parentRaw?.label ?? parentRaw?.['http://www.w3.org/2000/01/rdf-schema#label']
+        );
+        if (parentLabel) lineageLabels.push(parentLabel);
+
+        currentIri = this._firstOrNull(
+          parentRaw?.directParent ?? parentRaw?.direct_parent
+        ) || null;
+      } catch {
+        break;
+      }
     }
-    return mapped;
-  }
+
+  mapped.lineage = lineageLabels.reverse();
+  return mapped;
+}
 
   /* -------------------- entity selection -------------------- */
   async _findBestEntityForInput(input) {
