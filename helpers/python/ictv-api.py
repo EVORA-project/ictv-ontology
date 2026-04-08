@@ -121,7 +121,7 @@ class ICTVOLSClient:
     # -------------------- Input resolution (tunable) --------------------
     def resolveToLatest(self, inputRaw: Any, options: Dict[str, bool] = None) -> Dict[str, Any]:
         if options is None:
-            options = {'replacements': True, 'Lineage': True, 'suggestions': True}
+            options = {'replacements': True, 'enrichLineage': True, 'suggestions': True}
 
         input_val = inputRaw.strip() if isinstance(inputRaw, str) else inputRaw
         if not input_val:
@@ -192,8 +192,8 @@ class ICTVOLSClient:
             return {'status': 'not-found', 'input': iri}
 
         mapped = self.mapEntity(e)
-        if options.get('Lineage'):
-            mapped = self.Lineage(mapped)
+        if options.get('enrichLineage'):
+            mapped = self.enrichLineage(mapped)
 
         if not mapped['is_obsolete']:
             ncbi = self.ncbiMapper.getNcbiTaxon(mapped['ictv_id'], mapped['msl'])
@@ -233,8 +233,8 @@ class ICTVOLSClient:
                 continue
 
             mapped = self.mapEntity(e)
-            if options.get('Lineage'):
-                mapped = self.Lineage(mapped)
+            if options.get('enrichLineage'):
+                mapped = self.enrichLineage(mapped)
 
             if mapped['is_obsolete'] and mapped.get('replaced_by'):
                 for r in self.toArray(mapped['replaced_by']):
