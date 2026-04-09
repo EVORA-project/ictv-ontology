@@ -3,6 +3,8 @@ name: Build and Release Ontology
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'create_ontologies.py'
   workflow_dispatch:
   
 permissions:
