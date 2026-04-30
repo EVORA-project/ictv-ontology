@@ -25,6 +25,12 @@ export class ICTVApi {
   /* -------------------- tiny utils -------------------- */
   _toArray(x) { return x == null ? [] : Array.isArray(x) ? x : [x]; }
   _firstOrNull(x) { return Array.isArray(x) ? x[0] ?? null : x ?? null; }
+  _toIriArray(x) {
+    return this._toArray(x)
+      .flatMap(v => String(v).split(','))
+      .map(v => v.trim())
+      .filter(Boolean);
+  }
   _isUrlLike(v) { return typeof v === 'string' && /^https?:\/\//i.test(v); }
   _parseMslNum(msl) { const m = /MSL(\d+)/i.exec(msl || ''); return m ? parseInt(m[1], 10) : -1; }
   _isIctvId(s) { return /^ICTV\d{5,}$/i.test(String(s).trim()); }
@@ -380,7 +386,7 @@ export class ICTVApi {
   }
 
   async _followReplacements(entity) {
-    const queue = this._toArray(entity.replaced_by);
+    const queue = this._toIriArray(entity.replaced_by);
     const seen = new Set();
     const results = [];
 
@@ -396,7 +402,7 @@ export class ICTVApi {
       mapped = await this._enrichParentAndLineage(mapped);
 
       if (mapped.is_obsolete && mapped.replaced_by) {
-        queue.push(...this._toArray(mapped.replaced_by));
+        queue.push(...this._toIriArray(mapped.replaced_by));
       } else {
         results.push(mapped);
       }
@@ -476,15 +482,16 @@ export class ICTVApi {
     const walk = async (ent) => {
       let m = this._mapEntity(ent);
       if (!m.msl || !m.ictv_id) return;
-      if (seen.has(m.msl)) return;
-      seen.add(m.msl);
+      const seenKey = m.iri || `${m.msl}|${m.ictv_id}`;
+      if (seen.has(seenKey)) return;
+      seen.add(seenKey);
       m = await this._enrichParentAndLineage(m);
       history.push(m);
 
       for (const key of ['was_revision_of', 'had_revision']) {
-        if (m[key]) {
-          const nxt = await this.getEntityByIri(m[key]);
-          if (nxt) return walk(nxt);
+        for (const iri of this._toIriArray(m[key])) {
+          const nxt = await this.getEntityByIri(iri);
+          if (nxt) await walk(nxt);
         }
       }
     };
