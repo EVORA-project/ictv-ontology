@@ -53,6 +53,15 @@ class ICTVOLSClient:
             return []
         return x if isinstance(x, list) else [x]
 
+    def toIriArray(self, x: Any) -> List[str]:
+        iris: List[str] = []
+        for value in self.toArray(x):
+            for iri in str(value).split(','):
+                iri = iri.strip()
+                if iri:
+                    iris.append(iri)
+        return iris
+
     def parseMsl(self, msl: Optional[str]) -> int:
         if not msl:
             return -1
@@ -218,7 +227,7 @@ class ICTVOLSClient:
 
     # -------------------- Replacement chain --------------------
     def followReplacements(self, entity: Dict[str, Any], options: Dict[str, bool]) -> List[Dict[str, Any]]:
-        queue = self.toArray(entity.get('replaced_by'))
+        queue = self.toIriArray(entity.get('replaced_by'))
         seen = set()
         results: List[Dict[str, Any]] = []
 
@@ -237,7 +246,7 @@ class ICTVOLSClient:
                 mapped = self.enrichLineage(mapped)
 
             if mapped['is_obsolete'] and mapped.get('replaced_by'):
-                for r in self.toArray(mapped['replaced_by']):
+                for r in self.toIriArray(mapped['replaced_by']):
                     queue.append(r)
             else:
                 results.append(mapped)
@@ -513,19 +522,19 @@ class ICTVOLSClient:
             mapped = self.mapEntity(ent)
             if not mapped.get('msl') or not mapped.get('ictv_id'):
                 return
-            mslKey = mapped['msl']
-            if mslKey in seen:
+            seenKey = mapped.get('iri') or f"{mapped.get('msl')}|{mapped.get('ictv_id')}"
+            if seenKey in seen:
                 return
-            seen.add(mslKey)
+            seen.add(seenKey)
 
             mapped_enriched = self.enrichLineage(mapped)
             history.append(mapped_enriched)
 
             for key in ['was_revision_of', 'had_revision']:
-                if mapped_enriched.get(key):
-                    nxt = self.retrieveTaxonByIRI(mapped_enriched[key])
+                for iri in self.toIriArray(mapped_enriched.get(key)):
+                    nxt = self.retrieveTaxonByIRI(iri)
                     if nxt:
-                        return walk(nxt)
+                        walk(nxt)
 
         walk(entity)
         history.sort(key=lambda a: self.parseMsl(a.get('msl')), reverse=True)
@@ -536,8 +545,8 @@ class ICTVOLSClient:
         if not entity:
             return None
         for key in ['was_revision_of', 'had_revision']:
-            if entity.get(key):
-                parent = self.retrieveTaxonByIRI(entity[key])
+            for iri in self.toIriArray(entity.get(key)):
+                parent = self.retrieveTaxonByIRI(iri)
                 return self.mapEntity(parent) if parent else None
         return None
 

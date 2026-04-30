@@ -49,6 +49,17 @@ class ICTVOLSClient {
         return is_array($x) ? $x : [$x];
     }
 
+    private function toIriArray($x) {
+        $iris = [];
+        foreach ($this->toArray($x) as $value) {
+            foreach (explode(',', (string)$value) as $iri) {
+                $iri = trim($iri);
+                if ($iri !== '') $iris[] = $iri;
+            }
+        }
+        return $iris;
+    }
+
     private function parseMsl($msl) {
         return preg_match('/MSL(\d+)/i', $msl ?? '', $m) ? (int)$m[1] : -1;
     }
@@ -253,7 +264,7 @@ class ICTVOLSClient {
 
     /* -------------------- Replacement chain -------------------- */
     private function followReplacements($entity, array $options) {
-        $queue = $this->toArray($entity['replaced_by']);
+        $queue = $this->toIriArray($entity['replaced_by']);
         $seen = [];
         $results = [];
 
@@ -271,7 +282,7 @@ class ICTVOLSClient {
             }
 
             if ($mapped['is_obsolete'] && $mapped['replaced_by']) {
-                foreach ($this->toArray($mapped['replaced_by']) as $r) $queue[] = $r;
+                foreach ($this->toIriArray($mapped['replaced_by']) as $r) $queue[] = $r;
             } else {
                 $results[] = $mapped;
             }
@@ -587,7 +598,7 @@ class ICTVOLSClient {
         return $el ? $this->mapEntity($el) : null;
     }
 
-    /** Full history across revisions (linear chain), newest first. */
+    /** Full history across revisions, newest first. */
     public function getHistory($idOrLabelOrEntity) {
         $entityRaw = $this->resolveAsEntity($idOrLabelOrEntity);
         if (!$entityRaw) return [];
@@ -601,17 +612,17 @@ class ICTVOLSClient {
         $walk = function ($ent) use (&$walk, &$seen, &$history) {
             $mapped = $this->mapEntity($ent);
             if (!$mapped['msl'] || !$mapped['ictv_id']) return;
-            $mslKey = $mapped['msl'];
-            if (isset($seen[$mslKey])) return;
-            $seen[$mslKey] = true;
+            $seenKey = $mapped['iri'] ?: ($mapped['msl'] . '|' . $mapped['ictv_id']);
+            if (isset($seen[$seenKey])) return;
+            $seen[$seenKey] = true;
 
             $mapped = $this->enrichLineage($mapped);
             $history[] = $mapped;
 
             foreach (['was_revision_of', 'had_revision'] as $key) {
-                if (!empty($mapped[$key])) {
-                    $next = $this->retrieveTaxonByIRI($mapped[$key]);
-                    if ($next) return $walk($next);
+                foreach ($this->toIriArray($mapped[$key] ?? null) as $iri) {
+                    $next = $this->retrieveTaxonByIRI($iri);
+                    if ($next) $walk($next);
                 }
             }
         };
@@ -621,14 +632,14 @@ class ICTVOLSClient {
         return $history;
     }
 
-    /** Returns the (single) historical parent if present (linear only). */
+    /** Returns the first historical parent if present. */
     public function getHistoricalParent($idOrLabelOrEntity) {
         $entity = $this->resolveAsEntity($idOrLabelOrEntity);
         if (!$entity) return null;
 
         foreach (['was_revision_of', 'had_revision'] as $key) {
-            if (!empty($entity[$key])) {
-                $parent = $this->retrieveTaxonByIRI($entity[$key]);
+            foreach ($this->toIriArray($entity[$key] ?? null) as $iri) {
+                $parent = $this->retrieveTaxonByIRI($iri);
                 return $parent ? $this->mapEntity($parent) : null;
             }
         }
@@ -735,4 +746,3 @@ class ICTVtoNCBImapping {
         return array_values($best);
     }
 }
-
