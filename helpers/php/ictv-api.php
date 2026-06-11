@@ -128,19 +128,69 @@ class ICTVOLSClient {
 
     /* -------------------- Suggestions (OLS autosuggest) -------------------- */
     public function getSuggestions($query) {
-        $url = "https://www.ebi.ac.uk/ols4/api/suggest";
-        $data = $this->fetchit($url, ["ontology" => "ictv", "q" => $query]);
-        $docs = $data['response']['docs'] ?? [];
-        $sugs = [];
-        foreach ($docs as $d) {
-            if (!empty($d['autosuggest'])) {
-                $v = trim($d['autosuggest']);
-                if (strcasecmp($v, $query) !== 0) {
-                    $sugs[$v] = true;
+        $collect = function ($docs) use ($query) {
+            $cleaned = $this->normText($query);
+            $sugs = [];
+            foreach ($docs ?? [] as $d) {
+                $v = $this->normalizeValue($d['autosuggest'] ?? $d['label'] ?? null);
+                if (is_string($v)) {
+                    $v = trim($v);
+                    if ($v !== '' && $this->normText($v) !== $cleaned) {
+                        $sugs[$v] = true;
+                    }
                 }
             }
+            return array_slice(array_values(array_keys($sugs)), 0, 5);
+        };
+
+        try {
+            $data = $this->fetchit("https://www.ebi.ac.uk/ols4/api/suggest?ontology=ictv&q=" . rawurlencode((string)$query));
+            $suggestions = $collect($data['response']['docs'] ?? []);
+            if (!empty($suggestions)) return $suggestions;
+        } catch (Exception $e) {
+            // fall through to legacy search suggestions
         }
-        return array_values(array_keys($sugs));
+
+        try {
+            $data = $this->fetchit("https://www.ebi.ac.uk/ols4/api/search?ontology=ictv&q=" . rawurlencode((string)$query) . "&rows=10");
+            return $collect($data['response']['docs'] ?? []);
+        } catch (Exception $e) {
+            return [];
+        }
+    }
+
+    private function normText($value) {
+        return strtolower(preg_replace('/\s+/', ' ', trim((string)($value ?? ''))));
+    }
+
+    private function entityTextValues($entity) {
+        $values = [];
+        $add = function ($value) use (&$values, &$add) {
+            if (is_array($value)) {
+                if (isset($value['value']) && is_string($value['value'])) {
+                    $values[] = $value['value'];
+                    return;
+                }
+                foreach ($value as $item) {
+                    $add($item);
+                }
+            } elseif (is_string($value)) {
+                $values[] = $value;
+            }
+        };
+        $add($entity['label'] ?? $entity["http://www.w3.org/2000/01/rdf-schema#label"] ?? null);
+        foreach (['synonym', 'synonyms', 'http://www.geneontology.org/formats/oboInOwl#hasExactSynonym'] as $key) {
+            $add($entity[$key] ?? null);
+        }
+        return $values;
+    }
+
+    private function entityMatchesTextExactly($entity, $query) {
+        $wanted = $this->normText($query);
+        foreach ($this->entityTextValues($entity) as $value) {
+            if ($this->normText($value) === $wanted) return true;
+        }
+        return false;
     }
 
     /* -------------------- Input resolution (tunable) -------------------- */
@@ -188,41 +238,20 @@ class ICTVOLSClient {
                 return $this->resolveEntityByIri($iri, $options);
             }
         }
-        // 4) label / synonym
-        $found = $this->seekOntologyTaxonByUniqueRelaxedSearch($input)
-            ?: $this->seekOntologyTaxon('classes', [
-                'search' => $input,
-                'exactMatch' => 'true',
-                'includeObsoleteEntities' => 'false',
-                'size' => 2
-            ])
-            ?: $this->seekOntologyTaxon('classes', [
-                'search' => $input,
-                'exactMatch' => 'true',
-                'includeObsoleteEntities' => 'true',
-                'size' => 2
-            ]);
+        // 4) individuals -> parent class
+        $parents = $this->seekOntologyTaxonByIndividual($input);
+        if ($parents) {
+            $sorted = $this->sortCandidates($parents);
+            return $this->resolveEntityByIri($sorted[0]['iri'], $options);
+        }
 
+        // 5) label / synonym classes
+        $found = $this->seekOntologyTaxonByClassLabel($input)
+            ?: $this->seekOntologyTaxonByUniqueRelaxedSearch($input);
         if ($found) {
             $sorted = $this->sortCandidates($found);
             return $this->resolveEntityByIri($sorted[0]['iri'], $options);
         }
-
-        // 5) individuals -> parent class
-        $ind = $this->seekOntologyTaxon('individuals', [
-                'search' => $input,
-                'exactMatch' => 'true',
-                'includeObsoleteEntities' => 'false',
-                'size' => 2
-            ]);
-        if ($ind) {
-            foreach ($ind as $e) {
-                $pIri = $this->normalizeValue($e['directParent'] ?? null);
-                if ($pIri) return $this->resolveEntityByIri($pIri, $options);
-            }
-        }
-
-
 
         // 6) suggestions fallback
         return [
@@ -419,8 +448,12 @@ class ICTVOLSClient {
 
     /* -------------------- Seekers -------------------- */
     private function seekOntologyTaxon($endpoint, $params) {
-        $data = $this->ols($endpoint, $params);
-        return $data['elements'] ?? null;
+        try {
+            $data = $this->ols($endpoint, $params);
+            return $data['elements'] ?? [];
+        } catch (Exception $e) {
+            return [];
+        }
     }
 
     private function seekOntologyTaxonByClassId($id) {
@@ -435,25 +468,38 @@ class ICTVOLSClient {
         return array_merge($curr, $obs);
     }
 
+    private function seekOntologyTaxonByExactClassFields($text, $includeObsolete) {
+        $results = [];
+        foreach (['label', 'synonyms'] as $field) {
+            $hits = $this->seekOntologyTaxon('classes', [
+                "search" => $text,
+                "searchFields" => $field,
+                "exactMatch" => "true",
+                "includeObsoleteEntities" => $includeObsolete,
+                "size" => 20
+            ]) ?: [];
+            $results = array_merge(
+                $results,
+                array_values(array_filter($hits, fn($e) => $this->entityMatchesTextExactly($e, $text)))
+            );
+        }
+        return $results;
+    }
+
     private function seekOntologyTaxonByClassLabel($label) {
-        $curr = $this->seekOntologyTaxon('classes', [
-            "search" => $label,
-            "exactMatch" => "true",
-            "includeObsoleteEntities" => "false"
-        ]) ?: [];
-        $obs = $curr ? [] : ($this->seekOntologyTaxon('classes', [
-            "search" => $label,
-            "exactMatch" => "true",
-            "includeObsoleteEntities" => "true"
-        ]) ?: []);
+        $curr = $this->seekOntologyTaxonByExactClassFields($label, "false");
+        $obs = $curr ? [] : $this->seekOntologyTaxonByExactClassFields($label, "true");
         return array_merge($curr, $obs);
     }
 
     private function seekOntologyTaxonBySynonym($synonym) {
-        return $this->seekOntologyTaxon('classes', [
-            "synonym" => $synonym,
-            "exactMatch" => "true"
-        ]) ?: [];
+        return array_values(array_filter($this->seekOntologyTaxon('classes', [
+            "search" => $synonym,
+            "searchFields" => "synonyms",
+            "exactMatch" => "true",
+            "includeObsoleteEntities" => "true",
+            "size" => 20
+        ]) ?: [], fn($e) => $this->entityMatchesTextExactly($e, $synonym)));
     }
 
     private function seekOntologyTaxonByUniqueRelaxedSearch($label) {
@@ -470,39 +516,50 @@ class ICTVOLSClient {
             $variants[] = strtolower($raw);
         }
         foreach (array_values(array_unique($variants)) as $search) {
-            $data = $this->ols('classes', [
-                "search" => $search,
-                "exactMatch" => "false",
-                "includeObsoleteEntities" => "false",
-                "size" => 2
-            ]);
-            if (($data['totalElements'] ?? 0) === 1) {
-                return $data['elements'] ?? [];
+            try {
+                $data = $this->ols('classes', [
+                    "search" => $search,
+                    "exactMatch" => "false",
+                    "includeObsoleteEntities" => "false",
+                    "size" => 2
+                ]);
+                if (($data['totalElements'] ?? 0) === 1) {
+                    return $data['elements'] ?? [];
+                }
+            } catch (Exception $e) {
+                // ignore fallback query failures
             }
         }
         return [];
     }
 
     private function seekOntologyTaxonByIndividual($labelOrSyn) {
-        $all = $this->seekOntologyTaxon('individuals', [
-            'search' => $labelOrSyn,
-            'exactMatch' => 'true',
-            'includeObsoleteEntities' => 'false',
-            'size' => 2
-        ]) ?: [];
-        $parents = [];
+        $all = [];
+        foreach (['label', 'synonyms'] as $field) {
+            $all = array_merge($all, $this->seekOntologyTaxon('individuals', [
+                'search' => $labelOrSyn,
+                'searchFields' => $field,
+                'exactMatch' => 'true',
+                'includeObsoleteEntities' => 'false',
+                'size' => 20
+            ]) ?: []);
+        }
+        $parentIris = [];
         $seen = [];
         foreach ($all as $ind) {
             $pIri = $this->normalizeValue($ind['directParent'] ?? null);
             if ($pIri && !isset($seen[$pIri])) {
                 $seen[$pIri] = true;
-                $p = $this->retrieveTaxonByIRI($pIri);
-                if ($p && !empty($p["http://purl.org/dc/terms/identifier"])) {
-                    $parents[] = $p;
-                }
+                $parentIris[] = $pIri;
             }
         }
-        return $parents;
+        if (count($parentIris) !== 1) return [];
+        try {
+            $p = $this->retrieveTaxonByIRI($parentIris[0]);
+            return ($p && !empty($p["http://purl.org/dc/terms/identifier"])) ? [$p] : [];
+        } catch (Exception $e) {
+            return [];
+        }
     }
 
     private function sortCandidates($arr) {

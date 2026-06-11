@@ -117,15 +117,54 @@ class ICTVOLSClient:
 
     # -------------------- Suggestions (OLS autosuggest) --------------------
     def getSuggestions(self, query: str) -> List[str]:
-        url = "https://www.ebi.ac.uk/ols4/api/suggest"
-        data = self.fetchit(url, {"ontology": "ictv", "q": query})
-        docs = (data.get('response') or {}).get('docs', [])
-        sugs = {}
-        for d in docs:
-            v = (d.get('autosuggest') or '').strip()
-            if v and v.lower() != query.strip().lower():
-                sugs[v] = True
-        return list(sugs.keys())
+        def collect(docs: List[Dict[str, Any]]) -> List[str]:
+            cleaned = self.normText(query)
+            sugs: Dict[str, bool] = {}
+            for d in docs or []:
+                v = self.normalizeValue(d.get('autosuggest') or d.get('label'))
+                if v and self.normText(v) != cleaned:
+                    sugs[v] = True
+            return list(sugs.keys())[:5]
+
+        try:
+            url = f"https://www.ebi.ac.uk/ols4/api/suggest?ontology=ictv&q={quote(str(query), safe='')}"
+            data = self.fetchit(url)
+            suggestions = collect((data.get('response') or {}).get('docs', []))
+            if suggestions:
+                return suggestions
+        except Exception:
+            pass
+
+        try:
+            url = f"https://www.ebi.ac.uk/ols4/api/search?ontology=ictv&q={quote(str(query), safe='')}&rows=10"
+            data = self.fetchit(url)
+            return collect((data.get('response') or {}).get('docs', []))
+        except Exception:
+            return []
+
+    def normText(self, value: Any) -> str:
+        return re.sub(r'\s+', ' ', str(value or '').strip()).lower()
+
+    def entityTextValues(self, entity: Dict[str, Any]) -> List[str]:
+        values: List[str] = []
+
+        def add(value: Any) -> None:
+            if isinstance(value, list):
+                for item in value:
+                    add(item)
+            elif isinstance(value, str):
+                values.append(value)
+            elif isinstance(value, dict) and isinstance(value.get('value'), str):
+                values.append(value['value'])
+
+        add(entity.get('label') or entity.get("http://www.w3.org/2000/01/rdf-schema#label"))
+        for key in ["synonym", "synonyms", "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"]:
+            add(entity.get(key))
+        return values
+
+    def entityMatchesTextExactly(self, entity: Dict[str, Any], query: str) -> bool:
+        wanted = self.normText(query)
+        return any(self.normText(v) == wanted for v in self.entityTextValues(entity))
 
     # -------------------- Input resolution (tunable) --------------------
     def resolveToLatest(self, inputRaw: Any, options: Dict[str, bool] = None) -> Dict[str, Any]:
@@ -156,37 +195,17 @@ class ICTVOLSClient:
                 iri = f"http://ictv.global/id/{best['h']['msl']}/{best['h']['ictv_id']}"
                 return self._resolveEntityByIri(iri, options)
 
-        # 4) label / synonym
-        found = (self.seekOntologyTaxonByUniqueRelaxedSearch(input_val) or
-                 self.seekOntologyTaxon('classes', {
-                    'search': input_val,
-                    'exactMatch': 'true',
-                    'includeObsoleteEntities': 'false',
-                    'size': 2
-                 }) or
-                 self.seekOntologyTaxon('classes', {
-                    'search': input_val,
-                    'exactMatch': 'true',
-                    'includeObsoleteEntities': 'true',
-                    'size': 2
-                 }))
+        # 4) individuals -> parent class
+        parents = self.seekOntologyTaxonByIndividual(input_val)
+        if parents:
+            sorted_cands = self.sortCandidates(parents)
+            return self._resolveEntityByIri(sorted_cands[0]['iri'], options)
 
+        # 5) label / synonym classes
+        found = self.seekOntologyTaxonByClassLabel(input_val) or self.seekOntologyTaxonByUniqueRelaxedSearch(input_val)
         if found:
             sorted_cands = self.sortCandidates(found)
             return self._resolveEntityByIri(sorted_cands[0]['iri'], options)
-
-        # 5) individuals -> parent class
-        ind = self.seekOntologyTaxon('individuals', {
-                  'search': input_val,
-                  'exactMatch': 'true',
-                  'includeObsoleteEntities': 'false',
-                  'size': 2
-              })
-        if ind:
-            for e in ind:
-                pIri = self.normalizeValue(e.get('directParent'))
-                if pIri:
-                    return self._resolveEntityByIri(pIri, options)
 
         # 6) suggestions fallback
         return {
@@ -379,8 +398,11 @@ class ICTVOLSClient:
 
     # -------------------- Seekers --------------------
     def seekOntologyTaxon(self, endpoint: str, params: Dict[str, Any]) -> Optional[List[Dict[str, Any]]]:
-        data = self.ols(endpoint, params)
-        return data.get('elements')
+        try:
+            data = self.ols(endpoint, params)
+            return data.get('elements')
+        except Exception:
+            return []
 
     def seekOntologyTaxonByClassId(self, id_: str) -> List[Dict[str, Any]]:
         curr = self.seekOntologyTaxon('classes', {
@@ -391,24 +413,37 @@ class ICTVOLSClient:
         }) or []
         return curr + obs
 
+    def seekOntologyTaxonByExactClassFields(self, text: str, include_obsolete: str) -> List[Dict[str, Any]]:
+        results: List[Dict[str, Any]] = []
+        for field in ("label", "synonyms"):
+            results.extend([
+                e for e in (self.seekOntologyTaxon('classes', {
+                    "search": text,
+                    "searchFields": field,
+                    "exactMatch": "true",
+                    "includeObsoleteEntities": include_obsolete,
+                    "size": 20
+                }) or [])
+                if self.entityMatchesTextExactly(e, text)
+            ])
+        return results
+
     def seekOntologyTaxonByClassLabel(self, label: str) -> List[Dict[str, Any]]:
-        curr = self.seekOntologyTaxon('classes', {
-            "search": label,
-            "exactMatch": "true",
-            "includeObsoleteEntities": "false"
-        }) or []
-        obs = [] if curr else self.seekOntologyTaxon('classes', {
-            "search": label,
-            "exactMatch": "true",
-            "includeObsoleteEntities": "true"
-        }) or []
+        curr = self.seekOntologyTaxonByExactClassFields(label, "false")
+        obs = [] if curr else self.seekOntologyTaxonByExactClassFields(label, "true")
         return curr + obs
 
     def seekOntologyTaxonBySynonym(self, synonym: str) -> List[Dict[str, Any]]:
-        return self.seekOntologyTaxon('classes', {
-            "synonym": synonym,
-            "exactMatch": "true"
-        }) or []
+        return [
+            e for e in (self.seekOntologyTaxon('classes', {
+                "search": synonym,
+                "searchFields": "synonyms",
+                "exactMatch": "true",
+                "includeObsoleteEntities": "true",
+                "size": 20
+            }) or [])
+            if self.entityMatchesTextExactly(e, synonym)
+        ]
 
     def seekOntologyTaxonByUniqueRelaxedSearch(self, label: str) -> List[Dict[str, Any]]:
         raw = str(label).strip()
@@ -421,33 +456,43 @@ class ICTVOLSClient:
         else:
             variants.append(raw.lower())
         for search in dict.fromkeys(variants):
-            data = self.ols('classes', {
-                "search": search,
-                "exactMatch": "false",
-                "includeObsoleteEntities": "false",
-                "size": 2
-            })
-            if int(data.get('totalElements') or 0) == 1:
-                return data.get('elements') or []
+            try:
+                data = self.ols('classes', {
+                    "search": search,
+                    "exactMatch": "false",
+                    "includeObsoleteEntities": "false",
+                    "size": 2
+                })
+                if int(data.get('totalElements') or 0) == 1:
+                    return data.get('elements') or []
+            except Exception:
+                pass
         return []
 
     def seekOntologyTaxonByIndividual(self, labelOrSyn: str) -> List[Dict[str, Any]]:
-        all_inds = self.seekOntologyTaxon('individuals', {
-            'search': labelOrSyn,
-            'exactMatch': 'true',
-            'includeObsoleteEntities': 'false',
-            'size': 2
-        }) or []
-        parents = []
+        all_inds: List[Dict[str, Any]] = []
+        for field in ("label", "synonyms"):
+            all_inds.extend(self.seekOntologyTaxon('individuals', {
+                'search': labelOrSyn,
+                'searchFields': field,
+                'exactMatch': 'true',
+                'includeObsoleteEntities': 'false',
+                'size': 20
+            }) or [])
+        parent_iris = []
         seen = set()
         for ind in all_inds:
-            pIri = self.normalizeValue(ind.get('directParent'))
-            if pIri and pIri not in seen:
-                seen.add(pIri)
-                p = self.retrieveTaxonByIRI(pIri)
-                if p and p.get("http://purl.org/dc/terms/identifier"):
-                    parents.append(p)
-        return parents
+            p_iri = self.normalizeValue(ind.get('directParent'))
+            if p_iri and p_iri not in seen:
+                seen.add(p_iri)
+                parent_iris.append(p_iri)
+        if len(parent_iris) != 1:
+            return []
+        try:
+            p = self.retrieveTaxonByIRI(parent_iris[0])
+            return [p] if p and p.get("http://purl.org/dc/terms/identifier") else []
+        except Exception:
+            return []
 
     def sortCandidates(self, arr: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         def msl_num(el: Dict[str, Any]) -> int:
