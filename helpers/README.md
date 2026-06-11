@@ -299,8 +299,11 @@ The ICTV Ontology is exposed through two main sets of OLS endpoints:
 
 **Examples:**
 - List current classes: `GET /api/v2/ontologies/ictv/classes`
+- Strict text search for a class: `GET /api/v2/ontologies/ictv/classes?search={QUERY}&exactMatch=true`
 - Get specific class: `GET /api/v2/ontologies/ictv/classes/{DOUBLE_URL_ENCODED_IRI}`
 - Get specific entity by IRI: `GET /api/v2/ontologies/ictv/entities/{DOUBLE_URL_ENCODED_IRI}`
+
+**Search note:** for v2 endpoints, OLS documents `search` as the query text parameter. The `exactMatch` option defaults to `false`, so set `exactMatch=true` when strict matching is required.
 
 ---
 
@@ -378,11 +381,12 @@ example: [https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes?page=0&size=
 #### Step 1: Search for the Historical Name (Including Obsolete Terms)
 
 ```
-https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes?label=severe%20acute%20respiratory%20syndrome%20coronavirus&includeObsoleteEntities=true
+https://www.ebi.ac.uk/ols4/api/v2/ontologies/ictv/classes?search=severe%20acute%20respiratory%20syndrome%20coronavirus&exactMatch=true&includeObsoleteEntities=true
 ```
 
 **Parameters:**
-- `label`: The taxon name to search for (URL-encoded)
+- `search`: The taxon name to search for (URL-encoded)
+- `exactMatch`: Set to `true` for strict matching
 - `includeObsoleteEntities`: Set to `true` to include obsolete terms
 
 **Response:** List of matching classes, including obsolete ones.
@@ -493,11 +497,12 @@ For any ICTV IRI, follow this pattern:
 | Endpoint | Purpose |
 |----------|---------|
 | `GET /api/v2/ontologies/ictv/classes` | List all current ICTV classes/taxa |
-| `GET /api/v2/ontologies/ictv/classes?label={LABEL}` | Search classes by taxon name |
-| `GET /api/v2/ontologies/ictv/classes?label={LABEL}&includeObsoleteEntities=true` | Search classes by name including obsolete taxa |
+| `GET /api/v2/ontologies/ictv/classes?search={QUERY}` | Search classes by taxon name |
+| `GET /api/v2/ontologies/ictv/classes?search={QUERY}&exactMatch=true` | Search classes by exact taxon name |
+| `GET /api/v2/ontologies/ictv/classes?search={QUERY}&exactMatch=true&includeObsoleteEntities=true` | Search classes by exact name including obsolete taxa |
 | `GET /api/v2/ontologies/ictv/classes/{ENCODED_IRI}` | Retrieve a specific class by IRI |
 | `GET /api/v2/ontologies/ictv/entities` | List all entities, including classes and individuals |
-| `GET /api/v2/ontologies/ictv/entities?label={LABEL}` |  Search by name across all entity types|
+| `GET /api/v2/ontologies/ictv/entities?search={QUERY}` | Search by name across all entity types |
 | `GET /api/v2/ontologies/ictv/entities/{ENCODED_IRI}` | Retrieve a specific entity by IRI |
 | `GET /api/v2/ontologies/ictv/individuals` | List isolates and strains |
 | `GET /api/v2/ontologies/ictv/properties` | List ontology properties |
@@ -506,7 +511,8 @@ For any ICTV IRI, follow this pattern:
 
 | Parameter | Values | Purpose |
 |-----------|--------|---------|
-| `label` | string (URL-encoded) | Search by entity label/name |
+| `search` | string (URL-encoded) | Documented OLS v2 query text parameter |
+| `exactMatch` | true/false | Use `true` for strict v2 search |
 | `includeObsoleteEntities` | true/false | Include obsolete terms in results |
 | `page` | integer | Page number (0-indexed) |
 | `size` | integer (1-1000) | Results per page |
@@ -567,7 +573,7 @@ When resolving historical taxa, you may encounter the **term_replaced_by** relat
 
 ```
 Original Request:
-  GET /api/v2/ontologies/ictv/classes?label=old%20name&includeObsoleteEntities=true
+  GET /api/v2/ontologies/ictv/classes?search=old%20name&exactMatch=true&includeObsoleteEntities=true
 
 Response includes:
   {
