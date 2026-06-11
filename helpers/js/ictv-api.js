@@ -390,10 +390,6 @@ export class ICTVApi {
   }
 
   async _enrichParentAndLineage(mapped) {
-    if (mapped.direct_parent_label && mapped.lineage.length) {
-      return mapped;
-    }
-
     // direct parent label
     if (mapped.direct_parent_iri) {
       try {
