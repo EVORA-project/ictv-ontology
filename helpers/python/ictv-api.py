@@ -156,28 +156,37 @@ class ICTVOLSClient:
                 iri = f"http://ictv.global/id/{best['h']['msl']}/{best['h']['ictv_id']}"
                 return self._resolveEntityByIri(iri, options)
 
-        # 4) individuals → parent class
-        ind = self.seekOntologyTaxon('individuals', {'label': input_val}) or \
-              self.seekOntologyTaxon('individuals', {'synonym': input_val})
+        # 4) label / synonym
+        found = (self.seekOntologyTaxonByUniqueRelaxedSearch(input_val) or
+                 self.seekOntologyTaxon('classes', {
+                    'search': input_val,
+                    'exactMatch': 'true',
+                    'includeObsoleteEntities': 'false',
+                    'size': 2
+                 }) or
+                 self.seekOntologyTaxon('classes', {
+                    'search': input_val,
+                    'exactMatch': 'true',
+                    'includeObsoleteEntities': 'true',
+                    'size': 2
+                 }))
+
+        if found:
+            sorted_cands = self.sortCandidates(found)
+            return self._resolveEntityByIri(sorted_cands[0]['iri'], options)
+
+        # 5) individuals -> parent class
+        ind = self.seekOntologyTaxon('individuals', {
+                  'search': input_val,
+                  'exactMatch': 'true',
+                  'includeObsoleteEntities': 'false',
+                  'size': 2
+              })
         if ind:
             for e in ind:
                 pIri = self.normalizeValue(e.get('directParent'))
                 if pIri:
                     return self._resolveEntityByIri(pIri, options)
-
-        # 5) label / synonym
-        found = (self.seekOntologyTaxon('classes', {'label': input_val, 'isObsolete': 'false'}) or
-                 self.seekOntologyTaxon('classes', {'label': input_val, 'isObsolete': 'true'}) or
-                 self.seekOntologyTaxon('classes', {'synonym': input_val}))
-
-        if not found:
-            rel = self.seekOntologyTaxon('classes', {'q': input_val, 'isObsolete': 'false'}) or []
-            if rel:
-                found = rel
-
-        if found:
-            sorted_cands = self.sortCandidates(found)
-            return self._resolveEntityByIri(sorted_cands[0]['iri'], options)
 
         # 6) suggestions fallback
         return {
@@ -383,17 +392,52 @@ class ICTVOLSClient:
         return curr + obs
 
     def seekOntologyTaxonByClassLabel(self, label: str) -> List[Dict[str, Any]]:
-        curr = self.seekOntologyTaxon('classes', {"label": label, "isObsolete": "false"}) or []
-        obs = self.seekOntologyTaxon('classes', {"label": label, "isObsolete": "true"}) or []
+        curr = self.seekOntologyTaxon('classes', {
+            "search": label,
+            "exactMatch": "true",
+            "includeObsoleteEntities": "false"
+        }) or []
+        obs = [] if curr else self.seekOntologyTaxon('classes', {
+            "search": label,
+            "exactMatch": "true",
+            "includeObsoleteEntities": "true"
+        }) or []
         return curr + obs
 
     def seekOntologyTaxonBySynonym(self, synonym: str) -> List[Dict[str, Any]]:
-        return self.seekOntologyTaxon('classes', {"synonym": synonym}) or []
+        return self.seekOntologyTaxon('classes', {
+            "synonym": synonym,
+            "exactMatch": "true"
+        }) or []
+
+    def seekOntologyTaxonByUniqueRelaxedSearch(self, label: str) -> List[Dict[str, Any]]:
+        raw = str(label).strip()
+        if len(raw.split()) < 2:
+            return []
+        variants = []
+        without_virus = re.sub(r'\s+virus$', '', raw, flags=re.IGNORECASE).strip()
+        if without_virus and without_virus != raw:
+            variants.extend([without_virus.lower(), without_virus])
+        else:
+            variants.append(raw.lower())
+        for search in dict.fromkeys(variants):
+            data = self.ols('classes', {
+                "search": search,
+                "exactMatch": "false",
+                "includeObsoleteEntities": "false",
+                "size": 2
+            })
+            if int(data.get('totalElements') or 0) == 1:
+                return data.get('elements') or []
+        return []
 
     def seekOntologyTaxonByIndividual(self, labelOrSyn: str) -> List[Dict[str, Any]]:
-        indsLabel = self.seekOntologyTaxon('individuals', {'label': labelOrSyn}) or []
-        indsSyn = self.seekOntologyTaxon('individuals', {'synonym': labelOrSyn}) or []
-        all_inds = indsLabel + indsSyn
+        all_inds = self.seekOntologyTaxon('individuals', {
+            'search': labelOrSyn,
+            'exactMatch': 'true',
+            'includeObsoleteEntities': 'false',
+            'size': 2
+        }) or []
         parents = []
         seen = set()
         for ind in all_inds:

@@ -188,29 +188,38 @@ class ICTVOLSClient {
                 return $this->resolveEntityByIri($iri, $options);
             }
         }
-        // 4) individuals → parent class
-        $ind = $this->seekOntologyTaxon('individuals', ['label' => $input])
-            ?: $this->seekOntologyTaxon('individuals', ['synonym' => $input]);
+        // 4) label / synonym
+        $found = $this->seekOntologyTaxonByUniqueRelaxedSearch($input)
+            ?: $this->seekOntologyTaxon('classes', [
+                'search' => $input,
+                'exactMatch' => 'true',
+                'includeObsoleteEntities' => 'false',
+                'size' => 2
+            ])
+            ?: $this->seekOntologyTaxon('classes', [
+                'search' => $input,
+                'exactMatch' => 'true',
+                'includeObsoleteEntities' => 'true',
+                'size' => 2
+            ]);
+
+        if ($found) {
+            $sorted = $this->sortCandidates($found);
+            return $this->resolveEntityByIri($sorted[0]['iri'], $options);
+        }
+
+        // 5) individuals -> parent class
+        $ind = $this->seekOntologyTaxon('individuals', [
+                'search' => $input,
+                'exactMatch' => 'true',
+                'includeObsoleteEntities' => 'false',
+                'size' => 2
+            ]);
         if ($ind) {
             foreach ($ind as $e) {
                 $pIri = $this->normalizeValue($e['directParent'] ?? null);
                 if ($pIri) return $this->resolveEntityByIri($pIri, $options);
             }
-        }
-        // 5) label / synonym
-        $found = $this->seekOntologyTaxon('classes', ['label' => $input, 'isObsolete' => 'false'])
-            ?: $this->seekOntologyTaxon('classes', ['label' => $input, 'isObsolete' => 'true'])
-            ?: $this->seekOntologyTaxon('classes', ['synonym' => $input]);
-
-        if (!$found) {
-            // relaxed query
-            $rel = $this->seekOntologyTaxon('classes', ['q' => $input, 'isObsolete' => 'false']) ?: [];
-            if (!empty($rel)) $found = $rel;
-        }
-
-        if ($found) {
-            $sorted = $this->sortCandidates($found);
-            return $this->resolveEntityByIri($sorted[0]['iri'], $options);
         }
 
 
@@ -427,19 +436,60 @@ class ICTVOLSClient {
     }
 
     private function seekOntologyTaxonByClassLabel($label) {
-        $curr = $this->seekOntologyTaxon('classes', ["label" => $label, "isObsolete" => "false"]) ?: [];
-        $obs  = $this->seekOntologyTaxon('classes', ["label" => $label, "isObsolete" => "true"]) ?: [];
+        $curr = $this->seekOntologyTaxon('classes', [
+            "search" => $label,
+            "exactMatch" => "true",
+            "includeObsoleteEntities" => "false"
+        ]) ?: [];
+        $obs = $curr ? [] : ($this->seekOntologyTaxon('classes', [
+            "search" => $label,
+            "exactMatch" => "true",
+            "includeObsoleteEntities" => "true"
+        ]) ?: []);
         return array_merge($curr, $obs);
     }
 
     private function seekOntologyTaxonBySynonym($synonym) {
-        return $this->seekOntologyTaxon('classes', ["synonym" => $synonym]) ?: [];
+        return $this->seekOntologyTaxon('classes', [
+            "synonym" => $synonym,
+            "exactMatch" => "true"
+        ]) ?: [];
+    }
+
+    private function seekOntologyTaxonByUniqueRelaxedSearch($label) {
+        $raw = trim((string)$label);
+        if (count(preg_split('/\s+/', $raw)) < 2) {
+            return [];
+        }
+        $variants = [];
+        $withoutVirus = preg_replace('/\s+virus$/i', '', $raw);
+        if ($withoutVirus && $withoutVirus !== $raw) {
+            $variants[] = strtolower($withoutVirus);
+            $variants[] = $withoutVirus;
+        } else {
+            $variants[] = strtolower($raw);
+        }
+        foreach (array_values(array_unique($variants)) as $search) {
+            $data = $this->ols('classes', [
+                "search" => $search,
+                "exactMatch" => "false",
+                "includeObsoleteEntities" => "false",
+                "size" => 2
+            ]);
+            if (($data['totalElements'] ?? 0) === 1) {
+                return $data['elements'] ?? [];
+            }
+        }
+        return [];
     }
 
     private function seekOntologyTaxonByIndividual($labelOrSyn) {
-        $indsLabel = $this->seekOntologyTaxon('individuals', ['label' => $labelOrSyn]) ?: [];
-        $indsSyn   = $this->seekOntologyTaxon('individuals', ['synonym' => $labelOrSyn]) ?: [];
-        $all = array_merge($indsLabel, $indsSyn);
+        $all = $this->seekOntologyTaxon('individuals', [
+            'search' => $labelOrSyn,
+            'exactMatch' => 'true',
+            'includeObsoleteEntities' => 'false',
+            'size' => 2
+        ]) ?: [];
         $parents = [];
         $seen = [];
         foreach ($all as $ind) {

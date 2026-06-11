@@ -266,8 +266,8 @@ resolveToLatest() and getHistory() use a conservative resolution strategy:
 1. Direct ICTV IRI: if the input looks like an ICTV IRI, it is resolved directly.  
 2. ICTV ID: if it matches ICTV\d+, the helper queries classes by identifier.
 3. NCBI Taxon ID: if it looks like a taxid (1234 or ncbitaxon:1234), it resolves via SSSOM mappings.
-4. Individuals → parent class: some virus names exist as individuals; in that case, the helper resolves the parent taxon.  
-5. Class label / synonym: the helper searches current + obsolete classes by label and synonym (with some relaxed matching as a fallback).
+4. Class name / synonym: the helper searches matching ICTV classes.
+5. Individuals -> parent class: if class lookup fails, some virus names exist as individuals; in that case, the helper resolves the parent taxon.
 6. Suggestions: if nothing is found, the helper uses the OLS suggest API to propose alternative labels.
 
 ## 7. Error handling
