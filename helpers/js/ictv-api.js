@@ -128,41 +128,99 @@ export class ICTVApi {
   }
 
   async _getSuggestions(query) {
+    const collect = (docs) => {
+      const cleaned = this._normText(query);
+      const out = [];
+      const seen = new Set();
+      for (const d of docs || []) {
+        const v = this._firstOrNull(d.autosuggest ?? d.label);
+        const s = typeof v === 'string' ? v.trim() : '';
+        const key = this._normText(s);
+        if (s && key !== cleaned && !seen.has(key)) {
+          seen.add(key);
+          out.push(s);
+        }
+      }
+      return out.slice(0, 5);
+    };
+
     try {
       const url = `https://www.ebi.ac.uk/ols4/api/suggest?ontology=ictv&q=${encodeURIComponent(query)}`;
       const res = await this._fetchJSON(url);
-      if (res && res.response && res.response.docs) {
-        const list = res.response.docs.map(d => d.autosuggest).filter(Boolean);
-        const unique = Array.from(new Set(list.map(s => s.trim())));
-        return unique.filter(s => s.toLowerCase() !== query.toLowerCase()).slice(0, 5);
-      }
+      const suggestions = collect(res?.response?.docs);
+      if (suggestions.length) return suggestions;
     } catch { /* ignore */ }
+
+    try {
+      const url = `https://www.ebi.ac.uk/ols4/api/search?ontology=ictv&q=${encodeURIComponent(query)}&rows=10`;
+      const res = await this._fetchJSON(url);
+      return collect(res?.response?.docs);
+    } catch { /* ignore */ }
+
     return [];
   }
 
   /* -------- conservative class/individual lookups -------- */
-  async _findClassesByLabelConservative(label) {
-    let all = await this._uniqueRelaxedClassSearch(label);
+  _normText(v) {
+    return String(v ?? '').trim().replace(/\s+/g, ' ').toLowerCase();
+  }
 
-    const exactCurrent = all.length
-      ? []
-      : await this._ols('classes', {
+  _entityTextValues(e) {
+    const values = [];
+    for (const v of this._toArray(e.label ?? e['http://www.w3.org/2000/01/rdf-schema#label'])) {
+      if (typeof v === 'string') values.push(v);
+    }
+    for (const key of ['synonym', 'synonyms', 'http://www.geneontology.org/formats/oboInOwl#hasExactSynonym']) {
+      for (const s of this._toArray(e[key])) {
+        if (typeof s === 'string') values.push(s);
+        else if (s && typeof s === 'object' && typeof s.value === 'string') values.push(s.value);
+      }
+    }
+    return values;
+  }
+
+  _entityMatchesTextExactly(e, query) {
+    const wanted = this._normText(query);
+    return this._entityTextValues(e).some(v => this._normText(v) === wanted);
+  }
+
+  async _olsElementsOrEmpty(endpoint, params, filter = null) {
+    try {
+      const res = await this._ols(endpoint, params);
+      const elements = res.elements || [];
+      return filter ? elements.filter(filter) : elements;
+    } catch {
+      return [];
+    }
+  }
+
+  async _findClassesByExactFields(label, includeObsoleteEntities) {
+    const baseParams = {
       search: label,
       exactMatch: 'true',
-      includeObsoleteEntities: 'false',
-      size: 2
-    }).then(r => r.elements || []);
+      includeObsoleteEntities,
+      size: 20
+    };
+    const filter = e => this._entityMatchesTextExactly(e, label);
+    const [byLabel, bySynonyms] = await Promise.all([
+      this._olsElementsOrEmpty('classes', { ...baseParams, searchFields: 'label' }, filter),
+      this._olsElementsOrEmpty('classes', { ...baseParams, searchFields: 'synonyms' }, filter)
+    ]);
+    return [...byLabel, ...bySynonyms];
+  }
 
-    all = [...all, ...exactCurrent];
+  async _findClassesByLabelConservative(label) {
+    const exactCurrent = await this._findClassesByExactFields(label, 'false');
+
+    let all = [...exactCurrent];
 
     if (all.length === 0) {
-      const exactAny = await this._ols('classes', {
-        search: label,
-        exactMatch: 'true',
-        includeObsoleteEntities: 'true',
-        size: 2
-      }).then(r => r.elements || []);
+      const exactAny = await this._findClassesByExactFields(label, 'true');
       all = [...exactAny];
+    }
+
+    if (all.length === 0) {
+      all = await this._uniqueRelaxedClassSearch(label);
     }
 
     // Deduplicate
@@ -197,13 +255,15 @@ export class ICTVApi {
       variants.push(raw.toLowerCase());
     }
     for (const search of Array.from(new Set(variants))) {
-      const res = await this._ols('classes', {
-        search,
-        exactMatch: 'false',
-        includeObsoleteEntities: 'false',
-        size: 2
-      });
-      if (Number(res.totalElements || 0) === 1) return res.elements || [];
+      try {
+        const res = await this._ols('classes', {
+          search,
+          exactMatch: 'false',
+          includeObsoleteEntities: 'false',
+          size: 2
+        });
+        if (Number(res.totalElements || 0) === 1) return res.elements || [];
+      } catch { /* ignore fallback query failures */ }
     }
     return [];
   }
@@ -221,25 +281,29 @@ export class ICTVApi {
   }
 
   async _findIndividualsAndResolveParents(labelOrSynonym) {
-    const allInds = await this._ols('individuals', {
+    const baseParams = {
       search: labelOrSynonym,
       exactMatch: 'true',
       includeObsoleteEntities: 'false',
-      size: 2
-    }).then(r => r.elements || []);
-    const seenIri = new Set();
-    const parents = [];
+      size: 20
+    };
+    const [byLabel, bySynonyms] = await Promise.all([
+      this._olsElementsOrEmpty('individuals', { ...baseParams, searchFields: 'label' }),
+      this._olsElementsOrEmpty('individuals', { ...baseParams, searchFields: 'synonyms' })
+    ]);
+    const allInds = [...byLabel, ...bySynonyms];
 
-    for (const ind of allInds) {
-      const pIri = this._firstOrNull(ind.directParent);
-      if (!pIri || seenIri.has(pIri)) continue;
-      seenIri.add(pIri);
-      try {
-        const parent = await this.getEntityByIri(pIri);
-        if (parent && parent['http://purl.org/dc/terms/identifier']) parents.push(parent);
-      } catch { /* ignore */ }
+    const parentIris = Array.from(new Set(
+      allInds.map(ind => this._firstOrNull(ind.directParent)).filter(Boolean)
+    ));
+    if (parentIris.length !== 1) return [];
+
+    try {
+      const parent = await this.getEntityByIri(parentIris[0]);
+      return parent && parent['http://purl.org/dc/terms/identifier'] ? [parent] : [];
+    } catch {
+      return [];
     }
-    return parents;
   }
 
   /* -------------------- mapping to normalized object -------------------- */
@@ -415,10 +479,10 @@ export class ICTVApi {
       }
     }
      
-    // 4) label/synonym (classes first)
-    const classes = await this._findClassesByLabelConservative(trimmed);
-    if (classes.length) {
-      base = classes.sort(
+    // 4) individuals -> parent class
+    const parents = await this._findIndividualsAndResolveParents(trimmed);
+    if (parents.length) {
+      base = parents.sort(
         (a, b) =>
           this._parseMslNum(b['http://www.w3.org/2002/07/owl#versionInfo']) -
           this._parseMslNum(a['http://www.w3.org/2002/07/owl#versionInfo'])
@@ -426,10 +490,10 @@ export class ICTVApi {
       return { base, suggestions };
     }
 
-    // 5) then individuals -> parent class
-    const parents = await this._findIndividualsAndResolveParents(trimmed);
-    if (parents.length) {
-      base = parents.sort(
+    // 5) label/synonym classes
+    const classes = await this._findClassesByLabelConservative(trimmed);
+    if (classes.length) {
+      base = classes.sort(
         (a, b) =>
           this._parseMslNum(b['http://www.w3.org/2002/07/owl#versionInfo']) -
           this._parseMslNum(a['http://www.w3.org/2002/07/owl#versionInfo'])
