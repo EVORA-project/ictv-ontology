@@ -184,6 +184,22 @@ export class ICTVApi {
     return this._entityTextValues(e).some(v => this._normText(v) === wanted);
   }
 
+  _entityMatchesIctvId(e, ictvId) {
+    const wanted = String(ictvId ?? '').trim().toUpperCase();
+    if (!wanted) return false;
+    const rawValues = [
+      e['http://purl.org/dc/terms/identifier'],
+      e.shortForm,
+      e.curie,
+      e.ictv_id,
+      e.iri
+    ];
+    return rawValues.some(v => {
+      const text = String(v ?? '').trim().toUpperCase();
+      return text === wanted || text.endsWith(`/${wanted}`);
+    });
+  }
+
   async _olsElementsOrEmpty(endpoint, params, filter = null) {
     try {
       const res = await this._ols(endpoint, params);
@@ -269,15 +285,25 @@ export class ICTVApi {
   }
 
   async _getClassesByIdentifier(ictvId) {
-    const curr = await this._ols('classes', {
-      'http://purl.org/dc/terms/identifier': ictvId,
-      isObsolete: 'false'
-    }).then(r => r.elements || []);
-    const obs = await this._ols('classes', {
-      'http://purl.org/dc/terms/identifier': ictvId,
-      isObsolete: 'true'
-    }).then(r => r.elements || []);
-    return [...curr, ...obs];
+    const filter = e => this._entityMatchesIctvId(e, ictvId);
+    const baseParams = {
+      search: ictvId,
+      searchFields: 'shortForm',
+      exactMatch: 'true',
+      size: 100
+    };
+    const [current, all] = await Promise.all([
+      this._olsElementsOrEmpty('classes', {
+        ...baseParams,
+        includeObsoleteEntities: 'false'
+      }, filter),
+      this._olsElementsOrEmpty('classes', {
+        ...baseParams,
+        includeObsoleteEntities: 'true'
+      }, filter)
+    ]);
+    const obsolete = all.filter(e => e.isObsolete === true);
+    return this._dedupeByIri([...current, ...obsolete]);
   }
 
   async _findIndividualsAndResolveParents(labelOrSynonym) {
