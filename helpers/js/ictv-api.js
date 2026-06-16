@@ -242,21 +242,6 @@ export class ICTVApi {
     // Deduplicate
     const uniq = await this._dedupeByIri(all);
 
-    // Try fuzzy normalization (e.g. SARSCoV → SARS-CoV)
-    if (uniq.length === 0 && /sars/i.test(label)) {
-        const relaxed = label.replace(/[-_\s]+/g, '').toLowerCase();
-        const fuzzy = (await this._ols('classes', {
-          search: 'SARS',
-          exactMatch: 'false',
-          includeObsoleteEntities: 'false'
-        }).then(r => r.elements || []))
-        .filter(e => {
-            const l = String(this._firstOrNull(e.label) || '').toLowerCase().replace(/[-_\s]+/g, '');
-            return l.includes(relaxed);
-        });
-        return this._dedupeByIri(fuzzy);
-    }
-
     return uniq;
   }
 
