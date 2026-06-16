@@ -193,6 +193,25 @@ class ICTVOLSClient {
         return false;
     }
 
+    private function entityMatchesIctvId($entity, $ictvId) {
+        $wanted = strtoupper(trim((string)($ictvId ?? '')));
+        if ($wanted === '') return false;
+        $rawValues = [
+            $entity["http://purl.org/dc/terms/identifier"] ?? null,
+            $entity['shortForm'] ?? null,
+            $entity['curie'] ?? null,
+            $entity['ictv_id'] ?? null,
+            $entity['iri'] ?? null,
+        ];
+        foreach ($rawValues as $value) {
+            $text = strtoupper(trim((string)($value ?? '')));
+            if ($text === $wanted || substr($text, -strlen('/' . $wanted)) === '/' . $wanted) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /* -------------------- Input resolution (tunable) -------------------- */
     /**
      * Resolve any input (IRI, ICTV ID, NCBI TaxID, label/synonym, individual) to current/obsolete entity.
@@ -457,15 +476,36 @@ class ICTVOLSClient {
     }
 
     private function seekOntologyTaxonByClassId($id) {
-        $curr = $this->seekOntologyTaxon('classes', [
-            "http://purl.org/dc/terms/identifier" => $id,
-            "isObsolete" => "false"
-        ]) ?: [];
-        $obs  = $this->seekOntologyTaxon('classes', [
-            "http://purl.org/dc/terms/identifier" => $id,
-            "isObsolete" => "true"
-        ]) ?: [];
-        return array_merge($curr, $obs);
+        $baseParams = [
+            "search" => $id,
+            "searchFields" => "shortForm",
+            "exactMatch" => "true",
+            "size" => 100,
+        ];
+        $current = array_values(array_filter(
+            $this->seekOntologyTaxon('classes', array_merge($baseParams, [
+                "includeObsoleteEntities" => "false"
+            ])) ?: [],
+            fn($e) => $this->entityMatchesIctvId($e, $id)
+        ));
+        $allMatches = array_values(array_filter(
+            $this->seekOntologyTaxon('classes', array_merge($baseParams, [
+                "includeObsoleteEntities" => "true"
+            ])) ?: [],
+            fn($e) => $this->entityMatchesIctvId($e, $id)
+        ));
+        $obsolete = array_values(array_filter($allMatches, fn($e) => ($e['isObsolete'] ?? null) === true));
+
+        $seen = [];
+        $out = [];
+        foreach (array_merge($current, $obsolete) as $e) {
+            $key = $e['iri'] ?? (($e["http://purl.org/dc/terms/identifier"] ?? '') . '|' . ($e["http://www.w3.org/2002/07/owl#versionInfo"] ?? ''));
+            if (!isset($seen[$key])) {
+                $seen[$key] = true;
+                $out[] = $e;
+            }
+        }
+        return $out;
     }
 
     private function seekOntologyTaxonByExactClassFields($text, $includeObsolete) {

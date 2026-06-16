@@ -166,6 +166,23 @@ class ICTVOLSClient:
         wanted = self.normText(query)
         return any(self.normText(v) == wanted for v in self.entityTextValues(entity))
 
+    def entityMatchesIctvId(self, entity: Dict[str, Any], ictvId: str) -> bool:
+        wanted = str(ictvId or '').strip().upper()
+        if not wanted:
+            return False
+        raw_values = [
+            entity.get("http://purl.org/dc/terms/identifier"),
+            entity.get("shortForm"),
+            entity.get("curie"),
+            entity.get("ictv_id"),
+            entity.get("iri"),
+        ]
+        for value in raw_values:
+            text = str(value or '').strip().upper()
+            if text == wanted or text.endswith(f"/{wanted}"):
+                return True
+        return False
+
     # -------------------- Input resolution (tunable) --------------------
     def resolveToLatest(self, inputRaw: Any, options: Dict[str, bool] = None) -> Dict[str, Any]:
         if options is None:
@@ -405,13 +422,38 @@ class ICTVOLSClient:
             return []
 
     def seekOntologyTaxonByClassId(self, id_: str) -> List[Dict[str, Any]]:
-        curr = self.seekOntologyTaxon('classes', {
-            "http://purl.org/dc/terms/identifier": id_, "isObsolete": "false"
-        }) or []
-        obs = self.seekOntologyTaxon('classes', {
-            "http://purl.org/dc/terms/identifier": id_, "isObsolete": "true"
-        }) or []
-        return curr + obs
+        base_params = {
+            "search": id_,
+            "searchFields": "shortForm",
+            "exactMatch": "true",
+            "size": 100,
+        }
+        current = [
+            e for e in (self.seekOntologyTaxon('classes', {
+                **base_params,
+                "includeObsoleteEntities": "false"
+            }) or [])
+            if self.entityMatchesIctvId(e, id_)
+        ]
+        all_matches = [
+            e for e in (self.seekOntologyTaxon('classes', {
+                **base_params,
+                "includeObsoleteEntities": "true"
+            }) or [])
+            if self.entityMatchesIctvId(e, id_)
+        ]
+        obsolete = [e for e in all_matches if e.get("isObsolete") is True]
+
+        seen = set()
+        out: List[Dict[str, Any]] = []
+        for e in current + obsolete:
+            key = e.get("iri") or (
+                f"{e.get('http://purl.org/dc/terms/identifier')}|{e.get('http://www.w3.org/2002/07/owl#versionInfo')}"
+            )
+            if key not in seen:
+                seen.add(key)
+                out.append(e)
+        return out
 
     def seekOntologyTaxonByExactClassFields(self, text: str, include_obsolete: str) -> List[Dict[str, Any]]:
         results: List[Dict[str, Any]] = []
