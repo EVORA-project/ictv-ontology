@@ -21,6 +21,7 @@
 - [Direct OLS API access](#-advanced-direct-ols-api-access)
 - [Common use cases](#-common-use-cases-with-examples)
 - [Response structure](#-response-structure-and-navigation)
+- [Citation](#citation)
 - [Related resources](#-related-resources)
 - [Support & feedback](#-support--feedback)
 
@@ -53,6 +54,16 @@ This is useful for:
 - **ICTV ontology API metadata endpoint:** [https://www.ebi.ac.uk/ols4/api/ontologies/ictv](https://www.ebi.ac.uk/ols4/api/ontologies/ictv)
 
 The ICTV OLS API follows REST principles and returns JSON responses, making it accessible from any programming language or environment that can make HTTP requests.
+
+## Citation
+
+If you use the ICTV Ontology, ICTV API documentation, or helper libraries, please cite:
+
+> Programmatic access to ICTV virus taxonomy through a public ontology API
+>
+> Philippe Lieutaud, James McLaughlin, R. Curtis Hendrickson, Romain David, Helen Parkinson, Elliot J. Lefkowitz, Donald M. Dempsey, Bruno Coutard
+>
+> bioRxiv 2026.06.16.732600; doi: https://doi.org/10.64898/2026.06.16.732600
 
 ---
 

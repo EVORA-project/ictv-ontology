@@ -26,6 +26,18 @@ The ontology is publicly accessible via the Ontology Lookup Service (OLS):
 
 ---
 
+## Citation
+
+If you use the ICTV Ontology, API documentation, or helper libraries, please cite:
+
+> Programmatic access to ICTV virus taxonomy through a public ontology API
+>
+> Philippe Lieutaud, James McLaughlin, R. Curtis Hendrickson, Romain David, Helen Parkinson, Elliot J. Lefkowitz, Donald M. Dempsey, Bruno Coutard
+>
+> bioRxiv 2026.06.16.732600; doi: https://doi.org/10.64898/2026.06.16.732600
+
+---
+
 ## 🔎 Using the ICTV API
 
 While OLS provides ontology access through standardised REST API, this repository also provides documentation on how to use the ICTV OLS API directly for taxonomic term resolution, and **ready-to-use helper libraries for practical API usage** (name resolution, obsolete taxa handling, lineage, ICTV ↔ NCBI mapping, etc.).
