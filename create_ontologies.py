@@ -14,6 +14,7 @@ from rdflib.namespace import OWL, RDFS, RDF, PROV, FOAF, SKOS
 import pandas as pd
 import os
 import json
+import io
 import re
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
@@ -36,6 +37,7 @@ HAD_REVISION = "http://www.w3.org/ns/prov#hadRevision"
 
 
 ontology_iri = f'http://ictv.global/'
+ICTV_TSV_NULL_FIELD_RE = re.compile(r'(^|\t)\\N(?=\t|\r?\n|$)', re.MULTILINE)
 
 # taxnode_id: Taxon within a specific release
 # ictv_id: Taxon across releases
@@ -43,12 +45,31 @@ ontology_iri = f'http://ictv.global/'
 # All ictv_ids are taxnode_ids but not all taxnode_ids are ictv_ids
 # 
 
+def read_ictv_tsv(path, **kwargs):
+    with open(path, encoding='utf-8', newline='') as f:
+        content = f.read()
+
+    # With escapechar enabled, pandas strips the backslash from unquoted \N values.
+    content = ICTV_TSV_NULL_FIELD_RE.sub(r'\1', content)
+
+    read_csv_kwargs = {
+        'sep': '\t',
+        'dtype': str,
+        'escapechar': '\\',
+        'keep_default_na': True,
+        'na_values': ['NULL'],
+    }
+    read_csv_kwargs.update(kwargs)
+
+    return pd.read_csv(io.StringIO(content), **read_csv_kwargs)
+
+
 def main():
 
     common_graph = rdflib.Graph()
     common_graph.parse('imported_terms.ttl', format='ttl')
     
-    nodes = pd.read_csv('data/taxonomy_node_export.utf8.txt', sep='\t', on_bad_lines=lambda x: x[:-1], engine='python', dtype=str)
+    nodes = read_ictv_tsv('data/taxonomy_node_export.utf8.txt', on_bad_lines=lambda x: x[:-1], engine='python')
 
     releases = nodes[(nodes['level_id'] == '100') & (nodes['name'] != 'empty_tree')]
 
@@ -186,9 +207,9 @@ def build_ontology_for_release(release):
 
     print(f'Creating ontology for ICTV release {release['name']}')
 
-    nodes = pd.read_csv('data/taxonomy_node_export.utf8.txt', sep='\t', on_bad_lines=lambda x: x[:-1], engine='python', dtype=str)
-    delta = pd.read_csv('data/taxonomy_node_delta.utf8.txt', sep='\t', dtype=str)
-    isolates = pd.read_csv('data/species_isolates.utf8.txt', sep='\t', dtype=str)
+    nodes = read_ictv_tsv('data/taxonomy_node_export.utf8.txt', on_bad_lines=lambda x: x[:-1], engine='python')
+    delta = read_ictv_tsv('data/taxonomy_node_delta.utf8.txt')
+    isolates = read_ictv_tsv('data/species_isolates.utf8.txt')
 
     taxnode_id_to_ictv_id = {}
     for node in nodes.itertuples():
