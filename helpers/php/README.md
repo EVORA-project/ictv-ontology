@@ -117,7 +117,7 @@ Some helpers (like `enrichLineage`) add:
 
 ### 5.1 `resolveToLatest($inputRaw, array $options = [...])`
 
-Resolve any input (ICTV ID, IRI, label, synonym, NCBI taxid, individual) to the latest ICTV taxon.
+Resolve any input (ICTV or VMR ID, IRI, label, synonym, NCBI taxid, individual) to the latest ICTV taxon.
 
 ```php
 $result = $client->resolveToLatest('Zika virus');
@@ -173,6 +173,7 @@ $result = $client->resolveToLatest('Zika virus');
 #### Input formats supported
 
 - ICTV ID: `"ICTV19990695"`  
+- VMR ID: `"VMR1011389"`  
 - ICTV IRI: `"http://ictv.global/id/MSL22/ICTV20040588"`  
 - Label / former taxon name / virus name: `"Tehran virus"`  
 - NCBI taxid: `"64320"` or `"ncbitaxon:64320"`  

@@ -101,7 +101,7 @@ All async methods below return Promises and may throw network errors if the API 
 
 ### 5.1 resolveToLatest(input)
 
-Resolves any ICTV ID, label, synonym, virus name, NCBI taxid, or IRI, to the current ICTV taxon, following replacement chains if necessary.
+Resolves any ICTV or VMR ID, label, synonym, virus name, NCBI taxid, or IRI, to the current ICTV taxon, following replacement chains if necessary.
 
 Possible return structures include:
 - current ICTV taxon
@@ -115,6 +115,8 @@ const res = await api.resolveToLatest("Zika virus");
 #### Input formats supported
 
 * ICTV ID: e.g. "ICTV19990695"
+
+* VMR ID: e.g. "VMR1011389"
 
 * ICTV IRI: e.g. "http://ictv.global/id/MSL22/ICTV20040588"
 
@@ -265,10 +267,11 @@ resolveToLatest() and getHistory() use a conservative resolution strategy:
 
 1. Direct ICTV IRI: if the input looks like an ICTV IRI, it is resolved directly.  
 2. ICTV ID: if it matches ICTV\d+, the helper queries classes by identifier.
-3. NCBI Taxon ID: if it looks like a taxid (1234 or ncbitaxon:1234), it resolves via SSSOM mappings.
-4. Class name / synonym: the helper searches matching ICTV classes.
-5. Individuals -> parent class: if class lookup fails, some virus names exist as individuals; in that case, the helper resolves the parent taxon.
-6. Suggestions: if nothing is found, the helper uses the OLS suggest API to propose alternative labels.
+3. VMR ID: if it matches VMR\d+, the helper queries individuals and resolves their parent taxon.
+4. NCBI Taxon ID: if it looks like a taxid (1234 or ncbitaxon:1234), it resolves via SSSOM mappings.
+5. Individuals -> parent class: virus names and synonyms stored as individuals resolve to their parent taxon.
+6. Class name / synonym: the helper searches matching ICTV classes.
+7. Suggestions: if nothing is found, the helper uses the OLS suggest API to propose alternative labels.
 
 ## 7. Error handling
 

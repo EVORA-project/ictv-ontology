@@ -35,7 +35,10 @@ export class ICTVApi {
   _isUrlLike(v) { return typeof v === 'string' && /^https?:\/\//i.test(v); }
   _parseMslNum(msl) { const m = /MSL(\d+)/i.exec(msl || ''); return m ? parseInt(m[1], 10) : -1; }
   _isIctvId(s) { return /^ICTV\d{5,}$/i.test(String(s).trim()); }
-  _isIctvIri(s) { return /^https?:\/\/ictv\.global\/id\/MSL\d+\/ICTV\d+/i.test(String(s).trim()); }
+  _isVmrId(s) { return /^VMR\d+$/i.test(String(s).trim()); }
+  _isIctvIri(s) {
+    return /^https?:\/\/ictv\.global\/id\/(?:MSL\d+\/ICTV\d+|VMR\d+)/i.test(String(s).trim());
+  }
   _asIctvIriFromCurie(curie) {
     const m = /^ictv:([^/]+)\/([^/]+)$/i.exec(curie || '');
     return m ? `http://ictv.global/id/${m[1]}/${m[2]}` : null;
@@ -200,6 +203,15 @@ export class ICTVApi {
     });
   }
 
+  _entityMatchesVmrId(e, vmrId) {
+    const wanted = String(vmrId ?? '').trim().toUpperCase();
+    if (!wanted) return false;
+    return [e.shortForm, e.curie, e.iri].some(v => {
+      const text = String(v ?? '').trim().toUpperCase();
+      return text === wanted || text.endsWith(`/${wanted}`);
+    });
+  }
+
   async _olsElementsOrEmpty(endpoint, params, filter = null) {
     try {
       const res = await this._ols(endpoint, params);
@@ -208,6 +220,18 @@ export class ICTVApi {
     } catch {
       return [];
     }
+  }
+
+  async _olsElementsByFirstMatchingField(endpoint, params, searchFields, filter) {
+    for (const field of searchFields) {
+      const elements = await this._olsElementsOrEmpty(
+        endpoint,
+        { ...params, searchFields: field },
+        filter
+      );
+      if (elements.length > 0) return elements;
+    }
+    return [];
   }
 
   async _findClassesByExactFields(label, includeObsoleteEntities) {
@@ -220,7 +244,12 @@ export class ICTVApi {
     const filter = e => this._entityMatchesTextExactly(e, label);
     const [byLabel, bySynonyms] = await Promise.all([
       this._olsElementsOrEmpty('classes', { ...baseParams, searchFields: 'label' }, filter),
-      this._olsElementsOrEmpty('classes', { ...baseParams, searchFields: 'synonyms' }, filter)
+      this._olsElementsByFirstMatchingField(
+        'classes',
+        baseParams,
+        ['synonyms', 'synonym'],
+        filter
+      )
     ]);
     return [...byLabel, ...bySynonyms];
   }
@@ -291,21 +320,9 @@ export class ICTVApi {
     return this._dedupeByIri([...current, ...obsolete]);
   }
 
-  async _findIndividualsAndResolveParents(labelOrSynonym) {
-    const baseParams = {
-      search: labelOrSynonym,
-      exactMatch: 'true',
-      includeObsoleteEntities: 'false',
-      size: 20
-    };
-    const [byLabel, bySynonyms] = await Promise.all([
-      this._olsElementsOrEmpty('individuals', { ...baseParams, searchFields: 'label' }),
-      this._olsElementsOrEmpty('individuals', { ...baseParams, searchFields: 'synonyms' })
-    ]);
-    const allInds = [...byLabel, ...bySynonyms];
-
+  async _resolveIndividualParents(individuals) {
     const parentIris = Array.from(new Set(
-      allInds.map(ind => this._firstOrNull(ind.directParent)).filter(Boolean)
+      individuals.map(ind => this._firstOrNull(ind.directParent)).filter(Boolean)
     ));
     if (parentIris.length !== 1) return [];
 
@@ -315,6 +332,37 @@ export class ICTVApi {
     } catch {
       return [];
     }
+  }
+
+  async _findIndividualByIdentifierAndResolveParent(vmrId) {
+    const individuals = await this._olsElementsOrEmpty('individuals', {
+      search: vmrId,
+      searchFields: 'shortForm',
+      exactMatch: 'true',
+      includeObsoleteEntities: 'false',
+      size: 20
+    }, e => this._entityMatchesVmrId(e, vmrId));
+    return this._resolveIndividualParents(individuals);
+  }
+
+  async _findIndividualsAndResolveParents(labelOrSynonym) {
+    const baseParams = {
+      search: labelOrSynonym,
+      exactMatch: 'true',
+      includeObsoleteEntities: 'false',
+      size: 20
+    };
+    const filter = e => this._entityMatchesTextExactly(e, labelOrSynonym);
+    const [byLabel, bySynonyms] = await Promise.all([
+      this._olsElementsOrEmpty('individuals', { ...baseParams, searchFields: 'label' }, filter),
+      this._olsElementsByFirstMatchingField(
+        'individuals',
+        baseParams,
+        ['synonyms', 'synonym'],
+        filter
+      )
+    ]);
+    return this._resolveIndividualParents([...byLabel, ...bySynonyms]);
   }
 
   /* -------------------- mapping to normalized object -------------------- */
@@ -470,7 +518,16 @@ export class ICTVApi {
       }
     }
 
-    // 3) NCBI taxid or ncbitaxon:####
+    // 3) VMR individual ID (e.g., VMR1011389)
+    if (this._isVmrId(trimmed)) {
+      const parents = await this._findIndividualByIdentifierAndResolveParent(trimmed);
+      if (parents.length) {
+        base = parents[0];
+        return { base, suggestions };
+      }
+    }
+
+    // 4) NCBI taxid or ncbitaxon:####
     if (/^\d+$/.test(trimmed) || /^ncbitaxon:\d+$/i.test(trimmed)) {
       const hits = await this.getIctvFromNcbi(trimmed);
       if (hits.length) {
@@ -486,7 +543,7 @@ export class ICTVApi {
       }
     }
      
-    // 4) individuals -> parent class
+    // 5) individuals -> parent class
     const parents = await this._findIndividualsAndResolveParents(trimmed);
     if (parents.length) {
       base = parents.sort(
@@ -497,7 +554,7 @@ export class ICTVApi {
       return { base, suggestions };
     }
 
-    // 5) label/synonym classes
+    // 6) label/synonym classes
     const classes = await this._findClassesByLabelConservative(trimmed);
     if (classes.length) {
       base = classes.sort(
@@ -508,7 +565,7 @@ export class ICTVApi {
       return { base, suggestions };
     }
 
-    // 6) nothing → suggest terms
+    // 7) nothing → suggest terms
     suggestions = await this._getSuggestions(trimmed);
     return { base: null, suggestions };
   }

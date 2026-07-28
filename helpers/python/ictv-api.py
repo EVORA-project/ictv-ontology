@@ -71,8 +71,15 @@ class ICTVOLSClient:
     def isIctvId(self, s: str) -> bool:
         return bool(re.match(r'^ICTV\d{5,}$', s.strip(), flags=re.IGNORECASE))
 
+    def isVmrId(self, s: str) -> bool:
+        return bool(re.match(r'^VMR\d+$', s.strip(), flags=re.IGNORECASE))
+
     def isIctvIri(self, s: str) -> bool:
-        return bool(re.match(r'^https?://ictv\.global/id/MSL\d+/ICTV\d+', s.strip(), flags=re.IGNORECASE))
+        return bool(re.match(
+            r'^https?://ictv\.global/id/(?:MSL\d+/ICTV\d+|VMR\d+)',
+            s.strip(),
+            flags=re.IGNORECASE
+        ))
 
     def _cache_key(self, endpoint: str, params: Dict[str, Any]) -> str:
         # stable key independent of param order
@@ -183,6 +190,16 @@ class ICTVOLSClient:
                 return True
         return False
 
+    def entityMatchesVmrId(self, entity: Dict[str, Any], vmrId: str) -> bool:
+        wanted = str(vmrId or '').strip().upper()
+        if not wanted:
+            return False
+        for value in (entity.get('shortForm'), entity.get('curie'), entity.get('iri')):
+            text = str(value or '').strip().upper()
+            if text == wanted or text.endswith(f"/{wanted}"):
+                return True
+        return False
+
     # -------------------- Input resolution (tunable) --------------------
     def resolveToLatest(self, inputRaw: Any, options: Dict[str, bool] = None) -> Dict[str, Any]:
         if options is None:
@@ -200,7 +217,13 @@ class ICTVOLSClient:
         if isinstance(input_val, str) and self.isIctvId(input_val):
             return self._resolveEntityById(input_val, options)
 
-        # 3) NCBI TaxID
+        # 3) VMR individual ID
+        if isinstance(input_val, str) and self.isVmrId(input_val):
+            parents = self.seekOntologyTaxonByIndividualId(input_val)
+            if parents:
+                return self._resolveEntityByIri(parents[0]['iri'], options)
+
+        # 4) NCBI TaxID
         if isinstance(input_val, str) and (input_val.isdigit() or re.match(r'^ncbitaxon:\d+$', input_val, re.I)):
             hits = self.ncbiMapper.getIctvFromNcbi(input_val)
             if hits:
@@ -212,19 +235,19 @@ class ICTVOLSClient:
                 iri = f"http://ictv.global/id/{best['h']['msl']}/{best['h']['ictv_id']}"
                 return self._resolveEntityByIri(iri, options)
 
-        # 4) individuals -> parent class
+        # 5) individuals -> parent class
         parents = self.seekOntologyTaxonByIndividual(input_val)
         if parents:
             sorted_cands = self.sortCandidates(parents)
             return self._resolveEntityByIri(sorted_cands[0]['iri'], options)
 
-        # 5) label / synonym classes
+        # 6) label / synonym classes
         found = self.seekOntologyTaxonByClassLabel(input_val) or self.seekOntologyTaxonByUniqueRelaxedSearch(input_val)
         if found:
             sorted_cands = self.sortCandidates(found)
             return self._resolveEntityByIri(sorted_cands[0]['iri'], options)
 
-        # 6) suggestions fallback
+        # 7) suggestions fallback
         return {
             'status': 'not-found',
             'input': input_val,
@@ -457,17 +480,21 @@ class ICTVOLSClient:
 
     def seekOntologyTaxonByExactClassFields(self, text: str, include_obsolete: str) -> List[Dict[str, Any]]:
         results: List[Dict[str, Any]] = []
-        for field in ("label", "synonyms"):
-            results.extend([
-                e for e in (self.seekOntologyTaxon('classes', {
-                    "search": text,
-                    "searchFields": field,
-                    "exactMatch": "true",
-                    "includeObsoleteEntities": include_obsolete,
-                    "size": 20
-                }) or [])
-                if self.entityMatchesTextExactly(e, text)
-            ])
+        for fields in (("label",), ("synonyms", "synonym")):
+            for field in fields:
+                hits = [
+                    e for e in (self.seekOntologyTaxon('classes', {
+                        "search": text,
+                        "searchFields": field,
+                        "exactMatch": "true",
+                        "includeObsoleteEntities": include_obsolete,
+                        "size": 20
+                    }) or [])
+                    if self.entityMatchesTextExactly(e, text)
+                ]
+                if hits:
+                    results.extend(hits)
+                    break
         return results
 
     def seekOntologyTaxonByClassLabel(self, label: str) -> List[Dict[str, Any]]:
@@ -476,16 +503,20 @@ class ICTVOLSClient:
         return curr + obs
 
     def seekOntologyTaxonBySynonym(self, synonym: str) -> List[Dict[str, Any]]:
-        return [
-            e for e in (self.seekOntologyTaxon('classes', {
-                "search": synonym,
-                "searchFields": "synonyms",
-                "exactMatch": "true",
-                "includeObsoleteEntities": "true",
-                "size": 20
-            }) or [])
-            if self.entityMatchesTextExactly(e, synonym)
-        ]
+        for field in ("synonyms", "synonym"):
+            hits = [
+                e for e in (self.seekOntologyTaxon('classes', {
+                    "search": synonym,
+                    "searchFields": field,
+                    "exactMatch": "true",
+                    "includeObsoleteEntities": "true",
+                    "size": 20
+                }) or [])
+                if self.entityMatchesTextExactly(e, synonym)
+            ]
+            if hits:
+                return hits
+        return []
 
     def seekOntologyTaxonByUniqueRelaxedSearch(self, label: str) -> List[Dict[str, Any]]:
         raw = str(label).strip()
@@ -511,19 +542,10 @@ class ICTVOLSClient:
                 pass
         return []
 
-    def seekOntologyTaxonByIndividual(self, labelOrSyn: str) -> List[Dict[str, Any]]:
-        all_inds: List[Dict[str, Any]] = []
-        for field in ("label", "synonyms"):
-            all_inds.extend(self.seekOntologyTaxon('individuals', {
-                'search': labelOrSyn,
-                'searchFields': field,
-                'exactMatch': 'true',
-                'includeObsoleteEntities': 'false',
-                'size': 20
-            }) or [])
+    def _resolveIndividualParents(self, individuals: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         parent_iris = []
         seen = set()
-        for ind in all_inds:
+        for ind in individuals:
             p_iri = self.normalizeValue(ind.get('directParent'))
             if p_iri and p_iri not in seen:
                 seen.add(p_iri)
@@ -531,10 +553,42 @@ class ICTVOLSClient:
         if len(parent_iris) != 1:
             return []
         try:
-            p = self.retrieveTaxonByIRI(parent_iris[0])
-            return [p] if p and p.get("http://purl.org/dc/terms/identifier") else []
+            parent = self.retrieveTaxonByIRI(parent_iris[0])
+            return [parent] if parent and parent.get("http://purl.org/dc/terms/identifier") else []
         except Exception:
             return []
+
+    def seekOntologyTaxonByIndividualId(self, vmrId: str) -> List[Dict[str, Any]]:
+        individuals = [
+            e for e in (self.seekOntologyTaxon('individuals', {
+                'search': vmrId,
+                'searchFields': 'shortForm',
+                'exactMatch': 'true',
+                'includeObsoleteEntities': 'false',
+                'size': 20
+            }) or [])
+            if self.entityMatchesVmrId(e, vmrId)
+        ]
+        return self._resolveIndividualParents(individuals)
+
+    def seekOntologyTaxonByIndividual(self, labelOrSyn: str) -> List[Dict[str, Any]]:
+        all_inds: List[Dict[str, Any]] = []
+        for fields in (("label",), ("synonyms", "synonym")):
+            for field in fields:
+                hits = [
+                    e for e in (self.seekOntologyTaxon('individuals', {
+                        'search': labelOrSyn,
+                        'searchFields': field,
+                        'exactMatch': 'true',
+                        'includeObsoleteEntities': 'false',
+                        'size': 20
+                    }) or [])
+                    if self.entityMatchesTextExactly(e, labelOrSyn)
+                ]
+                if hits:
+                    all_inds.extend(hits)
+                    break
+        return self._resolveIndividualParents(all_inds)
 
     def sortCandidates(self, arr: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         def msl_num(el: Dict[str, Any]) -> int:

@@ -68,8 +68,12 @@ class ICTVOLSClient {
         return preg_match('/^ICTV\d{5,}$/i', trim($s));
     }
 
+    private function isVmrId($s) {
+        return preg_match('/^VMR\d+$/i', trim($s));
+    }
+
     private function isIctvIri($s) {
-        return preg_match('#^https?://ictv\.global/id/MSL\d+/ICTV\d+#i', trim($s));
+        return preg_match('#^https?://ictv\.global/id/(?:MSL\d+/ICTV\d+|VMR\d+)#i', trim($s));
     }
 
     private function buildUrl($base, $params = []) {
@@ -212,6 +216,18 @@ class ICTVOLSClient {
         return false;
     }
 
+    private function entityMatchesVmrId($entity, $vmrId) {
+        $wanted = strtoupper(trim((string)($vmrId ?? '')));
+        if ($wanted === '') return false;
+        foreach ([$entity['shortForm'] ?? null, $entity['curie'] ?? null, $entity['iri'] ?? null] as $value) {
+            $text = strtoupper(trim((string)($value ?? '')));
+            if ($text === $wanted || substr($text, -strlen('/' . $wanted)) === '/' . $wanted) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /* -------------------- Input resolution (tunable) -------------------- */
     /**
      * Resolve any input (IRI, ICTV ID, NCBI TaxID, label/synonym, individual) to current/obsolete entity.
@@ -244,7 +260,15 @@ class ICTVOLSClient {
             return $this->resolveEntityById($input, $options);
         }
 
-        // 3) NCBI TaxID
+        // 3) VMR individual ID
+        if ($this->isVmrId($input)) {
+            $parents = $this->seekOntologyTaxonByIndividualId($input);
+            if ($parents) {
+                return $this->resolveEntityByIri($parents[0]['iri'], $options);
+            }
+        }
+
+        // 4) NCBI TaxID
         if (ctype_digit($input) || preg_match('/^ncbitaxon:\d+$/i', $input)) {
             $hits = $this->ncbiMapper->getIctvFromNcbi($input);
             if (!empty($hits)) {
@@ -257,14 +281,14 @@ class ICTVOLSClient {
                 return $this->resolveEntityByIri($iri, $options);
             }
         }
-        // 4) individuals -> parent class
+        // 5) individuals -> parent class
         $parents = $this->seekOntologyTaxonByIndividual($input);
         if ($parents) {
             $sorted = $this->sortCandidates($parents);
             return $this->resolveEntityByIri($sorted[0]['iri'], $options);
         }
 
-        // 5) label / synonym classes
+        // 6) label / synonym classes
         $found = $this->seekOntologyTaxonByClassLabel($input)
             ?: $this->seekOntologyTaxonByUniqueRelaxedSearch($input);
         if ($found) {
@@ -272,7 +296,7 @@ class ICTVOLSClient {
             return $this->resolveEntityByIri($sorted[0]['iri'], $options);
         }
 
-        // 6) suggestions fallback
+        // 7) suggestions fallback
         return [
             'status' => 'not-found',
             'input' => $input,
@@ -510,18 +534,23 @@ class ICTVOLSClient {
 
     private function seekOntologyTaxonByExactClassFields($text, $includeObsolete) {
         $results = [];
-        foreach (['label', 'synonyms'] as $field) {
-            $hits = $this->seekOntologyTaxon('classes', [
-                "search" => $text,
-                "searchFields" => $field,
-                "exactMatch" => "true",
-                "includeObsoleteEntities" => $includeObsolete,
-                "size" => 20
-            ]) ?: [];
-            $results = array_merge(
-                $results,
-                array_values(array_filter($hits, fn($e) => $this->entityMatchesTextExactly($e, $text)))
-            );
+        foreach ([['label'], ['synonyms', 'synonym']] as $fields) {
+            foreach ($fields as $field) {
+                $hits = array_values(array_filter(
+                    $this->seekOntologyTaxon('classes', [
+                        "search" => $text,
+                        "searchFields" => $field,
+                        "exactMatch" => "true",
+                        "includeObsoleteEntities" => $includeObsolete,
+                        "size" => 20
+                    ]) ?: [],
+                    fn($e) => $this->entityMatchesTextExactly($e, $text)
+                ));
+                if ($hits) {
+                    $results = array_merge($results, $hits);
+                    break;
+                }
+            }
         }
         return $results;
     }
@@ -533,13 +562,17 @@ class ICTVOLSClient {
     }
 
     private function seekOntologyTaxonBySynonym($synonym) {
-        return array_values(array_filter($this->seekOntologyTaxon('classes', [
-            "search" => $synonym,
-            "searchFields" => "synonyms",
-            "exactMatch" => "true",
-            "includeObsoleteEntities" => "true",
-            "size" => 20
-        ]) ?: [], fn($e) => $this->entityMatchesTextExactly($e, $synonym)));
+        foreach (['synonyms', 'synonym'] as $field) {
+            $hits = array_values(array_filter($this->seekOntologyTaxon('classes', [
+                "search" => $synonym,
+                "searchFields" => $field,
+                "exactMatch" => "true",
+                "includeObsoleteEntities" => "true",
+                "size" => 20
+            ]) ?: [], fn($e) => $this->entityMatchesTextExactly($e, $synonym)));
+            if ($hits) return $hits;
+        }
+        return [];
     }
 
     private function seekOntologyTaxonByUniqueRelaxedSearch($label) {
@@ -573,20 +606,10 @@ class ICTVOLSClient {
         return [];
     }
 
-    private function seekOntologyTaxonByIndividual($labelOrSyn) {
-        $all = [];
-        foreach (['label', 'synonyms'] as $field) {
-            $all = array_merge($all, $this->seekOntologyTaxon('individuals', [
-                'search' => $labelOrSyn,
-                'searchFields' => $field,
-                'exactMatch' => 'true',
-                'includeObsoleteEntities' => 'false',
-                'size' => 20
-            ]) ?: []);
-        }
+    private function resolveIndividualParents($individuals) {
         $parentIris = [];
         $seen = [];
-        foreach ($all as $ind) {
+        foreach ($individuals as $ind) {
             $pIri = $this->normalizeValue($ind['directParent'] ?? null);
             if ($pIri && !isset($seen[$pIri])) {
                 $seen[$pIri] = true;
@@ -595,11 +618,45 @@ class ICTVOLSClient {
         }
         if (count($parentIris) !== 1) return [];
         try {
-            $p = $this->retrieveTaxonByIRI($parentIris[0]);
-            return ($p && !empty($p["http://purl.org/dc/terms/identifier"])) ? [$p] : [];
+            $parent = $this->retrieveTaxonByIRI($parentIris[0]);
+            return ($parent && !empty($parent["http://purl.org/dc/terms/identifier"])) ? [$parent] : [];
         } catch (Exception $e) {
             return [];
         }
+    }
+
+    private function seekOntologyTaxonByIndividualId($vmrId) {
+        $individuals = array_values(array_filter($this->seekOntologyTaxon('individuals', [
+            'search' => $vmrId,
+            'searchFields' => 'shortForm',
+            'exactMatch' => 'true',
+            'includeObsoleteEntities' => 'false',
+            'size' => 20
+        ]) ?: [], fn($e) => $this->entityMatchesVmrId($e, $vmrId)));
+        return $this->resolveIndividualParents($individuals);
+    }
+
+    private function seekOntologyTaxonByIndividual($labelOrSyn) {
+        $all = [];
+        foreach ([['label'], ['synonyms', 'synonym']] as $fields) {
+            foreach ($fields as $field) {
+                $hits = array_values(array_filter(
+                    $this->seekOntologyTaxon('individuals', [
+                        'search' => $labelOrSyn,
+                        'searchFields' => $field,
+                        'exactMatch' => 'true',
+                        'includeObsoleteEntities' => 'false',
+                        'size' => 20
+                    ]) ?: [],
+                    fn($e) => $this->entityMatchesTextExactly($e, $labelOrSyn)
+                ));
+                if ($hits) {
+                    $all = array_merge($all, $hits);
+                    break;
+                }
+            }
+        }
+        return $this->resolveIndividualParents($all);
     }
 
     private function sortCandidates($arr) {
