@@ -1,6 +1,6 @@
 # ICTV Python API Helper (`ictv-api.py`)
 
-Lightweight Python helper to query the **ICTV Ontology API** (via OLS4) and resolve virus taxon names, historical ICTV identifiers, and NCBI Taxon IDs to the corresponding current ICTV taxon.
+Lightweight Python helper to query the **ICTV Ontology API** (via OLS4) and resolve virus taxon names, ICTV and VMR identifiers, and NCBI Taxon IDs to the corresponding current ICTV taxon.
 
 This is the Python counterpart of:
 

@@ -142,7 +142,7 @@ console.log(result);
 
 **Features:**
 
-- resolution of ICTV IDs, IRIs, taxon or virus labels, and synonyms
+- resolution of ICTV and VMR IDs, IRIs, taxon or virus labels, and synonyms
 - ICTV ↔ NCBI Taxon mapping
 - replacement chains and obsolete term resolution
 - taxon history retrieval
@@ -233,10 +233,10 @@ print_r($result);
 
 All three helper implementations follow the same general resolution strategy:
 
-1. recognize ICTV IRIs and identifiers
+1. recognize ICTV and VMR IRIs and identifiers
 2. optionally map NCBI Taxon identifiers to ICTV taxa
-3. search classes by label and synonym
-4. search individuals when needed and resolve them upward through their parent class
+3. search individuals by label or synonym and resolve them through their parent class
+4. search classes by label and synonym
 5. follow replacement chains when an entity is obsolete until final non-obsolete taxa are reached
 
 ### Normalized Output
