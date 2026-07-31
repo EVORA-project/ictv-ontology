@@ -322,19 +322,21 @@ The ICTV Ontology is exposed through two main sets of OLS endpoints:
 
 ### Use Case 1: Building a Local Cache of a former release
 
-If you want to retrieve all classes for one ICTV release, your code can query the `classes` endpoint while filtering by the release value stored in `owl:versionInfo`, with pagination and the includeObsoleteEntities set to true as all former releases terms are marked as obsolete.
+If you want to retrieve all classes for one ICTV release, query the `classes` endpoint for the release value stored in `owl:versionInfo`. Exact matching and obsolete entities must be enabled because classes from former releases are marked as obsolete.
 
 Example pattern:
 
 ```
-GET /api/v2/ontologies/ictv/classes?http%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23versionInfo=MSL39&page=0&size=10&includeObsoleteEntities=true
+GET /api/v2/ontologies/ictv/classes?search=MSL39&searchFields=http__%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23versionInfo&exactMatch=true&includeObsoleteEntities=true&page=0&size=10
 ```
 
 **Parameters:**
+- `search`: MSL release identifier
+- `searchFields`: the configured `owl:versionInfo` field
+- `exactMatch`: boolean set to `true`
+- `includeObsoleteEntities`: boolean set to `true` to include former releases
 - `page`: Page number (0-indexed)
 - `size`: Number of items per page (up to 1000)
-- `http%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23versionInfo`: version info corresponding to the MSL number in the ICTV ontology
-- `includeObsoleteEntities`: boolean set to `true` to include obsolete terms
 
 **An iteration loop can simply handle paginated results to retrieve all terms**
 

@@ -534,23 +534,18 @@ class ICTVOLSClient {
 
     private function seekOntologyTaxonByExactClassFields($text, $includeObsolete) {
         $results = [];
-        foreach ([['label'], ['synonyms', 'synonym']] as $fields) {
-            foreach ($fields as $field) {
-                $hits = array_values(array_filter(
-                    $this->seekOntologyTaxon('classes', [
-                        "search" => $text,
-                        "searchFields" => $field,
-                        "exactMatch" => "true",
-                        "includeObsoleteEntities" => $includeObsolete,
-                        "size" => 20
-                    ]) ?: [],
-                    fn($e) => $this->entityMatchesTextExactly($e, $text)
-                ));
-                if ($hits) {
-                    $results = array_merge($results, $hits);
-                    break;
-                }
-            }
+        foreach (['label', 'synonym'] as $field) {
+            $hits = array_values(array_filter(
+                $this->seekOntologyTaxon('classes', [
+                    "search" => $text,
+                    "searchFields" => $field,
+                    "exactMatch" => "true",
+                    "includeObsoleteEntities" => $includeObsolete,
+                    "size" => 20
+                ]) ?: [],
+                fn($e) => $this->entityMatchesTextExactly($e, $text)
+            ));
+            $results = array_merge($results, $hits);
         }
         return $results;
     }
@@ -562,17 +557,13 @@ class ICTVOLSClient {
     }
 
     private function seekOntologyTaxonBySynonym($synonym) {
-        foreach (['synonyms', 'synonym'] as $field) {
-            $hits = array_values(array_filter($this->seekOntologyTaxon('classes', [
-                "search" => $synonym,
-                "searchFields" => $field,
-                "exactMatch" => "true",
-                "includeObsoleteEntities" => "true",
-                "size" => 20
-            ]) ?: [], fn($e) => $this->entityMatchesTextExactly($e, $synonym)));
-            if ($hits) return $hits;
-        }
-        return [];
+        return array_values(array_filter($this->seekOntologyTaxon('classes', [
+            "search" => $synonym,
+            "searchFields" => "synonym",
+            "exactMatch" => "true",
+            "includeObsoleteEntities" => "true",
+            "size" => 20
+        ]) ?: [], fn($e) => $this->entityMatchesTextExactly($e, $synonym)));
     }
 
     private function seekOntologyTaxonByUniqueRelaxedSearch($label) {
@@ -638,23 +629,18 @@ class ICTVOLSClient {
 
     private function seekOntologyTaxonByIndividual($labelOrSyn) {
         $all = [];
-        foreach ([['label'], ['synonyms', 'synonym']] as $fields) {
-            foreach ($fields as $field) {
-                $hits = array_values(array_filter(
-                    $this->seekOntologyTaxon('individuals', [
-                        'search' => $labelOrSyn,
-                        'searchFields' => $field,
-                        'exactMatch' => 'true',
-                        'includeObsoleteEntities' => 'false',
-                        'size' => 20
-                    ]) ?: [],
-                    fn($e) => $this->entityMatchesTextExactly($e, $labelOrSyn)
-                ));
-                if ($hits) {
-                    $all = array_merge($all, $hits);
-                    break;
-                }
-            }
+        foreach (['label', 'synonym'] as $field) {
+            $hits = array_values(array_filter(
+                $this->seekOntologyTaxon('individuals', [
+                    'search' => $labelOrSyn,
+                    'searchFields' => $field,
+                    'exactMatch' => 'true',
+                    'includeObsoleteEntities' => 'false',
+                    'size' => 20
+                ]) ?: [],
+                fn($e) => $this->entityMatchesTextExactly($e, $labelOrSyn)
+            ));
+            $all = array_merge($all, $hits);
         }
         return $this->resolveIndividualParents($all);
     }
@@ -771,22 +757,33 @@ class ICTVOLSClient {
 
     /** Get all taxa for a specific MSL release (paged). */
     public function getAllFromRelease(string $release): array {
+        $release = strtoupper(trim($release));
+        if (!preg_match('/^MSL\d+$/', $release)) return [];
+
         $page = 0;
         $size = 1000;
         $all = [];
 
         do {
             $data = $this->fetchit("{$this->baseUrl}/classes", [
-                "http://www.w3.org/2002/07/owl#versionInfo" => $release,
+                "search" => $release,
+                "searchFields" => "http__//www.w3.org/2002/07/owl#versionInfo",
+                "exactMatch" => "true",
+                "includeObsoleteEntities" => "true",
                 "size" => $size,
                 "page" => $page
             ]);
             $batch = $data['elements'] ?? [];
             foreach ($batch as $el) {
-                $all[] = $this->mapEntity($el);
+                $version = $this->normalizeValue($el["http://www.w3.org/2002/07/owl#versionInfo"] ?? null);
+                $iri = (string)($el['iri'] ?? '');
+                if ($version === $release && strpos($iri, "http://ictv.global/id/$release/") === 0) {
+                    $all[] = $this->mapEntity($el);
+                }
             }
+            $totalPages = $data['totalPages'] ?? null;
             $page++;
-            $hasMore = !empty($batch);
+            $hasMore = !empty($batch) && (!is_numeric($totalPages) || $page < (int)$totalPages);
         } while ($hasMore);
 
         return $all;
@@ -794,12 +791,22 @@ class ICTVOLSClient {
 
     /** Fetch a specific taxon by ICTV ID + MSL (release). */
     public function getTaxonByRelease($ictvId, $release) {
-        $data = $this->ols('classes', [
-            "http://www.w3.org/2002/07/owl#versionInfo" => $release,
-            "http://purl.org/dc/terms/identifier" => $ictvId
-        ]);
-        $el = $data['elements'][0] ?? null;
-        return $el ? $this->mapEntity($el) : null;
+        $ictvId = strtoupper(trim((string)$ictvId));
+        $release = strtoupper(trim((string)$release));
+        if (!$this->isIctvId($ictvId) || !preg_match('/^MSL\d+$/', $release)) return null;
+
+        $iri = "http://ictv.global/id/$release/$ictvId";
+        try {
+            $el = $this->retrieveTaxonByIRI($iri);
+        } catch (Exception $e) {
+            if (strpos($e->getMessage(), 'Fetch failed (404)') !== false) return null;
+            throw $e;
+        }
+
+        if (!$el) return null;
+        $version = $this->normalizeValue($el["http://www.w3.org/2002/07/owl#versionInfo"] ?? null);
+        $identifier = $this->normalizeValue($el["http://purl.org/dc/terms/identifier"] ?? null);
+        return $version === $release && $identifier === $ictvId ? $this->mapEntity($el) : null;
     }
 
     /** Full history across revisions, newest first. */

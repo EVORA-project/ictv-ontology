@@ -480,21 +480,18 @@ class ICTVOLSClient:
 
     def seekOntologyTaxonByExactClassFields(self, text: str, include_obsolete: str) -> List[Dict[str, Any]]:
         results: List[Dict[str, Any]] = []
-        for fields in (("label",), ("synonyms", "synonym")):
-            for field in fields:
-                hits = [
-                    e for e in (self.seekOntologyTaxon('classes', {
-                        "search": text,
-                        "searchFields": field,
-                        "exactMatch": "true",
-                        "includeObsoleteEntities": include_obsolete,
-                        "size": 20
-                    }) or [])
-                    if self.entityMatchesTextExactly(e, text)
-                ]
-                if hits:
-                    results.extend(hits)
-                    break
+        for field in ("label", "synonym"):
+            hits = [
+                e for e in (self.seekOntologyTaxon('classes', {
+                    "search": text,
+                    "searchFields": field,
+                    "exactMatch": "true",
+                    "includeObsoleteEntities": include_obsolete,
+                    "size": 20
+                }) or [])
+                if self.entityMatchesTextExactly(e, text)
+            ]
+            results.extend(hits)
         return results
 
     def seekOntologyTaxonByClassLabel(self, label: str) -> List[Dict[str, Any]]:
@@ -503,20 +500,16 @@ class ICTVOLSClient:
         return curr + obs
 
     def seekOntologyTaxonBySynonym(self, synonym: str) -> List[Dict[str, Any]]:
-        for field in ("synonyms", "synonym"):
-            hits = [
-                e for e in (self.seekOntologyTaxon('classes', {
-                    "search": synonym,
-                    "searchFields": field,
-                    "exactMatch": "true",
-                    "includeObsoleteEntities": "true",
-                    "size": 20
-                }) or [])
-                if self.entityMatchesTextExactly(e, synonym)
-            ]
-            if hits:
-                return hits
-        return []
+        return [
+            e for e in (self.seekOntologyTaxon('classes', {
+                "search": synonym,
+                "searchFields": "synonym",
+                "exactMatch": "true",
+                "includeObsoleteEntities": "true",
+                "size": 20
+            }) or [])
+            if self.entityMatchesTextExactly(e, synonym)
+        ]
 
     def seekOntologyTaxonByUniqueRelaxedSearch(self, label: str) -> List[Dict[str, Any]]:
         raw = str(label).strip()
@@ -573,21 +566,18 @@ class ICTVOLSClient:
 
     def seekOntologyTaxonByIndividual(self, labelOrSyn: str) -> List[Dict[str, Any]]:
         all_inds: List[Dict[str, Any]] = []
-        for fields in (("label",), ("synonyms", "synonym")):
-            for field in fields:
-                hits = [
-                    e for e in (self.seekOntologyTaxon('individuals', {
-                        'search': labelOrSyn,
-                        'searchFields': field,
-                        'exactMatch': 'true',
-                        'includeObsoleteEntities': 'false',
-                        'size': 20
-                    }) or [])
-                    if self.entityMatchesTextExactly(e, labelOrSyn)
-                ]
-                if hits:
-                    all_inds.extend(hits)
-                    break
+        for field in ("label", "synonym"):
+            hits = [
+                e for e in (self.seekOntologyTaxon('individuals', {
+                    'search': labelOrSyn,
+                    'searchFields': field,
+                    'exactMatch': 'true',
+                    'includeObsoleteEntities': 'false',
+                    'size': 20
+                }) or [])
+                if self.entityMatchesTextExactly(e, labelOrSyn)
+            ]
+            all_inds.extend(hits)
         return self._resolveIndividualParents(all_inds)
 
     def sortCandidates(self, arr: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -667,30 +657,52 @@ class ICTVOLSClient:
         return list(names.keys())
 
     def getAllFromRelease(self, release: str) -> List[Dict[str, Any]]:
+        release = str(release or '').strip().upper()
+        if not re.fullmatch(r'MSL\d+', release):
+            return []
+
         page = 0
         size = 1000
         all_items: List[Dict[str, Any]] = []
         while True:
             data = self.fetchit(f"{self.baseUrl}/classes", {
-                "http://www.w3.org/2002/07/owl#versionInfo": release,
+                "search": release,
+                "searchFields": "http__//www.w3.org/2002/07/owl#versionInfo",
+                "exactMatch": "true",
+                "includeObsoleteEntities": "true",
                 "size": size,
                 "page": page
             })
             batch = data.get('elements') or []
             for el in batch:
-                all_items.append(self.mapEntity(el))
+                version = self.normalizeValue(el.get("http://www.w3.org/2002/07/owl#versionInfo"))
+                if version == release and str(el.get('iri') or '').startswith(f"http://ictv.global/id/{release}/"):
+                    all_items.append(self.mapEntity(el))
             page += 1
-            if not batch:
+            total_pages = data.get('totalPages')
+            if not batch or (isinstance(total_pages, int) and page >= total_pages):
                 break
         return all_items
 
     def getTaxonByRelease(self, ictvId: str, release: str) -> Optional[Dict[str, Any]]:
-        data = self.ols('classes', {
-            "http://www.w3.org/2002/07/owl#versionInfo": release,
-            "http://purl.org/dc/terms/identifier": ictvId
-        })
-        el = (data.get('elements') or [None])[0]
-        return self.mapEntity(el) if el else None
+        ictv_id = str(ictvId or '').strip().upper()
+        release = str(release or '').strip().upper()
+        if not self.isIctvId(ictv_id) or not re.fullmatch(r'MSL\d+', release):
+            return None
+
+        iri = f"http://ictv.global/id/{release}/{ictv_id}"
+        try:
+            el = self.retrieveTaxonByIRI(iri)
+        except Exception as exc:
+            if 'Fetch failed (404)' in str(exc):
+                return None
+            raise
+
+        if not el:
+            return None
+        version = self.normalizeValue(el.get("http://www.w3.org/2002/07/owl#versionInfo"))
+        identifier = self.normalizeValue(el.get("http://purl.org/dc/terms/identifier"))
+        return self.mapEntity(el) if version == release and identifier == ictv_id else None
 
     def getHistory(self, idOrLabelOrEntity: Any) -> List[Dict[str, Any]]:
         entityRaw = self._resolveAsEntity(idOrLabelOrEntity)
