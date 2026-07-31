@@ -222,18 +222,6 @@ export class ICTVApi {
     }
   }
 
-  async _olsElementsByFirstMatchingField(endpoint, params, searchFields, filter) {
-    for (const field of searchFields) {
-      const elements = await this._olsElementsOrEmpty(
-        endpoint,
-        { ...params, searchFields: field },
-        filter
-      );
-      if (elements.length > 0) return elements;
-    }
-    return [];
-  }
-
   async _findClassesByExactFields(label, includeObsoleteEntities) {
     const baseParams = {
       search: label,
@@ -244,10 +232,9 @@ export class ICTVApi {
     const filter = e => this._entityMatchesTextExactly(e, label);
     const [byLabel, bySynonyms] = await Promise.all([
       this._olsElementsOrEmpty('classes', { ...baseParams, searchFields: 'label' }, filter),
-      this._olsElementsByFirstMatchingField(
+      this._olsElementsOrEmpty(
         'classes',
-        baseParams,
-        ['synonyms', 'synonym'],
+        { ...baseParams, searchFields: 'synonym' },
         filter
       )
     ]);
@@ -355,10 +342,9 @@ export class ICTVApi {
     const filter = e => this._entityMatchesTextExactly(e, labelOrSynonym);
     const [byLabel, bySynonyms] = await Promise.all([
       this._olsElementsOrEmpty('individuals', { ...baseParams, searchFields: 'label' }, filter),
-      this._olsElementsByFirstMatchingField(
+      this._olsElementsOrEmpty(
         'individuals',
-        baseParams,
-        ['synonyms', 'synonym'],
+        { ...baseParams, searchFields: 'synonym' },
         filter
       )
     ]);
