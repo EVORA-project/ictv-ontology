@@ -332,14 +332,16 @@ export class ICTVApi {
     return this._resolveIndividualParents(individuals);
   }
 
-  async _findIndividualsAndResolveParents(labelOrSynonym) {
+  async _findIndividualsByExactText(labelOrSynonym) {
+    const terms = String(labelOrSynonym).split(';').map(v => v.trim()).filter(Boolean);
+    const searchTerm = terms[0] || String(labelOrSynonym).trim();
     const baseParams = {
-      search: labelOrSynonym,
+      search: searchTerm,
       exactMatch: 'true',
       includeObsoleteEntities: 'false',
       size: 20
     };
-    const filter = e => this._entityMatchesTextExactly(e, labelOrSynonym);
+    const filter = e => terms.every(term => this._entityMatchesTextExactly(e, term));
     const [byLabel, bySynonyms] = await Promise.all([
       this._olsElementsOrEmpty('individuals', { ...baseParams, searchFields: 'label' }, filter),
       this._olsElementsOrEmpty(
@@ -348,7 +350,34 @@ export class ICTVApi {
         filter
       )
     ]);
-    return this._resolveIndividualParents([...byLabel, ...bySynonyms]);
+    return this._dedupeByIri([...byLabel, ...bySynonyms]);
+  }
+
+  _individualDisambiguationSuggestions(individuals, query) {
+    const wanted = this._normText(query);
+    const seen = new Set();
+    const suggestions = [];
+
+    for (const individual of individuals) {
+      const rawLabels = individual.label
+        ?? individual['http://www.w3.org/2000/01/rdf-schema#label'];
+      const labels = Array.from(new Map(
+        this._toArray(rawLabels)
+          .filter(label => typeof label === 'string' && label.trim())
+          .map(label => [this._normText(label), label])
+      ).values());
+      const ordered = [
+        ...labels.filter(label => this._normText(label) !== wanted),
+        ...labels.filter(label => this._normText(label) === wanted)
+      ];
+      const suggestion = ordered.join('; ');
+      const key = this._normText(suggestion);
+      if (key && key !== wanted && !seen.has(key)) {
+        seen.add(key);
+        suggestions.push(suggestion);
+      }
+    }
+    return suggestions;
   }
 
   /* -------------------- mapping to normalized object -------------------- */
@@ -530,7 +559,9 @@ export class ICTVApi {
     }
      
     // 5) individuals -> parent class
-    const parents = await this._findIndividualsAndResolveParents(trimmed);
+    const individuals = await this._findIndividualsByExactText(trimmed);
+    const parents = await this._resolveIndividualParents(individuals);
+    const individualSuggestions = this._individualDisambiguationSuggestions(individuals, trimmed);
     if (parents.length) {
       base = parents.sort(
         (a, b) =>
@@ -552,7 +583,9 @@ export class ICTVApi {
     }
 
     // 7) nothing → suggest terms
-    suggestions = await this._getSuggestions(trimmed);
+    suggestions = individualSuggestions.length
+      ? individualSuggestions
+      : await this._getSuggestions(trimmed);
     return { base: null, suggestions };
   }
 

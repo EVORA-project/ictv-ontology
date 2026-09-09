@@ -282,7 +282,9 @@ class ICTVOLSClient {
             }
         }
         // 5) individuals -> parent class
-        $parents = $this->seekOntologyTaxonByIndividual($input);
+        $individuals = $this->seekIndividualsByExactText($input);
+        $parents = $this->resolveIndividualParents($individuals);
+        $individualSuggestions = $this->individualDisambiguationSuggestions($individuals, $input);
         if ($parents) {
             $sorted = $this->sortCandidates($parents);
             return $this->resolveEntityByIri($sorted[0]['iri'], $options);
@@ -300,7 +302,9 @@ class ICTVOLSClient {
         return [
             'status' => 'not-found',
             'input' => $input,
-            'suggestions' => $options['suggestions'] ? $this->getSuggestions($input) : []
+            'suggestions' => $options['suggestions']
+                ? ($individualSuggestions ?: $this->getSuggestions($input))
+                : []
         ];
     }
 
@@ -627,22 +631,68 @@ class ICTVOLSClient {
         return $this->resolveIndividualParents($individuals);
     }
 
-    private function seekOntologyTaxonByIndividual($labelOrSyn) {
+    private function seekIndividualsByExactText($labelOrSyn) {
+        $terms = array_values(array_filter(
+            array_map('trim', explode(';', (string)$labelOrSyn)),
+            fn($term) => $term !== ''
+        ));
+        $searchTerm = $terms[0] ?? trim((string)$labelOrSyn);
         $all = [];
         foreach (['label', 'synonym'] as $field) {
             $hits = array_values(array_filter(
                 $this->seekOntologyTaxon('individuals', [
-                    'search' => $labelOrSyn,
+                    'search' => $searchTerm,
                     'searchFields' => $field,
                     'exactMatch' => 'true',
                     'includeObsoleteEntities' => 'false',
                     'size' => 20
                 ]) ?: [],
-                fn($e) => $this->entityMatchesTextExactly($e, $labelOrSyn)
+                fn($e) => count(array_filter(
+                    $terms,
+                    fn($term) => !$this->entityMatchesTextExactly($e, $term)
+                )) === 0
             ));
             $all = array_merge($all, $hits);
         }
-        return $this->resolveIndividualParents($all);
+        $unique = [];
+        foreach ($all as $individual) {
+            $key = $individual['iri'] ?? json_encode($individual);
+            if (!isset($unique[$key])) $unique[$key] = $individual;
+        }
+        return array_values($unique);
+    }
+
+    private function individualDisambiguationSuggestions($individuals, $query) {
+        $wanted = $this->normText($query);
+        $suggestions = [];
+        foreach ($individuals as $individual) {
+            $rawLabels = $individual['label']
+                ?? $individual['http://www.w3.org/2000/01/rdf-schema#label']
+                ?? null;
+            $labels = [];
+            foreach ($this->toArray($rawLabels) as $label) {
+                if (is_string($label) && trim($label) !== '') {
+                    $labels[$this->normText($label)] = $label;
+                }
+            }
+            $ordered = array_values(array_filter(
+                $labels,
+                fn($label) => $this->normText($label) !== $wanted
+            ));
+            foreach ($labels as $label) {
+                if ($this->normText($label) === $wanted) $ordered[] = $label;
+            }
+            $suggestion = implode('; ', $ordered);
+            $key = $this->normText($suggestion);
+            if ($key && $key !== $wanted && !isset($suggestions[$key])) {
+                $suggestions[$key] = $suggestion;
+            }
+        }
+        return array_values($suggestions);
+    }
+
+    private function seekOntologyTaxonByIndividual($labelOrSyn) {
+        return $this->resolveIndividualParents($this->seekIndividualsByExactText($labelOrSyn));
     }
 
     private function sortCandidates($arr) {
