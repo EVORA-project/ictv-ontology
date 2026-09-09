@@ -236,7 +236,9 @@ class ICTVOLSClient:
                 return self._resolveEntityByIri(iri, options)
 
         # 5) individuals -> parent class
-        parents = self.seekOntologyTaxonByIndividual(input_val)
+        individuals = self._seekIndividualsByExactText(input_val)
+        parents = self._resolveIndividualParents(individuals)
+        individual_suggestions = self._individualDisambiguationSuggestions(individuals, input_val)
         if parents:
             sorted_cands = self.sortCandidates(parents)
             return self._resolveEntityByIri(sorted_cands[0]['iri'], options)
@@ -251,7 +253,9 @@ class ICTVOLSClient:
         return {
             'status': 'not-found',
             'input': input_val,
-            'suggestions': self.getSuggestions(input_val) if options.get('suggestions') else []
+            'suggestions': (
+                individual_suggestions or self.getSuggestions(input_val)
+            ) if options.get('suggestions') else []
         }
 
     def _resolveEntityByIri(self, iri: str, options: Dict[str, bool]) -> Dict[str, Any]:
@@ -564,21 +568,51 @@ class ICTVOLSClient:
         ]
         return self._resolveIndividualParents(individuals)
 
-    def seekOntologyTaxonByIndividual(self, labelOrSyn: str) -> List[Dict[str, Any]]:
+    def _seekIndividualsByExactText(self, labelOrSyn: str) -> List[Dict[str, Any]]:
+        terms = [term.strip() for term in str(labelOrSyn).split(';') if term.strip()]
+        search_term = terms[0] if terms else str(labelOrSyn).strip()
         all_inds: List[Dict[str, Any]] = []
         for field in ("label", "synonym"):
             hits = [
                 e for e in (self.seekOntologyTaxon('individuals', {
-                    'search': labelOrSyn,
+                    'search': search_term,
                     'searchFields': field,
                     'exactMatch': 'true',
                     'includeObsoleteEntities': 'false',
                     'size': 20
                 }) or [])
-                if self.entityMatchesTextExactly(e, labelOrSyn)
+                if all(self.entityMatchesTextExactly(e, term) for term in terms)
             ]
             all_inds.extend(hits)
-        return self._resolveIndividualParents(all_inds)
+        unique: Dict[str, Dict[str, Any]] = {}
+        for individual in all_inds:
+            key = individual.get('iri') or json.dumps(individual, sort_keys=True)
+            unique.setdefault(key, individual)
+        return list(unique.values())
+
+    def _individualDisambiguationSuggestions(
+        self, individuals: List[Dict[str, Any]], query: str
+    ) -> List[str]:
+        wanted = self.normText(query)
+        suggestions: Dict[str, str] = {}
+        for individual in individuals:
+            raw_labels = individual.get(
+                'label', individual.get('http://www.w3.org/2000/01/rdf-schema#label')
+            )
+            labels: Dict[str, str] = {}
+            for label in self.toArray(raw_labels):
+                if isinstance(label, str) and label.strip():
+                    labels.setdefault(self.normText(label), label)
+            ordered = [label for key, label in labels.items() if key != wanted]
+            ordered.extend(label for key, label in labels.items() if key == wanted)
+            suggestion = '; '.join(ordered)
+            key = self.normText(suggestion)
+            if key and key != wanted:
+                suggestions.setdefault(key, suggestion)
+        return list(suggestions.values())
+
+    def seekOntologyTaxonByIndividual(self, labelOrSyn: str) -> List[Dict[str, Any]]:
+        return self._resolveIndividualParents(self._seekIndividualsByExactText(labelOrSyn))
 
     def sortCandidates(self, arr: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         def msl_num(el: Dict[str, Any]) -> int:
