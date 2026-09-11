@@ -341,7 +341,7 @@ def add_xrefs(g, class_iri, field, prefix):
 
 def map_rank(rank):
     if rank == "realm":
-        return "http://purl.obolibrary.org/obo/TAXRANK_0001004" # clade
+        return "http://purl.obolibrary.org/obo/TAXRANK_0001013" # realm
     if rank == "kingdom":
         return "http://purl.obolibrary.org/obo/TAXRANK_0000017"
     if rank == "subkingdom":

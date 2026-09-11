@@ -62,9 +62,9 @@
     rdfs:label "Viruses" ;
     rdfs:isDefinedBy <http://purl.obolibrary.org/obo/ncbitaxon.owl> .
     
-<http://purl.obolibrary.org/obo/TAXRANK_0001004> a owl:Class ;
+<http://purl.obolibrary.org/obo/TAXRANK_0001013> a owl:Class ;
     rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
-    rdfs:label "clade" .
+    rdfs:label "realm" .
     
 <http://purl.obolibrary.org/obo/TAXRANK_0000017> a owl:Class ;
     rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> ;
