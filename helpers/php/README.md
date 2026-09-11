@@ -372,7 +372,19 @@ try {
 
 ---
 
-## 8. Licensing
+## 8. Citation
+
+If you use this helper, please cite:
+
+> Programmatic access to ICTV virus taxonomy through a public ontology API
+>
+> Philippe Lieutaud, James McLaughlin, R. Curtis Hendrickson, Romain David, Helen Parkinson, Elliot J. Lefkowitz, Donald M. Dempsey, Bruno Coutard
+>
+> *GigaScience*. 2026; giag089. doi: https://doi.org/10.1093/gigascience/giag089
+
+---
+
+## 9. Licensing
 
 - ICTV data as included in the ICTV ontology: ICTV CC BY 4.0  
 - SSSOM mapping: CC0 (see the `virus-taxonomy-mappings` repository)  
