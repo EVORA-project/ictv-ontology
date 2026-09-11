@@ -54,6 +54,14 @@
     rdfs:label "identifier" ;
     rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
+<http://purl.org/dc/terms/modified> a owl:AnnotationProperty ;
+    rdfs:label "Date Modified" ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+
+<http://purl.org/dc/terms/bibliographicCitation> a owl:AnnotationProperty ;
+    rdfs:label "Bibliographic Citation" ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+
 <http://purl.obolibrary.org/obo/TAXRANK_1000000> a owl:AnnotationProperty ;
     rdfs:label "has rank" ;
     rdfs:isDefinedBy <http://purl.obolibrary.org/obo/taxrank.owl> .
