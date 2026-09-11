@@ -10,12 +10,13 @@
 import rdflib
 from rdflib import URIRef, BNode, Literal
 from rdflib.collection import Collection
-from rdflib.namespace import OWL, RDFS, RDF, PROV, FOAF, SKOS
+from rdflib.namespace import OWL, RDFS, RDF, PROV, FOAF, SKOS, XSD
 import pandas as pd
 import os
 import json
 import io
 import re
+from datetime import datetime, timezone
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 TERM_REPLACED_BY = "http://purl.obolibrary.org/obo/IAO_0100001"
@@ -31,6 +32,14 @@ REPLACES = "http://purl.org/dc/terms/replaces"
 REPLACED_BY = "http://purl.org/dc/terms/isReplacedBy"
 EDITOR_NOTE = "http://purl.obolibrary.org/obo/IAO_0000116"
 IDENTIFIER = "http://purl.org/dc/terms/identifier"
+MODIFIED = "http://purl.org/dc/terms/modified"
+BIBLIOGRAPHIC_CITATION = "http://purl.org/dc/terms/bibliographicCitation"
+PUBLICATION_CITATION = (
+    "Lieutaud P, McLaughlin J, Hendrickson RC, David R, Parkinson H, "
+    "Lefkowitz EJ, Dempsey DM, Coutard B. Programmatic access to ICTV "
+    "virus taxonomy through a public ontology API. GigaScience. 2026; "
+    "giag089. doi:10.1093/gigascience/giag089."
+)
 RANK = "http://purl.obolibrary.org/obo/TAXRANK_1000000"
 WAS_REVISION_OF = "http://www.w3.org/ns/prov#wasRevisionOf"
 HAD_REVISION = "http://www.w3.org/ns/prov#hadRevision"
@@ -166,6 +175,9 @@ def main():
     g_all.add((URIRef(ontology_iri), RDFS.comment, Literal("International Committee on Taxonomy of Viruses (ICTV)")))
     g_all.add((URIRef(ontology_iri), FOAF.homepage, URIRef("http://ictv.global/")))
     g_all.add((URIRef(ontology_iri), OWL.versionInfo, Literal("MSL"+latest_release)))
+    modified = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    g_all.add((URIRef(ontology_iri), URIRef(MODIFIED), Literal(modified, datatype=XSD.dateTime)))
+    g_all.add((URIRef(ontology_iri), URIRef(BIBLIOGRAPHIC_CITATION), Literal(PUBLICATION_CITATION)))
     g_all.add((URIRef(ontology_iri), URIRef('http://purl.obolibrary.org/obo/IAO_0000700'), URIRef('http://purl.obolibrary.org/obo/NCBITaxon_10239')))
 
     g_all.bind('owl', OWL)
