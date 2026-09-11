@@ -63,7 +63,7 @@ If you use the ICTV Ontology, ICTV API documentation, or helper libraries, pleas
 >
 > Philippe Lieutaud, James McLaughlin, R. Curtis Hendrickson, Romain David, Helen Parkinson, Elliot J. Lefkowitz, Donald M. Dempsey, Bruno Coutard
 >
-> bioRxiv 2026.06.16.732600; doi: https://doi.org/10.64898/2026.06.16.732600
+> *GigaScience*. 2026; giag089. doi: https://doi.org/10.1093/gigascience/giag089
 
 ---
 
